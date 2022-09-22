@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container } from '@chakra-ui/react'
-import Header from '../Header'
+import { Box, Container } from '@chakra-ui/react'
+
 
 const Layout = ({ children, router }) => { 
-    return (      
-        <Container> 
-            <Header/>
+   //maxWidth='100^' minHeight='100vh'
+    return (    
+        <Container  maxW='container' width='100%' margin='auto' minH='100vh' bg='#faf7fa'> 
             <main>{children}</main> 
         </Container> 
     )   
