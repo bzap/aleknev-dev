@@ -14,7 +14,7 @@ import {
     useColorModeValue,
   } from '@chakra-ui/react';
 const Hero = () => ( 
-    <Container maxW={'7xl'}>
+    <Container maxW={'7xl'} id='p1'>
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 15, lg: 30 }}
@@ -52,7 +52,7 @@ const Hero = () => (
           <Text 
           color={'gray.500'}
           fontSize={{ base: '20', sm: '30', lg: '25' }}>
-            Known for an overly large desire for dan-dan noodles and a strong desire to learn.  
+            Sometimes known for my overly large desire for dan-dan noodles and other times for my strong desire to learn.  
           </Text>
         </Stack>
 
