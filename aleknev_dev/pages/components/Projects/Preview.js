@@ -32,10 +32,10 @@ const Preview = () => (
         <Stack>
               
             <Center>
-                <div>{projectTitle('ARD Util')}</div>
+                <div>{projectTitle('GONI-GO')}</div>
             </Center>
             <Divider orientation='horizontal'/>
-            <Grid templateColumns='repeat(5, 1fr)' gap={3}>
+            <Grid templateColumns='repeat(4, 1fr)' gap={3}>
                 <GridItem> 
                     <div>{projectSkill('React')}</div>
                 </GridItem>
@@ -59,12 +59,6 @@ const Preview = () => (
                 </GridItem>
                 <GridItem> 
                     <div>{projectSkill('NextJS')}</div>
-                </GridItem>
-                <GridItem> 
-                    <div>{projectSkill('ThreeJS')}</div>
-                </GridItem>
-                <GridItem> 
-                    <div>{projectSkill('C++')}</div>
                 </GridItem>
             </Grid>
             <Center>
@@ -107,7 +101,7 @@ const projectSkill = (props) => {
     // make this map from a future json object 
     return (
         <Center
-            bg='black' 
+            bg='gray.700' 
             py='1'
             boxShadow={'lg'} 
             borderRadius={'12'}

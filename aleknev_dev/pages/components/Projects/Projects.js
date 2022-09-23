@@ -19,9 +19,9 @@ import Preview from './Preview'
 
 
 const Projects = () => ( 
-    <Container maxW={'7xl'} id='p2' py='5em'>
+    <Container maxW={'7xl'} w={'100%'} id='p2' py='7em'>
 
-        <Grid templateColumns='repeat(2, 1fr)' gap={6}>
+        <Grid templateColumns='repeat(3, 1fr)' gap={'2em'}>
             <GridItem 
             
                 flex={1}
@@ -32,11 +32,23 @@ const Projects = () => (
                 borderRadius={'15px'} >
                 <Preview/>
             </GridItem>
-            <GridItem w='100%' h='10em' bg='white' boxShadow={'lg'} borderRadius={'15px'}>
-                lol
+            <GridItem 
+                flex={1}
+                justifyContent={'flex-start'}
+                w='100%' 
+                bg='white' 
+                boxShadow={'lg'} 
+                borderRadius={'15px'} >
+                <Preview/>
             </GridItem>
-            <GridItem w='100%' h='10em' bg='white' boxShadow={'lg'} borderRadius={'15px'}>
-                lol
+            <GridItem 
+                flex={1}
+                justifyContent={'flex-start'}
+                w='100%' 
+                bg='white' 
+                boxShadow={'lg'} 
+                borderRadius={'15px'} >
+                <Preview/>
             </GridItem>
             <GridItem w='100%' h='10em' bg='white' boxShadow={'lg'} borderRadius={'15px'}>\
                 lol
