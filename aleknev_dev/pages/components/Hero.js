@@ -13,6 +13,7 @@ import {
     IconProps,
     useColorModeValue,
   } from '@chakra-ui/react';
+import Head from 'next/head';
 const Hero = () => ( 
     <Container maxW={'7xl'} id='p1'>
       <Stack
@@ -26,14 +27,13 @@ const Hero = () => (
                   color={'black'}
                   fontWeight='600'
                   fontSize={{ base: '20', sm: '30', lg: '50' }}>
-                Hello! I'm
+                Hey! I'm
             </Text>
             <Text 
                 as={'span'} 
                 color={'black'} 
                 fontWeight='semibold'
                 fontSize={{ base: '40', sm: '50', lg: '90' }}>  
-                
                  &thinsp;Linas
             </Text>      
             <Text 
@@ -41,19 +41,24 @@ const Hero = () => (
                 color={'black'} 
                 fontSize={{ base: '20', sm: '30', lg: '40' }}>  
                  .
-            </Text>   
+            </Text> 
+            <Text
+                color={'gray.600'}
+                fontWeight='600'
+                pl={'9'}
+                fontSize={{ base: '20', sm: '30', lg: '30' }}>
+                I'm a developer based in Toronto. 
+            </Text>
+          <Text 
+            pt={1}
+            color={'gray.500'}
+            pl={'20'}
+            fontSize={{ base: '20', sm: '30', lg: '22' }}>
+              Sometimes I'm known for my pursuits of dan-dan noodles and other times for my strong desire to learn.  
+        </Text>  
         </Heading> 
-          <Text 
-          color={'gray.600'}
-          fontWeight='600'
-          fontSize={{ base: '20', sm: '30', lg: '30' }}>
-            I'm a developer based in Toronto. 
-          </Text>
-          <Text 
-          color={'gray.500'}
-          fontSize={{ base: '20', sm: '30', lg: '25' }}>
-            Sometimes known for my overly large desire for dan-dan noodles and other times for my strong desire to learn.  
-          </Text>
+  
+
         </Stack>
 
         <Flex
@@ -63,7 +68,6 @@ const Hero = () => (
           position={'relative'}
           w={'full'}>
           <Box
-            
             position={'relative'}
             height={'400px'}
             rounded={'2xl'}

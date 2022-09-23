@@ -28,7 +28,7 @@ const Header = () => (
                         fontWeight={600}
                         fontSize={{ base: '4xl', sm: '4xl', lg: '1xl' }}>    
                         <Text>
-                            &lt;aleknev&gt;
+                        &thinsp;&lt;aleknev&gt;
                         </Text>
                     </Heading> 
                     <Stack direction='row' justify={'flex-end'} > 
