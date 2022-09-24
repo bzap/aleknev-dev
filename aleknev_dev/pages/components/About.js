@@ -29,7 +29,10 @@ const About = () => (
         w={'100%'} 
         id='p3' 
         py='7em'>
-        <Grid templateColumns='repeat(2, 1fr)' gap={'2em'}>
+        <Grid 
+        templateColumns='repeat(2, 1fr)' 
+        gap={'2em'}
+        spacing={'2'}>
             {backgroundInfo()}
             {selfPortrait()}
             {skillsInfo()}
@@ -61,10 +64,7 @@ const selfPortrait = () => {
             colSpan={1}
             flex={1}
             justifyContent={'flex-start'}
-            w='100%' 
-            bg='white' 
-            boxShadow={'lg'} 
-            borderRadius={'25px'} >
+            w='100%' >
             {pictureFrame()}
         </GridItem>
     )
@@ -168,25 +168,39 @@ const pictureFrame = () => {
                 flex={1}
                 position={'relative'}
                 w={'20em'}
-                align={'center'}
-                overflow={'hidden'}
-                borderRadius={'20px'}
-                boxShadow={'lg'}>
-                <Stack
-                    direction={''}
+                align={'center'}>
+
+                <Stack  
+                    overflow={'hidden'}
+                    direction={'column'}
                     h={'35em'}>
-                    <Image
-                        h={'100%'}
-                        fit={'cover'}
-                        align={'center'}
-                        src={'https://i.imgur.com/7R4gnAa.jpg'}>
-                        </Image>
+                    {stackedImage('0%', '-3%', 'https://i.imgur.com/7R4gnAa.jpg', 8, '14em', '15em')}
+                    {stackedImage('45%', '30%', 'https://staticg.sportskeeda.com/editor/2022/02/af653-16442505538786-1920.jpg', 7, '11em', '11em')}
+                    {stackedImage('79%', '60%', 'https://i.imgur.com/P9IVqkS.jpeg', 8, '7em', '7em')}
                 </Stack>
             </Box>
     )
 
 }
 
+const stackedImage = (top, left, url, ind, h, w) => { 
+    return ( 
+        <Image
+            borderRadius={'20px'}
+            boxShadow={'2xl'}
+            borderWidth={'5em'}
+            borderColor={'purple'}
+            zIndex={ind}
+            w={h}
+            h={w}
+            position={'absolute'}
+            top={top}
+            left={left}
+            fit={'cover'}
+            align={'center'}
+            src={url}/>
+    )
+}
 
 export default About
 

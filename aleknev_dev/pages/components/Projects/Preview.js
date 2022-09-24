@@ -35,7 +35,7 @@ const Preview = () => (
         </Stack>
         <Stack
             px={10}
-            pt={2}
+            pt={7}
             spacing={-1}>
             {projectTitle('GONI-GO')}
             <Grid templateColumns='repeat(4, 1fr)' gap={3}>
@@ -79,28 +79,8 @@ const Preview = () => (
                 spacing={5}>
                 </Flex>
         </Stack>
-
-        
     </Stack>
 )
-
-const horizontalPreview = () => { 
-    return (
-    <Stack
-        maxW={'7x1'}>
-        <Stack
-            flexShrink={1}
-            h={'13em'}
-            overflow={'hidden'}
-            boxShadow={'lg'}>
-            {projectImages('https://raw.githubusercontent.com/bzap/amazon_review_data/master/ss.png?token=GHSAT0AAAAAABZBXH62PJFSQM5UXV25ZXCCYZLQFBQ')}
-        </Stack>
-
-
-    </Stack>
-
-    )
-}
 
 
 const projectImages = (props) => { 
@@ -178,6 +158,5 @@ const projectButton = (name, link, icon) => {
 
 }
 //textShadow={"1px 1px gray.700"}
-export { horizontalPreview }
 export default Preview
 
