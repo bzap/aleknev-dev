@@ -71,13 +71,6 @@ const Preview = () => (
                         {projectButton('Details', 'temp', <InfoOutlineIcon/>)}      
                         {projectButton('Demo', 'temp', <WarningTwoIcon/>)}   
                 </ButtonGroup>
-                <Flex
-                flex={1}
-                bg={'gray.100'}
-                borderRadius='20px'
-                boxShadow={'lg'}
-                spacing={5}>
-                </Flex>
         </Stack>
     </Stack>
 )
