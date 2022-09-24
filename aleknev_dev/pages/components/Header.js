@@ -32,13 +32,14 @@ const Header = () => (
                         </Text>
                     </Heading> 
                     <Stack direction='row' justify={'flex-end'} > 
-                            <Button colorScheme='gray' borderRadius='15' boxShadow={'md'}>
-                            <Link activeClass="active" to="p1" spy={true} smooth={true} offset={0} duration={500}>
-                                About
-                            </Link>    
-                                
-
-                    
+                            <Button 
+                                colorScheme='gray' 
+                                borderRadius='15' 
+                                boxShadow={'md'}
+                                >
+                                <Link activeClass="active" to="p1" spy={true} smooth={true} offset={0} duration={500}>
+                                    About
+                                </Link>    
                             </Button>
                             <Button colorScheme='gray' variant='ghost' borderRadius='15'>
                             <Link activeClass="active" to="p2" spy={true} smooth={true} offset={0} duration={500}>

@@ -35,7 +35,8 @@ const Preview = () => (
         </Stack>
         <Stack
             px={10}
-            pb={9}>
+            pt={2}
+            spacing={-1}>
             {projectTitle('GONI-GO')}
             <Grid templateColumns='repeat(4, 1fr)' gap={3}>
                 <GridItem> 
@@ -51,30 +52,36 @@ const Preview = () => (
                     <div>{projectSkill('Python')}</div>
                 </GridItem>
             </Grid>
-            <Center>
-                <div>{projectDesc('This is a temporary description before I set it up to look nice and do things. This line is way too long and will be fixed when I introduce some JSON data.')}</div>
-            </Center>
-            <ButtonGroup 
-                flex={1}
-                alignContent={'center'}
-                size='sm'
-                bg='white'
-                isAttached
-                boxShadow={'lg'}
-                borderRadius={'20px'}
-                > 
-                    {projectButton('Details', 'temp', <InfoOutlineIcon/>)}      
-                    {projectButton('Demo', 'temp', <WarningTwoIcon/>)}   
-            </ButtonGroup>
-            <Flex
-            flex={1}
-            bg={'gray.100'}
-            borderRadius='20px'
-            boxShadow={'lg'}
-            spacing={5}>
-
-            </Flex>
         </Stack> 
+        <Stack
+            px={10}
+            pb={10}>
+            <Center>
+                    {projectDesc('This is a temporary description before I set it up to look nice and do things. This line is way too long and will be fixed when I introduce some JSON data.')}
+                </Center>
+                <ButtonGroup 
+                    flex={1}
+                    alignContent={'center'}
+                    size='sm'
+                    bg='white'
+                    isAttached
+                    boxShadow={'lg'}
+                    borderRadius={'20px'}
+                    > 
+                        {projectButton('DETAILS', 'temp', <InfoOutlineIcon/>)}      
+                        {projectButton('DEMO', 'temp', <WarningTwoIcon/>)}   
+                </ButtonGroup>
+                <Flex
+                flex={1}
+                bg={'gray.100'}
+                borderRadius='20px'
+                boxShadow={'lg'}
+                spacing={5}>
+
+                </Flex>
+        </Stack>
+
+        
     </Stack>
 )
 
@@ -129,6 +136,7 @@ const projectDesc = (props) => {
     return ( 
         <Text 
             py={'4'}
+            px={'1'}
             as='p'
             fontSize={'18'}
             color={'gray.500'}>  
@@ -151,6 +159,7 @@ const projectButton = (name, link, icon) => {
     )
 
 }
+//textShadow={"1px 1px gray.700"}
 
 export default Preview
 
