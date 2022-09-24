@@ -21,7 +21,7 @@ import Preview from './Preview'
 const Projects = () => ( 
     <Container 
         maxW={'7xl'}
-        w={'100%'}
+        
         id='p2' 
         py='7em'>
         <Grid templateColumns='repeat(3, 1fr)' gap={'2em'}>

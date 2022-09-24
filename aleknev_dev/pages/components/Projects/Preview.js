@@ -17,6 +17,7 @@ import {
     useColorModeValue,
     Grid, 
     GridItem,
+    ButtonGroup,
     chakra,
   } from '@chakra-ui/react';
 import { InfoOutlineIcon, WarningTwoIcon, ArrowForwardIcon } from '@chakra-ui/icons'
@@ -34,7 +35,7 @@ const Preview = () => (
         </Stack>
         <Stack
             px={10}
-            pb={10}>
+            pb={9}>
             {projectTitle('GONI-GO')}
             <Grid templateColumns='repeat(4, 1fr)' gap={3}>
                 <GridItem> 
@@ -53,15 +54,25 @@ const Preview = () => (
             <Center>
                 <div>{projectDesc('This is a temporary description before I set it up to look nice and do things. This line is way too long and will be fixed when I introduce some JSON data.')}</div>
             </Center>
+            <ButtonGroup 
+                flex={1}
+                alignContent={'center'}
+                size='sm'
+                bg='white'
+                isAttached
+                boxShadow={'lg'}
+                borderRadius={'20px'}
+                > 
+                    {projectButton('Details', 'temp', <InfoOutlineIcon/>)}      
+                    {projectButton('Demo', 'temp', <WarningTwoIcon/>)}   
+            </ButtonGroup>
             <Flex
             flex={1}
             bg={'gray.100'}
             borderRadius='20px'
             boxShadow={'lg'}
             spacing={5}>
-                <div>{projectButton('Details', 'temp', <InfoOutlineIcon/>)}</div>
-                <div>{projectButton('Demo', 'temp', <WarningTwoIcon/>)}</div>
-                <div>{projectButton('Source', 'temp', <ArrowForwardIcon/>)}</div>
+
             </Flex>
         </Stack> 
     </Stack>
@@ -126,13 +137,15 @@ const projectDesc = (props) => {
     )
 }
 
+
 const projectButton = (name, link, icon) => { 
     return (
     <Button 
+        flex={1}
         color='Gray' 
         textColor={'Black'}
-        borderRadius={'20px'}
-        rightIcon={icon}>
+        rightIcon={icon}
+        borderRadius={'20px'}>
         {name}
         </Button>
     )
