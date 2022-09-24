@@ -27,7 +27,7 @@ const Hero = () => (
                   color={'black'}
                   fontWeight='600'
                   fontSize={{ base: '20', sm: '30', lg: '50' }}>
-                Hey! I'm
+                Hey, I'm
             </Text>
             <Text 
                 as={'span'} 
@@ -39,8 +39,8 @@ const Hero = () => (
             <Text 
                 as={'span'} 
                 color={'black'} 
-                fontSize={{ base: '20', sm: '30', lg: '40' }}>  
-                 .
+                fontSize={{ base: '20', sm: '30', lg: '50' }}>  
+                 !
             </Text> 
             <Text
                 color={'gray.600'}

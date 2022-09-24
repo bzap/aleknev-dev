@@ -1,5 +1,6 @@
 import {
     Center,
+    HStack,
     Divider,
     Container,
     Stack,
@@ -16,25 +17,25 @@ import {
     useColorModeValue,
     Grid, 
     GridItem,
+    chakra,
   } from '@chakra-ui/react';
+import { InfoOutlineIcon, WarningTwoIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 
 
 const Preview = () => (
-    <Container 
-        maxW={'7x1'}
-        p={10}>
-        <Flex
-        flex={1}
-        justifyContent={'center'}>
-            <div>{projectImages()}</div>
-        </Flex>
-        
-        <Stack>
-              
-            <Center>
-                <div>{projectTitle('GONI-GO')}</div>
-            </Center>
-            <Divider orientation='horizontal'/>
+    <Stack 
+        maxW={'7x1'}>
+        <Stack
+            flexShrink={1}
+            h={'13em'}
+            overflow={'hidden'}
+            boxShadow={'lg'}>
+            {projectImages('https://raw.githubusercontent.com/bzap/amazon_review_data/master/ss.png?token=GHSAT0AAAAAABZBXH62PJFSQM5UXV25ZXCCYZLQFBQ')}
+        </Stack>
+        <Stack
+            px={10}
+            pb={10}>
+            {projectTitle('GONI-GO')}
             <Grid templateColumns='repeat(4, 1fr)' gap={3}>
                 <GridItem> 
                     <div>{projectSkill('React')}</div>
@@ -48,39 +49,33 @@ const Preview = () => (
                 <GridItem> 
                     <div>{projectSkill('Python')}</div>
                 </GridItem>
-                <GridItem> 
-                    <div>{projectSkill('Chakra')}</div>
-                </GridItem>
-                <GridItem> 
-                    <div>{projectSkill('Node')}</div>
-                </GridItem>
-                <GridItem> 
-                    <div>{projectSkill('Java')}</div>
-                </GridItem>
-                <GridItem> 
-                    <div>{projectSkill('NextJS')}</div>
-                </GridItem>
             </Grid>
             <Center>
                 <div>{projectDesc('This is a temporary description before I set it up to look nice and do things. This line is way too long and will be fixed when I introduce some JSON data.')}</div>
             </Center>
+            <Flex
+            flex={1}
+            bg={'gray.100'}
+            borderRadius='20px'
+            boxShadow={'lg'}
+            spacing={5}>
+                <div>{projectButton('Details', 'temp', <InfoOutlineIcon/>)}</div>
+                <div>{projectButton('Demo', 'temp', <WarningTwoIcon/>)}</div>
+                <div>{projectButton('Source', 'temp', <ArrowForwardIcon/>)}</div>
+            </Flex>
         </Stack> 
-    </Container>
+    </Stack>
 )
 
-
-
-const projectImages = () => { 
-
+const projectImages = (props) => { 
     return (
         <Image
-        align={'center'}
-        h={'60%'}
-        borderRadius={'20'}
-        boxShadow={'lg'}
-        src={
-          'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
-        }
+            align={'center'}
+            borderTopRadius={'20'}
+            top={32}
+            fit={'background'}
+            boxShadow={'lg'}
+            src={props}
       />
     )
 }
@@ -100,18 +95,22 @@ const projectTitle = (props) => {
 const projectSkill = (props) => {
     // make this map from a future json object 
     return (
-        <Center
-            bg='gray.700' 
-            py='1'
+        <Box
+            minW={'4em'}
+            p={'1px'}
+            bg='gray.600' 
             boxShadow={'lg'} 
-            borderRadius={'12'}
+            borderRadius={'22px'}
+            textColor={'white'}         
+            >
+            <Center
+            p={'4px'}
             textColor={'white'}
-            align={'center'}
-            justifyContent={'center'}
-            fontSize={'12'}
+            fontSize={'10'}
             fontWeight={'600'}>
             {props}
-        </Center> 
+            </Center>
+        </Box>     
     )
 }
 
@@ -120,10 +119,24 @@ const projectDesc = (props) => {
         <Text 
             py={'4'}
             as='p'
-            fontSize={'18'}>  
+            fontSize={'18'}
+            color={'gray.500'}>  
             {props}
         </Text>
     )
+}
+
+const projectButton = (name, link, icon) => { 
+    return (
+    <Button 
+        color='Gray' 
+        textColor={'Black'}
+        borderRadius={'20px'}
+        rightIcon={icon}>
+        {name}
+        </Button>
+    )
+
 }
 
 export default Preview

@@ -19,17 +19,19 @@ import Preview from './Preview'
 
 
 const Projects = () => ( 
-    <Container maxW={'7xl'} w={'100%'} id='p2' py='7em'>
-
+    <Container 
+        maxW={'7xl'}
+        w={'100%'}
+        id='p2' 
+        py='7em'>
         <Grid templateColumns='repeat(3, 1fr)' gap={'2em'}>
             <GridItem 
-            
                 flex={1}
                 justifyContent={'flex-start'}
                 w='100%' 
                 bg='white' 
                 boxShadow={'lg'} 
-                borderRadius={'15px'} >
+                borderRadius={'25px'} >
                 <Preview/>
             </GridItem>
             <GridItem 

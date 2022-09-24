@@ -6,8 +6,8 @@ const Header = () => (
     <Container 
         display={'flex'} 
         justifyContent={'center'} 
-        mb={'40'} 
-        pt={'5'}>
+        pt={'5'}
+        >
         <Container 
             maxW={'7xl'} 
             position='fixed' 
@@ -38,14 +38,18 @@ const Header = () => (
                             </Link>    
                                 
 
-                                
+                    
                             </Button>
                             <Button colorScheme='gray' variant='ghost' borderRadius='15'>
                             <Link activeClass="active" to="p2" spy={true} smooth={true} offset={0} duration={500}>
                                 Skills
                             </Link>
                             </Button>
-                            <Button colorScheme='gray' variant='ghost' borderRadius='15'>Projects</Button>
+                            <Button colorScheme='gray' variant='ghost' borderRadius='15'>
+                            <Link activeClass="active" to="p3" spy={true} smooth={true} offset={0} duration={500}>
+                                Projects
+                            </Link>
+                                </Button>
                             <Button colorScheme='gray' variant='ghost' borderRadius='15'>Contact</Button>
                     </Stack>
                 </Flex>
