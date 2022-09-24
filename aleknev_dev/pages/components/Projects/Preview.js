@@ -48,7 +48,7 @@ const Preview = () => (
                 <GridItem> 
                     <div>{projectSkill('JS')}</div>
                 </GridItem>
-                <GridItem> 
+                <GridItem>
                     <div>{projectSkill('Python')}</div>
                 </GridItem>
             </Grid>
@@ -68,8 +68,8 @@ const Preview = () => (
                     boxShadow={'lg'}
                     borderRadius={'20px'}
                     > 
-                        {projectButton('DETAILS', 'temp', <InfoOutlineIcon/>)}      
-                        {projectButton('DEMO', 'temp', <WarningTwoIcon/>)}   
+                        {projectButton('Details', 'temp', <InfoOutlineIcon/>)}      
+                        {projectButton('Demo', 'temp', <WarningTwoIcon/>)}   
                 </ButtonGroup>
                 <Flex
                 flex={1}
@@ -77,13 +77,31 @@ const Preview = () => (
                 borderRadius='20px'
                 boxShadow={'lg'}
                 spacing={5}>
-
                 </Flex>
         </Stack>
 
         
     </Stack>
 )
+
+const horizontalPreview = () => { 
+    return (
+    <Stack
+        maxW={'7x1'}>
+        <Stack
+            flexShrink={1}
+            h={'13em'}
+            overflow={'hidden'}
+            boxShadow={'lg'}>
+            {projectImages('https://raw.githubusercontent.com/bzap/amazon_review_data/master/ss.png?token=GHSAT0AAAAAABZBXH62PJFSQM5UXV25ZXCCYZLQFBQ')}
+        </Stack>
+
+
+    </Stack>
+
+    )
+}
+
 
 const projectImages = (props) => { 
     return (
@@ -160,6 +178,6 @@ const projectButton = (name, link, icon) => {
 
 }
 //textShadow={"1px 1px gray.700"}
-
+export { horizontalPreview }
 export default Preview
 

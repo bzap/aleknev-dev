@@ -50,17 +50,14 @@ const Hero = () => (
                 I'm a developer based in Toronto. 
             </Text>
           <Text 
-            pt={1}
+            pt={3}
             color={'gray.500'}
-            pl={'20'}
+            pl={'15em'}
             fontSize={{ base: '20', sm: '30', lg: '22' }}>
-              Sometimes I'm known for my pursuits of dan-dan noodles and other times for my strong desire to learn.  
+            Welcome to my site :) 
         </Text>  
         </Heading> 
-  
-
         </Stack>
-
         <Flex
           flex={1}
           justify={{sm: 'center', md: 'center', lg: 'flex-end'}}
