@@ -130,6 +130,7 @@ const projectDesc = (props) => {
             px={'1'}
             as='p'
             fontSize={'15'}
+            fontWeight={'500'}
             color={'gray.500'}>  
             {props}
         </Text>

@@ -1,4 +1,5 @@
 import {
+    Divider,
     Container,
     Stack,
     Flex,
@@ -16,6 +17,7 @@ import {
     VStack,
     AspectRatio,
     HStack,
+    Center,
     List, 
     ListIcon,
     ListItem,
@@ -76,7 +78,6 @@ const selfPortrait = () => {
     return ( 
             <GridItem 
             colSpan={2}
-
             flex={1}
             w={'25em'}
             justifyContent={'flex-end'} >
@@ -111,68 +112,98 @@ const skillsInfo = () => {
 
 const placeholderText = () => { 
     return (
-        <Stack
-        direction={'vertical'}
-        p={10}>
+        <Flex
+        direction={'column'}
+        p={6}>
+            <Heading>
+                <Text
+                    pb='2'
+                    fontSize={'1em'}
+                    fontWeight={'bold'}> 
+                    &#x2192;&#8201;&#x2192;
+                </Text>
+            </Heading>
+            <Divider orientation={'horizontal'}/>
             <Text
+                pt={'5'}
                 as={'p'}
-                fontSize={16}>
+                fontSize={16}
+                fontWeight={'500'}>
                 I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree. <br/><br/> 
                 My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.   
                 <br/><br/>
                 When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time. 
                 <br/><br/>
-                Currently I'm looking for new oppurtunities as a developer!
+                Currently I'm looking for new opportunities as a developer!
             </Text>
-        </Stack>
+        </Flex>
 
     )
 }
 
 const skillText = () => { 
     return ( 
-        <HStack
-        p={7}>
+        <Flex
+        p={'10'}
+        direction={'column'}>
+            <Heading>
+                <Text
+                    pb='2'
+                    fontSize={'1em'}
+                    fontWeight={'bold'}> 
+                    SKILLS
+                </Text>
+            </Heading>
+            <Divider orientation={'horizontal'}/>
             <Text
                 fontSize={16}
-                as={'p'}>
-                I love that this field is continously evolving, so I try to familiarize myself with new variations on an ongoing basis! That said, here's a list of things I'ved learnt and used the most over time:  
+                pt={'5'}
+                pb={'8'}
+                as={'p'}
+                fontWeight={'500'}>
+                I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've learnt and used the most over time:  
             </Text>
+            <Grid
+            templateColumns='repeat(3, 1fr)'
+            gap={3}>
+                {skillList(4, 'React')}
+                {skillList(4, 'React')}
+                {skillList(4, 'React')}
+            </Grid >        
+        </Flex>
 
-            <List spacing={3}>
-                <ListItem>
-                    <ListIcon as={ChevronRightIcon} color='green.500' />
-                    React
-                </ListItem>
-                <ListItem>
-                    <ListIcon as={ChevronRightIcon} color='green.500' />
-                    JS
-                </ListItem>
-                <ListItem>
-                    <ListIcon as={ChevronRightIcon} color='black' />
-                    Node.js
-                </ListItem>
-                {/* You can also use custom icons from react-icons */}
-            </List>    
-            <List spacing={3}>
-                <ListItem>
-                    <ListIcon as={ChevronRightIcon} color='green.500' />
-                    React
-                </ListItem>
-                <ListItem>
-                    <ListIcon as={ChevronRightIcon} color='green.500' />
-                    JS
-                </ListItem>
-                <ListItem>
-                    <ListIcon as={ChevronRightIcon} color='black' />
-                    Node.js
-                </ListItem>
-                {/* You can also use custom icons from react-icons */}
-            </List>             
-        </HStack>
     )
 }
 
+const skillList = (items, icon) => { 
+    return( 
+        <List spacing={4}>
+        {skillItem('React')}
+        {skillItem('JS')}
+        {skillItem('C++')}
+        {skillItem('Python')}
+        {/* You can also use custom icons from react-icons */}
+    </List>        
+    )
+}
+
+const skillItem = (skill) => { 
+    return(
+        <ListItem>
+            <Flex
+            flex={1}
+            alignItems='center'
+            direction={'row'}>
+                <ListIcon as={ChevronRightIcon} color='black.500' />
+                <Text
+
+                    fontWeight={'bold'}>
+                    {skill}
+                </Text>
+            </Flex>
+        </ListItem>
+    )
+}
 
 //flexShrink={1}
 //h={'13em'}
