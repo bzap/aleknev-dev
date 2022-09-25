@@ -8,6 +8,7 @@ import {
     Text,
     Button,
     Image,
+    Icon,
     IconButton,
     createIcon,
     IconProps,
@@ -23,6 +24,8 @@ import {
     ListItem,
   } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import { SiReact, SiChakraui, SiJavascript, SiPython } from 'react-icons/si';
+
 
 
 const About = () => ( 
@@ -163,39 +166,50 @@ const skillText = () => {
             <Grid
             templateColumns='repeat(3, 1fr)'
             gap={3}>
-                {skillList(4, 'React')}
-                {skillList(4, 'React')}
-                {skillList(4, 'React')}
+                {skillList(4)}
+                {skillList(4)}
+                {skillList(4)}
             </Grid >        
         </Flex>
 
     )
 }
 
-const skillList = (items, icon) => { 
+const skillList = (items) => { 
+    // get from mdx here
+    const name = 'React'
+    const ic = SiReact
+
+    // temp icons for test 
+    const name2 = 'Python'
+    const name3 = 'JS'
+    const name4 = 'Chakra'
+    const ic2 = SiPython
+    const ic3 = SiJavascript
+    const ic4 = SiChakraui
+
     return( 
         <List spacing={4}>
-        {skillItem('React')}
-        {skillItem('JS')}
-        {skillItem('C++')}
-        {skillItem('Python')}
+        {skillItem(name, ic)}
+        {skillItem(name2, ic2)}
+        {skillItem(name3, ic3)}
+        {skillItem(name4, ic4)}
         {/* You can also use custom icons from react-icons */}
     </List>        
     )
 }
 
-const skillItem = (skill) => { 
+const skillItem = (name, ic) => { 
     return(
         <ListItem>
             <Flex
             flex={1}
             alignItems='center'
             direction={'row'}>
-                <ListIcon as={ChevronRightIcon} color='black.500' />
+                <ListIcon as={ic} color='black.500' />
                 <Text
-
                     fontWeight={'bold'}>
-                    {skill}
+                    &thinsp;{name}
                 </Text>
             </Flex>
         </ListItem>

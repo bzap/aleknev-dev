@@ -29,7 +29,7 @@ const Hero = () => (
 	pt={{ base: 20, md: '20em' }}
 	pb={{ base: 20, md: '40em' }}>
 		<Grid
-		gap={'14em'}
+		gap={'12em'}
 		templateColumns='repeat(3, 1fr)'>
 			<GridItem 
 			w={'40em'}
@@ -107,7 +107,6 @@ const Hero = () => (
 			w={'30em'}
 			colSpan={1}>
 			<Flex	
-				
 				flex={1}
 				justify={{sm: 'center', md: 'center', lg: 'flex-end'}}
 				align={'center'}
