@@ -29,43 +29,43 @@ const About = () => (
         w={'100%'} 
         id='p3' 
         py='7em'>
-        <Grid 
-        templateColumns='repeat(4, 1fr)' 
-        templateRows='repeat(3, 1fr)'
-        gap={'5em'}
-        spacing={'6'}>
-            {backgroundInfo()}
-            {selfPortrait()}
-            <GridItem
-                colSpan={2}
-                flex={1}
-                justifyContent={'flex-start'}
-                w='100%' >
-                <Flex
-                h={'15em'}
-                gap={'4em'}>
-                    {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
-                    {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
-                </Flex>
-            </GridItem>
-            {skillsInfo()}
-        </Grid>
-        
-
+        <Flex
+        maxW={'7x1'}
+        direction={'row'}
+        justifyContent={'center'}
+        gap={'7em'}>
+            <Flex 
+            direction='column'
+            gap={'6em'}>
+                    {backgroundInfo()}
+                    <Flex
+                    h={'20em'}
+                    gap={'2em'}>
+                        {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
+                        {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
+                    </Flex>
+            </Flex>
+            <Flex
+            direction='column'
+            gap={'5em'}>
+                {selfPortrait()}
+                {skillsInfo()}
+            </Flex>
+        </Flex>
     </Container>
   );
 
 const backgroundInfo = () => { 
     return ( 
         <GridItem 
-        colSpan={2}
+ 
         flex={1}
-        justifyContent={'flex-start'}
+        justifyContent='center'
         borderRadius={'20px'}
         bg={'white'}
         boxShadow={'lg'}
         p={6}
-        w='100%'  >
+        w='35em'>
             {placeholderText()}
         </GridItem>
     )
@@ -76,8 +76,9 @@ const selfPortrait = () => {
     return ( 
             <GridItem 
             colSpan={2}
-            position={'relative'}
+
             flex={1}
+            w={'25em'}
             justifyContent={'flex-end'} >
             {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
         </GridItem>
@@ -88,13 +89,11 @@ const skillsInfo = () => {
     return (
         <GridItem 
             colSpan={2}
-            top={'-36%'}
             h={'35em'}
             position='relative'
       
             flex={1}
-            justifyContent={'flex-start'}
-            w='100%' 
+            w='25em' 
             bg='white' 
             boxShadow={'lg'} 
             borderRadius={'25px'} >
@@ -117,7 +116,7 @@ const placeholderText = () => {
         p={10}>
             <Text
                 as={'p'}
-                fontSize={18}>
+                fontSize={16}>
                 I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree. <br/><br/> 
                 My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.   
                 <br/><br/>
@@ -135,7 +134,7 @@ const skillText = () => {
         <HStack
         p={7}>
             <Text
-                fontSize={18}
+                fontSize={16}
                 as={'p'}>
                 I love that this field is continously evolving, so I try to familiarize myself with new variations on an ongoing basis! That said, here's a list of things I'ved learnt and used the most over time:  
             </Text>
@@ -180,6 +179,8 @@ const skillText = () => {
 //overflow={'hidden'}
 //boxShadow={'lg'}>
 
+
+// need to remake this function for cleanliness with selfprotrait
 const pictureFrame = (top, left, url, ind, w, h) => {
     return (
             <Box
@@ -189,7 +190,8 @@ const pictureFrame = (top, left, url, ind, w, h) => {
                 <Stack  
                     overflow={'hidden'}
                     direction={'column'}
-                    h={'35em'}>
+                    h={'35em'}
+                    >
                 <Image
                     borderRadius={'20px'}
                     boxShadow={'2xl'}
