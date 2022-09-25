@@ -25,18 +25,19 @@ const Hero = () => (
 	maxW={'7xl'}
 	direction={'column'}
 	flex={1}
-	pt={{ base: 20, md: '18em' }}
+	px='7em'
+	pt={{ base: 20, md: '20em' }}
 	pb={{ base: 20, md: '40em' }}>
 		<Grid
-		gap={2}
+		gap={'14em'}
 		templateColumns='repeat(3, 1fr)'>
 			<GridItem 
-			w='100%'
+			w={'40em'}
 			colSpan={2}>
 				<Flex
 				direction={'column'}
 				alignItems={'flex-end'}
-				pr={'8em'}>
+				>
 				<Heading>  
 					<Text 
 						as='span'
@@ -103,7 +104,7 @@ const Hero = () => (
 
 			</GridItem>
 			<GridItem 
-			w='100%'
+			w={'30em'}
 			colSpan={1}>
 			<Flex	
 				
@@ -112,9 +113,10 @@ const Hero = () => (
 				align={'center'}
 				position={'relative'}>
 				<Box
+					transform={'rotate(-30deg)'}
 					position={'relative'}
-					height={'400px'}
-					rounded={'2xl'}
+					height={'300px'}
+					rounded={'50em'}
 					boxShadow={'2xl'}
 					width={'100%'}
 					overflow={'hidden'}>
