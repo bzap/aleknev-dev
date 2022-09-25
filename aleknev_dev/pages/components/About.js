@@ -30,11 +30,24 @@ const About = () => (
         id='p3' 
         py='7em'>
         <Grid 
-        templateColumns='repeat(2, 1fr)' 
-        gap={'2em'}
-        spacing={'2'}>
+        templateColumns='repeat(4, 1fr)' 
+        templateRows='repeat(3, 1fr)'
+        gap={'5em'}
+        spacing={'6'}>
             {backgroundInfo()}
             {selfPortrait()}
+            <GridItem
+                colSpan={2}
+                flex={1}
+                justifyContent={'flex-start'}
+                w='100%' >
+                <Flex
+                h={'15em'}
+                gap={'4em'}>
+                    {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
+                    {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
+                </Flex>
+            </GridItem>
             {skillsInfo()}
         </Grid>
         
@@ -48,28 +61,12 @@ const backgroundInfo = () => {
         colSpan={2}
         flex={1}
         justifyContent={'flex-start'}
+        borderRadius={'20px'}
+        bg={'white'}
+        boxShadow={'lg'}
+        p={6}
         w='100%'  >
-                <Text
-                    position={'absolute'}
-                    zIndex={8}
-                    height={'300px'}
-                    left={'7.5em'}
-                    width={'full'}
-                    fontSize={'2em'}
-                    fontWeight={'bold'}>
-                        &#x2192;&#x2192;      
-                </Text>
             {placeholderText()}
-            <Text
-                    position={'absolute'}
-                    zIndex={8}
-                    height={'300px'}
-                    left={'30em'}
-                    width={'full'}
-                    fontSize={'2em'}
-                    fontWeight={'bold'}>
-                        &#x2192;&#x2192;      
-                </Text>
         </GridItem>
     )
 }
@@ -78,11 +75,11 @@ const backgroundInfo = () => {
 const selfPortrait = () => { 
     return ( 
             <GridItem 
-            colSpan={1}
+            colSpan={2}
+            position={'relative'}
             flex={1}
-            justifyContent={'flex-start'}
-            w='100%' >
-            {pictureFrame()}
+            justifyContent={'flex-end'} >
+            {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
         </GridItem>
     )
 }
@@ -90,7 +87,11 @@ const selfPortrait = () => {
 const skillsInfo = () => { 
     return (
         <GridItem 
-            colSpan={3}
+            colSpan={2}
+            top={'-36%'}
+            h={'35em'}
+            position='relative'
+      
             flex={1}
             justifyContent={'flex-start'}
             w='100%' 
@@ -116,7 +117,7 @@ const placeholderText = () => {
         p={10}>
             <Text
                 as={'p'}
-                fontSize={20}>
+                fontSize={18}>
                 I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree. <br/><br/> 
                 My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.   
                 <br/><br/>
@@ -134,7 +135,7 @@ const skillText = () => {
         <HStack
         p={7}>
             <Text
-                fontSize={20}
+                fontSize={18}
                 as={'p'}>
                 I love that this field is continously evolving, so I try to familiarize myself with new variations on an ongoing basis! That said, here's a list of things I'ved learnt and used the most over time:  
             </Text>
@@ -179,44 +180,40 @@ const skillText = () => {
 //overflow={'hidden'}
 //boxShadow={'lg'}>
 
-const pictureFrame = () => {
+const pictureFrame = (top, left, url, ind, w, h) => {
     return (
             <Box
                 flex={1}
-                position={'relative'}
-                w={'20em'}
-                align={'center'}>
+                position={'relative'}>
 
                 <Stack  
                     overflow={'hidden'}
                     direction={'column'}
                     h={'35em'}>
-                    {stackedImage('0%', '-3%', 'https://i.imgur.com/7R4gnAa.jpg', 8, '14em', '15em')}
-                    {stackedImage('45%', '30%', 'https://staticg.sportskeeda.com/editor/2022/02/af653-16442505538786-1920.jpg', 7, '11em', '11em')}
-                    {stackedImage('79%', '60%', 'https://i.imgur.com/P9IVqkS.jpeg', 8, '7em', '7em')}
+                <Image
+                    borderRadius={'20px'}
+                    boxShadow={'2xl'}
+                    borderWidth={'5em'}
+                    zIndex={ind}
+                    w={w}
+                    h={h}
+                    position={'absolute'}
+                    top={top}
+                    left={left}
+                    fit={'cover'}
+                    align={'center'}
+                    src={url}/>
+            )
                 </Stack>
             </Box>
     )
-
+    
 }
 
-const stackedImage = (top, left, url, ind, h, w) => { 
-    return ( 
-        <Image
-            borderRadius={'20px'}
-            boxShadow={'2xl'}
-            borderWidth={'5em'}
-            zIndex={ind}
-            w={h}
-            h={w}
-            position={'absolute'}
-            top={top}
-            left={left}
-            fit={'cover'}
-            align={'center'}
-            src={url}/>
-    )
-}
+
+//{stackedImage('45%', '30%', 'https://staticg.sportskeeda.com/editor/2022/02/af653-16442505538786-1920.jpg', 7, '11em', '11em')}
+//{stackedImage('79%', '60%', 'https://i.imgur.com/P9IVqkS.jpeg', 8, '7em', '7em')}
+
 
 export default About
 
