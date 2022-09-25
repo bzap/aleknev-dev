@@ -66,6 +66,7 @@ const horizontalItem = () => {
             direction={'column'}>
                 <Text
                     position={'absolute'}
+                    
                     zIndex={8}
                     height={'300px'}
                     top={'-2em'}

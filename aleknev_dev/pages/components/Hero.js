@@ -40,7 +40,7 @@ const Hero = () => (
                 as={'span'} 
                 color={'black'} 
                 fontSize={{ base: '20', sm: '30', lg: '50' }}>  
-                 !
+                 .
             </Text> 
             <Text
                 color={'gray.600'}
@@ -54,7 +54,7 @@ const Hero = () => (
             color={'gray.500'}
             pl={'15em'}
             fontSize={{ base: '20', sm: '30', lg: '22' }}>
-            Welcome to my site :) 
+            Welcome to my site!
         </Text>  
         </Heading> 
         </Stack>

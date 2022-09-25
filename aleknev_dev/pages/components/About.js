@@ -48,11 +48,28 @@ const backgroundInfo = () => {
         colSpan={2}
         flex={1}
         justifyContent={'flex-start'}
-        w='100%' 
-        bg='white' 
-        boxShadow={'lg'} 
-        borderRadius={'25px'} >
+        w='100%'  >
+                <Text
+                    position={'absolute'}
+                    zIndex={8}
+                    height={'300px'}
+                    left={'7.5em'}
+                    width={'full'}
+                    fontSize={'2em'}
+                    fontWeight={'bold'}>
+                        &#x2192;&#x2192;      
+                </Text>
             {placeholderText()}
+            <Text
+                    position={'absolute'}
+                    zIndex={8}
+                    height={'300px'}
+                    left={'30em'}
+                    width={'full'}
+                    fontSize={'2em'}
+                    fontWeight={'bold'}>
+                        &#x2192;&#x2192;      
+                </Text>
         </GridItem>
     )
 }
@@ -189,7 +206,6 @@ const stackedImage = (top, left, url, ind, h, w) => {
             borderRadius={'20px'}
             boxShadow={'2xl'}
             borderWidth={'5em'}
-            borderColor={'purple'}
             zIndex={ind}
             w={h}
             h={w}
