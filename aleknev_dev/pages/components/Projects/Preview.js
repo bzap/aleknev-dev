@@ -56,6 +56,7 @@ const Preview = () => (
         <Stack
             px={10}
             pb={10}>
+            <Divider orientation='horizontal' pt={3}/>
             <Center>
                     {projectDesc('This is a temporary description before I set it up to look nice and do things. This line is way too long and will be fixed when I introduce some JSON data.')}
                 </Center>

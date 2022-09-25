@@ -73,7 +73,6 @@ const backgroundInfo = () => {
     )
 }
 
-
 const selfPortrait = () => { 
     return ( 
             <GridItem 
@@ -102,8 +101,6 @@ const skillsInfo = () => {
         </GridItem>
     )
 }
-
-
 
 //<Heading as={'u'}>
 //  A few projects&nbsp;&nbsp;&nbsp;&nbsp;
@@ -134,7 +131,7 @@ const placeholderText = () => {
                 <br/><br/>
                 When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time. 
                 <br/><br/>
-                Currently I'm looking for new opportunities as a developer!
+                Currently I'm <b>looking for new opportunities</b> as a developer!
             </Text>
         </Flex>
 

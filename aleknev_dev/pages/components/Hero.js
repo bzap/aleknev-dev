@@ -1,80 +1,129 @@
 import {
-    Container,
-    Stack,
-    Flex,
-    Box,
-    Heading,
-    Text,
-    Button,
-    Image,
-    Icon,
-    IconButton,
-    createIcon,
-    IconProps,
-    useColorModeValue,
+	Container,
+	Stack,
+	Flex,
+	Box,
+	Heading,
+	Text,
+	Button,
+	Image,
+	Grid,
+	GridItem,
+	Icon,
+	IconButton,
+	createIcon,
+	IconProps,
+	useColorModeValue,
   } from '@chakra-ui/react';
 import Head from 'next/head';
+
+
+
 const Hero = () => ( 
-    <Container maxW={'7xl'} id='p1'>
-      <Stack
-        align={'center'}
-        spacing={{ base: 8, md: 15, lg: 30 }}
-        py={{ base: 20, md: 48 }}
-        direction={{ base: 'column', md: 'row' }}>
-        <Stack flex={1} spacing={{ base: 5, md: 0 }}>
-        <Heading>  
-            <Text as={'span'} 
-                  color={'black'}
-                  fontWeight='600'
-                  fontSize={{ base: '20', sm: '30', lg: '50' }}>
-                Hey, I'm
-            </Text>
-            <Text 
-                as={'span'} 
-                color={'black'} 
-                fontWeight='semibold'
-                fontSize={{ base: '40', sm: '50', lg: '90' }}>  
-                 &thinsp;Linas
-            </Text>      
-            <Text 
-                as={'span'} 
-                color={'black'} 
-                fontSize={{ base: '20', sm: '30', lg: '50' }}>  
-                 .
-            </Text> 
-            <Text
-                color={'gray.600'}
-                fontWeight='600'
-                pl={'9'}
-                fontSize={{ base: '20', sm: '30', lg: '30' }}>
-                I'm a developer based in Toronto. 
-            </Text>
-          <Text 
-            pt={3}
-            color={'gray.500'}
-            pl={'15em'}
-            fontSize={{ base: '20', sm: '30', lg: '22' }}>
-            Welcome to my site!
-        </Text>  
-        </Heading> 
-        </Stack>
-        <Flex
-          flex={1}
-          justify={{sm: 'center', md: 'center', lg: 'flex-end'}}
-          align={'center'}
-          position={'relative'}
-          w={'full'}>
-          <Box
-            position={'relative'}
-            height={'400px'}
-            rounded={'2xl'}
-            boxShadow={'2xl'}
-            width={'100%'}
-            overflow={'hidden'}>
-          </Box>
-        </Flex>
-      </Stack>
-    </Container>
+	<Container
+	id={'p1'}
+	maxW={'7xl'}
+	direction={'column'}
+	flex={1}
+	pt={{ base: 20, md: '18em' }}
+	pb={{ base: 20, md: '40em' }}>
+		<Grid
+		gap={2}
+		templateColumns='repeat(3, 1fr)'>
+			<GridItem 
+			w='100%'
+			colSpan={2}>
+				<Flex
+				direction={'column'}
+				alignItems={'flex-end'}
+				pr={'8em'}>
+				<Heading>  
+					<Text 
+						as='span'
+						color={'black'}
+						fontWeight='600'
+						fontSize={{ base: '20', sm: '30', lg: '50' }}>
+						Hey, I'm
+					</Text>
+					<Text 
+						as={'span'} 
+						color={'black'} 
+						fontWeight='bold'
+						pl={8}
+						fontSize={{ base: '40', sm: '50', lg: '95' }}>  
+						Linas
+					</Text>    
+					<Text 
+						as={'span'} 
+						color={'black'} 
+						fontSize={{ base: '20', sm: '30', lg: '50' }}>  
+						.
+					</Text> 
+				</Heading> 
+				<Heading>				
+					<Text
+						as={'span'}
+						color={'gray.600'}
+						fontWeight='semibold'
+						fontSize={{ base: '20', sm: '30', lg: '27' }}>
+						A developer based in
+					</Text>
+					<Text 
+						as={'span'} 
+						color={'black'} 
+						fontWeight='bold'
+						fontSize={{ base: '40', sm: '50', lg: '50' }}>  
+						&thinsp;Toronto
+					</Text>      
+					<Text 
+						as={'span'} 
+						color={'black'} 
+						fontSize={{ base: '20', sm: '30', lg: '35' }}>  
+						,
+					</Text> 
+				</Heading>
+				<Heading
+				pt={'2'}>
+					<Text 
+						as={'span'}
+						fontWeight={'semibold'}
+						color={'gray.500'}
+						fontSize={{ base: '20', sm: '30', lg: '22' }}>
+						that's on the pursuit of
+					</Text>  
+					<Text 
+						as={'span'} 
+						color={'black'} 
+						fontWeight='bold'
+						fontSize={{ base: '40', sm: '50', lg: '32' }}>  
+						&thinsp; growth.
+					</Text>      
+				</Heading> 	
+				</Flex>
+
+			</GridItem>
+			<GridItem 
+			w='100%'
+			colSpan={1}>
+			<Flex	
+				
+				flex={1}
+				justify={{sm: 'center', md: 'center', lg: 'flex-end'}}
+				align={'center'}
+				position={'relative'}>
+				<Box
+					position={'relative'}
+					height={'400px'}
+					rounded={'2xl'}
+					boxShadow={'2xl'}
+					width={'100%'}
+					overflow={'hidden'}>
+				</Box>
+			</Flex>				
+			</GridItem>
+		</Grid>
+	</Container>
+
   );
 
 export default Hero
