@@ -22,7 +22,7 @@ import Preview from './Preview'
 const Projects = () => ( 
     <Container 
         maxW={'7xl'}
-        id='Projects' 
+        id='2' 
         px={'10em'}
         py={'10em'}
         pb={'20em'}>

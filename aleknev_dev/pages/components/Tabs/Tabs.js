@@ -22,64 +22,70 @@ import {
 	shouldForwardProp
   } from '@chakra-ui/react';
 import { isValidMotionProp, motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
-
+import { Link } from "react-scroll/modules"
 
 
 const AnimatedTabs = () => {
 	const [selectedTab, setSelectedTab] = useState(tabs[0])
+	
 	return (
 				<Stack
 				direction={'row'}
 				justify={'flex-end'}
-				as={AnimateSharedLayout}>
+				as={AnimateSharedLayout}> 
 					<Flex
-					gap={6}
-						>
+					gap={6}>
 						{tabs.map((item, idx) => (
-								<Center
-									key={idx}
-									className={item === selectedTab ? 'selected' : ''}
-									onClick={() => setSelectedTab(item)}>
-									{item === selectedTab ? (
-									<Button
-										borderRadius='15'
-										variant='ghost'
-										zIndex={2}
-										size={'md'}
-										>
-										{item.label}
-									</Button>
-									) : (
+								<Link 
+								key={idx} 
+								activeClass="active" 
+								to={idx.toString()} 
+								spy={true} 
+								smooth={true} 
+								offset={0} 
+								duration={500}>
+									<Center
+										className={item === selectedTab ? 'selected' : ''}
+										onClick={() => 
+													{setSelectedTab(item)
+													console.log(idx)}}>
+										{item === selectedTab ? (
 										<Button
-										variant='ghost'
-										borderRadius='15'
-										size={'md'}
-										zIndex={2}>
+											borderRadius='15'
+											variant='ghost'
+											zIndex={2}
+											size={'md'}
+											>
 											{item.label}
 										</Button>
-									)}
-									{item === selectedTab ? (
-											<Box
-											zIndex={1}
-											position={'absolute'}
-											layoutId={'outline'}
-											as={motion.div}
-											bg='gray.100'
-											h={'2.5em'}
-											w={'6em'}
+										) : (
+											<Button
+											variant='ghost'
 											borderRadius='15'
-											boxShadow={'lg'}/>
-											) : (null)}
-								</Center>
+											size={'md'}
+											zIndex={2}>
+												{item.label}
+											</Button>
+										)}
+										{item === selectedTab ? (
+												<Box
+												zIndex={1}
+												position={'absolute'}
+												layoutId={'outline'}
+												as={motion.div}
+												bg='gray.100'
+												h={'2.5em'}
+												w={'9%'}
+												borderRadius='15'
+												boxShadow={'lg'}/>
+												) : (null)}
+									</Center>
+								</Link>
 							))}
 						</Flex>
+						
 					</Stack>
-
-
-
 	)
-
-
 }
 
 export default AnimatedTabs

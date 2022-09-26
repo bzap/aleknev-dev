@@ -14,13 +14,11 @@ const Home = () => {
     <Layout>
         <Header/>
         <Hero/>
-        <Projects/>
         <About/>
+        <Projects/>
     </Layout>
 
   )
 }
-
-
 
 export default Home

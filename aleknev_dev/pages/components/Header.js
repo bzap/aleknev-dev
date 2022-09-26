@@ -18,6 +18,7 @@ const Header = () => (
             bg='white'
             >
             <Box
+                p={2}
                 py={{ base: '1em', md: '1em' }}>
                 <Flex
                     align={'center'}

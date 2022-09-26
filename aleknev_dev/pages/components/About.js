@@ -32,7 +32,7 @@ const About = () => (
     <Container 
         maxW={'7xl'} 
         w={'100%'} 
-        id='About' 
+        id='0' 
         py='7em'>
         <Flex
         maxW={'7x1'}
