@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
-import { chakra, shouldForwardProp, Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer, ScaleFade } from '@chakra-ui/react'
+import { Center, chakra, shouldForwardProp, Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer, ScaleFade } from '@chakra-ui/react'
 import { Link } from "react-scroll/modules"
 import AnimatedTabs from './Tabs/Tabs'
 import { AnimatePresence, motion, isValidMotionProp } from "framer-motion";
+import { ScrollPosition } from './Hooks/ScrollPosition'
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
   });
 
 const Header = () => {
+	const scrollPos = ScrollPosition()
 	const [isShown, setIsShown] = useState(true)
+	
+	//console.log(scrollPos)
 	return (
 	<Container>
 		<Container 
@@ -71,9 +75,22 @@ const Header = () => {
 								<ChakraBox
 								as={motion.div}
 								variants={fadeOutItem}>
-									<Text>
+									{scrollPos < 1199 && (
+									<Center>
 										&thinsp;&lt;aleknev&gt;
-									</Text>
+									</Center>)}
+									{scrollPos >= 1200 && scrollPos < 3100 && (
+									<Center
+									fontWeight={'bold'}
+									fontSize={'1em'}>
+										&thinsp;MORE ON MYSELF
+									</Center>)}
+									{scrollPos >= 3100 && (
+									<Center
+									fontWeight={'bold'}
+									fontSize={'1em'}>
+										&thinsp;THINGS I'VE MADE
+									</Center>)}
 								</ChakraBox>
 								<ChakraBox
 								as={motion.div}
@@ -82,7 +99,7 @@ const Header = () => {
 								position={'absolute'}
 								top={0}>			
 									<Text>
-										&thinsp;&lt;home&gt;
+										&thinsp;&lt;aleknevl&gt;
 									</Text>
 								</ChakraBox> 
 							</ChakraBox>

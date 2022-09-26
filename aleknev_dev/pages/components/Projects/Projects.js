@@ -108,6 +108,8 @@ const gitButton = () => {
                     duration: 2,
                   }}>
                     <Text
+                        position={'relative'}
+                        top={3}
                         zIndex={8}
                         fontSize={'2em'}
                         fontWeight={'bold'}>
@@ -138,6 +140,8 @@ const gitButton = () => {
                     duration: 2,
                   }}>
                     <Text
+                        position={'relative'}
+                        top={-3}
                         zIndex={8}
                         fontSize={'2em'}
                         fontWeight={'bold'}>
