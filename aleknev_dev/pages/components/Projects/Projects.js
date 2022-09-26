@@ -27,6 +27,22 @@ const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
   });
 
+  const cardVariants = {
+    offscreen: {
+      y: 300
+    },
+    onscreen: {
+      y: 50,
+      rotate: -10,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8
+      }
+    }
+  };
+
+
 const Projects = () => ( 
     <Container 
         maxW={'7xl'}
@@ -49,6 +65,10 @@ const verticalItem = (top, left) => {
         <GridItem 
             as={motion.div}
             whileHover={{ scale: 1.025 }}
+            initial={'offscreen'}
+            whileInView={'onscreen'}
+            viewport={{once:true, amount:0.8}}
+            variants={cardVariants}
             flex={1}
             position='relative'
             justifyContent={'flex-start'}

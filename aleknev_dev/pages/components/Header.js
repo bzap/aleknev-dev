@@ -11,71 +11,92 @@ const ChakraBox = chakra(motion.div, {
 const Header = () => {
 	const [isShown, setIsShown] = useState(true)
 	return (
-	<Container 
-		display={'flex'} 
-		justifyContent={'center'} 
-		pt={'5'}
-		>
+	<Container>
 		<Container 
-			maxW={'7xl'} 
-			position='fixed' 
-			zIndex={200} 
-			boxShadow={'lg'}
-			borderRadius={'20px'}
-			bg='white'
+			display={'flex'} 
+			justifyContent={'center'} 
+			pt={'5'}
 			>
-			<Box
-				p={2}
-				py={{ base: '1em', md: '1em' }}>
-				<Flex
-					align={'center'}
-					justifyContent={'space-between'}
-					direction={{ base: 'column', md: 'row' }}>
-					<Link 
-						activeClass="active" 
-						to={'1'} 
-						spy={true} 
-						smooth={true} 
-						offset={0} 
-						duration={500}>                   
-					<Heading
-						cursor={'pointer'}
-						as={motion.div}
-						lineHeight={1.1}
-						fontWeight={600}
-						variants={'container'}
-						initial="hidden"
-						animate={!isShown ? 'show' : ''}
-						onHoverStart={() => setIsShown(false)}
-						onHoverEnd={() => setIsShown(true)}
-						fontSize={{ base: '4xl', sm: '4xl', lg: '1xl' }}>   
-						<ChakraBox
-							position={'relative'}>
-							<ChakraBox
+			<ChakraBox 
+				as={motion.div}
+				initial={{opacity:0}}
+				animate={{
+					
+					opacity: [0, 1],
+					scale: [0, 1.1, 1]
+				}}
+				transition={{
+					type:'spring',
+					duration: 1.5,
+					bounce: 0.6,
+					ease: "easeInOut",
+					delay: 0.2,
+				}}
+				justifyContent={'center'} 
+				maxW={'6xl'} 
+				position='fixed' 
+				zIndex={200} 
+				width={'100%'}
+				boxShadow={'lg'}
+				borderRadius={'20px'}
+				bg='white'
+				>
+				<Box
+					p={4}
+					py={{ base: '1em', md: '1em' }}>
+					<Flex
+						align={'center'}
+						justifyContent={'space-between'}
+						direction={{ base: 'column', md: 'row' }}>
+						<Link 
+							activeClass="active" 
+							to={'1'} 
+							spy={true} 
+							smooth={true} 
+							offset={0} 
+							duration={500}>                   
+						<Heading
+							cursor={'pointer'}
 							as={motion.div}
-							variants={fadeOutItem}>
-								<Text>
-									&thinsp;&lt;aleknev&gt;
-								</Text>
+							lineHeight={1.1}
+							fontWeight={600}
+							variants={'container'}
+							initial="hidden"
+							animate={!isShown ? 'show' : ''}
+							onHoverStart={() => setIsShown(false)}
+							onHoverEnd={() => setIsShown(true)}
+							fontSize={{ base: '4xl', sm: '4xl', lg: '1xl' }}>   
+							<ChakraBox
+								position={'relative'}>
+								<ChakraBox
+								as={motion.div}
+								variants={fadeOutItem}>
+									<Text>
+										&thinsp;&lt;aleknev&gt;
+									</Text>
+								</ChakraBox>
+								<ChakraBox
+								as={motion.div}
+								variants={fadeInItem}
+								whileTap={{scale:0.9}}
+								position={'absolute'}
+								top={0}>			
+									<Text>
+										&thinsp;&lt;home&gt;
+									</Text>
+								</ChakraBox> 
 							</ChakraBox>
-							<ChakraBox
-							as={motion.div}
-							variants={fadeInItem}
-							whileTap={{scale:0.9}}
-							position={'absolute'}
-							top={0}>			
-								<Text>
-									&thinsp;&lt;home&gt;
-								</Text>
-							</ChakraBox> 
-						</ChakraBox>
-					</Heading> 
-					</Link>
-					<AnimatedTabs/>
-				</Flex>
-			</Box>
+						</Heading> 
+						</Link>
+						<AnimatedTabs/>
+					</Flex>
+				</Box>
+			</ChakraBox>
 		</Container>
-	</Container>
+
+		
+	</Container>	
+
 	)
 }
 	
