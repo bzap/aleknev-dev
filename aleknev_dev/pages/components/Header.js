@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Center, chakra, shouldForwardProp, Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer, ScaleFade } from '@chakra-ui/react'
+import { Center, chakra, shouldForwardProp, Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer, ScaleFade, transition } from '@chakra-ui/react'
 import { Link } from "react-scroll/modules"
 import AnimatedTabs from './Tabs/Tabs'
 import { AnimatePresence, motion, isValidMotionProp } from "framer-motion";
@@ -10,10 +10,10 @@ const ChakraBox = chakra(motion.div, {
   });
 
 const Header = () => {
-	const scrollPos = ScrollPosition()
+	
 	const [isShown, setIsShown] = useState(true)
 	
-	//console.log(scrollPos)
+	
 	return (
 	<Container>
 		<Container 
@@ -70,45 +70,9 @@ const Header = () => {
 							onHoverStart={() => setIsShown(false)}
 							onHoverEnd={() => setIsShown(true)}
 							fontSize={{ base: '4xl', sm: '4xl', lg: '1xl' }}>   
-							<Flex
-							align={'flex-start'}
-								>
-								<ChakraBox
-								as={motion.div}
-								variants={fadeOutItem}>
-									{scrollPos >= 1171 && scrollPos < 3100 && (
-									<Center
-									fontWeight={'bold'}
-									fontSize={'1em'}>
-										&thinsp;MORE ON MYSELF
-									</Center>)}
-									{scrollPos >= 3100 && (
-									<Center
-									fontWeight={'bold'}
-									fontSize={'1em'}>
-										&thinsp;THINGS I'VE MADE
-									</Center>)}
-								</ChakraBox>
-								{scrollPos > 1171  && (
-								<ChakraBox
-								as={motion.div}
-								variants={fadeInItem}
-								whileTap={{scale:0.9}}
-								position={'absolute'}>								
-									<Text>
-										&thinsp;&lt;aleknev&gt;
-									</Text>
-								</ChakraBox> )}
-								<ChakraBox
-								as={motion.div}
-								whileHover={{scale:1.06}}
-								whileTap={{scale:0.96}}>
-									{scrollPos < 1170 && (
-									<Center>
-										&thinsp;&lt;aleknev&gt;
-									</Center>)}
-								</ChakraBox>
-							</Flex>
+								
+								{scrollBehaviour()}
+							
 						</Heading> 
 						</Link>
 						<AnimatedTabs/>
@@ -120,6 +84,71 @@ const Header = () => {
 		
 	</Container>	
 
+	)
+}
+
+const scrollBehaviour = () => { 
+	const scrollPos = ScrollPosition()
+	console.log(scrollPos)
+	// if scroll distance gap/speed is big don't change these titles 
+	// if gap > 150, then don't apply the title changes, else do? 
+	return (
+	<Flex
+		align={'flex-start'}>
+		<ChakraBox
+		as={motion.div}
+		variants={fadeOutItem}>
+			{scrollPos >= 1171 && scrollPos < 3100 && (
+			<ChakraBox
+			as={motion.div}
+			animate={{scale:[1,1.05,1], opacity:[0.4,1]}}
+			transition={{
+				type:'spring',
+				duration: 0.3
+			}}
+			fontWeight={'bold'}
+			fontSize={'1em'}>
+				&thinsp;MORE ON MYSELF
+			</ChakraBox>)}
+			{scrollPos >= 3100 && (
+			<ChakraBox
+			as={motion.div}
+			animate={{scale:[1, 1.03, 1], opacity:[0.4,1]}}
+			transition={{
+				type:'spring',
+				duration: 0.3
+			}}
+			fontWeight={'bold'}
+			fontSize={'1em'}>
+				&thinsp;THINGS I'VE MADE
+			</ChakraBox>)}
+		</ChakraBox>
+		{scrollPos > 1171  && (
+		<ChakraBox
+		as={motion.div}
+		variants={fadeInItem}
+		whileTap={{scale:0.9}}
+		position={'absolute'}>								
+			<Text>
+				&thinsp;&lt;aleknev&gt;
+			</Text>
+		</ChakraBox> )}
+		{scrollPos < 1170 && (
+		<ChakraBox
+		as={motion.div}
+		animate={{scale:[1, 1.03, 1], opacity:[0.4,1]}}
+		transition={{
+			type:'spring',
+			duration: 0.3
+		}}
+		whileHover={{scale:1.02}}
+		whileTap={{scale:0.96}}>
+			
+			<Text>
+				&thinsp;&lt;aleknev&gt;
+			</Text>
+		</ChakraBox>)}
+	</Flex>
 	)
 }
 	
@@ -140,7 +169,7 @@ const fadeInItem = {
 
 const fadeOutItem = { 
 	hidden: { opacity: 1 },
-	show: { opacity: 0, scale: 0.9 }
+	show: { opacity: 0, scale: 0.9 },
   }
 
   
