@@ -23,9 +23,8 @@ import {
     ListIcon,
     ListItem,
   } from '@chakra-ui/react';
-import { ChevronRightIcon } from '@chakra-ui/icons'
 import { SiReact, SiChakraui, SiJavascript, SiPython } from 'react-icons/si';
-
+import { motion } from "framer-motion";
 
 
 const About = () => ( 
@@ -63,7 +62,8 @@ const About = () => (
 const backgroundInfo = () => { 
     return ( 
         <GridItem 
- 
+        as={motion.div}
+        whileHover={{ scale: 1.03 }}
         flex={1}
         justifyContent='center'
         borderRadius={'20px'}
@@ -91,10 +91,11 @@ const selfPortrait = () => {
 const skillsInfo = () => { 
     return (
         <GridItem 
+            as={motion.div}
+            whileHover={{ scale: 1.03 }}
             colSpan={2}
             h={'35em'}
             position='relative'
-      
             flex={1}
             w='25em' 
             bg='white' 
@@ -227,6 +228,8 @@ const skillItem = (name, ic) => {
 const pictureFrame = (top, left, url, ind, w, h) => {
     return (
             <Box
+                as={motion.div}
+                whileHover={{ scale: 1.03 }}
                 flex={1}
                 position={'relative'}>
 

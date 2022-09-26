@@ -2,6 +2,7 @@ import React from 'react'
 import { Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer } from '@chakra-ui/react'
 import { Link } from "react-scroll/modules"
 import AnimatedTabs from './Tabs/Tabs'
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 const Header = () => ( 
     <Container 
@@ -10,6 +11,8 @@ const Header = () => (
         pt={'5'}
         >
         <Container 
+            as={motion.div}
+            whileHover={{ scale: 1.005 }}
             maxW={'7xl'} 
             position='fixed' 
             zIndex={200} 

@@ -14,9 +14,11 @@ import {
     useColorModeValue,
     Grid, 
     GridItem,
-    Center
+    Center,
+    ScaleFade
   } from '@chakra-ui/react';
 import Preview from './Preview'
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 
 const Projects = () => ( 
@@ -39,6 +41,8 @@ const Projects = () => (
 const verticalItem = (top, left) => { 
     return ( 
         <GridItem 
+            as={motion.div}
+            whileHover={{ scale: 1.03 }}
             flex={1}
             position='relative'
             justifyContent={'flex-start'}
