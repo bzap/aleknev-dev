@@ -70,16 +70,13 @@ const Header = () => {
 							onHoverStart={() => setIsShown(false)}
 							onHoverEnd={() => setIsShown(true)}
 							fontSize={{ base: '4xl', sm: '4xl', lg: '1xl' }}>   
-							<ChakraBox
-								position={'relative'}>
+							<Flex
+							align={'flex-start'}
+								>
 								<ChakraBox
 								as={motion.div}
 								variants={fadeOutItem}>
-									{scrollPos < 1199 && (
-									<Center>
-										&thinsp;&lt;aleknev&gt;
-									</Center>)}
-									{scrollPos >= 1200 && scrollPos < 3100 && (
+									{scrollPos >= 1171 && scrollPos < 3100 && (
 									<Center
 									fontWeight={'bold'}
 									fontSize={'1em'}>
@@ -92,17 +89,26 @@ const Header = () => {
 										&thinsp;THINGS I'VE MADE
 									</Center>)}
 								</ChakraBox>
+								{scrollPos > 1171  && (
 								<ChakraBox
 								as={motion.div}
 								variants={fadeInItem}
 								whileTap={{scale:0.9}}
-								position={'absolute'}
-								top={0}>			
+								position={'absolute'}>								
 									<Text>
-										&thinsp;&lt;aleknevl&gt;
+										&thinsp;&lt;aleknev&gt;
 									</Text>
-								</ChakraBox> 
-							</ChakraBox>
+								</ChakraBox> )}
+								<ChakraBox
+								as={motion.div}
+								whileHover={{scale:1.06}}
+								whileTap={{scale:0.96}}>
+									{scrollPos < 1170 && (
+									<Center>
+										&thinsp;&lt;aleknev&gt;
+									</Center>)}
+								</ChakraBox>
+							</Flex>
 						</Heading> 
 						</Link>
 						<AnimatedTabs/>
@@ -127,14 +133,23 @@ const container = {
 	}
   }
   
-  const fadeInItem = {
+const fadeInItem = {
 	hidden: { opacity: 0 },
 	show: { opacity: 1 }
   }
 
-  const fadeOutItem = { 
+const fadeOutItem = { 
 	hidden: { opacity: 1 },
 	show: { opacity: 0, scale: 0.9 }
   }
+
+  
+const scaleOutItem = {
+	hidden: { opcaity: 1 },	
+	show: { scale: 0}
+}
+
+
+
 //<Divider orientation='horizontal' borderRadius={'2em'} border='1px' dropShadow={'lg'}/>
 export default Header
