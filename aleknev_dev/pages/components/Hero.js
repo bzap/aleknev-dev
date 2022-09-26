@@ -90,7 +90,7 @@ const Hero = () => (
 						fontWeight={'semibold'}
 						color={'gray.500'}
 						fontSize={{ base: '20', sm: '30', lg: '22' }}>
-						that's on the pursuit of
+						that's on the pursuit for
 					</Text>  
 					<Text 
 						as={'span'} 

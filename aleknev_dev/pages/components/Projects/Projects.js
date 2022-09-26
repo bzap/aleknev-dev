@@ -18,7 +18,7 @@ import {
     ScaleFade
   } from '@chakra-ui/react';
 import Preview from './Preview'
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 const Projects = () => ( 
@@ -33,7 +33,7 @@ const Projects = () => (
             {verticalItem('40%')}
             {verticalItem('10%')}
             {verticalItem('50%')}
-            {horizontalItem()}
+            {gitButton()}
         </Grid>
     </Container>
   );
@@ -42,7 +42,7 @@ const verticalItem = (top, left) => {
     return ( 
         <GridItem 
             as={motion.div}
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.025 }}
             flex={1}
             position='relative'
             justifyContent={'flex-start'}
@@ -56,45 +56,40 @@ const verticalItem = (top, left) => {
     )
 }
 
-const horizontalItem = () => { 
+const gitButton = () => { 
     return ( 
 
         <GridItem 
             flex={1}
             justifyContent={'center'}
             position={'relative'}
+            
             w='full' 
             pl={'3em'}
             top={'10em'}>
-            <Stack
-            direction={'column'}>
+            <Flex
+				direction={'column'}
+				>
                 <Text
-                    position={'absolute'}
-                    
+                    as={motion.div}
                     zIndex={8}
-                    height={'300px'}
-                    top={'-2em'}
-                    width={'full'}
                     fontSize={'2em'}
                     fontWeight={'bold'}>
                         &#x2192;&#x2192;     
                 </Text>
                 <Text
-                    position={'absolute'}
                     zIndex={8}
-                    height={'300px'}
-                    top={'-1em'}
+                    initial={{x:'1em'}}
+                    animation={{x:'10em'}}
+                    transition={{ease:"linear", duration:2, repeat: Infinity}}
                     width={'full'}
-                    fontSize={'2em'}
+                    fontSize={'1.8em'}
                     fontWeight={'bold'}>
-                        MORE ON GITHUB     
+                        SEE MORE ON GITHUB     
                 </Text>
                 <Text
-                    position={'absolute'}
                     zIndex={8}
-                    height={'300px'}
                     left={'8.5em'}
-                    width={'full'}
                     fontSize={'2em'}
                     fontWeight={'bold'}>
                         &#x2192;&#x2192;      
@@ -102,7 +97,7 @@ const horizontalItem = () => {
 
 
             
-            </Stack>
+            </Flex>
         </GridItem>
     )
 }

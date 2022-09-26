@@ -63,7 +63,7 @@ const backgroundInfo = () => {
     return ( 
         <GridItem 
         as={motion.div}
-        whileHover={{ scale: 1.03 }}
+        whileHover={{ scale: 1.025 }}
         flex={1}
         justifyContent='center'
         borderRadius={'20px'}
@@ -92,7 +92,7 @@ const skillsInfo = () => {
     return (
         <GridItem 
             as={motion.div}
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.025 }}
             colSpan={2}
             h={'35em'}
             position='relative'
@@ -229,7 +229,7 @@ const pictureFrame = (top, left, url, ind, w, h) => {
     return (
             <Box
                 as={motion.div}
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.025 }}
                 flex={1}
                 position={'relative'}>
 
