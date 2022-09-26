@@ -53,7 +53,6 @@ const Header = () => {
 						onHoverStart={() => setIsShown(false)}
 						onHoverEnd={() => setIsShown(true)}
 						fontSize={{ base: '4xl', sm: '4xl', lg: '1xl' }}>   
-
 						<Flex
 							position={'relative'}>
 							<Flex
@@ -68,7 +67,9 @@ const Header = () => {
 							variants={fadeInItem}>			
 								<Text
 								position={'absolute'}
-								left={0}>
+								top={0}
+								left={0}
+								>
 									&thinsp;&lt;home&gt;
 								</Text>
 							</Flex> 
@@ -104,7 +105,7 @@ const container = {
 
   const fadeOutItem = { 
 	hidden: { opacity: 1 },
-	show: { opacity: 0 }
+	show: { opacity: 0, scale:0.9 }
   }
 //<Divider orientation='horizontal' borderRadius={'2em'} border='1px' dropShadow={'lg'}/>
 export default Header

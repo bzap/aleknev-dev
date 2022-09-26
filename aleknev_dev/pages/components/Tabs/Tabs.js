@@ -27,7 +27,6 @@ import { Link } from "react-scroll/modules"
 
 const AnimatedTabs = () => {
 	const [selectedTab, setSelectedTab] = useState(tabs[0])
-	
 	return (
 				<Stack
 				direction={'row'}
@@ -83,7 +82,6 @@ const AnimatedTabs = () => {
 								</Link>
 							))}
 						</Flex>
-						
 					</Stack>
 	)
 }

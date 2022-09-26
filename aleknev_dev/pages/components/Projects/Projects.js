@@ -15,11 +15,17 @@ import {
     Grid, 
     GridItem,
     Center,
-    ScaleFade
+    ScaleFade,
+    transition, chakra, 
+    shouldForwardProp
   } from '@chakra-ui/react';
 import Preview from './Preview'
-import { motion } from "framer-motion";
+import { motion, isValidMotionProp } from "framer-motion";
 
+
+const ChakraBox = chakra(motion.div, {
+    shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
+  });
 
 const Projects = () => ( 
     <Container 
@@ -70,33 +76,53 @@ const gitButton = () => {
             <Flex
 				direction={'column'}
 				>
-                <Text
-                    as={motion.div}
-                    zIndex={8}
-                    fontSize={'2em'}
-                    fontWeight={'bold'}>
-                        &#x2192;&#x2192;     
-                </Text>
-                <Text
-                    zIndex={8}
-                    initial={{x:'1em'}}
-                    animation={{x:'10em'}}
-                    transition={{ease:"linear", duration:2, repeat: Infinity}}
-                    width={'full'}
-                    fontSize={'1.8em'}
-                    fontWeight={'bold'}>
-                        SEE MORE ON GITHUB     
-                </Text>
-                <Text
-                    zIndex={8}
-                    left={'8.5em'}
-                    fontSize={'2em'}
-                    fontWeight={'bold'}>
-                        &#x2192;&#x2192;      
-                </Text>
-
-
-            
+                <ChakraBox
+                as={motion.div}
+                initial={{x:0}}
+                animate={{x:'90%'}}
+                transition={{
+                    type: 'tween',
+                    ease: 'easeInOut',
+                    repeat: Infinity,
+                    repeatType: 'reverse',
+                    duration: 2,
+                  }}>
+                    <Text
+                        zIndex={8}
+                        fontSize={'2em'}
+                        fontWeight={'bold'}>
+                            &#x2192;&#x2192;     
+                    </Text>
+                </ChakraBox>
+                <Center
+                        as={motion.div}
+                        whileHover={{scale:1.1}}
+                        cursor={'pointer'}
+                        zIndex={8}
+                        transition={{ease:"linear", duration:2, repeat: Infinity}}
+                        width={'full'}
+                        fontSize={'1.8em'}
+                        fontWeight={'bold'}>
+                            SEE MORE ON GITHUB     
+                </Center>
+                <ChakraBox
+                as={motion.div}
+                initial={{x:'90%'}}
+                animate={{x:'0'}}
+                transition={{
+                    type: 'tween',
+                    ease: 'easeInOut',
+                    repeat: Infinity,
+                    repeatType: 'reverse',
+                    duration: 2,
+                  }}>
+                    <Text
+                        zIndex={8}
+                        fontSize={'2em'}
+                        fontWeight={'bold'}>
+                            &#x2192;&#x2192;     
+                    </Text>
+                </ChakraBox>
             </Flex>
         </GridItem>
     )
