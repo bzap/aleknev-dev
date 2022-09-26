@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer, ScaleFade } from '@chakra-ui/react'
+import { chakra, shouldForwardProp, Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer, ScaleFade } from '@chakra-ui/react'
 import { Link } from "react-scroll/modules"
 import AnimatedTabs from './Tabs/Tabs'
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, isValidMotionProp } from "framer-motion";
 
-
+const ChakraBox = chakra(motion.div, {
+    shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
+  });
 
 const Header = () => {
 	const [isShown, setIsShown] = useState(true)
@@ -25,12 +27,6 @@ const Header = () => {
 			<Box
 				p={2}
 				py={{ base: '1em', md: '1em' }}>
-
-				
-
-
-				
-
 				<Flex
 					align={'center'}
 					justifyContent={'space-between'}
@@ -53,37 +49,32 @@ const Header = () => {
 						onHoverStart={() => setIsShown(false)}
 						onHoverEnd={() => setIsShown(true)}
 						fontSize={{ base: '4xl', sm: '4xl', lg: '1xl' }}>   
-						<Flex
+						<ChakraBox
 							position={'relative'}>
-							<Flex
+							<ChakraBox
 							as={motion.div}
 							variants={fadeOutItem}>
 								<Text>
 									&thinsp;&lt;aleknev&gt;
 								</Text>
-							</Flex>
-							<Flex
+							</ChakraBox>
+							<ChakraBox
 							as={motion.div}
-							variants={fadeInItem}>			
-								<Text
-								position={'absolute'}
-								top={0}
-								left={0}
-								>
+							variants={fadeInItem}
+							whileTap={{scale:0.9}}
+							position={'absolute'}
+							top={0}>			
+								<Text>
 									&thinsp;&lt;home&gt;
 								</Text>
-							</Flex> 
-						</Flex>
+							</ChakraBox> 
+						</ChakraBox>
 					</Heading> 
 					</Link>
 					<AnimatedTabs/>
 				</Flex>
-				
 			</Box>
-			
 		</Container>
-
-
 	</Container>
 	)
 }
@@ -105,7 +96,7 @@ const container = {
 
   const fadeOutItem = { 
 	hidden: { opacity: 1 },
-	show: { opacity: 0, scale:0.9 }
+	show: { opacity: 0, scale: 0.9 }
   }
 //<Divider orientation='horizontal' borderRadius={'2em'} border='1px' dropShadow={'lg'}/>
 export default Header

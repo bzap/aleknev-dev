@@ -97,6 +97,7 @@ const gitButton = () => {
                 <Center
                         as={motion.div}
                         whileHover={{scale:1.1}}
+                        whileTap={{scale:1}}
                         cursor={'pointer'}
                         zIndex={8}
                         transition={{ease:"linear", duration:2, repeat: Infinity}}
