@@ -101,7 +101,7 @@ const scrollBehaviour = () => {
 			{scrollPos >= 1171 && scrollPos < 3100 && (
 			<ChakraBox
 			as={motion.div}
-			animate={{scale:[1,1.05,1], opacity:[0.4,1]}}
+			animate={{scale:[1,1.01,1], opacity:[0.4,1]}}
 			transition={{
 				type:'spring',
 				duration: 0.3
@@ -113,7 +113,7 @@ const scrollBehaviour = () => {
 			{scrollPos >= 3100 && (
 			<ChakraBox
 			as={motion.div}
-			animate={{scale:[1, 1.03, 1], opacity:[0.4,1]}}
+			animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
 			transition={{
 				type:'spring',
 				duration: 0.3
@@ -130,20 +130,19 @@ const scrollBehaviour = () => {
 		whileTap={{scale:0.9}}
 		position={'absolute'}>								
 			<Text>
-				&thinsp;&lt;aleknev&gt;
+				&thinsp;&lt;home&gt;
 			</Text>
 		</ChakraBox> )}
 		{scrollPos < 1170 && (
 		<ChakraBox
 		as={motion.div}
-		animate={{scale:[1, 1.03, 1], opacity:[0.4,1]}}
+		animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
 		transition={{
 			type:'spring',
 			duration: 0.3
 		}}
 		whileHover={{scale:1.02}}
 		whileTap={{scale:0.96}}>
-			
 			<Text>
 				&thinsp;&lt;aleknev&gt;
 			</Text>
