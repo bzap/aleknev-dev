@@ -32,7 +32,8 @@ const About = () => (
         maxW={'7xl'} 
         w={'100%'} 
         id='0' 
-        py='7em'>
+        pt='10em'
+        pb='40em'>
         <Flex
         maxW={'7x1'}
         direction={'row'}
