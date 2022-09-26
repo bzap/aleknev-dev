@@ -1,6 +1,7 @@
 import React from 'react'
 import { Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer } from '@chakra-ui/react'
 import { Link } from "react-scroll/modules"
+import AnimatedTabs from './Tabs/Tabs'
 
 const Header = () => ( 
     <Container 
@@ -21,7 +22,6 @@ const Header = () => (
                 <Flex
                     align={'center'}
                     justifyContent={'space-between'}
-    
                     direction={{ base: 'column', md: 'row' }}>
                     <Heading
                         lineHeight={1.1}
@@ -31,28 +31,7 @@ const Header = () => (
                         &thinsp;&lt;aleknev&gt;
                         </Text>
                     </Heading> 
-                    <Stack direction='row' justify={'flex-end'} > 
-                            <Button 
-                                colorScheme='gray' 
-                                borderRadius='15' 
-                                boxShadow={'md'}
-                                >
-                                <Link activeClass="active" to="p1" spy={true} smooth={true} offset={0} duration={500}>
-                                    About
-                                </Link>    
-                            </Button>
-                            <Button colorScheme='gray' variant='ghost' borderRadius='15'>
-                            <Link activeClass="active" to="p2" spy={true} smooth={true} offset={0} duration={500}>
-                                Skills
-                            </Link>
-                            </Button>
-                            <Button colorScheme='gray' variant='ghost' borderRadius='15'>
-                            <Link activeClass="active" to="p3" spy={true} smooth={true} offset={0} duration={500}>
-                                Projects
-                            </Link>
-                                </Button>
-                            <Button colorScheme='gray' variant='ghost' borderRadius='15'>Contact</Button>
-                    </Stack>
+                    <AnimatedTabs/>
                 </Flex>
             </Box>
             

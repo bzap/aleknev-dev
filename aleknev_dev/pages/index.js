@@ -7,6 +7,7 @@ import Hero from './components/Hero'
 import Header from './components/Header'
 import Projects from './components/Projects/Projects'
 import About from './components/About'
+import AnimatedTabs from './components/Tabs/Tabs'
 
 const Home = () => { 
   return ( 

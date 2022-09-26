@@ -32,7 +32,7 @@ const About = () => (
     <Container 
         maxW={'7xl'} 
         w={'100%'} 
-        id='p3' 
+        id='About' 
         py='7em'>
         <Flex
         maxW={'7x1'}
@@ -161,7 +161,7 @@ const skillText = () => {
                 pb={'8'}
                 as={'p'}
                 fontWeight={'500'}>
-                I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've learnt and used the most over time:  
+                I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
             </Text>
             <Grid
             templateColumns='repeat(3, 1fr)'
@@ -193,6 +193,7 @@ const skillList = (items) => {
         {skillItem(name, ic)}
         {skillItem(name2, ic2)}
         {skillItem(name3, ic3)}
+        {skillItem(name4, ic4)}
         {skillItem(name4, ic4)}
         {/* You can also use custom icons from react-icons */}
     </List>        
