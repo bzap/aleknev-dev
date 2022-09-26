@@ -23,12 +23,12 @@ const Header = () => {
 				animate={{
 					
 					opacity: [0, 1],
-					scale: [0, 1.1, 1]
+					scale: [0, 1.06, 1]
 				}}
 				transition={{
 					type:'spring',
-					duration: 1.5,
-					bounce: 0.6,
+					duration: 1.2,
+					bounce: 0.1,
 					ease: "easeInOut",
 					delay: 0.2,
 				}}
