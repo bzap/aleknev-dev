@@ -79,7 +79,7 @@ const AnimatedTabs = ({pos}) => {
 								spy={true} 
 								smooth={true} 
 								offset={0} 
-								duration={2000}>
+								duration={2200}>
 									<Center
 										className={item === selectedTab ? 'selected' : ''}
 										onClick={() => 
