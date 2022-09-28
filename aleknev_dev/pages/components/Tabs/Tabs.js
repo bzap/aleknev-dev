@@ -29,8 +29,14 @@ const ChakraBox = chakra(motion.div, {
   });
 
 const AnimatedTabs = ({pos}) => {
-	console.log(pos.tabs.selectedTab)
-	console.log(pos.views.homeView)
+	const [selectedTab, setSelectedTab] = useState(tabs[3])
+	useEffect(() => {
+		if (pos.views.aboutView) setSelectedTab(tabs[0])
+		if (pos.views.projView) setSelectedTab(tabs[1])
+		if (pos.views.contactView) setSelectedTab(tabs[2])
+		console.log(selectedTab)
+	},[pos.views.aboutView, pos.views.projView, pos.views.contactView])
+
 	return (
 				<Stack
 				direction={'row'}
@@ -47,11 +53,11 @@ const AnimatedTabs = ({pos}) => {
 								offset={0} 
 								duration={800}>
 									<Center
-										className={item === pos.tabs.selectedTab ? 'selected' : ''}
+										className={item === selectedTab ? 'selected' : ''}
 										onClick={() => 
-													{pos.tabs.setSelectedTab(item)
-													console.log(idx)}}>
-										{item === pos.tabs.selectedTab ? (
+													{setSelectedTab(item)
+													console.log(selectedTab)}}>
+										{item === selectedTab ? (
 										<Button
 											borderRadius='15'
 											variant='ghost'
@@ -69,30 +75,26 @@ const AnimatedTabs = ({pos}) => {
 												{item.label}
 											</Button>
 										)}
-
-										
-										<AnimatePresence exitBeforeEnter>
-										{item === pos.tabs.selectedTab && !pos.views.heroView ? (
+										<AnimatePresence mode='wait'>
+										{item === selectedTab && !pos.views.heroView ? (
 												<ChakraBox
-												
 												as={motion.div}
 												zIndex={1}
+												layout
 												key='overlayBox'
 												position={'absolute'}
 												layoutId={'outline'}
 												initial={{opacity:0}}
 												animate={{opacity:1}}
-												exit={{opacity:0}}
-												
+												exit={{opacity:0}}				
 												bg='gray.100'
 												h={'2.5em'}
 												w={'9%'}
 												borderRadius='15'
-											
 												boxShadow={'lg'}/>
-												
-											
-												) : (null)}
+												) : (
+													null
+												)}
 										</AnimatePresence>
 									
 									</Center>

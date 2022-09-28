@@ -21,7 +21,7 @@ import Head from 'next/head';
 
 const Hero = () => ( 
 	<Container
-	id={'1'}
+	id={'home'}
 	maxW={'7xl'}
 	direction={'column'}
 	flex={1}

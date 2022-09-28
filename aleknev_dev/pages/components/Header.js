@@ -50,7 +50,7 @@ const Header = ({pos}) => {
 						direction={{ base: 'column', md: 'row' }}>
 						<Link 
 							activeClass="active" 
-							to={'1'} 
+							to={'home'} 
 							spy={true} 
 							smooth={true} 
 							offset={0} 
@@ -110,6 +110,18 @@ const scrollBehaviour = (pos) => {
 			fontWeight={'bold'}
 			fontSize={'1em'}>
 				&thinsp;THINGS I'VE MADE
+			</ChakraBox>)}
+			{pos.views.contactView && (
+			<ChakraBox
+			as={motion.div}
+			animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
+			transition={{
+				type:'spring',
+				duration: 0.3
+			}}
+			fontWeight={'bold'}
+			fontSize={'1em'}>
+				&thinsp;REACH OUT TO ME
 			</ChakraBox>)}
 		</ChakraBox>
 		{pos.views.homeView  && (
