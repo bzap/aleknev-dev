@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { tabs } from "./TabContent"
 import {
 	Container,
@@ -25,8 +25,7 @@ import { isValidMotionProp, motion, AnimatePresence, AnimateSharedLayout } from 
 import { Link } from "react-scroll/modules"
 
 
-const AnimatedTabs = () => {
-	const [selectedTab, setSelectedTab] = useState(tabs[0])
+const AnimatedTabs = ({pos}) => {
 	return (
 				<Stack
 				direction={'row'}
@@ -44,11 +43,11 @@ const AnimatedTabs = () => {
 								offset={0} 
 								duration={500}>
 									<Center
-										className={item === selectedTab ? 'selected' : ''}
+										className={item === pos.tabs.selectedTab ? 'selected' : ''}
 										onClick={() => 
-													{setSelectedTab(item)
+													{pos.tabs.setSelectedTab(item)
 													console.log(idx)}}>
-										{item === selectedTab ? (
+										{item === pos.tabs.selectedTab ? (
 										<Button
 											borderRadius='15'
 											variant='ghost'
@@ -66,7 +65,7 @@ const AnimatedTabs = () => {
 												{item.label}
 											</Button>
 										)}
-										{item === selectedTab ? (
+										{item === pos.tabs.selectedTab ? (
 												<Box
 												zIndex={1}
 												position={'absolute'}

@@ -9,10 +9,7 @@ const ChakraBox = chakra(motion.div, {
   });
 
 const Header = ({pos}) => {
-	
 	const [isShown, setIsShown] = useState(true)
-	
-	
 	return (
 	<Container>
 		<Container 
@@ -69,20 +66,15 @@ const Header = ({pos}) => {
 							onHoverStart={() => setIsShown(false)}
 							onHoverEnd={() => setIsShown(true)}
 							fontSize={{ base: '4xl', sm: '4xl', lg: '1xl' }}>   
-								
 								{scrollBehaviour(pos)}
-							
 						</Heading> 
 						</Link>
-						<AnimatedTabs/>
+						<AnimatedTabs pos={pos} />
 					</Flex>
 				</Box>
 			</ChakraBox>
 		</Container>
-
-		
 	</Container>	
-
 	)
 }
 
@@ -95,7 +87,7 @@ const scrollBehaviour = (pos) => {
 		<ChakraBox
 		as={motion.div}
 		variants={fadeOutItem}>
-			{pos.aboutView && (
+			{pos.views.aboutView && (
 			<ChakraBox
 			as={motion.div}
 			animate={{scale:[1,1.01,1], opacity:[0.4,1]}}
@@ -107,7 +99,7 @@ const scrollBehaviour = (pos) => {
 			fontSize={'1em'}>
 				&thinsp;MORE ON MYSELF
 			</ChakraBox>)}
-			{pos.projView && (
+			{pos.views.projView && (
 			<ChakraBox
 			as={motion.div}
 			animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
@@ -120,7 +112,7 @@ const scrollBehaviour = (pos) => {
 				&thinsp;THINGS I'VE MADE
 			</ChakraBox>)}
 		</ChakraBox>
-		{pos.homeView  && (
+		{pos.views.homeView  && (
 		<ChakraBox
 		as={motion.div}
 		variants={fadeInItem}
@@ -130,7 +122,7 @@ const scrollBehaviour = (pos) => {
 				&thinsp;&lt;home&gt;
 			</Text>
 		</ChakraBox> )}
-		{pos.heroView && (
+		{pos.views.heroView && (
 		<ChakraBox
 		as={motion.div}
 		animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
