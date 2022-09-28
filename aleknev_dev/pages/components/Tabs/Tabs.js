@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useMemo, useEffect, useState } from "react";
 import { tabs } from "./TabContent"
 import {
 	Container,
@@ -30,34 +30,25 @@ const ChakraBox = chakra(motion.div, {
 
 
 
-// need to fix if pressing the home button 
-// it goes into not pressed bc of the refresh
-//use the didScroll state??? 
-//if did scroll then change it  
-// if pressed and label == the view then stop 
+// need to fix if pressing the home button, make it fade out 
 const AnimatedTabs = ({pos}) => {
 	
 	// allows it to hover buttons on scroll as well as when pressed
 	const [selectedTab, setSelectedTab] = useState(tabs[3])
 	const [pressed, setPressed] = useState(false)
-
-
 	const [currItem, setCurrItem] = useState(tabs[3])
 
-	useEffect(() => {
+	useMemo(() => {
 		if (currItem != undefined){
 			if (currItem.label == 'About' && pos.views.aboutView){
-				console.log('matched a')
 				setSelectedTab(tabs[0])
 				setPressed(false)
 			}
 			else if (currItem.label == 'Projects' && pos.views.projView){
-				console.log('matched p')
 				setSelectedTab(tabs[1])
 				setPressed(false)
 			}
 			else if (currItem.label == 'Contact' && pos.views.contactView){
-				console.log('matched c')
 				setSelectedTab(tabs[2])
 				setPressed(false)
 			}
@@ -66,19 +57,13 @@ const AnimatedTabs = ({pos}) => {
 			if (pos.views.aboutView) {
 				setSelectedTab(tabs[0])
 			}
-			
-			if (pos.views.projView) {
+			else if (pos.views.projView) {
 				setSelectedTab(tabs[1])
-			}
-			 
-			if (pos.views.contactView) {
+			} 
+			else if (pos.views.contactView) {
 				setSelectedTab(tabs[2])
 			} 
 		}
-		
-
-		console.log(selectedTab, 'set tab')
-		console.log('---------')
 	},[pos.views])
 	return (
 				<Stack
