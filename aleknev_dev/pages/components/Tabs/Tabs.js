@@ -24,13 +24,17 @@ import {
 import { isValidMotionProp, motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { Link } from "react-scroll/modules"
 
+const ChakraBox = chakra(motion.div, {
+    shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
+  });
 
 const AnimatedTabs = ({pos}) => {
+	console.log(pos.tabs.selectedTab)
+	console.log(pos.views.homeView)
 	return (
 				<Stack
 				direction={'row'}
-				justify={'flex-end'}
-				as={AnimateSharedLayout}> 
+				justify={'flex-end'}> 
 					<Flex
 					gap={6}>
 						{tabs.map((item, idx) => (
@@ -41,7 +45,7 @@ const AnimatedTabs = ({pos}) => {
 								spy={true} 
 								smooth={true} 
 								offset={0} 
-								duration={500}>
+								duration={800}>
 									<Center
 										className={item === pos.tabs.selectedTab ? 'selected' : ''}
 										onClick={() => 
@@ -65,18 +69,32 @@ const AnimatedTabs = ({pos}) => {
 												{item.label}
 											</Button>
 										)}
-										{item === pos.tabs.selectedTab ? (
-												<Box
+
+										
+										<AnimatePresence exitBeforeEnter>
+										{item === pos.tabs.selectedTab && !pos.views.heroView ? (
+												<ChakraBox
+												
+												as={motion.div}
 												zIndex={1}
+												key='overlayBox'
 												position={'absolute'}
 												layoutId={'outline'}
-												as={motion.div}
+												initial={{opacity:0}}
+												animate={{opacity:1}}
+												exit={{opacity:0}}
+												
 												bg='gray.100'
 												h={'2.5em'}
 												w={'9%'}
 												borderRadius='15'
+											
 												boxShadow={'lg'}/>
+												
+											
 												) : (null)}
+										</AnimatePresence>
+									
 									</Center>
 								</Link>
 							))}

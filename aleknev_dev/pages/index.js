@@ -18,9 +18,10 @@ const Home = () => {
   const [aboutView, setAboutView] = useState(false)
   const [projView, setProjView] = useState(false)
   const [heroView, setHeroView] = useState(true)
-  const [homeView, setHomeView] = useState(false)
+  const [homeView, setHomeView] = useState(true)
 
-  const [selectedTab, setSelectedTab] = useState(tabs[0])
+  const [selectedTab, setSelectedTab] = useState(tabs[3])
+  console.log(tabs)
 
   useScrollPosition(({ prevPos, currPos }) => {
     const isShowAbout = -currPos.y >= 1171 && -currPos.y < 3100
@@ -34,7 +35,8 @@ const Home = () => {
     if (isShowHome !== homeView) setHomeView(isShowHome)
     if (isShowAbout) setSelectedTab(tabs[0])
     if (isShowProj) setSelectedTab(tabs[1])
-    
+
+
   }, [aboutView, projView, heroView, homeView, selectedTab])
 
   return ( 
