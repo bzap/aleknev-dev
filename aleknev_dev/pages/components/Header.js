@@ -3,13 +3,12 @@ import { Center, chakra, shouldForwardProp, Divider, Heading, Flex, Stack, Conta
 import { Link } from "react-scroll/modules"
 import AnimatedTabs from './Tabs/Tabs'
 import { AnimatePresence, motion, isValidMotionProp } from "framer-motion";
-import { ScrollPosition } from './Hooks/ScrollPosition'
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
   });
 
-const Header = () => {
+const Header = ({pos}) => {
 	
 	const [isShown, setIsShown] = useState(true)
 	
@@ -71,7 +70,7 @@ const Header = () => {
 							onHoverEnd={() => setIsShown(true)}
 							fontSize={{ base: '4xl', sm: '4xl', lg: '1xl' }}>   
 								
-								{scrollBehaviour()}
+								{scrollBehaviour(pos)}
 							
 						</Heading> 
 						</Link>
@@ -87,9 +86,7 @@ const Header = () => {
 	)
 }
 
-const scrollBehaviour = () => { 
-	const scrollPos = ScrollPosition()
-	console.log(scrollPos)
+const scrollBehaviour = (pos) => { 
 	// if scroll distance gap/speed is big don't change these titles 
 	// if gap > 150, then don't apply the title changes, else do? 
 	return (
@@ -98,7 +95,7 @@ const scrollBehaviour = () => {
 		<ChakraBox
 		as={motion.div}
 		variants={fadeOutItem}>
-			{scrollPos >= 1171 && scrollPos < 3100 && (
+			{pos.aboutView && (
 			<ChakraBox
 			as={motion.div}
 			animate={{scale:[1,1.01,1], opacity:[0.4,1]}}
@@ -110,7 +107,7 @@ const scrollBehaviour = () => {
 			fontSize={'1em'}>
 				&thinsp;MORE ON MYSELF
 			</ChakraBox>)}
-			{scrollPos >= 3100 && (
+			{pos.projView && (
 			<ChakraBox
 			as={motion.div}
 			animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
@@ -123,7 +120,7 @@ const scrollBehaviour = () => {
 				&thinsp;THINGS I'VE MADE
 			</ChakraBox>)}
 		</ChakraBox>
-		{scrollPos > 1171  && (
+		{pos.homeView  && (
 		<ChakraBox
 		as={motion.div}
 		variants={fadeInItem}
@@ -133,7 +130,7 @@ const scrollBehaviour = () => {
 				&thinsp;&lt;home&gt;
 			</Text>
 		</ChakraBox> )}
-		{scrollPos < 1170 && (
+		{pos.heroView && (
 		<ChakraBox
 		as={motion.div}
 		animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
