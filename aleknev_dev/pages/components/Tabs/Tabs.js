@@ -28,15 +28,58 @@ const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
   });
 
-const AnimatedTabs = ({pos}) => {
-	const [selectedTab, setSelectedTab] = useState(tabs[3])
-	useEffect(() => {
-		if (pos.views.aboutView) setSelectedTab(tabs[0])
-		if (pos.views.projView) setSelectedTab(tabs[1])
-		if (pos.views.contactView) setSelectedTab(tabs[2])
-		console.log(selectedTab)
-	},[pos.views.aboutView, pos.views.projView, pos.views.contactView])
 
+
+// need to fix if pressing the home button 
+// it goes into not pressed bc of the refresh
+//use the didScroll state??? 
+//if did scroll then change it  
+// if pressed and label == the view then stop 
+const AnimatedTabs = ({pos}) => {
+	
+	// allows it to hover buttons on scroll as well as when pressed
+	const [selectedTab, setSelectedTab] = useState(tabs[3])
+	const [pressed, setPressed] = useState(false)
+
+
+	const [currItem, setCurrItem] = useState(tabs[3])
+
+	useEffect(() => {
+		if (currItem != undefined){
+			if (currItem.label == 'About' && pos.views.aboutView){
+				console.log('matched a')
+				setSelectedTab(tabs[0])
+				setPressed(false)
+			}
+			else if (currItem.label == 'Projects' && pos.views.projView){
+				console.log('matched p')
+				setSelectedTab(tabs[1])
+				setPressed(false)
+			}
+			else if (currItem.label == 'Contact' && pos.views.contactView){
+				console.log('matched c')
+				setSelectedTab(tabs[2])
+				setPressed(false)
+			}
+		}
+		if (!pressed){
+			if (pos.views.aboutView) {
+				setSelectedTab(tabs[0])
+			}
+			
+			if (pos.views.projView) {
+				setSelectedTab(tabs[1])
+			}
+			 
+			if (pos.views.contactView) {
+				setSelectedTab(tabs[2])
+			} 
+		}
+		
+
+		console.log(selectedTab, 'set tab')
+		console.log('---------')
+	},[pos.views])
 	return (
 				<Stack
 				direction={'row'}
@@ -51,12 +94,14 @@ const AnimatedTabs = ({pos}) => {
 								spy={true} 
 								smooth={true} 
 								offset={0} 
-								duration={800}>
+								duration={2000}>
 									<Center
 										className={item === selectedTab ? 'selected' : ''}
 										onClick={() => 
 													{setSelectedTab(item)
-													console.log(selectedTab)}}>
+													setPressed(true)
+													setCurrItem(item)
+													console.log(idx)}}>
 										{item === selectedTab ? (
 										<Button
 											borderRadius='15'
@@ -86,7 +131,9 @@ const AnimatedTabs = ({pos}) => {
 												layoutId={'outline'}
 												initial={{opacity:0}}
 												animate={{opacity:1}}
-												exit={{opacity:0}}				
+												exit={{opacity:0}}	
+												
+														
 												bg='gray.100'
 												h={'2.5em'}
 												w={'9%'}
