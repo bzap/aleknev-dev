@@ -29,6 +29,7 @@ import { motion } from "framer-motion";
 
 const About = () => ( 
     <Container 
+        position={'relative'}
         maxW={'7xl'} 
         w={'100%'} 
         id='0' 

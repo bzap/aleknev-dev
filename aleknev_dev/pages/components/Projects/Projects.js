@@ -45,6 +45,7 @@ const ChakraBox = chakra(motion.div, {
 
 const Projects = () => ( 
     <Container 
+        position={'relative'}
         maxW={'7xl'}
         id='1' 
         px={'10em'}

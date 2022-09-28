@@ -49,12 +49,12 @@ const Header = ({pos}) => {
 						justifyContent={'space-between'}
 						direction={{ base: 'column', md: 'row' }}>
 						<Link 
-							activeClass="active" 
+							
 							to={'home'} 
 							spy={true} 
 							smooth={true} 
 							offset={0} 
-							duration={500}>                   
+							duration={2500}>                   
 						<Heading
 							cursor={'pointer'}
 							as={motion.div}
