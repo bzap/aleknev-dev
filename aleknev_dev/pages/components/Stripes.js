@@ -126,8 +126,9 @@ const gridOfLines = () => {
 	borderRadius={'18px'}
 	animate={{translateX:['-100%','100%']}}
 	transition={{repeat: Infinity, 
-				repeatType: 'reverse', 
+				repeatType: 'loop', 
 				duration:5,
+				ease:'linear'
 				}}
 	h={'20px'}
 	minW={'300px'}
@@ -147,9 +148,9 @@ const rstripe = () => {
 	borderRadius={'18px'}
 	animate={{translateX:['100%','-100%']}}
 	transition={{repeat: Infinity, 
-				repeatType: 'reverse', 
+				repeatType: 'loop', 
 				duration:5,
-				delay:0.5
+				ease:'linear'
 				}}
 	h={'20px'}
 	minW={'300px'}

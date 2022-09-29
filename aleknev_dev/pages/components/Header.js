@@ -90,10 +90,10 @@ const scrollBehaviour = (pos) => {
 			{pos.views.aboutView && (
 			<ChakraBox
 			as={motion.div}
-			animate={{scale:[1,1.01,1], opacity:[0.4,1]}}
+			animate={{scale:[1, 1.01, 1], opacity:[0.6,1]}}
 			transition={{
 				type:'spring',
-				duration: 0.3
+				duration: 0.18
 			}}
 			fontWeight={'bold'}
 			fontSize={'1em'}>
@@ -105,7 +105,7 @@ const scrollBehaviour = (pos) => {
 			animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
 			transition={{
 				type:'spring',
-				duration: 0.3
+				duration: 0.18
 			}}
 			fontWeight={'bold'}
 			fontSize={'1em'}>
@@ -117,7 +117,7 @@ const scrollBehaviour = (pos) => {
 			animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
 			transition={{
 				type:'spring',
-				duration: 0.3
+				duration: 0.18
 			}}
 			fontWeight={'bold'}
 			fontSize={'1em'}>
@@ -137,13 +137,13 @@ const scrollBehaviour = (pos) => {
 		{pos.views.heroView && (
 		<ChakraBox
 		as={motion.div}
-		animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
+		animate={{scale:[1,1.06, 1], opacity:[0.4,1]}}
 		transition={{
 			type:'spring',
-			duration: 0.3
+			duration: 0.18
 		}}
-		whileHover={{scale:1.02}}
-		whileTap={{scale:0.96}}>
+		whileHover={{scaleX:1.1, scaleY:1.1}}
+		whileTap={{scale:0.98}}>
 			<Text>
 				&thinsp;&lt;aleknev&gt;
 			</Text>
