@@ -27,6 +27,7 @@ const Parallax = ({ children, offset }) => {
 	  return () => window.removeEventListener('resize', onResize)
 	}, [ref])
   
+	
 	return (
 	  <motion.div 
 	  ref={ref} 

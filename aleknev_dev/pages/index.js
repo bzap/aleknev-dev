@@ -11,8 +11,10 @@ import Contact from './components/Contact'
 import Stripes from './components/Stripes'
 import AnimatedTabs from './components/Tabs/Tabs'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { tabs } from "./components/Tabs/TabContent"
+import { motion, useScroll } from 'framer-motion'
+
 
  
 
@@ -25,28 +27,24 @@ const Home = () => {
   const [homeView, setHomeView] = useState(true)
   const [contactView, setContactView] = useState(false)
 
+  const { scrollY } = useScroll() 
 
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      const isShowAbout = latest >= 1171 && latest < 3100
+      const isShowProj = latest >= 3100 && latest < 5150
+      const isShowHero = latest <  1170 
+      const isShowHome = latest >  1171 
+      const isShowContact = latest >= 5150
 
-  
-
-  useScrollPosition(({ currPos }) => {
-    const isShowAbout = -currPos.y >= 1171 && -currPos.y < 3100
-    const isShowProj = -currPos.y >= 3100 && -currPos.y < 5150
-    const isShowHero = -currPos.y <  1170 
-    const isShowHome = -currPos.y >  1171 
-    const isShowContact = -currPos.y >= 5150
-
-   // console.log(-currPos.y)
-
-    if (isShowAbout !== aboutView) setAboutView(isShowAbout)
-    if (isShowProj !== projView) setProjView(isShowProj)
-    if (isShowHero !== heroView) setHeroView(isShowHero)
-    if (isShowHome !== homeView) setHomeView(isShowHome)
-    if (isShowContact !== contactView) setContactView(isShowContact)
-
-    
-
+      if (isShowAbout !== aboutView) setAboutView(isShowAbout)
+      if (isShowProj !== projView) setProjView(isShowProj)
+      if (isShowHero !== heroView) setHeroView(isShowHero)
+      if (isShowHome !== homeView) setHomeView(isShowHome)
+      if (isShowContact !== contactView) setContactView(isShowContact)
+    })
   }, [aboutView, projView, heroView, homeView, contactView])
+  
 
   return ( 
     <Layout>
