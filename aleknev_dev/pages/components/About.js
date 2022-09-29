@@ -6,6 +6,7 @@ import {
     Box,
     Heading,
     Text,
+    chakra,
     Button,
     Image,
     Icon,
@@ -22,12 +23,26 @@ import {
     List, 
     ListIcon,
     ListItem,
+    shouldForwardProp
   } from '@chakra-ui/react';
 import { SiReact, SiChakraui, SiJavascript, SiPython } from 'react-icons/si';
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, isValidMotionProp } from "framer-motion";
+import Parallax from './layouts/Parallax';
 
 
-const About = () => ( 
+const ChakraBox = chakra(motion.div, {
+    shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
+  });
+
+const About = () => {
+    //const { scrollYProgress } = useScroll() 
+    //const y1 = useTransform(scrollYProgress, [0, 300], [0, 200]);
+    //const y2 = useTransform(scrollYProgress, [0, 300], [0, -100]);
+  
+    return( 
+
+    
+
     <Container 
         position={'relative'}
         maxW={'7xl'} 
@@ -43,23 +58,40 @@ const About = () => (
             <Flex 
             direction='column'
             gap={'6em'}>
-                    {backgroundInfo()}
-                    <Flex
-                    h={'20em'}
+                    <Parallax offset={70}>
+                        {backgroundInfo()}
+                    </Parallax>
+                    <Grid
+                    templateColumns='repeat(2, 1fr)'
                     gap={'2em'}>
-                        {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
-                        {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
-                    </Flex>
+                        <Parallax
+                        offset={120}>
+                            {pictureFrame('10%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', '20em')}
+                        </Parallax>
+                        <Parallax
+                        offset={90}> 
+                            {pictureFrame('-5%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', '22em')}
+                        </Parallax>
+                    </Grid> 
             </Flex>
             <Flex
             direction='column'
             gap={'5em'}>
-                {selfPortrait()}
-                {skillsInfo()}
+                <Parallax offset={140}>
+                <Flex
+                    pt={'25%'}>
+                    {selfPortrait()}
+                </Flex>
+                </Parallax>
+                <Parallax offset={120}>
+                <Flex>
+                    {skillsInfo()}
+                </Flex>
+                </Parallax>
             </Flex>
         </Flex>
     </Container>
-  );
+)}
 
 const backgroundInfo = () => { 
     return ( 
@@ -85,7 +117,9 @@ const selfPortrait = () => {
             flex={1}
             w={'25em'}
             justifyContent={'flex-end'} >
-            {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
+                <Center>
+                    {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
+                </Center>
         </GridItem>
     )
 }
@@ -96,6 +130,7 @@ const skillsInfo = () => {
             as={motion.div}
             whileHover={{ scale: 1.025 }}
             colSpan={2}
+            
             h={'35em'}
             position='relative'
             flex={1}
@@ -229,6 +264,7 @@ const skillItem = (name, ic) => {
 // need to remake this function for cleanliness with selfprotrait
 const pictureFrame = (top, left, url, ind, w, h) => {
     return (
+            
             <Box
                 as={motion.div}
                 whileHover={{ scale: 1.025 }}

@@ -21,6 +21,7 @@ import {
   } from '@chakra-ui/react';
 import Preview from './Preview'
 import { motion, isValidMotionProp } from "framer-motion";
+import Parallax from '../layouts/Parallax';
 
 
 const ChakraBox = chakra(motion.div, {
@@ -29,11 +30,11 @@ const ChakraBox = chakra(motion.div, {
 
   const cardVariants = {
     offscreen: {
-      y: 300
+      y: 0
     },
     onscreen: {
-      y: 50,
-      rotate: -10,
+      y: 0,
+    
       transition: {
         type: "spring",
         bounce: 0.4,
@@ -52,10 +53,18 @@ const Projects = () => (
         py={'10em'}
         pb={'20em'}>
         <Grid templateColumns='repeat(2, 1fr)' gap={'10em'}>
+          <Parallax offset={150}>
             {verticalItem('0%')}
+          </Parallax>
+          <Parallax offset={80}>
             {verticalItem('40%')}
-            {verticalItem('10%')}
-            {verticalItem('50%')}
+          </Parallax>
+          <Parallax offset={150}>
+            {verticalItem('-20%')}
+            </Parallax>
+          <Parallax offset={80}>
+            {verticalItem('40%')}
+          </Parallax>
             {gitButton()}
         </Grid>
     </Container>
@@ -85,18 +94,15 @@ const verticalItem = (top, left) => {
 
 const gitButton = () => { 
     return ( 
-
         <GridItem 
             flex={1}
             justifyContent={'center'}
             position={'relative'}
-            
             w='full' 
             pl={'3em'}
             top={'10em'}>
             <Flex
-				direction={'column'}
-				>
+            direction={'column'}>
                 <ChakraBox
                 as={motion.div}
                 initial={{x:0}}

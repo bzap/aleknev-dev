@@ -8,10 +8,12 @@ import Header from './components/Header'
 import Projects from './components/Projects/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
+import Stripes from './components/Stripes'
 import AnimatedTabs from './components/Tabs/Tabs'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import { useState } from 'react'
 import { tabs } from "./components/Tabs/TabContent"
+
  
 
 const Home = () => { 
@@ -29,12 +31,12 @@ const Home = () => {
 
   useScrollPosition(({ currPos }) => {
     const isShowAbout = -currPos.y >= 1171 && -currPos.y < 3100
-    const isShowProj = -currPos.y >= 3100 && -currPos.y < 5399
+    const isShowProj = -currPos.y >= 3100 && -currPos.y < 5150
     const isShowHero = -currPos.y <  1170 
     const isShowHome = -currPos.y >  1171 
-    const isShowContact = -currPos.y > 5400
+    const isShowContact = -currPos.y >= 5150
 
-    //console.log(isShowContact)
+   // console.log(-currPos.y)
 
     if (isShowAbout !== aboutView) setAboutView(isShowAbout)
     if (isShowProj !== projView) setProjView(isShowProj)
@@ -44,15 +46,20 @@ const Home = () => {
 
     
 
-  }, [aboutView, projView, heroView, homeView, contactView, ])
+  }, [aboutView, projView, heroView, homeView, contactView])
 
   return ( 
     <Layout>
-        <Header pos={{views:{aboutView, projView, heroView, homeView, contactView}}}/>
-        <Hero/>
+        
+        <Header pos={{views:{aboutView, setAboutView, projView, 
+                           setProjView, setContactView, heroView, homeView, contactView}}}
+               />
+        
+        <Hero />
         <About/>
         <Projects/>
         <Contact/>
+        
     </Layout>
 
   )
