@@ -14,6 +14,7 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import { useState, useEffect } from 'react'
 import { tabs } from "./components/Tabs/TabContent"
 import { motion, useScroll } from 'framer-motion'
+import Stripesv2 from './components/Stripesv2'
 
 
  
@@ -50,9 +51,8 @@ const Home = () => {
     <Layout>
         
         <Header pos={{views:{aboutView, setAboutView, projView, 
-                           setProjView, setContactView, heroView, homeView, contactView}}}
-               />
-        
+                           setProjView, setContactView, heroView, homeView, contactView}}}/>
+        <Stripesv2/>
         <Hero />
         <About/>
         <Projects/>

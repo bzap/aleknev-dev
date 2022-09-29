@@ -22,6 +22,7 @@ import {
 import Preview from './Preview'
 import { motion, isValidMotionProp } from "framer-motion";
 import Parallax from '../layouts/Parallax';
+import { SiGithub  } from 'react-icons/si';
 
 
 const ChakraBox = chakra(motion.div, {
@@ -133,8 +134,44 @@ const gitButton = () => {
                         width={'full'}
                         fontSize={'1.8em'}
                         fontWeight={'bold'}>
-                            SEE MORE ON GITHUB     
+                            MORE CODE HERE    
                 </Center>
+               
+                <Flex
+                direction={'row'}>
+                  <Flex
+                  as={motion.div}
+                  pt={'2em'}
+                  direction={'column'}
+                  alignItems={'flex-end'}>
+                    <Text
+                    fontSize={26}
+                    fontWeight={'bold'}>
+                      MORE&#160;&#160;&#160;&#160;
+                    </Text> 
+                    <Text
+                    fontSize={26}
+                    fontWeight={'bold'}>
+                      CODE&#160;&#160;
+                    </Text>
+                    <Text
+                    fontSize={26}
+                    fontWeight={'bold'}>
+                      HERE
+                    </Text>
+                  </Flex>  
+                  
+                  <ChakraBox
+                  cursor={'pointer'}
+                  as={motion.div}
+                  whileHover={{scale:1.1}}
+                  whileTap={{scale:0.9}}>
+                    <Icon 
+                    as={SiGithub} 
+                    h={'6em'}
+                    w={'6em'}/>
+                  </ChakraBox>               
+                </Flex>
                 <ChakraBox
                 as={motion.div}
                 initial={{x:'90%'}}

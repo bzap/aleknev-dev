@@ -121,7 +121,7 @@ const scrollBehaviour = (pos) => {
 			}}
 			fontWeight={'bold'}
 			fontSize={'1em'}>
-				&thinsp;REACH OUT TO ME
+				&thinsp;REACH OUT!
 			</ChakraBox>)}
 		</ChakraBox>
 		{pos.views.homeView  && (
