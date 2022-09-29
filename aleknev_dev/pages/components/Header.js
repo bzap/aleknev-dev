@@ -93,7 +93,7 @@ const scrollBehaviour = (pos) => {
 			animate={{scale:[1, 1.01, 1], opacity:[0.6,1]}}
 			transition={{
 				type:'spring',
-				duration: 0.18
+				duration: 0.2
 			}}
 			fontWeight={'bold'}
 			fontSize={'1em'}>
@@ -102,10 +102,10 @@ const scrollBehaviour = (pos) => {
 			{pos.views.projView && (
 			<ChakraBox
 			as={motion.div}
-			animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
+			animate={{scale:[1, 1.01, 1], opacity:[0.6,1]}}
 			transition={{
 				type:'spring',
-				duration: 0.18
+				duration: 0.2
 			}}
 			fontWeight={'bold'}
 			fontSize={'1em'}>
@@ -114,10 +114,10 @@ const scrollBehaviour = (pos) => {
 			{pos.views.contactView && (
 			<ChakraBox
 			as={motion.div}
-			animate={{scale:[1, 1.01, 1], opacity:[0.4,1]}}
+			animate={{scale:[1, 1.01, 1], opacity:[0.6,1]}}
 			transition={{
 				type:'spring',
-				duration: 0.18
+				duration: 0.2
 			}}
 			fontWeight={'bold'}
 			fontSize={'1em'}>
@@ -137,10 +137,10 @@ const scrollBehaviour = (pos) => {
 		{pos.views.heroView && (
 		<ChakraBox
 		as={motion.div}
-		animate={{scale:[1,1.06, 1], opacity:[0.4,1]}}
+		animate={{scale:[1,1.01, 1], opacity:[0.6,1]}}
 		transition={{
 			type:'spring',
-			duration: 0.18
+			duration: 0.2
 		}}
 		whileHover={{scaleX:1.1, scaleY:1.1}}
 		whileTap={{scale:0.98}}>
