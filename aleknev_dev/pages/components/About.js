@@ -63,17 +63,20 @@ const About = () => {
                     </Parallax>
                     <Grid
                     templateColumns='repeat(2, 1fr)'
-                    gap={'2em'}>
+                    gap={'4em'}>
                         <Parallax
                         offset={120}>
                             {pictureFrame('10%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', '20em')}
                         </Parallax>
                         <Parallax
                         offset={90}> 
-                            {pictureFrame('-5%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', '22em')}
+                            {pictureFrame('-10%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', '20em')}
                         </Parallax>
                     </Grid> 
             </Flex>
+
+
+
             <Flex
             direction='column'
             gap={'5em'}>
@@ -90,6 +93,7 @@ const About = () => {
                 </Parallax>
             </Flex>
         </Flex>
+
     </Container>
 )}
 

@@ -52,7 +52,7 @@ const Home = () => {
         
         <Header pos={{views:{aboutView, setAboutView, projView, 
                            setProjView, setContactView, heroView, homeView, contactView}}}/>
-        <Stripesv2/>
+        
         <Hero />
         <About/>
         <Projects/>

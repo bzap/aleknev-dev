@@ -1,6 +1,5 @@
 import { useState, useRef, useLayoutEffect, ReactNode } from 'react'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
-import { Center, chakra, shouldForwardProp, Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer, ScaleFade, transition } from '@chakra-ui/react'
 
 const Parallax = ({ children, offset }) => {
 	const [top, setTop] = useState(0)

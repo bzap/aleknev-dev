@@ -14,6 +14,7 @@ import {
 	IconButton,
 	createIcon,
 	IconProps,
+	Center,
 	useColorModeValue,
 	shouldForwardProp
   } from '@chakra-ui/react';
@@ -29,124 +30,79 @@ const ChakraBox = chakra(motion.div, {
 const Stripesv2 = () => ( 
 	<Container
 	maxW={'container'}
-	h={'100vh'}
-	position={'relative'}
+	left={0}
+	position={'fixed'}
 	zIndex={200}
-	pt={'15em'}
-	bg='red'
-	overflow={'hidden'}
-	p={16}>
-		<ChakraBox>
+	bg='blue.100'
+	overflow={'hidden'}>
 		<Grid
-		templateRows='repeat(2, 1fr)'
-		gap={'10em'}>
-			<GridItem>
-			<Flex
-			w={'200%'}
-			left={0}>
-			{reverseLine()}
-			{reverseLine()}
-			</Flex>
-			</GridItem>
+		
+		gap={'15em'}
+		templateRows='repeat(18, 1fr)'>
+			{reverseGrid()}
+			{forwardGrid()}
+			{reverseGrid()}
+			{forwardGrid()}
+			{reverseGrid()}
+			{forwardGrid()}
+			{reverseGrid()}
+			{forwardGrid()}
 
-			<GridItem>
-			<Flex
-			w={'200%'}
-			left={0}>
-			{reverseLine()}
-			{reverseLine()}
-			</Flex>
-			</GridItem>
+			{reverseGrid()}
+			{forwardGrid()}
+			{reverseGrid()}
+			{forwardGrid()}
+			{reverseGrid()}
+			{forwardGrid()}
+			{reverseGrid()}
+			{forwardGrid()}
 
-
+			{reverseGrid()}
+			{forwardGrid()}
 		</Grid>
-
-		</ChakraBox>
 	</Container>
-
-  );
+  )
 
 const bar = () => { 
 	return ( 
 		<Box
 		h={'20px'}
-		w={'25em'}
+		w={'20em'}
 		borderRadius={'18px'}
 		bg='#e8edf3'/>
 	) 
 }
 
-const backgroundGrid = () => { 
+const reverseGrid = () => { 
 	return ( 
-		<Grid
-		templateRows='repeat(5, 1fr)'
-		gap={'5em'}>
-			<GridItem>
-			<Flex
-			w={'200%'}
-			left={0}>
-			{reverseLine()}
-			{reverseLine()}
-			</Flex>
-			</GridItem>
-
-			<GridItem>
-			<Flex
-			w={'200%'}
-			left={0}>
-			{reverseLine()}
-			{reverseLine()}
-			</Flex>
-			</GridItem>
-			<GridItem>
-			<Flex
-			w={'200%'}
-			left={0}>
-			{reverseLine()}
-			{reverseLine()}
-			</Flex>
-			</GridItem>
-
-
-		</Grid>
-	)
-
-
-}
-
-const forwardLine = () => {
-	return ( 
-		<ChakraBox
-		w={'200%'}
-		position={'relative'}
-		left={0}
-		as={motion.div}
-		animate={{translateX:['-100%','0']}}
-		transition={{repeat: Infinity, 
-					repeatType: 'loop', 
-					duration:2,
-					ease:'linear'
-					}}>
-					{lineOfBars()}
-
-		</ChakraBox>
+			<Stack>
+				<Flex
+				width={'200%'}
+				overflow={'hidden'}
+				left={0}>
+					{reverseLine()}
+					{reverseLine()}
+				</Flex>
+			</Stack>
 	)
 }
+
 
 const reverseLine = () => {
 	return ( 
 		<ChakraBox
-		w={'200%'}
+		w={'50%'}
 		position={'relative'}
 		left={0}
 		as={motion.div}
 		animate={{translateX:['0%','-100%']}}
 		transition={{repeat: Infinity, 
 					repeatType: 'loop', 
-					duration:15,
-					ease:'linear'
+					duration:35,
+					ease:'linear',
+					
 					}}>
-					{lineOfBars()}
+						{lineOfBars()}
 		</ChakraBox>
 	)
 }
@@ -155,15 +111,48 @@ const reverseLine = () => {
 const lineOfBars = () => { 
 	return (
 		<Flex 
-		pt={'10em'}
 		justify={'space-around'}>
-				{[...Array(5)].map((item, idx) => (
-						bar()
-				))}
+			{[...Array(10)].map((item, idx) => (
+				bar()
+			))}
 		</Flex> 
 	)
 }
 
+
+const forwardGrid = () => { 
+	return ( 
+			<Stack
+			>
+				<Flex
+				width={'200%'}
+				overflow={'hidden'}
+				left={0}>
+					{forwardLine()}
+					{forwardLine()}
+				</Flex>
+			</Stack>
+	)
+}
+
+
+const forwardLine = () => {
+	return ( 
+		<ChakraBox
+		w={'100%'}
+		position={'relative'}
+		left={0}
+		as={motion.div}
+		animate={{translateX:['-100%','0%']}}
+		transition={{repeat: Infinity, 
+					repeatType: 'loop', 
+					duration:35,
+					ease:'linear'
+					}}>
+					{lineOfBars()}
+		</ChakraBox>
+	)
+}
 
 const rgridOfLines = () => { 
 	return ( 
@@ -173,7 +162,7 @@ const rgridOfLines = () => {
 		alignItems='center'
 		templateColumns='repeat(10, 1fr)' 
 		gap={'15em'}
-		w={'3000px'}>
+		>
 			<GridItem>
 				{rstripe()}
 			</GridItem>

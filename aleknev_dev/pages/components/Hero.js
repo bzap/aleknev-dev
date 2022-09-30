@@ -29,7 +29,6 @@ const Hero = () => (
 	px='7em'
 	pt={{ base: 20, md: '20em' }}
 	pb={{ base: 20, md: '40em' }}>
-
 		<Grid
 		position={'relative'}
 		gap={'12em'}
