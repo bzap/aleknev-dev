@@ -60,9 +60,10 @@ const Stripesv2 = () => (
 	</Center>
   )
 
-const bar = () => { 
+const bar = (barKey) => { 
 	return ( 
 		<Box
+		key={barKey}
 		h={'20px'}
 		w={'20em'}
 		borderRadius={'18px'}
@@ -106,9 +107,10 @@ const lineOfBars = () => {
 	return (
 		<Flex 
 		justify={'space-around'}
+		
 		>
 			{[...Array(10)].map((item, idx) => (
-				bar()
+				bar(idx)
 			))}
 		</Flex> 
 	)

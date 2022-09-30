@@ -52,48 +52,49 @@ const About = () => {
         pb='40em'>
         <Flex
         maxW={'7x1'}
-        direction={'row'}
-        justifyContent={'center'}
+        direction={'column'}
+        
         gap={'7em'}>
             <Flex 
-            direction='column'
+            justifyContent={'center'}
+            direction='row'
             gap={'6em'}>
                     <Parallax offset={70}>
                         {backgroundInfo()}
                     </Parallax>
-                    <Grid
+                    <Parallax offset={140}>
+                        <Flex
+                            pt={'25%'}>
+                            {selfPortrait()}
+                        </Flex>
+                    </Parallax>
+
+            </Flex>
+            <Flex
+            direction={'row'}
+            gap={'6em'}
+            justifyContent={'center'}>
+                <Grid
+                    w={'40%'}
                     templateColumns='repeat(2, 1fr)'
                     gap={'4em'}>
                         <Parallax
-                        offset={120}>
-                            {pictureFrame('10%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', '20em')}
+                        offset={290}>
+                            {pictureFrame('', '', '15%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', '20em')}
+                            
                         </Parallax>
                         <Parallax
-                        offset={90}> 
-                            {pictureFrame('-10%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', '20em')}
+                        offset={230}> 
+                            {pictureFrame('15%', '', '0%', '', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', '20em')}
                         </Parallax>
-                    </Grid> 
-            </Flex>
-
-
-
-            <Flex
-            direction='column'
-            gap={'5em'}>
-                <Parallax offset={140}>
-                <Flex
-                    pt={'25%'}>
-                    {selfPortrait()}
-                </Flex>
-                </Parallax>
-                <Parallax offset={120}>
-                <Flex>
-                    {skillsInfo()}
-                </Flex>
+                </Grid> 
+                <Parallax offset={170}>
+                    <Flex>
+                        {skillsInfo()}
+                    </Flex>
                 </Parallax>
             </Flex>
         </Flex>
-
     </Container>
 )}
 
@@ -122,7 +123,7 @@ const selfPortrait = () => {
             w={'25em'}
             justifyContent={'flex-end'} >
                 <Center>
-                    {pictureFrame('0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
+                    {pictureFrame('0%', '0%', '0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
                 </Center>
         </GridItem>
     )
@@ -266,10 +267,9 @@ const skillItem = (name, ic) => {
 
 
 // need to remake this function for cleanliness with selfprotrait
-const pictureFrame = (top, left, url, ind, w, h) => {
+const pictureFrame = (top, left, bottom, right, url, ind, w, h) => {
     return (
-            
-            <Box
+            <Flex
                 as={motion.div}
                 whileHover={{ scale: 1.025 }}
                 flex={1}
@@ -290,12 +290,14 @@ const pictureFrame = (top, left, url, ind, w, h) => {
                     position={'absolute'}
                     top={top}
                     left={left}
+                    bottom={bottom}
+                    right={right}
                     fit={'cover'}
                     align={'center'}
                     src={url}/>
             )
                 </Stack>
-            </Box>
+            </Flex>
     )
     
 }

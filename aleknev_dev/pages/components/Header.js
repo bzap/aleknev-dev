@@ -90,7 +90,7 @@ const scrollBehaviour = (pos) => {
 			{pos.views.aboutView && (
 			<ChakraBox
 			as={motion.div}
-			animate={{scale:[1, 1.01, 1], opacity:[0.6,1]}}
+			animate={{scale:[1, 1.01, 1]}}
 			transition={{
 				type:'spring',
 				duration: 0.2
@@ -128,6 +128,7 @@ const scrollBehaviour = (pos) => {
 		<ChakraBox
 		as={motion.div}
 		variants={fadeInItem}
+		whileHover={{scale:1.1}}
 		whileTap={{scale:0.9}}
 		position={'absolute'}>								
 			<Text>
