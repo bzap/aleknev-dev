@@ -12,8 +12,7 @@ const Layout = ({ children, router }) => {
         margin='auto' 
         minH='100vh' 
         bg='#edf2f8'> 
-            <Stripesv2 
-            position='fixed'/> 
+            <Stripesv2/> 
             <main>{children}</main> 
         </Container> 
     )   
