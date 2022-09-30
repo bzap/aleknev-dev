@@ -52,17 +52,15 @@ const About = () => {
         pb='40em'>
         <Flex
         maxW={'7x1'}
-        direction={'column'}
-        
-        gap={'7em'}>
+        direction={'column'}>
             <Flex 
             justifyContent={'center'}
             direction='row'
             gap={'6em'}>
-                    <Parallax offset={70}>
+                    <Parallax offset={120}>
                         {backgroundInfo()}
                     </Parallax>
-                    <Parallax offset={140}>
+                    <Parallax offset={190}>
                         <Flex
                             pt={'25%'}>
                             {selfPortrait()}
@@ -77,7 +75,7 @@ const About = () => {
                 <Grid
                     w={'40%'}
                     templateColumns='repeat(2, 1fr)'
-                    gap={'4em'}>
+                    gap={'3em'}>
                         <Parallax
                         offset={290}>
                             {pictureFrame('', '', '15%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', '20em')}
