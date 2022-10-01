@@ -58,8 +58,7 @@ const Projects = () => (
 
         <Flex
         direction='column'
-        gap={'20em'}>
-          
+        gap={'15em'}>
           <ChakraBox
           variants={projectContainer}
           initial={'hidden'}
@@ -67,16 +66,15 @@ const Projects = () => (
           viewport={{once: true}}>	
           <Grid templateColumns='repeat(2, 1fr)' gap={'10em'}>
             <Parallax 
-            offset={150}>
+            offset={180}>
               {verticalItem('0em')}
             </Parallax>
             <Parallax 
             offset={80}>
-              {verticalItem('25em')}
+              {verticalItem('30em')}
             </Parallax>
           </Grid>
           </ChakraBox>
-
           <ChakraBox
           variants={projectContainer}
           initial={'hidden'}
@@ -84,24 +82,19 @@ const Projects = () => (
           viewport={{once: true}}>	
           <Grid templateColumns='repeat(2, 1fr)' gap={'10em'}>
             <Parallax 
-            offset={150}>
-              {verticalItem('-15em')}
+            offset={180}>
+              {verticalItem('0em')}
             </Parallax>
             <Parallax 
             offset={80}>
-              {verticalItem('15em')}
+              {verticalItem('35em')}
             </Parallax>
           </Grid>
           </ChakraBox>
             {gitButton()}
-
         </Flex>
-        
-        
-      
-    </Container>
-    
-  );
+    </Container> 
+  )
 
 const verticalItem = (top) => { 
     return ( 

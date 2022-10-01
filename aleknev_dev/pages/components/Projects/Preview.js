@@ -22,7 +22,7 @@ import {
     shouldForwardProp
   } from '@chakra-ui/react';
 import { InfoOutlineIcon, WarningTwoIcon, ArrowForwardIcon } from '@chakra-ui/icons'
-import { pskillsItem, imageItem, skillsTextItem, previewContainer, item, skillsItem, pillItem } from '../Variants/Variants'
+import { pskillsItem, item, pillItem } from '../Variants/Variants'
 import { motion, isValidMotionProp } from "framer-motion";
 
 const ChakraBox = chakra(motion.div, {

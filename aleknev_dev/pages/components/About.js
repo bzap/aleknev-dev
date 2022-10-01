@@ -28,7 +28,7 @@ import {
 import { SiReact, SiChakraui, SiJavascript, SiPython } from 'react-icons/si';
 import { motion, useScroll, useTransform, isValidMotionProp } from "framer-motion";
 import Parallax from './layouts/Parallax';
-
+import { skillsContainer, subContainer, item, skillsItem, container } from './Variants/Variants';
 
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -163,7 +163,6 @@ const skillsInfo = () => {
 			as={motion.div}
 			whileHover={{ scale: 1.025 }}
 			colSpan={2}
-			
 			h={'35em'}
 			position='relative'
 			flex={1}
@@ -339,69 +338,6 @@ const pictureFrame = (top, left, bottom, right, url, ind, w, h) => {
 }
 
 
-// import these from another component later 
-
-const container = {
-	hidden: { opacity: 0, y:20 },
-	visible: {
-	  y:0,
-	  opacity: 1,
-	  transition: {
-		duration:0.3,
-		delayChildren: 0.3,
-		staggerChildren: 0.9
-	  }
-	}
-  } 
-
-const skillsContainer = {
-	hidden: { opacity: 0, y:20 },
-	visible: {
-	  y:0,
-	  opacity: 1,
-	  transition: {
-		duration:0.3,
-		delayChildren: 0.3,
-		staggerChildren: 0.4
-	  }
-	}
-  } 
-
-const subContainer = {
-  hidden: { opacity: 0, y:20 },
-  visible: {
-	y:0,
-	opacity: 1,
-	transition: {
-	  duration:0.5,
-	  delayChildren: 0.25,
-	  staggerChildren: 0.2
-	}
-  }
-}
-
-const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-	transition: {
-		duration:0.4
-	},
-	y: 0,
-	opacity: 1
-  }
-};
-
-const skillsItem = {
-	hidden: { opacity: 0 },
-	visible: {
-	  transition: {
-		  duration:0.7
-	  },
-	  opacity: 1,
-	  scale:[0.5, 1.02, 1]
-	}
-  };
-  
 
 
 //{stackedImage('45%', '30%', 'https://staticg.sportskeeda.com/editor/2022/02/af653-16442505538786-1920.jpg', 7, '11em', '11em')}
