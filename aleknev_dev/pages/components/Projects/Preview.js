@@ -19,8 +19,15 @@ import {
     GridItem,
     ButtonGroup,
     chakra,
+    shouldForwardProp
   } from '@chakra-ui/react';
 import { InfoOutlineIcon, WarningTwoIcon, ArrowForwardIcon } from '@chakra-ui/icons'
+import { pskillsItem, imageItem, skillsTextItem, previewContainer, item, skillsItem, pillItem } from '../Variants/Variants'
+import { motion, isValidMotionProp } from "framer-motion";
+
+const ChakraBox = chakra(motion.div, {
+    shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
+  });
 
 
 const Preview = () => (
@@ -37,7 +44,10 @@ const Preview = () => (
             px={10}
             pt={7}
             spacing={-1}>
-            {projectTitle('GONI-GO')}
+            <ChakraBox
+            variants={item}>
+                {projectTitle('GONI-GO')}
+            </ChakraBox>
             <Grid templateColumns='repeat(4, 1fr)' gap={3}>
                 <GridItem> 
                     <div>{projectSkill('React')}</div>
@@ -56,24 +66,29 @@ const Preview = () => (
         <Stack
             px={10}
             pb={10}>
-            <Divider orientation='horizontal' pt={3}/>
-            <Center>
+            <ChakraBox
+            variants={item}>
+                <Divider orientation='horizontal' pt={3}/>
+                <Center>
                     {projectDesc('This is a temporary description before I set it up to look nice and do things. This line is way too long and will be fixed when I introduce some JSON data.')}
                 </Center>
-                <ButtonGroup 
-                    flex={1}
-                    alignContent={'center'}
-                    size='sm'
-                    bg='white'
-                    isAttached
-                    boxShadow={'lg'}
-                    borderRadius={'20px'}
-                    > 
-                        {projectButton('Details', 'temp', <InfoOutlineIcon/>)}      
-                        {projectButton('Demo', 'temp', <WarningTwoIcon/>)}   
-                </ButtonGroup>
+            </ChakraBox>
+            <ButtonGroup 
+                as={motion.div}
+                variants={pillItem}
+                flex={1}
+                alignContent={'center'}
+                size='sm'
+                bg='white'
+                isAttached
+                boxShadow={'lg'}
+                borderRadius={'20px'}> 
+                    {projectButton('Details', 'temp', <InfoOutlineIcon/>)}      
+                    {projectButton('Demo', 'temp', <WarningTwoIcon/>)}   
+            </ButtonGroup>
         </Stack>
     </Stack>
+
 )
 
 
@@ -85,8 +100,7 @@ const projectImages = (props) => {
             top={32}
             fit={'background'}
             boxShadow={'lg'}
-            src={props}
-      />
+            src={props}/>
     )
 }
 
@@ -105,22 +119,25 @@ const projectTitle = (props) => {
 const projectSkill = (props) => {
     // make this map from a future json object 
     return (
-        <Box
-            minW={'4em'}
-            p={'1px'}
-            bg='gray.600' 
-            boxShadow={'lg'} 
-            borderRadius={'22px'}
-            textColor={'white'}         
-            >
-            <Center
-            p={'4px'}
-            textColor={'white'}
-            fontSize={'10'}
-            fontWeight={'600'}>
-            {props}
-            </Center>
-        </Box>     
+        <ChakraBox
+        variants={pskillsItem}>
+            <Box
+                minW={'4em'}
+                p={'1px'}
+                bg='gray.600' 
+                boxShadow={'lg'} 
+                borderRadius={'22px'}
+                textColor={'white'}         
+                >
+                <Center
+                p={'4px'}
+                textColor={'white'}
+                fontSize={'10'}
+                fontWeight={'600'}>
+                {props}
+                </Center>
+            </Box>  
+        </ChakraBox>   
     )
 }
 

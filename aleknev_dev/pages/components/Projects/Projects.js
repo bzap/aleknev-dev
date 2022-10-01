@@ -23,6 +23,7 @@ import Preview from './Preview'
 import { motion, isValidMotionProp } from "framer-motion";
 import Parallax from '../layouts/Parallax';
 import { SiGithub  } from 'react-icons/si';
+import { projectContainer, projectSubContainer, skillsContainer, item, skillsItem, projectItem } from '../Variants/Variants'
 
 
 const ChakraBox = chakra(motion.div, {
@@ -52,34 +53,64 @@ const Projects = () => (
         id='1' 
         px={'10em'}
         py={'10em'}
-        pb={'20em'}>
-        <Grid templateColumns='repeat(2, 1fr)' gap={'10em'}>
-          <Parallax offset={150}>
-            {verticalItem('0%')}
-          </Parallax>
-          <Parallax offset={80}>
-            {verticalItem('40%')}
-          </Parallax>
-          <Parallax offset={150}>
-            {verticalItem('-20%')}
+        pb={'20em'}>		
+
+
+        <Flex
+        direction='column'
+        gap={'20em'}>
+          
+          <ChakraBox
+          variants={projectContainer}
+          initial={'hidden'}
+          whileInView={'visible'}
+          viewport={{once: true}}>	
+          <Grid templateColumns='repeat(2, 1fr)' gap={'10em'}>
+            <Parallax 
+            offset={150}>
+              {verticalItem('0em')}
             </Parallax>
-          <Parallax offset={80}>
-            {verticalItem('40%')}
-          </Parallax>
+            <Parallax 
+            offset={80}>
+              {verticalItem('25em')}
+            </Parallax>
+          </Grid>
+          </ChakraBox>
+
+          <ChakraBox
+          variants={projectContainer}
+          initial={'hidden'}
+          whileInView={'visible'}
+          viewport={{once: true}}>	
+          <Grid templateColumns='repeat(2, 1fr)' gap={'10em'}>
+            <Parallax 
+            offset={150}>
+              {verticalItem('-15em')}
+            </Parallax>
+            <Parallax 
+            offset={80}>
+              {verticalItem('15em')}
+            </Parallax>
+          </Grid>
+          </ChakraBox>
             {gitButton()}
-        </Grid>
+
+        </Flex>
+        
+        
+      
     </Container>
+    
   );
 
-const verticalItem = (top, left) => { 
+const verticalItem = (top) => { 
     return ( 
+      <ChakraBox
+        variants={projectSubContainer}>
         <GridItem 
             as={motion.div}
             whileHover={{ scale: 1.025 }}
-            initial={'offscreen'}
-            whileInView={'onscreen'}
             viewport={{once:true, amount:0.8}}
-            variants={cardVariants}
             flex={1}
             position='relative'
             justifyContent={'flex-start'}
@@ -89,7 +120,8 @@ const verticalItem = (top, left) => {
             boxShadow={'lg'} 
             borderRadius={'25px'} >
             <Preview/>
-        </GridItem>        
+        </GridItem>     
+        </ChakraBox> 
     )
 }
 
