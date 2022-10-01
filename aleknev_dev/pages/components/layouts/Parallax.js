@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect, ReactNode } from 'react'
+import { useState, useRef, useEffect, ReactNode } from 'react'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 
 const Parallax = ({ children, offset }) => {
@@ -15,7 +15,7 @@ const Parallax = ({ children, offset }) => {
 							stiffness: 400, 
 							damping: 70 
 						})
-	useLayoutEffect(() => {
+	useEffect(() => {
 	  const current = ref.current
 	  const onResize = () => {
 		setTop(current.getBoundingClientRect().top + window.scrollY || window.pageYOffset)
