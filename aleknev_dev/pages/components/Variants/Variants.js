@@ -141,7 +141,7 @@ export const gitItem = {
 
 export const aboutBar = {
 	active: {
-		backgroundColor: "#EAEAF2",
+		backgroundColor: "#E4E4EA",
 		transition: { duration: 0.7 }
 
 	},
@@ -203,7 +203,7 @@ export const projBG = {
 
 export const aboutBG = {
 	active: {
-		backgroundColor: "#EEEEF4",
+		backgroundColor: "#E9E9F0",
 		transition: { duration: 0.7 }
 		
 	},

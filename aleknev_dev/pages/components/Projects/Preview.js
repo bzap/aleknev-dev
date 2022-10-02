@@ -42,7 +42,7 @@ const Preview = () => (
         </Stack>
         <Stack
             px={10}
-            pt={7}
+            pt={2}
             spacing={-1}>
             <ChakraBox
             variants={item}>
@@ -108,7 +108,7 @@ const projectTitle = (props) => {
     return ( 
         <Text
             pt='2'
-            fontSize={'2.5em'}
+            fontSize={35}
             fontWeight={'bold'}> 
             {props} 
         </Text>

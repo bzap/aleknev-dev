@@ -149,10 +149,11 @@ const selfPortrait = () => {
 			colSpan={2}
 			flex={1}
 			w={'25em'}
-			justifyContent={'flex-end'} >
-				<Center>
+			justifyContent={'center'} >
+				<Flex
+				align={'center'}>
 					{pictureFrame('0%', '0%', '0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
-				</Center>
+				</Flex>
 		</GridItem>
 	)
 }
@@ -190,7 +191,7 @@ const placeholderText = () => {
 				<Heading>
 					<Text
 						pb='2'
-						fontSize={'1em'}
+						fontSize={30}
 						fontWeight={'bold'}> 
 						&#x2192;&#8201;&#x2192;
 					</Text>
@@ -203,7 +204,7 @@ const placeholderText = () => {
 				variants={item}
 				pt={'5'}
 				as={'p'}
-				fontSize={16}
+				fontSize={15}
 				fontWeight={'500'}>
 				I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree. <br/><br/> 
 				My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.   
@@ -228,7 +229,7 @@ const skillText = () => {
 				<Heading>
 					<Text
 						pb='2'
-						fontSize={'1em'}
+						fontSize={30}
 						fontWeight={'bold'}> 
 						SKILLS
 					</Text>
@@ -238,7 +239,7 @@ const skillText = () => {
 				<ChakraBox
 				variants={item}>
 				<Text
-					fontSize={16}
+					fontSize={15}
 					pt={'5'}
 					pb={'8'}
 					as={'p'}
@@ -296,6 +297,7 @@ const skillItem = (name, ic) => {
 			direction={'row'}>
 				<ListIcon as={ic} color='black.500' />
 				<Text
+					fontSize={15}
 					fontWeight={'bold'}>
 					&thinsp;{name}
 				</Text>

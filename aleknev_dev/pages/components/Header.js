@@ -43,16 +43,16 @@ const Header = ({pos}) => {
 				boxShadow={'lg'}
 				borderRadius={'20px'}
 				bg='whiteAlpha.800'
+	
 				>
 				<Box
-					p={4}
+					p={8}
 					py={{ base: '1em', md: '1em' }}>
 					<Flex
 						align={'center'}
 						justifyContent={'space-between'}
 						direction={{ base: 'column', md: 'row' }}>
 						<Link 
-							
 							to={'home'} 
 							spy={true} 
 							smooth={true} 
@@ -99,8 +99,8 @@ const scrollBehaviour = (pos) => {
 				duration: 0.2
 			}}
 			fontWeight={'bold'}
-			fontSize={'1em'}>
-				&thinsp;MORE ON MYSELF
+			fontSize={30}>
+				MORE ON MYSELF
 			</ChakraBox>)}
 			{pos.views.projView && (
 			<ChakraBox
@@ -111,8 +111,8 @@ const scrollBehaviour = (pos) => {
 				duration: 0.2
 			}}
 			fontWeight={'bold'}
-			fontSize={'1em'}>
-				&thinsp;THINGS I'VE MADE
+			fontSize={30}>
+				THINGS I'VE MADE
 			</ChakraBox>)}
 			{pos.views.contactView && (
 			<ChakraBox
@@ -123,8 +123,8 @@ const scrollBehaviour = (pos) => {
 				duration: 0.2
 			}}
 			fontWeight={'bold'}
-			fontSize={'1em'}>
-				&thinsp;REACH OUT!
+			fontSize={30}>
+				REACH OUT!
 			</ChakraBox>)}
 		</ChakraBox>
 		{pos.views.homeView  && (
@@ -134,8 +134,9 @@ const scrollBehaviour = (pos) => {
 		whileHover={{scale:1.1}}
 		whileTap={{scale:0.9}}
 		position={'absolute'}>								
-			<Text>
-				&thinsp;&lt;home&gt;
+			<Text
+			fontSize={30}>
+				&lt;home&gt;
 			</Text>
 		</ChakraBox> )}
 		{pos.views.heroView && (
@@ -148,8 +149,9 @@ const scrollBehaviour = (pos) => {
 		}}
 		whileHover={{scaleX:1.1, scaleY:1.1}}
 		whileTap={{scale:0.98}}>
-			<Text>
-				&thinsp;&lt;aleknev&gt;
+			<Text
+			fontSize={35}>
+				&lt;aleknev&gt;
 			</Text>
 		</ChakraBox>)}
 	</Flex>
