@@ -32,6 +32,9 @@ const Header = ({pos}) => {
 					ease: "easeInOut",
 					delay: 0.2,
 				}}
+			
+				backdropFilter='auto' 
+				backdropBlur='8px'
 				justifyContent={'center'} 
 				maxW={'6xl'} 
 				position='fixed' 
@@ -39,7 +42,7 @@ const Header = ({pos}) => {
 				width={'100%'}
 				boxShadow={'lg'}
 				borderRadius={'20px'}
-				bg='white'
+				bg='whiteAlpha.800'
 				>
 				<Box
 					p={4}

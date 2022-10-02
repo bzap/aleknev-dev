@@ -188,7 +188,6 @@ const forwardGrid = (pos) => {
 	)
 }
 
-
 const forwardLine = (pos) => {
 	return ( 
 		<ChakraBox
@@ -206,10 +205,5 @@ const forwardLine = (pos) => {
 		</ChakraBox>
 	)
 }
-
-
-
-
-
 
 export default Stripesv2

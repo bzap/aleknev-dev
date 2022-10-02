@@ -85,8 +85,7 @@ const AnimatedTabs = ({pos}) => {
 										onClick={() => 
 													{setSelectedTab(item)
 													setPressed(true)
-													setCurrItem(item)
-													console.log(idx)}}>
+													setCurrItem(item)}}>
 										{item === selectedTab ? (
 										<Button
 											borderRadius='15'
@@ -117,12 +116,12 @@ const AnimatedTabs = ({pos}) => {
 												initial={{opacity:0}}
 												animate={{opacity:1}}
 												exit={{opacity:0}}	
-												
-														
-												bg='gray.100'
+												bg='whiteAlpha.900'
 												h={'2.5em'}
-												w={'9%'}
+												w={'10%'}
 												borderRadius='15'
+												borderWidth={'1px'}
+												borderColor={'blackAlpha.50'}
 												boxShadow={'lg'}/>
 												) : (
 													null
