@@ -139,10 +139,11 @@ export const gitItem = {
   }
 
 
-
 export const aboutBar = {
 	active: {
-		backgroundColor: "#f2eef7"
+		backgroundColor: "#EAEAF2",
+		transition: { duration: 0.7 }
+
 	},
 	inactive: {
 	  transition: { duration: 0.2 }
@@ -150,15 +151,17 @@ export const aboutBar = {
 }
 export const heroBar = {
 	active: {
-		backgroundColor: "#e8edf3"
+		backgroundColor: "#EEEEEE",
+		transition: { duration: 0.7 }
 	},
 	inactive: {
-	  transition: { duration: 0.2 }
+	  transition: { duration: 0.1 }
 	}
 }
 export const projBar = {
 	active: {
-		backgroundColor: "#339b43"
+		backgroundColor: "#e8edf3",
+		transition: { duration: 0.7 }
 	},
 	inactive: {
 	  transition: { duration: 0.2 }
@@ -167,7 +170,8 @@ export const projBar = {
 
 export const contactBar = {
 	active: {
-		backgroundColor: "#9b6133"
+		backgroundColor: "#E7EEE9",
+		transition: { duration: 0.7 }
 	},
 	inactive: {
 	  transition: { duration: 0.2 }
@@ -176,7 +180,8 @@ export const contactBar = {
 
 export const contactBG = {
 	active: {
-		backgroundColor: "#9b9533"
+		backgroundColor: "#EDF2F0",
+		transition: { duration: 0.7 }
 	},
 	inactive: {
 	
@@ -186,7 +191,8 @@ export const contactBG = {
 
 export const projBG = {
 	active: {
-		backgroundColor: "#33879b"
+		backgroundColor: "#edf2f8",
+		transition: { duration: 0.7 }
 	},
 	inactive: {
 	
@@ -197,7 +203,9 @@ export const projBG = {
 
 export const aboutBG = {
 	active: {
-		backgroundColor: "#08ae86"
+		backgroundColor: "#EEEEF4",
+		transition: { duration: 0.7 }
+		
 	},
 	inactive: {
 	
@@ -206,7 +214,8 @@ export const aboutBG = {
 }
 export const heroBG = {
 	active: {
-		backgroundColor: "#edf2f8"
+		backgroundColor: "#F2F2F2",
+		transition: { duration: 0.7 }
 	},
 	inactive: {
 	  transition: { duration: 0.2 }

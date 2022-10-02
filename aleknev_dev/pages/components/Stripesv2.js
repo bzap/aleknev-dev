@@ -27,10 +27,6 @@ const ChakraBox = chakra(motion.div, {
   });
 
 
-
-
-
-
 const Stripesv2 = ({pos}) => {
 	return ( 
 		<ChakraBox
@@ -51,9 +47,8 @@ const Stripesv2 = ({pos}) => {
 		</ChakraBox>
 
 	)
-
-
 }
+
 const bar = (barKey, pos) => { 
 	return ( 
 		<ChakraBox>
