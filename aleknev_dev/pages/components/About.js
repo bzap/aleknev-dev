@@ -30,6 +30,7 @@ import { motion, useScroll, useTransform, isValidMotionProp } from "framer-motio
 import Parallax from './layouts/Parallax';
 import { skillsContainer, subContainer, item, skillsItem, container } from './Variants/Variants';
 
+
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
   });
@@ -66,18 +67,34 @@ const About = () => {
 				direction='row'
 				gap={'6em'}>
 						<ChakraBox
+						zIndex={1}
 						variants={subContainer}>
 							<Parallax offset={90}>
 								{backgroundInfo()}
 							</Parallax>
 						</ChakraBox>
 						<ChakraBox
+
 						variants={subContainer}>
 							<Parallax offset={160}>
-								<Flex
-									pt={'25%'}>
-										{selfPortrait()}
-								</Flex>
+								<Grid
+								templateColumns={'repeat 2, 1fr'}
+								position='relative'>
+									<GridItem
+									zIndex={0}>
+										<Image
+										boxSize={'xl'}
+										pr={'1.5em'}
+										pb={'0.5em'}
+										transform={'scale(1.8)'}
+										position='absolute'
+										borderRadius='full'
+										src='/blob8.svg'
+										/>
+									</GridItem>
+
+									{selfPortrait()}
+								</Grid>
 							</Parallax>
 						</ChakraBox>
 
@@ -149,12 +166,10 @@ const selfPortrait = () => {
 			colSpan={2}
 			flex={1}
 			w={'25em'}
-			justifyContent={'center'} >
-				<Flex
-				align={'center'}>
+			position='{absolute}'
+			filter={'hue-rotate(340deg) saturate(50%)'}>
 					{pictureFrame('0%', '0%', '0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
-				</Flex>
-		</GridItem>
+			</GridItem>
 	)
 }
 
@@ -313,14 +328,12 @@ const pictureFrame = (top, left, bottom, right, url, ind, w, h) => {
 				whileHover={{ scale: 1.025 }}
 				flex={1}
 				position={'relative'}>
-				<Stack  
+				<Flex  
 					overflow={'hidden'}
-					direction={'column'}
-					h={'35em'}
-					>
+					h={'30em'}>
 				<Image
 					borderRadius={'20px'}
-					boxShadow={'2xl'}
+					boxShadow={'xl'}
 					borderWidth={'5em'}
 					zIndex={ind}
 					w={w}
@@ -333,7 +346,7 @@ const pictureFrame = (top, left, bottom, right, url, ind, w, h) => {
 					fit={'cover'}
 					align={'center'}
 					src={url}/>
-				</Stack>
+				</Flex>
 			</Flex>
 	)
 	
