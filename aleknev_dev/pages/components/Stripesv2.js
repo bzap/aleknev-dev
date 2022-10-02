@@ -18,7 +18,8 @@ import {
 	useColorModeValue,
 	shouldForwardProp
   } from '@chakra-ui/react';
-import { motion, isValidMotionProp } from "framer-motion";
+import { motion, isValidMotionProp, useTransform, useMotionValue } from "framer-motion";
+import {aboutBar, projBar, heroBar, contactBar, aboutBG, projBG, contactBG, heroBG } from './Variants/Variants'
 
 
 const ChakraBox = chakra(motion.div, {
@@ -26,66 +27,130 @@ const ChakraBox = chakra(motion.div, {
   });
 
 
-const Stripesv2 = () => ( 
-	<Center
-	maxW={'container'}
-	w={'100vw'}
-	h={'100vh'}
-	left={0}
-	position={'fixed'}
-	overflow={'hidden'}>
+
+
+
+
+const Stripesv2 = ({pos}) => {
+	return ( 
+		<ChakraBox
+		maxW={'container'}
+		w={'100vw'}
+		h={'100vh'}
+		left={0}
+		variants={pos.heroView ? heroBG : pos.aboutView ? aboutBG : pos.projView ? projBG : contactBG}
+		animate={'active'}
+		top={0}
+		transition={{duration:2}}
+		bg={'#edf2f8'}
+		position={'fixed'}
+		overflow={'hidden'}>
+			<Center>
+				{entireGrid(pos)}
+			</Center>
+		</ChakraBox>
+
+	)
+
+
+}
+const bar = (barKey, pos) => { 
+	return ( 
+		<ChakraBox>
+		{pos.aboutView && 
+		(
+			<ChakraBox	
+			variants={aboutBar}	
+			key={barKey}
+			animate={'active'}
+			h={'20px'}
+			w={'20em'}
+			borderRadius={'18px'}
+			bg='#e8edf3'/>
+		)}
+		{pos.heroView && 
+		(
+			<ChakraBox	
+			variants={heroBar}	
+			key={barKey}
+			animate={'active'}
+			h={'20px'}
+			w={'20em'}
+			borderRadius={'18px'}
+			bg='#e8edf3'/>
+		)}
+		{pos.projView && 
+		(
+			<ChakraBox	
+			variants={projBar}	
+			key={barKey}
+			animate={'active'}
+			h={'20px'}
+			w={'20em'}
+			borderRadius={'18px'}
+			bg='#e8edf3'/>
+		)}
+		{pos.contactView && 
+		(
+			<ChakraBox	
+			variants={contactBar}	
+			key={barKey}
+			animate={'active'}
+			h={'20px'}
+			w={'20em'}
+			borderRadius={'18px'}
+			bg='#e8edf3'/>
+		)}
+		</ChakraBox>
+		
+	) 
+}
+
+const entireGrid = (pos) => { 
+	return ( 
 		<Grid
 		transform={'rotate(145deg)'}
 		gap={'15em'}
 		templateRows='repeat(auto-fill, 1fr)'>
-			{reverseGrid()}
-			{forwardGrid()}
-			{reverseGrid()}
-			{forwardGrid()}
-			{reverseGrid()}
-			{forwardGrid()}
-			{reverseGrid()}
-			{forwardGrid()}
-			{reverseGrid()}
-			{forwardGrid()}
-			{reverseGrid()}
-			{forwardGrid()}
-			{reverseGrid()}
-			{forwardGrid()}
-			{reverseGrid()}
-			{forwardGrid()}
-			{reverseGrid()}
-			{forwardGrid()}
+			{reverseGrid(pos)}
+			{forwardGrid(pos)}
+			{reverseGrid(pos)}
+			{forwardGrid(pos)}
+			{reverseGrid(pos)}
+			{forwardGrid(pos)}
+			{reverseGrid(pos)}
+			{forwardGrid(pos)}
+			{reverseGrid(pos)}
+			{forwardGrid(pos)}
+			{reverseGrid(pos)}
+			{forwardGrid(pos)}
+			{reverseGrid(pos)}
+			{forwardGrid(pos)}
+			{reverseGrid(pos)}
+			{forwardGrid(pos)}
+			{reverseGrid(pos)}
+			{forwardGrid(pos)}
 		</Grid>
-	</Center>
-  )
+	)
 
-const bar = (barKey) => { 
-	return ( 
-		<Box
-		key={barKey}
-		h={'20px'}
-		w={'20em'}
-		borderRadius={'18px'}
-		bg='#e8edf3'/>
-	) 
 }
 
-const reverseGrid = () => { 
+
+const reverseGrid = (pos) => { 
 	return ( 
 			<Stack>
 				<Flex
 				width={'200%'}
 				overflow={'hidden'}
 				left={0}>
-					{reverseLine()}
-					{reverseLine()}
+					{reverseLine(pos)}
+					{reverseLine(pos)}
 				</Flex>
 			</Stack>
 	)
 }
 
-const reverseLine = () => {
+const reverseLine = (pos) => {
 	return ( 
 		<ChakraBox
 		w={'50%'}
@@ -98,40 +163,38 @@ const reverseLine = () => {
 					duration:35,
 					ease:'linear'
 					}}>
-						{lineOfBars()}
+						{lineOfBars(pos)}
 		</ChakraBox>
 	)
 }
 
-const lineOfBars = () => { 
+const lineOfBars = (pos) => { 
 	return (
 		<Flex 
-		justify={'space-around'}
-		
-		>
+		justify={'space-around'}>
 			{[...Array(10)].map((item, idx) => (
-				bar(idx)
+				bar(idx, pos)
 			))}
 		</Flex> 
 	)
 }
 
-const forwardGrid = () => { 
+const forwardGrid = (pos) => { 
 	return ( 
 			<Stack>
 				<Flex
 				width={'200%'}
 				overflow={'hidden'}
 				left={0}>
-					{forwardLine()}
-					{forwardLine()}
+					{forwardLine(pos)}
+					{forwardLine(pos)}
 				</Flex>
 			</Stack>
 	)
 }
 
 
-const forwardLine = () => {
+const forwardLine = (pos) => {
 	return ( 
 		<ChakraBox
 		w={'50%'}
@@ -144,10 +207,14 @@ const forwardLine = () => {
 					duration:35,
 					ease:'linear'
 					}}>
-					{lineOfBars()}
+					{lineOfBars(pos)}
 		</ChakraBox>
 	)
 }
 
-// bg='#e8edf3'
+
+
+
+
+
 export default Stripesv2

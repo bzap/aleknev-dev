@@ -11,8 +11,7 @@ const Layout = ({ children, router }) => {
         width='100%' 
         margin='auto' 
         minH='100vh' 
-        bg='#edf2f8'> 
-            <Stripesv2/> 
+        > 
             <main>{children}</main> 
         </Container> 
     )   

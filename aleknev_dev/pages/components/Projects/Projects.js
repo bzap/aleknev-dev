@@ -54,8 +54,6 @@ const Projects = () => (
         px={'10em'}
         py={'10em'}
         pb={'20em'}>		
-
-
         <Flex
         direction='column'
         gap={'15em'}>
@@ -87,7 +85,7 @@ const Projects = () => (
             </Parallax>
             <Parallax 
             offset={80}>
-              {verticalItem('35em')}
+              {verticalItem('33em')}
             </Parallax>
           </Grid>
           </ChakraBox>
@@ -129,38 +127,6 @@ const gitButton = () => {
             top={'10em'}>
             <Flex
             direction={'column'}>
-                <ChakraBox
-                as={motion.div}
-                initial={{x:0}}
-                animate={{x:'90%'}}
-                transition={{
-                    type: 'tween',
-                    ease: 'easeInOut',
-                    repeat: Infinity,
-                    repeatType: 'reverse',
-                    duration: 2,
-                  }}>
-                    <Text
-                        position={'relative'}
-                        top={3}
-                        zIndex={8}
-                        fontSize={'2em'}
-                        fontWeight={'bold'}>
-                            &#x2192;&#x2192;     
-                    </Text>
-                </ChakraBox>
-                <Center
-                        as={motion.div}
-                        whileHover={{scale:1.1}}
-                        whileTap={{scale:1}}
-                        cursor={'pointer'}
-                        zIndex={8}
-                        transition={{ease:"linear", duration:2, repeat: Infinity}}
-                        width={'full'}
-                        fontSize={'1.8em'}
-                        fontWeight={'bold'}>
-                            MORE CODE HERE    
-                </Center>
                
                 <Flex
                 direction={'row'}>
