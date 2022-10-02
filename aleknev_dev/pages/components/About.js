@@ -57,15 +57,27 @@ const About = () => {
 		maxW={'7x1'}
 		direction={'column'}
 		gap={'7em'}>
+													<Image
+										boxSize={'xl'}
+										pl={'20em'}
+										pt={'5em'}
+										transform={'scale(3)'}
+										position='absolute'
+										borderRadius='full'
+										src='/blob8.svg'
+										backdropFilter='auto' 
+										filter={'blur(1px)'}z
+										/>
 			<ChakraBox
 			variants={container}
 			initial={'hidden'}
 			whileInView={'visible'}
 			viewport={{once: true}}>
+				
 				<Flex 
 				justifyContent={'center'}
 				direction='row'
-				gap={'6em'}>
+				gap={'4em'}>
 						<ChakraBox
 						zIndex={1}
 						variants={subContainer}>
@@ -82,15 +94,7 @@ const About = () => {
 								position='relative'>
 									<GridItem
 									zIndex={0}>
-										<Image
-										boxSize={'xl'}
-										pr={'1.5em'}
-										pb={'0.5em'}
-										transform={'scale(1.8)'}
-										position='absolute'
-										borderRadius='full'
-										src='/blob8.svg'
-										/>
+
 									</GridItem>
 
 									{selfPortrait()}
@@ -151,7 +155,9 @@ const backgroundInfo = () => {
 		flex={1}
 		justifyContent='center'
 		borderRadius={'20px'}
-		bg={'white'}
+		bg={'whiteAlpha.700'}
+		backdropFilter='auto' 
+		backdropBlur='8px'
 		boxShadow={'lg'}
 		p={6}
 		w='35em'>
@@ -167,7 +173,7 @@ const selfPortrait = () => {
 			flex={1}
 			w={'25em'}
 			position='{absolute}'
-			filter={'hue-rotate(340deg) saturate(50%)'}>
+			>
 					{pictureFrame('0%', '0%', '0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
 			</GridItem>
 	)
@@ -333,7 +339,7 @@ const pictureFrame = (top, left, bottom, right, url, ind, w, h) => {
 					h={'30em'}>
 				<Image
 					borderRadius={'20px'}
-					boxShadow={'xl'}
+					boxShadow={'2xl'}
 					borderWidth={'5em'}
 					zIndex={ind}
 					w={w}

@@ -51,7 +51,9 @@ const Stripesv2 = ({pos}) => {
 
 const bar = (barKey, pos) => { 
 	return ( 
-		<ChakraBox>
+		<ChakraBox
+		backdropFilter='auto' 
+		filter={'blur(7px)'}>
 		{pos.aboutView && 
 		(
 			<ChakraBox	
@@ -61,6 +63,7 @@ const bar = (barKey, pos) => {
 			h={'20px'}
 			w={'20em'}
 			borderRadius={'18px'}
+			
 			bg='#e8edf3'/>
 		)}
 		{pos.heroView && 
