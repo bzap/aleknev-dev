@@ -61,16 +61,10 @@ const Projects = () => (
           variants={projectContainer}
           initial={'hidden'}
           whileInView={'visible'}
-          viewport={{once: true}}>	
+          viewport={{once: false}}>	
           <Grid templateColumns='repeat(2, 1fr)' gap={'10em'}>
-            <Parallax 
-            offset={180}>
               {verticalItem('0em')}
-            </Parallax>
-            <Parallax 
-            offset={80}>
-              {verticalItem('30em')}
-            </Parallax>
+              {verticalItem('0em')}
           </Grid>
           </ChakraBox>
           <ChakraBox
@@ -79,14 +73,8 @@ const Projects = () => (
           whileInView={'visible'}
           viewport={{once: true}}>	
           <Grid templateColumns='repeat(2, 1fr)' gap={'10em'}>
-            <Parallax 
-            offset={180}>
               {verticalItem('0em')}
-            </Parallax>
-            <Parallax 
-            offset={80}>
-              {verticalItem('33em')}
-            </Parallax>
+              {verticalItem('0em')}
           </Grid>
           </ChakraBox>
             {gitButton()}
@@ -98,18 +86,30 @@ const verticalItem = (top) => {
     return ( 
       <ChakraBox
         variants={projectSubContainer}>
+            <Heading
+            fontSize={50}
+            pl={3}>
+              01
+            </Heading>
+            <Heading
+            pb={5}
+            pl={3}>
+            &#x5f;
+            </Heading>
         <GridItem 
             as={motion.div}
             whileHover={{ scale: 1.025 }}
             viewport={{once:true, amount:0.8}}
             flex={1}
             position='relative'
+            h='30em'
             justifyContent={'flex-start'}
-            w='100%' 
+            w='22em' 
             top={top}
-            bg='white' 
-            boxShadow={'lg'} 
-            borderRadius={'25px'} >
+            bg='whiteAlpha.600' 
+            boxShadow={'md'} 
+            borderRadius={'30px'} >
+
             <Preview/>
         </GridItem>     
         </ChakraBox> 

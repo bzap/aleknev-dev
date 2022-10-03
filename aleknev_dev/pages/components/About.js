@@ -57,17 +57,7 @@ const About = () => {
 		maxW={'7x1'}
 		direction={'column'}
 		gap={'7em'}>
-													<Image
-										boxSize={'xl'}
-										pl={'20em'}
-										pt={'5em'}
-										transform={'scale(3)'}
-										position='absolute'
-										borderRadius='full'
-										src='/blob8.svg'
-										backdropFilter='auto' 
-										filter={'blur(1px)'}z
-										/>
+					
 			<ChakraBox
 			variants={container}
 			initial={'hidden'}
@@ -81,9 +71,7 @@ const About = () => {
 						<ChakraBox
 						zIndex={1}
 						variants={subContainer}>
-							<Parallax offset={90}>
 								{backgroundInfo()}
-							</Parallax>
 						</ChakraBox>
 						<ChakraBox
 

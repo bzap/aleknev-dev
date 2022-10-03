@@ -18,6 +18,7 @@ import {
     Grid, 
     GridItem,
     ButtonGroup,
+    Spacer,
     chakra,
     shouldForwardProp
   } from '@chakra-ui/react';
@@ -33,59 +34,46 @@ const ChakraBox = chakra(motion.div, {
 const Preview = () => (
     <Stack 
         maxW={'7x1'}>
-        <Stack
+        <Flex
+            justifyContent={'center'}
             flexShrink={1}
-            h={'13em'}
-            overflow={'hidden'}
-            boxShadow={'lg'}>
-            {projectImages('https://raw.githubusercontent.com/bzap/amazon_review_data/master/ss.png?token=GHSAT0AAAAAABZBXH62PJFSQM5UXV25ZXCCYZLQFBQ')}
-        </Stack>
+            overflow='hidden'
+           >
+            {projectImages('https://i.pinimg.com/564x/af/26/42/af2642d7d8ed1d60959f0825e545d92c.jpg')}
+        </Flex>
         <Stack
-            px={10}
-            pt={2}
+            px={7}
+            pt={4}
             spacing={-1}>
             <ChakraBox
             variants={item}>
                 {projectTitle('GONI-GO')}
             </ChakraBox>
-            <Grid templateColumns='repeat(4, 1fr)' gap={3}>
-                <GridItem> 
+            <Flex>
                     <div>{projectSkill('React')}</div>
-                </GridItem>
-                <GridItem> 
+                    <Spacer/>
                     <div>{projectSkill('Angular')}</div>
-                </GridItem>
-                <GridItem> 
+                    <Spacer/>
                     <div>{projectSkill('JS')}</div>
-                </GridItem>
-                <GridItem>
+                    <Spacer/>
                     <div>{projectSkill('Python')}</div>
-                </GridItem>
-            </Grid>
+            </Flex>
         </Stack> 
         <Stack
-            px={10}
-            pb={10}>
+            pb={5}
+            px={7}>
             <ChakraBox
             variants={item}>
-                <Divider orientation='horizontal' pt={3}/>
                 <Center>
                     {projectDesc('This is a temporary description before I set it up to look nice and do things. This line is way too long and will be fixed when I introduce some JSON data.')}
                 </Center>
             </ChakraBox>
-            <ButtonGroup 
-                as={motion.div}
-                variants={pillItem}
-                flex={1}
-                alignContent={'center'}
-                size='sm'
-                bg='white'
-                isAttached
-                boxShadow={'lg'}
-                borderRadius={'20px'}> 
-                    {projectButton('Details', 'temp', <InfoOutlineIcon/>)}      
-                    {projectButton('Demo', 'temp', <WarningTwoIcon/>)}   
-            </ButtonGroup>
+            <Flex>
+            {projectButton('Learn More', 'temp', <InfoOutlineIcon/>)}  
+            <Spacer/>    
+            {projectButton('Try it out', 'temp', <WarningTwoIcon/>)}   
+            </Flex>
+
         </Stack>
     </Stack>
 
@@ -96,10 +84,12 @@ const projectImages = (props) => {
     return (
         <Image
             align={'center'}
-            borderTopRadius={'20'}
-            top={32}
+            borderTopRadius={'25px'}
+            h={'12em'}
+            w={'full'}
+
+            
             fit={'background'}
-            boxShadow={'lg'}
             src={props}/>
     )
 }
@@ -107,7 +97,6 @@ const projectImages = (props) => {
 const projectTitle = (props) => { 
     return ( 
         <Text
-            pt='2'
             fontSize={35}
             fontWeight={'bold'}> 
             {props} 
@@ -120,23 +109,15 @@ const projectSkill = (props) => {
     // make this map from a future json object 
     return (
         <ChakraBox
+        px={1}
         variants={pskillsItem}>
-            <Box
-                minW={'4em'}
-                p={'1px'}
-                bg='gray.600' 
-                boxShadow={'lg'} 
-                borderRadius={'22px'}
-                textColor={'white'}         
-                >
-                <Center
-                p={'4px'}
-                textColor={'white'}
+                <Flex
+                textColor={'blackAlpha.800'}
                 fontSize={'10'}
-                fontWeight={'600'}>
+                fontWeight={'bold'}>
                 {props}
-                </Center>
-            </Box>  
+                </Flex>
+        
         </ChakraBox>   
     )
 }
@@ -144,11 +125,11 @@ const projectSkill = (props) => {
 const projectDesc = (props) => { 
     return ( 
         <Text 
-            py={'4'}
-            px={'1'}
+            py={2}
+            
             as='p'
-            fontSize={'15'}
-            fontWeight={'500'}
+            fontSize={'14'}
+            fontWeight={'600'}
             color={'gray.500'}>  
             {props}
         </Text>
@@ -158,14 +139,18 @@ const projectDesc = (props) => {
 
 const projectButton = (name, link, icon) => { 
     return (
-    <Button 
-        flex={1}
-        color='Gray' 
-        textColor={'Black'}
-        rightIcon={icon}
-        borderRadius={'20px'}>
-        {name}
-        </Button>
+        <Flex 
+        pt={3}
+        justifyContent={'flex-end'}
+            flex={1}
+            colorScheme={'white'}
+            textColor={'Black'}
+            fontWeight={'bold'}
+            whiteSpace={'nowrap'}
+            fontSize={15}>
+                {name}&#160;&gt;
+            
+        </Flex>
     )
 
 }
