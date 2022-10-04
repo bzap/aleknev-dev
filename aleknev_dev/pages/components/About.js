@@ -48,24 +48,19 @@ const About = () => {
 	
 	<Container 
 		position={'relative'}
-		maxW={'7xl'} 
+		maxW={'9xl'} 
+		px={'10em'}
 		w={'100%'} 
 		id='0' 
 		pt='10em'
 		pb='40em'>
 		<Flex
-		maxW={'7x1'}
 		direction={'column'}
 		gap={'7em'}>
 			<Flex
 				pb={'5em'}
-				gap={2}
-						
+				gap={2}	
 				direction='column'>
-						<Heading
-						fontSize={'7em'}> 
-							About
-						</Heading>
 						<Text
 						w={'30em'}
 						fontSize={'1.5em'}
@@ -78,35 +73,83 @@ const About = () => {
 			initial={'hidden'}
 			whileInView={'visible'}
 			viewport={{once: true}}>
-				
-				<Flex 
+			
+							<Heading
+							as={'p'}
+							
+							writing-mode={'tb-rl'}
+							sx={{ 'writing-mode': 'vertical-lr',transform:'scale(-1)'  }}
+							fontSize={'7em'}> 
+								---- About
+							</Heading>
+					
+				<Grid
+				templateColumns={'repeat(5, 1fr)'}
+				templateRows={'repeat(2, 1fr)'}
 				justifyContent={'center'}
-				direction='row'
-				gap={'4em'}>
-						<ChakraBox
-						zIndex={1}
-						variants={subContainer}>
-								{backgroundInfo()}
-						</ChakraBox>
-						<ChakraBox
+				h='200px'
+				gap={'4'}>
 
-						variants={subContainer}>
-							<Parallax offset={160}>
-								<Grid
-								templateColumns={'repeat 2, 1fr'}
-								position='relative'>
-									<GridItem
-									zIndex={0}>
 
-									</GridItem>
+						<GridItem
+						colSpan={2}
+						rowSpan={1}
+						bg='red.100'>
+							<ChakraBox
+							zIndex={1}
+							variants={subContainer}>
+									{backgroundInfo()}
+							</ChakraBox>
+						</GridItem>
 
-									{selfPortrait()}
-								</Grid>
-							</Parallax>
-						</ChakraBox>
 
-				</Flex>
+						<GridItem
+						bg='blue'
+						colspan={2}
+						rowSpan={1}>
+						<Flex
+						bg='blue'
+							as={motion.div}
+							whileHover={{ scale: 1.025 }}
+							flex={1}
+							position={'relative'}
+>
+							<Flex  
+								overflow={'hidden'}>
+							<Image
+								borderRadius={'12px'}
+								boxShadow={'md'}
+								borderWidth={'5em'}
+
+
+								src={'https://i.imgur.com/7R4gnAa.jpg'}/>
+							</Flex>
+						</Flex>
+						</GridItem>
+
+
+
+
+						<GridItem
+						rowSpan={2}>
+							<ChakraBox
+							variants={subContainer}>
+
+										{selfPortrait()}
+							</ChakraBox>
+						</GridItem>
+
+
+
+				</Grid>
+
+
+
+				
 			</ChakraBox>
+
+
+
 			<ChakraBox
 			variants={skillsContainer}
 			initial={'hidden'}
@@ -120,13 +163,7 @@ const About = () => {
 						w={'40%'}
 						templateColumns='repeat(2, 1fr)'
 						gap={'3em'}>
-						<ChakraBox
-						variants={subContainer}>
-							<Parallax
-							offset={240}>
-								{pictureFrame('', '', '20%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', '20em')}		
-							</Parallax>
-						</ChakraBox>
+
 						<ChakraBox
 						variants={subContainer}>
 							<Parallax
@@ -152,33 +189,22 @@ const About = () => {
 
 const backgroundInfo = () => { 
 	return ( 
-		<GridItem 
+		<Flex 
 		as={motion.div}
 		whileHover={{ scale: 1.025 }}
-		flex={1}
-		justifyContent='center'
-		borderRadius={'20px'}
-		bg={'whiteAlpha.700'}
-		backdropFilter='auto' 
-		backdropBlur='8px'
-		boxShadow={'lg'}
-		p={6}
-		w='35em'>
+		justifyContent='center'>
 			{placeholderText()}
-		</GridItem>
+		</Flex>
 	)
 }
 
 const selfPortrait = () => { 
 	return ( 
-			<GridItem 
-			colSpan={2}
+			<Flex
 			flex={1}
-			w={'25em'}
-			position='{absolute}'
-			>
+			w={'25em'}>
 					{pictureFrame('0%', '0%', '0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
-			</GridItem>
+			</Flex>
 	)
 }
 
@@ -208,22 +234,9 @@ const skillsInfo = () => {
 const placeholderText = () => { 
 	return (
 		<Flex
-		direction={'column'}
-		p={6}>
+		direction={'column'}>
 			<ChakraBox
 			variants={item}>
-				<Heading>
-					<Text
-						pb='2'
-						fontSize={30}
-						fontWeight={'bold'}> 
-						&#x2192;&#8201;&#x2192;
-					</Text>
-				</Heading>
-			</ChakraBox>
-			<ChakraBox
-			variants={item}>
-			<Divider orientation={'horizontal'}/>
 			<Text
 				variants={item}
 				pt={'5'}
@@ -339,10 +352,10 @@ const pictureFrame = (top, left, bottom, right, url, ind, w, h) => {
 				position={'relative'}>
 				<Flex  
 					overflow={'hidden'}
-					h={'30em'}>
+					h={'50em'}>
 				<Image
-					borderRadius={'20px'}
-					boxShadow={'2xl'}
+					borderRadius={'12px'}
+					boxShadow={'md'}
 					borderWidth={'5em'}
 					zIndex={ind}
 					w={w}

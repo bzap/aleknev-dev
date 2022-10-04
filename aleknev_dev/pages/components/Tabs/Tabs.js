@@ -85,14 +85,29 @@ const AnimatedTabs = ({pos}) => {
 										onClick={() => 
 													{setSelectedTab(item)
 													setPressed(true)
+													// use an onclick approach where it changes to white on press
 													setCurrItem(item)}}>
+
+										
 										{item === selectedTab ? (
 											<Center>
+												<ChakraBox
+												as={motion.div}
+												initial={{color:'black'}}
+												animate={{color:'white'}}
+												transition={{
+														delay: 1
+													}}>
+												
 												<Text 
+												position={'relative'}
+												zIndex={1}
 												fontWeight={'600'}
-												color={!pos.views.heroView ? 'white' : 'black'}>
+												color={'black'}>
 													{item.label}
 												</Text>
+												</ChakraBox>
+
 											</Center>
 										) : (
 											<Center>
@@ -107,7 +122,7 @@ const AnimatedTabs = ({pos}) => {
 										{item === selectedTab && !pos.views.heroView ? (
 												<ChakraBox
 												as={motion.div}
-												zIndex={1}
+												zIndex={0}
 												layout
 												key='overlayBox'
 												position={'absolute'}
@@ -117,11 +132,11 @@ const AnimatedTabs = ({pos}) => {
 												exit={{opacity:0}}	
 												bg='blackAlpha.800'
 												h={'2.5em'}
-												w={'10%'}
+												w={'6%'}
 												borderRadius='15'
 												borderWidth={'1px'}
-												borderColor={'blackAlpha.50'}
-												boxShadow={'md'}>
+												borderColor={'gray.500'}
+												boxShadow={'lg'}>
 												</ChakraBox>
 												) : (
 													null
