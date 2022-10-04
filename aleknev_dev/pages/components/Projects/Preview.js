@@ -98,7 +98,7 @@ const projectTitle = (props) => {
     return ( 
         <Text
             fontSize={40}
-            fontWeight={'bold'}> 
+            fontWeight={800}> 
             {props} 
         </Text>
         
@@ -115,12 +115,11 @@ const projectSkill = (props, icon) => {
                 direction={'row'}>
                     <Icon as={icon} w={3} h={3} color='black.500' />
                     <Text
-                        fontSize={11}
-                        fontWeight={'bold'}>
+                        fontSize={12}
+                        fontWeight={800}>
                         &thinsp;{props}
                     </Text>
                 </Center>
-
         </ChakraBox>   
     )
 }

@@ -118,7 +118,7 @@ const AnimatedTabs = ({pos}) => {
 												exit={{opacity:0}}	
 												bg='blackAlpha.800'
 												px={4}
-												py={2.5}
+												py={2}
 												borderRadius={'12px'}
 												borderWidth={'1px'}
 												borderColor={'gray.500'}

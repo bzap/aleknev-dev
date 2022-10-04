@@ -37,6 +37,7 @@ const Home = () => {
       const isShowHero = latest <  1170 
       const isShowHome = latest >  1171 
       const isShowContact = latest >= 5150
+      
 
       if (isShowAbout !== aboutView) setAboutView(isShowAbout)
       if (isShowProj !== projView) setProjView(isShowProj)

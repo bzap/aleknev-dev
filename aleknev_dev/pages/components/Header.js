@@ -40,17 +40,16 @@ const Header = ({pos}) => {
 				maxW={'85%'}
 				position='fixed' 
 				w={'100%'}
-
 				zIndex={200} 
 				
 				boxShadow={'md'}
-				borderRadius={'20px'}
+				borderRadius={'12px'}
 				bg='whiteAlpha.600'
 				justifyContent={'center'}
 				>
 				<Box
 					p={8}
-					py={{ base: '1em', md: '1em' }}>
+					py={'10px'}>
 					<Flex
 						align={'center'}
 						justifyContent={'space-between'}

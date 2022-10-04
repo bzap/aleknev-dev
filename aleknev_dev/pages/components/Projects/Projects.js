@@ -190,7 +190,8 @@ const verticalItem = (top) => {
 					top={top}
 					direction={'column'}>
 						<Heading
-						fontSize={50}>
+						fontWeight={800}
+						fontSize={45}>
 							01
 						</Heading>
 						<Heading
@@ -213,7 +214,7 @@ const verticalItem = (top) => {
 						top={top}
 						bg='whiteAlpha.600' 
 						boxShadow={'md'} 
-						borderRadius={'12px'} >
+						borderRadius={'22px'} >
 						<Preview/>
 				</GridItem>     
 				</ChakraBox> 
