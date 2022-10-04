@@ -85,31 +85,15 @@ const AnimatedTabs = ({pos}) => {
 										onClick={() => 
 													{setSelectedTab(item)
 													setPressed(true)
+													
+													// or use the variants to try and set it to white when active 
 													// use an onclick approach where it changes to white on press
 													setCurrItem(item)}}>
-
-										
-										{item === selectedTab ? (
-											<Center>
-												<ChakraBox
-												as={motion.div}
-												initial={{color:'black'}}
-												animate={{color:'white'}}
-												transition={{
-														delay: 1
-													}}>
-												
-												<Text 
-												position={'relative'}
-												zIndex={1}
-												fontWeight={'600'}
-												color={'black'}>
-													{item.label}
-												</Text>
-												</ChakraBox>
-
-											</Center>
-										) : (
+											<ChakraBox
+											as={motion.div}
+											cursor={'pointer'}
+											whileHover={{scale:1.05}}
+											whileTap={{scale:0.99, opacity:[1,0.5,0]}}>
 											<Center>
 												<Text
 												fontWeight={'600'}
@@ -117,11 +101,13 @@ const AnimatedTabs = ({pos}) => {
 													{item.label}
 												</Text>	
 											</Center>
-										)}
+											</ChakraBox>
 										<AnimatePresence mode='wait'>
 										{item === selectedTab && !pos.views.heroView ? (
 												<ChakraBox
 												as={motion.div}
+												cursor={'pointer'}
+												whileTap={{scale:0.9}}
 												zIndex={0}
 												layout
 												key='overlayBox'
@@ -131,12 +117,23 @@ const AnimatedTabs = ({pos}) => {
 												animate={{opacity:1}}
 												exit={{opacity:0}}	
 												bg='blackAlpha.800'
-												h={'2.5em'}
-												w={'6%'}
-												borderRadius='15'
+												px={4}
+												py={2.5}
+												borderRadius={'12px'}
 												borderWidth={'1px'}
 												borderColor={'gray.500'}
-												boxShadow={'lg'}>
+												boxShadow={'md'}>
+												<ChakraBox
+												as={motion.div}>
+												<Text 
+												alignItems={'center'}
+												fontWeight={'600'}
+												color={'white'}>
+													{item.label}
+												</Text>
+												</ChakraBox>
+
+												
 												</ChakraBox>
 												) : (
 													null

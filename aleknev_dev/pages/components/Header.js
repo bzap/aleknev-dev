@@ -18,14 +18,12 @@ const Header = ({pos}) => {
 			display={'flex'} 
 			justifyContent={'center'} 
 			pt={'2'}
-			
-			>
+>
 			<ChakraBox 
  				
 				as={motion.div}
 				initial={{opacity:0}}
 				animate={{
-					
 					opacity: [0, 1],
 					scale: [0, 1.06, 1]
 				}}
@@ -39,10 +37,8 @@ const Header = ({pos}) => {
 			
 				backdropFilter='auto' 
 				backdropBlur='8px'
-
-				maxW={'9xl'}
+				maxW={'85%'}
 				position='fixed' 
-				px={'10em'}
 				w={'100%'}
 
 				zIndex={200} 
@@ -50,14 +46,14 @@ const Header = ({pos}) => {
 				boxShadow={'md'}
 				borderRadius={'20px'}
 				bg='whiteAlpha.600'
-	
+				justifyContent={'center'}
 				>
 				<Box
 					p={8}
 					py={{ base: '1em', md: '1em' }}>
 					<Flex
 						align={'center'}
-				
+						justifyContent={'space-between'}
 						direction={{ base: 'column', md: 'row' }}>
 						<Link 
 							to={'home'} 
