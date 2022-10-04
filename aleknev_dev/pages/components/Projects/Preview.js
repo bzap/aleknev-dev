@@ -18,6 +18,7 @@ import {
     Grid, 
     GridItem,
     ButtonGroup,
+    ListIcon,
     Spacer,
     chakra,
     shouldForwardProp
@@ -25,6 +26,7 @@ import {
 import { InfoOutlineIcon, WarningTwoIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import { pskillsItem, item, pillItem } from '../Variants/Variants'
 import { motion, isValidMotionProp } from "framer-motion";
+import { SiReact, SiPython, SiAngular, SiVuedotjs  } from 'react-icons/si';
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -37,12 +39,11 @@ const Preview = () => (
         <Flex
             justifyContent={'center'}
             flexShrink={1}
-            overflow='hidden'
-           >
+            overflow='hidden'>
             {projectImages('https://i.pinimg.com/564x/af/26/42/af2642d7d8ed1d60959f0825e545d92c.jpg')}
         </Flex>
         <Stack
-            px={7}
+            px={9}
             pt={4}
             spacing={-1}>
             <ChakraBox
@@ -50,18 +51,18 @@ const Preview = () => (
                 {projectTitle('GONI-GO')}
             </ChakraBox>
             <Flex>
-                    <div>{projectSkill('React')}</div>
+                    <div>{projectSkill('React', SiReact)}</div>
                     <Spacer/>
-                    <div>{projectSkill('Angular')}</div>
+                    <div>{projectSkill('Angular', SiAngular)}</div>
                     <Spacer/>
-                    <div>{projectSkill('JS')}</div>
+                    <div>{projectSkill('Vue', SiVuedotjs)}</div>
                     <Spacer/>
-                    <div>{projectSkill('Python')}</div>
+                    <div>{projectSkill('Python', SiPython)}</div>
             </Flex>
         </Stack> 
         <Stack
             pb={5}
-            px={7}>
+            px={9}>
             <ChakraBox
             variants={item}>
                 <Center>
@@ -71,12 +72,11 @@ const Preview = () => (
             <Flex>
             {projectButton('Learn More', 'temp', <InfoOutlineIcon/>)}  
             <Spacer/>    
-            {projectButton('Try it out', 'temp', <WarningTwoIcon/>)}   
+            {projectButton('Live Demo', 'temp', <WarningTwoIcon/>)}   
             </Flex>
 
         </Stack>
     </Stack>
-
 )
 
 
@@ -84,7 +84,7 @@ const projectImages = (props) => {
     return (
         <Image
             align={'center'}
-            borderTopRadius={'25px'}
+            borderTopRadius={'10px'}
             h={'12em'}
             w={'full'}
 
@@ -97,7 +97,7 @@ const projectImages = (props) => {
 const projectTitle = (props) => { 
     return ( 
         <Text
-            fontSize={35}
+            fontSize={40}
             fontWeight={'bold'}> 
             {props} 
         </Text>
@@ -105,19 +105,22 @@ const projectTitle = (props) => {
     )
 }
 
-const projectSkill = (props) => {
+const projectSkill = (props, icon) => {
     // make this map from a future json object 
     return (
         <ChakraBox
         px={1}
         variants={pskillsItem}>
-                <Flex
-                textColor={'blackAlpha.800'}
-                fontSize={'10'}
-                fontWeight={'bold'}>
-                {props}
-                </Flex>
-        
+                <Center
+                direction={'row'}>
+                    <Icon as={icon} w={3} h={3} color='black.500' />
+                    <Text
+                        fontSize={11}
+                        fontWeight={'bold'}>
+                        &thinsp;{props}
+                    </Text>
+                </Center>
+
         </ChakraBox>   
     )
 }

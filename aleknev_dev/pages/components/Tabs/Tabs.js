@@ -70,7 +70,7 @@ const AnimatedTabs = ({pos}) => {
 				direction={'row'}
 				justify={'flex-end'}> 
 					<Flex
-					gap={6}>
+					gap={'5em'}>
 						{tabs.map((item, idx) => (
 								<Link 
 								key={idx} 
@@ -87,22 +87,21 @@ const AnimatedTabs = ({pos}) => {
 													setPressed(true)
 													setCurrItem(item)}}>
 										{item === selectedTab ? (
-										<Button
-											borderRadius='15'
-											variant='ghost'
-											zIndex={2}
-											size={'md'}
-											>
-											{item.label}
-										</Button>
+											<Center>
+												<Text 
+												fontWeight={'600'}
+												color={!pos.views.heroView ? 'white' : 'black'}>
+													{item.label}
+												</Text>
+											</Center>
 										) : (
-											<Button
-											variant='ghost'
-											borderRadius='15'
-											size={'md'}
-											zIndex={2}>
-												{item.label}
-											</Button>
+											<Center>
+												<Text
+												fontWeight={'600'}
+												color='black'>
+													{item.label}
+												</Text>	
+											</Center>
 										)}
 										<AnimatePresence mode='wait'>
 										{item === selectedTab && !pos.views.heroView ? (
@@ -116,13 +115,14 @@ const AnimatedTabs = ({pos}) => {
 												initial={{opacity:0}}
 												animate={{opacity:1}}
 												exit={{opacity:0}}	
-												bg='whiteAlpha.900'
+												bg='blackAlpha.800'
 												h={'2.5em'}
 												w={'10%'}
 												borderRadius='15'
 												borderWidth={'1px'}
 												borderColor={'blackAlpha.50'}
-												boxShadow={'lg'}/>
+												boxShadow={'md'}>
+												</ChakraBox>
 												) : (
 													null
 												)}

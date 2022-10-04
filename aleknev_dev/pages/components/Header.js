@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Center, chakra, shouldForwardProp, Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer, ScaleFade, transition } from '@chakra-ui/react'
+import { Center, Icon, IconButton, chakra, shouldForwardProp, Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer, ScaleFade, transition } from '@chakra-ui/react'
 import { Link } from "react-scroll/modules"
 import AnimatedTabs from './Tabs/Tabs'
 import { AnimatePresence, motion, isValidMotionProp } from "framer-motion";
+import { SiGit, SiGithub } from 'react-icons/si';
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -12,12 +13,15 @@ const Header = ({pos}) => {
 	const [isShown, setIsShown] = useState(true)
 	return (
 	<Container>
-		<Container 
+		<Flex
+			
 			display={'flex'} 
 			justifyContent={'center'} 
-			pt={'5'}
+			pt={'2'}
+			
 			>
 			<ChakraBox 
+ 				
 				as={motion.div}
 				initial={{opacity:0}}
 				animate={{
@@ -35,14 +39,17 @@ const Header = ({pos}) => {
 			
 				backdropFilter='auto' 
 				backdropBlur='8px'
-				justifyContent={'center'} 
-				maxW={'6xl'} 
+
+				maxW={'9xl'}
 				position='fixed' 
+				px={'10em'}
+				w={'100%'}
+
 				zIndex={200} 
-				width={'100%'}
-				boxShadow={'lg'}
+				
+				boxShadow={'md'}
 				borderRadius={'20px'}
-				bg='whiteAlpha.800'
+				bg='whiteAlpha.600'
 	
 				>
 				<Box
@@ -50,7 +57,7 @@ const Header = ({pos}) => {
 					py={{ base: '1em', md: '1em' }}>
 					<Flex
 						align={'center'}
-						justifyContent={'space-between'}
+				
 						direction={{ base: 'column', md: 'row' }}>
 						<Link 
 							to={'home'} 
@@ -61,7 +68,6 @@ const Header = ({pos}) => {
 						<Heading
 							cursor={'pointer'}
 							as={motion.div}
-							lineHeight={1.1}
 							fontWeight={600}
 							variants={'container'}
 							initial="hidden"
@@ -72,11 +78,24 @@ const Header = ({pos}) => {
 								{scrollBehaviour(pos)}
 						</Heading> 
 						</Link>
+						<Spacer/>
 						<AnimatedTabs pos={pos} />
+						<Spacer/>
+						<ChakraBox
+									cursor={'pointer'}
+									as={motion.div}
+									whileHover={{scale:1.1}}
+									whileTap={{scale:0.9}}>
+										<Icon 
+										as={SiGithub} 
+										h={'2em'}
+										w={'2em'}/>
+						</ChakraBox>  
+
 					</Flex>
 				</Box>
 			</ChakraBox>
-		</Container>
+		</Flex>
 	</Container>	
 	)
 }
@@ -89,71 +108,14 @@ const scrollBehaviour = (pos) => {
 		align={'flex-start'}>
 		<ChakraBox
 		as={motion.div}
-		variants={fadeOutItem}>
-			{pos.views.aboutView && (
-			<ChakraBox
-			as={motion.div}
-			animate={{scale:[1, 1.01, 1]}}
-			transition={{
-				type:'spring',
-				duration: 0.2
-			}}
-			fontWeight={'bold'}
-			fontSize={30}>
-				MORE ON MYSELF
-			</ChakraBox>)}
-			{pos.views.projView && (
-			<ChakraBox
-			as={motion.div}
-			animate={{scale:[1, 1.01, 1], opacity:[0.6,1]}}
-			transition={{
-				type:'spring',
-				duration: 0.2
-			}}
-			fontWeight={'bold'}
-			fontSize={30}>
-				THINGS I'VE MADE
-			</ChakraBox>)}
-			{pos.views.contactView && (
-			<ChakraBox
-			as={motion.div}
-			animate={{scale:[1, 1.01, 1], opacity:[0.6,1]}}
-			transition={{
-				type:'spring',
-				duration: 0.2
-			}}
-			fontWeight={'bold'}
-			fontSize={30}>
-				REACH OUT!
-			</ChakraBox>)}
-		</ChakraBox>
-		{pos.views.homeView  && (
-		<ChakraBox
-		as={motion.div}
-		variants={fadeInItem}
 		whileHover={{scale:1.1}}
-		whileTap={{scale:0.9}}
-		position={'absolute'}>								
-			<Text
-			fontSize={30}>
-				&lt;home&gt;
-			</Text>
-		</ChakraBox> )}
-		{pos.views.heroView && (
-		<ChakraBox
-		as={motion.div}
-		animate={{scale:[1,1.01, 1], opacity:[0.6,1]}}
-		transition={{
-			type:'spring',
-			duration: 0.2
-		}}
-		whileHover={{scaleX:1.1, scaleY:1.1}}
 		whileTap={{scale:0.98}}>
 			<Text
-			fontSize={35}>
-				&lt;aleknev&gt;
+			fontSize={35}
+			fontWeight='bold'>
+				&lt;li&gt;
 			</Text>
-		</ChakraBox>)}
+		</ChakraBox>
 	</Flex>
 	)
 }

@@ -57,7 +57,22 @@ const About = () => {
 		maxW={'7x1'}
 		direction={'column'}
 		gap={'7em'}>
-					
+			<Flex
+				pb={'5em'}
+				gap={2}
+						
+				direction='column'>
+						<Heading
+						fontSize={'7em'}> 
+							About
+						</Heading>
+						<Text
+						w={'30em'}
+						fontSize={'1.5em'}
+						color={'blackAlpha.600'}>
+							This is sample text talking about my projects. That's just the way it goes sometimes. It is what it is.
+						</Text>
+			</Flex>
 			<ChakraBox
 			variants={container}
 			initial={'hidden'}
