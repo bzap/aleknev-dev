@@ -59,20 +59,9 @@ const About = () => {
         pb='40em'>
         <Flex
         direction={'column'}
-        gap={'10em'}>
-
-
-			
-
-
-
-
-
+        gap={'7em'}>
 					<Flex
-					direction='row'
-					bg='blue.100'
-					borderColor={'blackAlpha.800'}
-					borderLeftWidth={'9px'}>
+					direction='row'>
 						<Flex
 						pl={'2em'}
 						gap={2}
@@ -86,7 +75,7 @@ const About = () => {
 								w={'30em'}
 								fontWeight={600}
 								fontSize={'1.4em'}
-								color={'blackAlpha.600'}>
+								color={'blackAlpha.700'}>
 									"fear != fate", a simple but meaningful mantra that I try to live by.
 								</Text>
 						</Flex>
@@ -104,7 +93,7 @@ const About = () => {
 									w={'100%'}
 									gap={'7em'}
 									position={'relative'}
-									justifyContent={'center'}>						
+									justifyContent={'flex-end'}>						
 										<Flex
 											w={'20em'}
 											h={'10em'}
@@ -125,6 +114,8 @@ const About = () => {
 												</Heading>
 										</Flex>
 										<Flex
+										position={'relative'}
+										flexDirection={'flex-end'}
 										minW={'55em'}
 										w={'55em'}
 										bg={'whiteAlpha.600'}
@@ -157,7 +148,7 @@ const About = () => {
 									w={'100%'}
 									gap={'7em'}
 									position={'relative'}
-									justifyContent={'center'}>						
+									justifyContent={'flex-end'}>						
 										<Flex
 											w={'20em'}
 											h={'10em'}
@@ -205,14 +196,11 @@ const pageIndicator = () => {
 	return ( 
 		<Flex
 		w={'100%'}
-		bg={'red.100'}
-		minW={'10px'}
 		position={'relative'}
 		direction="row"
 		justifyContent={'flex-end'}	>
 			<Flex
 			w={'13em'}
-			bg='gray.200'
 			transform={'rotate(90deg)'}
 			transformOrigin={'top left'}
 			left={'100%'}
@@ -240,7 +228,7 @@ const pageIndicator = () => {
 							02&thinsp;
 						</Heading>
 						<Heading
-						color={'blackAlpha.500'}
+						color={'blackAlpha.700'}
 						fontWeight={900}>
 							_&thinsp;03
 						</Heading>
@@ -254,6 +242,7 @@ const pageIndicator = () => {
 					<Spacer/>
 					<Heading
 					fontSize={25}
+					color={'blackAlpha.700'}
 					fontWeight={900}>
 						&rarr;
 					</Heading>
