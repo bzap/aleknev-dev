@@ -76,15 +76,18 @@ const Header = ({pos}) => {
 						<Spacer/>
 						<AnimatedTabs pos={pos} />
 						<Spacer/>
+						
 						<ChakraBox
 									cursor={'pointer'}
 									as={motion.div}
 									whileHover={{scale:1.1}}
 									whileTap={{scale:0.9}}>
-										<Icon 
-										as={SiGithub} 
-										h={'2em'}
-										w={'2em'}/>
+										<Center>
+											<Icon 
+											as={SiGithub} 
+											h={'2em'}
+											w={'2em'}/>
+										</Center>
 						</ChakraBox>  
 
 					</Flex>
