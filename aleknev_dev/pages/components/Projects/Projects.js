@@ -60,87 +60,26 @@ const Projects = () => (
 				direction='column'>
 					<Flex
 					direction='row'
-					
-					justifyContent={'space-between'}>
+					pb={'5em'}>
 						<Flex
-						borderLeftWidth={'9px'}
-						borderColor={'blackAlpha.800'}
-						position='absolute'
-						top={'12em'}
-						w={'1em'}
-						h={'9em'}>
-						</Flex>
-						<Flex
-						pl={'3em'}
-						pb={'5em'}
+						pl={'2em'}
 						gap={2}
+						justifyContent={'space-between'}
 						direction='column'>
 								<Heading
 								fontSize={'7em'}> 
-									Projects
+									Projects.
 								</Heading>
 								<Text
 								w={'30em'}
 								fontWeight={600}
 								fontSize={'1.4em'}
-								color={'blackAlpha.600'}>
-									This is sample text talking about my projects. That's just the way it goes sometimes. It is what it is.
+								color={'blackAlpha.700'}>
+									"fear != fate", a simple but meaningful mantra that I try to live by.
 								</Text>
 						</Flex>
 						<Spacer/>
-						<Flex
-						minW={'10px'}
-						position={'relative'}
-						justifyContent={'flex-end'}	
->
-
-						<Flex
-						                        transform={'rotate(90deg)'}
-												transformOrigin={'left top'}
-						direction={'column'}>
-							<Flex
-							direction={'row'}
-							position={'relative'}
-							top={'4%'}
-							alignItems={'flex-start'}>
-								<Heading
-								fontSize={20}
-								fontWeight={900}>
-									&larr;
-								</Heading>
-								<Spacer/>
-							</Flex>
-							<Center>
-									<Heading
-									fontSize={60}
-									fontWeight={900}
-									pb={4}>
-										02&thinsp;
-									</Heading>
-									<Heading
-									color={'blackAlpha.500'}
-									fontWeight={900}>
-										_&thinsp;03
-									</Heading>
-							</Center>
-							<Flex
-							direction={'row'}
-							position={'relative'}
-							bottom={'8%'}
-							alignItems={'flex-end'}>
-								<Spacer/>
-								<Heading
-								fontSize={20}
-								fontWeight={900}>
-									&rarr;
-								</Heading>
-							</Flex>
-
-
-							
-						</Flex>
-
-						</Flex>
+						{pageIndicator()}
 					</Flex>
 
 
@@ -180,6 +119,67 @@ const Projects = () => (
 
 		</Container> 
 	)
+	const pageIndicator = () => { 
+		return ( 
+			<Flex
+			w={'100%'}
+			position={'relative'}
+			direction="row"
+			justifyContent={'flex-end'}	>
+				<Flex
+				w={'13em'}
+				transform={'rotate(90deg)'}
+				transformOrigin={'top left'}
+				left={'100%'}
+				justifyContent={'flex-end'}
+				position={'absolute'}
+				direction={'column'}>
+					<Flex
+					direction={'row'}
+					position={'relative'}
+					top={'1.5em'}
+					left={'1rem'}
+					alignItems={'flex-start'}>
+						<Heading
+						fontSize={25}
+						fontWeight={900}>
+							&larr;
+						</Heading>
+						<Spacer/>
+					</Flex>
+					<Center>
+							<Heading
+							fontSize={'4.5em'}
+							fontWeight={900}
+							pb={8}>
+								02&thinsp;
+							</Heading>
+							<Heading
+							color={'blackAlpha.700'}
+							fontWeight={900}>
+								_&thinsp;03
+							</Heading>
+					</Center>
+					<Flex
+					direction={'row'}
+					position={'relative'}
+					bottom={'3em'}
+					right={'1rem'}
+					alignItems={'flex-end'}>
+						<Spacer/>
+						<Heading
+						fontSize={25}
+						color={'blackAlpha.700'}
+						fontWeight={900}>
+							&rarr;
+						</Heading>
+					</Flex>	
+				</Flex>
+		</Flex>	
+		)
+	}
+
+
 
 const verticalItem = (top) => { 
 		return ( 

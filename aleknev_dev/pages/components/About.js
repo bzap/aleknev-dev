@@ -73,10 +73,10 @@ const About = () => {
 								</Heading>
 								<Text
 								w={'30em'}
-								fontWeight={600}
+								fontWeight={700}
 								fontSize={'1.4em'}
-								color={'blackAlpha.700'}>
-									"fear != fate", a simple but meaningful mantra that I try to live by.
+								color={'blackAlpha.600'}>
+									"fear != fate", a simple but meaningful mantra that I try to live by. A lot of times it's the irrational fear that stops us from trying.
 								</Text>
 						</Flex>
 						<Spacer/>
@@ -203,54 +203,59 @@ const pageIndicator = () => {
 			w={'13em'}
 			transform={'rotate(90deg)'}
 			transformOrigin={'top left'}
+			top={'10px'}
 			left={'100%'}
 			justifyContent={'flex-end'}
 			position={'absolute'}
 			direction={'column'}>
-				<Flex
-				direction={'row'}
-				position={'relative'}
-				top={'1.5em'}
-				left={'1rem'}
-				alignItems={'flex-start'}>
-					<Heading
-					fontSize={25}
-					fontWeight={900}>
-						&larr;
-					</Heading>
-					<Spacer/>
-				</Flex>
-				<Center>
-						<Heading
-						fontSize={'4.5em'}
-						fontWeight={900}
-						pb={8}>
-							02&thinsp;
-						</Heading>
-						<Heading
-						color={'blackAlpha.700'}
-						fontWeight={900}>
-							_&thinsp;03
-						</Heading>
-				</Center>
-				<Flex
-				direction={'row'}
-				position={'relative'}
-				bottom={'3em'}
-				right={'1rem'}
-				alignItems={'flex-end'}>
-					<Spacer/>
-					<Heading
-					fontSize={25}
-					color={'blackAlpha.700'}
-					fontWeight={900}>
-						&rarr;
-					</Heading>
-				</Flex>	
-			</Flex>
-	</Flex>
+					<Flex
+					direction={'row'}
+					position={'relative'}
+					top={'1.5em'}
+					left={'1rem'}>
+						<Flex
+						direction='column'>
+							<Heading
+							fontSize={'4.5em'}
+							color={'black'}
+							fontWeight={900}
+							pb={8}>
+								01
+							</Heading>
+							<Heading
+							position={'relative'}
+							top={'-3.5rem'}
+							textAlign={'start'}
+							fontSize={'2em'}
+							fontWeight={900}>
+								&larr;
+							</Heading>
 
-		
+						</Flex>
+						<Flex
+						direction='column'>
+							<Heading
+							fontSize={'4.5em'}
+							color={'blackAlpha.600'}
+							fontWeight={900}
+							pb={8}>
+								03
+							</Heading>
+							<Heading
+							top={'-3.5rem'}
+							color={'blackAlpha.600'}
+							position={'relative'}
+							textAlign={'end'}
+							fontSize={'2em'}
+							fontWeight={900}>
+								&rarr;
+							</Heading>
+
+						</Flex>
+					
+					</Flex>
+			</Flex>
+	</Flex>	
 	)
 }
 
