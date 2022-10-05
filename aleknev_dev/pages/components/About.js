@@ -60,135 +60,223 @@ const About = () => {
         <Flex
         direction={'column'}
         gap={'10em'}>
-                        <Flex
-                        gap={'5em'}
-                        direction='column'>
-                                <Heading
-                                fontSize={'7em'}> 
-                                    About
-                                </Heading>
-                                <Text
-								pb={'5em'}
-                                w={'30em'}
-                                fontWeight={600}
-                                fontSize={'1.4em'}
-                                color={'blackAlpha.600'}>
-                                    This is sample text talking about my projects. That's just the way it goes sometimes. It is what it is.
-                                </Text>
-								<Flex
-								w={'100%'}
+
+
+			
+
+
+
+
+
+					<Flex
+					direction='row'
+					bg='blue.100'
+					borderColor={'blackAlpha.800'}
+					borderLeftWidth={'9px'}>
+						<Flex
+						pl={'2em'}
+						gap={2}
+						justifyContent={'space-between'}
+						direction='column'>
+								<Heading
+								fontSize={'7em'}> 
+									About Me.
+								</Heading>
+								<Text
+								w={'30em'}
+								fontWeight={600}
+								fontSize={'1.4em'}
+								color={'blackAlpha.600'}>
+									"fear != fate", a simple but meaningful mantra that I try to live by.
+								</Text>
+						</Flex>
+						<Spacer/>
+						{pageIndicator()}
+					</Flex>
+					<Flex
 								position={'relative'}
+								w={'100%'}
 								justifyContent={'center'}
-								direction={'column'}>
+								direction={'column'}
+								gap={'5em'}>
 									<Flex
 									direction={'row'}
+									w={'100%'}
+									gap={'7em'}
 									position={'relative'}
 									justifyContent={'center'}>						
 										<Flex
-											
-											w={'22em'}
+											w={'20em'}
 											h={'10em'}
-											borderRightWidth={'9px'}
-											borderRightColor={'blackAlpha.800'}>
-											<Flex
-											w={'22em'}
-											direction={'column'}
 											position={'relative'}
-											bottom={'10px'}
-											gap={0}
-											pr={10}>
+											direction={'column'}
+											textAlign={'end'}>
 												<Heading
-												position={'relative'}
-												textAlign={'end'}
-												fontWeight={'900'}
-												fontSize={'2.5em'}>
+												fontWeight={900}
+												fontSize={45}>
 													BACKGROUND
 												</Heading>
-											</Flex>
+												<Heading
+												fontWeight={900}
+												position={'relative'}
+												textAlign={'end'}
+												top={-7}>
+													&#x5f;
+												</Heading>
 										</Flex>
 										<Flex
-										pl={'5em'}
-										w={'60em'}>         
-												<ChakraBox
+										minW={'55em'}
+										w={'55em'}
+										bg={'whiteAlpha.600'}
+										boxShadow={'md'}
+										borderRadius={'20px'}>         
+												<Flex
+												w={'100%'}
 													zIndex={1}
 													variants={subContainer}>
 														{backgroundInfo()}
-												</ChakraBox>
+														<Flex
+														p={10}
+														minW={'20em'}
+														w={'40%'}>                            
+															<Image
+																fit='cover'
+																borderRadius={'12px'}
+																borderColor={'white'}
+																borderWidth={'8px'}
+																boxShadow={'md'}
+																h={'100%'}
+																w={'35em'}
+																src={'https://i.imgur.com/7R4gnAa.jpg'}/>
+														</Flex>
+												</Flex>
 										</Flex>
 									</Flex>
-								</Flex>
-								<Flex
-								w={'100%'}
-								position={'relative'}
-								justifyContent={'center'}
-								direction={'column'}>
 									<Flex
 									direction={'row'}
+									w={'100%'}
+									gap={'7em'}
 									position={'relative'}
 									justifyContent={'center'}>						
 										<Flex
-											w={'22em'}
+											w={'20em'}
 											h={'10em'}
-											borderRightWidth={'9px'}
-											borderRightColor={'blackAlpha.800'}>
-											<Flex
-											w={'22em'}
-											direction={'column'}
 											position={'relative'}
-											bottom={'10px'}
-											gap={0}
-											pr={10}>
+											direction={'column'}
+											textAlign={'end'}>
 												<Heading
-												position={'relative'}
-												textAlign={'end'}
-												fontWeight={'900'}
-												fontSize={'2.5em'}>
+												fontWeight={900}
+												fontSize={45}>
 													SKILLS
 												</Heading>
-											</Flex>
+												<Heading
+												fontWeight={900}
+												position={'relative'}
+												textAlign={'end'}
+												top={-7}>
+													&#x5f;
+												</Heading>
 										</Flex>
 										<Flex
-										pl={'5em'}
-										w={'60em'}>         
-												<ChakraBox
+										minW={'55em'}
+										w={'55em'}
+										bg={'whiteAlpha.600'}
+										boxShadow={'md'}
+										borderRadius={'20px'}>         
+												<Flex
+												w={'100%'}
 													zIndex={1}
 													variants={subContainer}>
 														{skillsInfo()}
-												</ChakraBox>
+												</Flex>
 										</Flex>
 									</Flex>
+
 								</Flex>
                         </Flex>
-        </Flex>
+        
     </Container>
     
 )}
+
+
+
+const pageIndicator = () => { 
+	return ( 
+		<Flex
+		w={'100%'}
+		bg={'red.100'}
+		minW={'10px'}
+		position={'relative'}
+		direction="row"
+		justifyContent={'flex-end'}	>
+			<Flex
+			w={'13em'}
+			bg='gray.200'
+			transform={'rotate(90deg)'}
+			transformOrigin={'top left'}
+			left={'100%'}
+			justifyContent={'flex-end'}
+			position={'absolute'}
+			direction={'column'}>
+				<Flex
+				direction={'row'}
+				position={'relative'}
+				top={'1.5em'}
+				left={'1rem'}
+				alignItems={'flex-start'}>
+					<Heading
+					fontSize={25}
+					fontWeight={900}>
+						&larr;
+					</Heading>
+					<Spacer/>
+				</Flex>
+				<Center>
+						<Heading
+						fontSize={'4.5em'}
+						fontWeight={900}
+						pb={8}>
+							02&thinsp;
+						</Heading>
+						<Heading
+						color={'blackAlpha.500'}
+						fontWeight={900}>
+							_&thinsp;03
+						</Heading>
+				</Center>
+				<Flex
+				direction={'row'}
+				position={'relative'}
+				bottom={'3em'}
+				right={'1rem'}
+				alignItems={'flex-end'}>
+					<Spacer/>
+					<Heading
+					fontSize={25}
+					fontWeight={900}>
+						&rarr;
+					</Heading>
+				</Flex>	
+			</Flex>
+	</Flex>
+
+		
+	)
+}
 
 const backgroundInfo = () => { 
     return ( 
         <Flex 
         as={motion.div}
         whileHover={{ scale: 1.025 }}
-        boxShadow={'md'}
-        bg='whiteAlpha.500'
-        borderRadius={'20px'}
         direction={'row'}
         gap={10}
-        w={'60em'}
+        w={'70%'}
         justifyContent='center'>
     
             {placeholderText()}
-            <Stack>                            
-                <Image
-                    fit='cover'
-                    borderRightRadius={'12px'}
-                    borderWidth={'5em'}
-                    filter={'grayscale(80%)'}
-                    h={'100%'}
-                    w={'100%'}
-                    src={'https://i.imgur.com/7R4gnAa.jpg'}/>
 
-            </Stack>
         </Flex>
     )
 }
@@ -207,7 +295,6 @@ const selfPortrait = () => {
 const skillsInfo = () => { 
     return (
         <Flex
-		w={'60em'}
 		gap={'3em'}
 		direction={'row'}>
 			<Flex
@@ -215,36 +302,25 @@ const skillsInfo = () => {
             whileHover={{ scale: 1.025 }}
             colSpan={2}
             position='relative'
-            flex={1}
-			w={'30em'}
-            bg='whiteAlpha.600' 
-            boxShadow={'md'} 
-            borderRadius={'22px'}>
+            flex={1}>
            		{skillText()}
-        	</Flex>
-			<Flex
-            as={motion.div}
-            whileHover={{ scale: 1.025 }}
-            colSpan={2}
-            position='relative'
-            flex={1}
-			w={'30em'}
-            bg='whiteAlpha.600' 
-            boxShadow={'md'} 
-            borderRadius={'22px'}>
-				<Center
+				<Flex
+				p={10}
 				w={'100%'}>
-					<ChakraBox
-					variants={skillsItem}>
-						<Flex
-						direction={'row'}
-						gap={10}>
-							{skillList(4)}
-							{skillList(4)}
-							{skillList(4)}
-						</Flex> 
-                </ChakraBox>    
-				</Center> 
+					<Center>
+						<ChakraBox
+						variants={skillsItem}>
+							<Flex
+							direction={'row'}
+							gap={10}>
+								{skillList(4)}
+								{skillList(4)}
+								{skillList(4)}
+								{skillList(4)}
+							</Flex> 
+						</ChakraBox>   
+					</Center> 
+				</Flex> 
         	</Flex>
 
 		</Flex>
@@ -259,16 +335,14 @@ const skillsInfo = () => {
 const placeholderText = () => { 
     return (
         <Flex
-        p={10}
+        p={'3em'}
         direction={'column'}>
             <ChakraBox
-           
             variants={item}>
             <Text
                 variants={item}
                 as={'p'}
                 fontSize={15}
-                
                 fontWeight={'600'}>
                 I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree. <br/><br/> 
                 My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.   
@@ -284,7 +358,9 @@ const placeholderText = () => {
 const skillText = () => { 
     return ( 
             <Flex
-            p={'10'}
+            py={10}
+			pl={10}
+			pr={'1em'}
             direction={'column'}>
                 <ChakraBox
                 variants={item}>
@@ -293,14 +369,12 @@ const skillText = () => {
                 variants={item}>
                 <Text
                     fontSize={15}
-                    pt={'5'}
-                    pb={'8'}
                     as={'p'}
-                    fontWeight={'500'}>
-                    I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
+                    fontWeight={'600'}>
+                    Filler text filler text, this is my strength, filler text. I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
                 </Text>
                 </ChakraBox>
-  
+
             </Flex>
     )
 }
@@ -319,11 +393,10 @@ const skillList = (items) => {
     const ic4 = SiChakraui
 
     return( 
-        <List spacing={4}>
+        <List spacing={8}>
         {skillItem(name, ic)}
         {skillItem(name2, ic2)}
         {skillItem(name3, ic3)}
-        {skillItem(name4, ic4)}
         {skillItem(name4, ic4)}
     	</List>        
     )
@@ -333,11 +406,12 @@ const skillItem = (name, ic) => {
     return(
         <ListItem>
             <Flex
-            flex={1}
-            alignItems='center'
+			w={'105%'}
+			alignItems={'center'}
             direction={'row'}>
-                <ListIcon as={ic} color='black.500' />
+                <ListIcon as={ic} color='black.500'/>
                 <Text
+					textAlign={'center'}
                     fontSize={15}
                     fontWeight={'bold'}>
                     &thinsp;{name}

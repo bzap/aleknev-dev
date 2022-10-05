@@ -36,7 +36,7 @@ const Hero = () => (
 			<GridItem 
 			zIndex={3}
 			position={'relative'}
-			w={'40em'}
+			w={'50em'}
 			colSpan={2}>
 				<Flex
 				direction={'column'}
@@ -46,16 +46,16 @@ const Hero = () => (
 					<Text 
 						as='span'
 						color={'black'}
-						fontWeight='600'
+						fontWeight='7	00'
 						fontSize={{ base: '20', sm: '30', lg: '50' }}>
 						Hey, I'm
 					</Text>
 					<Text 
 						as={'span'} 
 						color={'black'} 
-						fontWeight='bold'
+						fontWeight='900'
 						pl={8}
-						fontSize={{ base: '40', sm: '50', lg: '95' }}>  
+						fontSize={{ base: '40', sm: '50', lg: '4em' }}>  
 						Linas
 					</Text>    
 					<Text 
@@ -69,20 +69,21 @@ const Hero = () => (
 					<Text
 						as={'span'}
 						color={'gray.600'}
-						fontWeight='semibold'
+						fontWeight='700'
 						fontSize={{ base: '20', sm: '30', lg: '27' }}>
 						A developer based in
 					</Text>
 					<Text 
 						as={'span'} 
-						color={'black'} 
-						fontWeight='bold'
+						color={'gray.800'} 
+						fontWeight='900'
 						fontSize={{ base: '40', sm: '50', lg: '50' }}>  
 						&thinsp;Toronto
 					</Text>      
 					<Text 
 						as={'span'} 
 						color={'black'} 
+						fontWeight='800'
 						fontSize={{ base: '20', sm: '30', lg: '35' }}>  
 						,
 					</Text> 
@@ -98,8 +99,8 @@ const Hero = () => (
 					</Text>  
 					<Text 
 						as={'span'} 
-						color={'black'} 
-						fontWeight='bold'
+						color={'gray.600'} 
+						fontWeight='900'
 						fontSize={{ base: '40', sm: '50', lg: '32' }}>  
 						&thinsp; growth.
 					</Text>      

@@ -11,8 +11,9 @@ const Layout = ({ children, router }) => {
         width='100%' 
         margin='auto' 
         minH='100vh' 
-        bg='#f6eef1'
+        sx={{'background-color': '#FFDEE9', 'background-image': 'linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%)'}}
         > 
+        
             <main>{children}</main> 
         </Container> 
     )   
