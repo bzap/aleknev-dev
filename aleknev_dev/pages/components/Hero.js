@@ -42,7 +42,6 @@ const Hero = () => (
 			{animation()}
 		</Flex>
 	</Container>
-
 )
 
 
@@ -74,7 +73,7 @@ const introText = () => {
 				<Text 
 					as='span'
 					color={'black'}
-					fontWeight='7	00'
+					fontWeight='700'
 					fontSize={{ base: '20', sm: '30', lg: '50' }}>
 					Hey, I'm
 				</Text>
@@ -130,7 +129,7 @@ const introText = () => {
 					color={'gray.600'} 
 					fontWeight='900'
 					fontSize={{ base: '40', sm: '50', lg: '32' }}>  
-					&thinsp; growth.
+					&thinsp;&thinsp;growth.
 				</Text>      
 			</Heading> 	
 		</Flex>
