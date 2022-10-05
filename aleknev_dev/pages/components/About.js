@@ -126,20 +126,23 @@ const About = () => {
 													zIndex={1}
 													variants={subContainer}>
 														{backgroundInfo()}
-														<Flex
-														p={10}
-														minW={'20em'}
-														w={'40%'}>                            
+														<Stack
+														borderRadius={'22px'}
+														
+														w={'40%'}
+														m={10}
+														boxShadow={'md'}
+														borderWidth={'1px'}
+														borderColor={'blackAlpha.400'}>                            
 															<Image
 																fit='cover'
-																borderRadius={'12px'}
-																borderColor={'white'}
-																borderWidth={'8px'}
-																boxShadow={'md'}
+																borderRadius={'21px'}
+																
+																
 																h={'100%'}
 																w={'35em'}
 																src={'https://i.imgur.com/7R4gnAa.jpg'}/>
-														</Flex>
+														</Stack>
 												</Flex>
 										</Flex>
 									</Flex>
