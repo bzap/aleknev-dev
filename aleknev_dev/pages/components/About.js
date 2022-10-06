@@ -87,7 +87,7 @@ const About = () => {
 								fontWeight={700}
 								fontSize={'1.2em'}
 								color={'blackAlpha.800'}>
-									"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that it's irrational fear that holds us back.
+									"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that irrational fear holds us back.
 								</Text>
 						</Flex>
 						<Spacer/>
@@ -208,6 +208,7 @@ const About = () => {
 				w={'100%'}
 				h={'100%'}
 				top={'35%'}
+				
 				left={'60%'}
 			>
 				<Image
