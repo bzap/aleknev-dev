@@ -55,7 +55,23 @@ const Projects = () => (
 				id='1' 
 				px={'10em'}
 				py={'10em'}
-				pb={'20em'}>		
+				pb={'20em'}>	
+
+
+				<Container
+					position={'absolute'}
+					maxW={'container'}
+					w={'100%'}
+					h={'100%'}
+					top={0}
+					left={0}>
+					<Image
+						filter={'grayscale(40%)'}
+						fit='cover'
+						h={'100%'}
+						w={'100%'}
+						src={'blobabouttex2.png'} />
+				</Container>	
 				<Flex
 				direction='column'>
 					<Flex
@@ -212,7 +228,9 @@ const verticalItem = (top) => {
 						justifyContent={'flex-start'}
 						w={'24em'} 
 						top={top}
-						bg='whiteAlpha.600' 
+						bg={'whiteAlpha.600'}
+						backdropFilter='auto'
+						backdropBlur='5px'
 						boxShadow={'md'} 
 						borderRadius={'22px'} >
 						<Preview/>
@@ -267,26 +285,6 @@ const gitButton = () => {
 										w={'6em'}/>
 									</ChakraBox>               
 								</Flex>
-								<ChakraBox
-								as={motion.div}
-								initial={{x:'90%'}}
-								animate={{x:'0'}}
-								transition={{
-										type: 'tween',
-										ease: 'easeInOut',
-										repeat: Infinity,
-										repeatType: 'reverse',
-										duration: 2,
-									}}>
-										<Text
-												position={'relative'}
-												top={-3}
-												zIndex={8}
-												fontSize={'2em'}
-												fontWeight={'bold'}>
-														&#x2192;&#x2192;     
-										</Text>
-								</ChakraBox>
 						</Flex>
 				</GridItem>
 		)

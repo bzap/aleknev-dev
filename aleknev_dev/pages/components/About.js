@@ -43,20 +43,31 @@ const About = () => {
     //const y1 = useTransform(scrollYProgress, [0, 300], [0, 200]);
     //const y2 = useTransform(scrollYProgress, [0, 300], [0, -100]);
   
-    return( 
-
-    
-
-
-    
+    return(
     <Container 
+		
         position={'relative'}
-        maxW={'9xl'} 
+        maxW={'100%'} 
         px={'10em'}
         w={'100%'} 
         id='0' 
         pt='10em'
         pb='40em'>
+			<Flex
+				position={'absolute'}
+				maxW={'full'}
+				w={'100%'}
+				h={'100%'}
+				top={'-10%'}
+				left={0}
+				>
+				<Image
+					filter={'grayscale(40%)'}
+					fit='cover'
+					h={'100%'}
+					w={'100%'}
+					src={'side2.png'} />
+			</Flex>
         <Flex
         direction={'column'}
         gap={'7em'}>
@@ -72,11 +83,11 @@ const About = () => {
 									About Me.
 								</Heading>
 								<Text
-								w={'30em'}
+								w={'35em'}
 								fontWeight={700}
-								fontSize={'1.4em'}
-								color={'blackAlpha.600'}>
-									"fear != fate", a simple but meaningful mantra that I try to live by. A lot of times it's the irrational fear that stops us from trying.
+								fontSize={'1.2em'}
+								color={'blackAlpha.800'}>
+									"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that it's irrational fear that holds us back.
 								</Text>
 						</Flex>
 						<Spacer/>
@@ -84,6 +95,7 @@ const About = () => {
 					</Flex>
 					<Flex
 								position={'relative'}
+								zIndex={10}
 								w={'100%'}
 								justifyContent={'center'}
 								direction={'column'}
@@ -102,6 +114,7 @@ const About = () => {
 											textAlign={'end'}>
 												<Heading
 												fontWeight={900}
+												color={'blackAlpha.800'}
 												fontSize={45}>
 													BACKGROUND
 												</Heading>
@@ -119,6 +132,8 @@ const About = () => {
 										minW={'55em'}
 										w={'55em'}
 										bg={'whiteAlpha.600'}
+										backdropFilter='auto'
+										backdropBlur='5px'
 										boxShadow={'md'}
 										borderRadius={'20px'}>         
 												<Flex
@@ -127,18 +142,13 @@ const About = () => {
 													variants={subContainer}>
 														{backgroundInfo()}
 														<Stack
-														borderRadius={'22px'}
-														
 														w={'40%'}
 														m={10}
 														boxShadow={'md'}
-														borderWidth={'1px'}
 														borderColor={'blackAlpha.400'}>                            
 															<Image
 																fit='cover'
-																borderRadius={'21px'}
-																
-																
+																borderRadius={'5px'}
 																h={'100%'}
 																w={'35em'}
 																src={'https://i.imgur.com/7R4gnAa.jpg'}/>
@@ -159,6 +169,7 @@ const About = () => {
 											direction={'column'}
 											textAlign={'end'}>
 												<Heading
+												color="blackAlpha.800"
 												fontWeight={900}
 												fontSize={45}>
 													SKILLS
@@ -175,6 +186,8 @@ const About = () => {
 										minW={'55em'}
 										w={'55em'}
 										bg={'whiteAlpha.600'}
+										backdropFilter='auto'
+										backdropBlur='5px'
 										boxShadow={'md'}
 										borderRadius={'20px'}>         
 												<Flex
@@ -188,7 +201,22 @@ const About = () => {
 
 								</Flex>
                         </Flex>
-        
+			<Flex
+				position={'absolute'}
+				zIndex={0}
+				maxW={'full'}
+				w={'100%'}
+				h={'100%'}
+				top={'35%'}
+				left={'60%'}
+			>
+				<Image
+					filter={'grayscale(40%)'}
+					fit='cover'
+					h={'50%'}
+					w={'50%'}
+					src={'aboutcorn.png'} />
+			</Flex>
     </Container>
     
 )}
@@ -225,35 +253,16 @@ const pageIndicator = () => {
 							pb={8}>
 								01
 							</Heading>
-							<Heading
-							position={'relative'}
-							top={'-3.5rem'}
-							textAlign={'start'}
-							fontSize={'2em'}
-							fontWeight={900}>
-								&larr;
-							</Heading>
-
 						</Flex>
 						<Flex
 						direction='column'>
 							<Heading
 							fontSize={'4.5em'}
-							color={'blackAlpha.600'}
+							color={'blackAlpha.300'}
 							fontWeight={900}
 							pb={8}>
 								03
 							</Heading>
-							<Heading
-							top={'-3.5rem'}
-							color={'blackAlpha.600'}
-							position={'relative'}
-							textAlign={'end'}
-							fontSize={'2em'}
-							fontWeight={900}>
-								&rarr;
-							</Heading>
-
 						</Flex>
 					
 					</Flex>
@@ -339,11 +348,13 @@ const placeholderText = () => {
             <Text
                 variants={item}
                 as={'p'}
+				color={'blackAlpha.800'}
                 fontSize={15}
-                fontWeight={'600'}>
+                fontWeight={'700'}>
                 I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree. <br/><br/> 
                 My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.   
-                When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time. 
+					<br></br><br></br>
+				When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time. 
                 Currently I'm <b>looking for new opportunities</b> as a developer!
             </Text>
             </ChakraBox>
@@ -365,9 +376,10 @@ const skillText = () => {
                 <ChakraBox
                 variants={item}>
                 <Text
-                    fontSize={15}
                     as={'p'}
-                    fontWeight={'600'}>
+					color={'blackAlpha.800'}
+					fontSize={15}
+					fontWeight={'700'}>
                     Filler text filler text, this is my strength, filler text. I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
                 </Text>
                 </ChakraBox>
@@ -409,8 +421,8 @@ const skillItem = (name, ic) => {
                 <ListIcon as={ic} color='black.500'/>
                 <Text
 					textAlign={'center'}
-                    fontSize={15}
-                    fontWeight={'bold'}>
+                    fontSize={16}
+                    fontWeight={700}>
                     &thinsp;{name}
                 </Text>
             </Flex>

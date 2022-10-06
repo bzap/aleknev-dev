@@ -34,16 +34,14 @@ const Stripesv2 = ({pos}) => {
 		w={'100vw'}
 		h={'100vh'}
 		left={0}
-		variants={pos.heroView ? heroBG : pos.aboutView ? aboutBG : pos.projView ? projBG : contactBG}
+		
 		animate={'active'}
 		top={0}
 		transition={{duration:2}}
-		bg={'#edf2f8'}
+		
 		position={'fixed'}
 		overflow={'hidden'}>
-			<Center>
-				{entireGrid(pos)}
-			</Center>
+			
 		</ChakraBox>
 
 	)

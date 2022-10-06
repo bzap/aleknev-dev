@@ -25,23 +25,42 @@ import { Environment, Stage, OrbitControls } from "@react-three/drei";
 
 const Keyboard = () => {
     return (
-    <Canvas 
-    shadows 
-    dpr={[1, 2]} 
-    camera={{ fov: 40}}>
-      <Suspense fallback={null}>
-        <Stage preset="rembrandt" intensity={1}  environment="city">
-        false
-          <Model />
-        false
-        </Stage>
-      </Suspense>
-      <OrbitControls 
-      makeDefault 
-      autoRotate
-      enableZoom={false}
-       />
-    </Canvas>
+    <Flex
+    w={'100%'}>
+        <Flex
+        position={'relative'}
+        zIndex={10}
+        w={'100%'}>
+          <Canvas
+            shadows
+            dpr={[1, 2]}
+            camera={{ fov: 50 }}>
+            <Suspense fallback={null}>
+              <Stage preset="rembrandt" intensity={1} environment="city">
+                false
+                <Model />
+                false
+              </Stage>
+            </Suspense>
+            <OrbitControls
+              makeDefault
+              autoRotate
+              enableZoom={false}
+            />
+          </Canvas>
+        </Flex>
+        <Flex
+        position={'absolute'}
+        maxW={'full'}
+        w={'100%'}>
+          <Image
+            filter={'grayscale(20%)'}
+            fit='cover'
+            h={'100%'}
+            w={'100%'}
+            src={'heroblur2.png'} />
+        </Flex>
+    </Flex>
     )
 }
 

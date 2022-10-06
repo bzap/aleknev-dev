@@ -49,11 +49,12 @@ const Home = () => {
   
 
   return ( 
-    <Layout>
+    <Layout
+    >
         
         <Header pos={{views:{aboutView, setAboutView, projView, 
                            setProjView, setContactView, heroView, homeView, contactView}}}/>
-        
+        <Stripesv2 pos={{aboutView, heroView, projView, contactView}}/> 
         <Hero />
         <About/>
         <Projects/>

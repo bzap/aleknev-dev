@@ -17,10 +17,8 @@ const Header = ({pos}) => {
 			
 			display={'flex'} 
 			justifyContent={'center'} 
-			pt={'2'}
->
-			<ChakraBox 
- 				
+			pt={'2'}>
+			<ChakraBox 	
 				as={motion.div}
 				initial={{opacity:0}}
 				animate={{
@@ -89,7 +87,6 @@ const Header = ({pos}) => {
 											w={'2em'}/>
 										</Center>
 						</ChakraBox>  
-
 					</Flex>
 				</Box>
 			</ChakraBox>
