@@ -50,28 +50,25 @@ const ChakraBox = chakra(motion.div, {
 
 const Projects = () => ( 
 		<Container 
+	
 				position={'relative'}
 				maxW={'9xl'}
 				id='1' 
 				px={'10em'}
 				py={'10em'}
 				pb={'20em'}>	
-
-
-				<Container
-					position={'absolute'}
-					maxW={'container'}
-					w={'100%'}
-					h={'100%'}
-					top={0}
-					left={0}>
-					<Image
-						filter={'grayscale(40%)'}
-						fit='cover'
-						h={'100%'}
-						w={'100%'}
-						src={'blobabouttex2.png'} />
-				</Container>	
+		<Flex
+			position={'absolute'}
+			zIndex={0}
+			w={'100%'}
+			top={'-15%'}>
+			<Image
+				filter={'grayscale(40%)'}
+				fit='cover'
+				h={'100%'}
+				w={'100%'}
+				src={'projblob1.png'} />
+		</Flex>	
 				<Flex
 				direction='column'>
 					<Flex
@@ -102,6 +99,8 @@ const Projects = () => (
 
 
 				<Flex
+				position={'relative'}
+				zIndex={10}
 				direction='column'
 				gap={'10em'}>
 					<ChakraBox
@@ -132,7 +131,19 @@ const Projects = () => (
 
 				</Flex>
 
-
+		<Flex
+			position={'absolute'}
+			zIndex={0}
+			w={'100%'}
+			top={'45%'}
+			left={'-20%'}>
+			<Image
+				filter={'grayscale(40%)'}
+				fit='cover'
+				h={'50%'}
+				w={'100%'}
+				src={'centerproj.png'} />
+		</Flex>	
 		</Container> 
 	)
 	const pageIndicator = () => { 
