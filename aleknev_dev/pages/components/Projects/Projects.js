@@ -178,7 +178,7 @@ const pageIndicator = () => {
 						direction='column'>
 						<Heading
 							fontSize={{ sm: '3.5em', md: '4em', lg: '4.5em' }}
-							color={'blackAlpha.800'}
+							color={'blackAlpha.700'}
 							fontWeight={900}
 							pb={8}>
 							01

@@ -44,7 +44,7 @@ const About = () => {
     //const y2 = useTransform(scrollYProgress, [0, 300], [0, -100]);
   
     return(
-    <Container 
+    <Box
 		
         position={'relative'}
         maxW={'100%'} 
@@ -55,18 +55,19 @@ const About = () => {
         pb='40em'>
 			<Flex
 				position={'absolute'}
-				maxW={'full'}
-				w={'100%'}
-				h={'100%'}
-				top={'-10%'}
-				left={0}
-				>
+				maxW={'100%'}
+				w={'full'}
+				h={'100em'}
+				top={'9em'}
+				left={0}>
+				<Center>
 				<Image
 					filter={'grayscale(40%)'}
-					fit='cover'
-					h={'100%'}
+					
+					h={'150%'}
 					w={'100%'}
 					src={'side2.png'} />
+				</Center>
 			</Flex>
         <Flex
 		justifyContent={'center'}
@@ -254,7 +255,7 @@ const About = () => {
 								
                         </Flex>
 
-    </Container>
+    </Box>
     
 )}
 
