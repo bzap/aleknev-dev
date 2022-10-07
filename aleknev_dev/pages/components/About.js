@@ -69,7 +69,7 @@ const About = () => {
 					src={'side2.png'} />
 			</Flex>
         <Flex
-				justifyContent={'center'}
+		justifyContent={'center'}
         direction={'column'}
         gap={'10em'}>
 					<Flex
@@ -96,7 +96,6 @@ const About = () => {
 						{pageIndicator()}
 					</Flex>
 					<Flex
-								
 								position={'relative'}
 								zIndex={10}
 								w={'100%'}
@@ -104,22 +103,17 @@ const About = () => {
 								direction={'column'}
 								gap={'5em'}>
 									<Flex
-						bg='blue.200'
-									
 									direction={{md:'column',lg:'row'}}
 									w={'100%'}
-									gap={{ md: '1em',  }}
+									gap={{ md: '1em', lg:'12%'}}
 									position={'relative'}
 									justifyContent={{ md: 'center', lg: 'flex-end' }}>						
 										<Flex
-							bg='blue.100'	
-											minW={'20%'}
-											maxW={'80%'}
 											justifyContent={'center'}
 											h={'10%'}
 											position={'relative'}
 											direction={'column'}
-											textAlign={{ md: 'start', lg: 'end' }}>
+											textAlign={{ md: 'start', lg:'end'}}>
 												<Heading
 												w={{md: '100%', lg: '1.5em'}}
 												fontWeight={900}
@@ -128,25 +122,21 @@ const About = () => {
 													BACKGROUND
 												</Heading>
 												<Heading
-												w={{ md: '100%', lg: '1.7em' }}
+												w={{ md: '100%', lg: '100%' }}
 												fontWeight={900}
 												position={'relative'}
 												textAlign={{ md: 'start', lg: 'end' }}
 												top={-7}>
 													&#x5f;
 												</Heading>
-										</Flex>
-										<Spacer/>
+										</Flex>						
 										<Flex
-										
 										position={'relative'}
 										flexDirection={{md:'center', lg:'flex-end'}}
-										
 										w={{md:'100%', lg:'45em'}}
 										minW={'30%'}
 										gap={'1em'}
-
-										bg={'whiteAlpha.600'}
+										bg={'whiteAlpha.500'}
 										backdropFilter='auto'
 										backdropBlur='5px'
 										boxShadow={'md'}
@@ -156,7 +146,6 @@ const About = () => {
 													zIndex={1}
 													variants={subContainer}>
 													<Text
-														
 														textAlign={'justify'}
 														p={10}
 														as={'p'}
@@ -169,7 +158,7 @@ const About = () => {
 															mb={8}
 															float={'right'}
 															fit='cover'
-															borderRadius={'5px'}
+															borderRadius={'8px'}
 															h={'22em'}
 															w={'15em'}
 															src={'https://i.imgur.com/7R4gnAa.jpg'} />
@@ -184,45 +173,51 @@ const About = () => {
 										</Flex>
 									</Flex>
 									<Flex
-									direction={'row'}
-									w={'100%'}
-									gap={'7em'}
-									position={'relative'}
-									justifyContent={'flex-end'}>						
+										direction={{ md: 'column', lg: 'row' }}
+										w={'100%'}
+										gap={{ md: '1em', lg: '12%' }}
+										position={'relative'}
+										justifyContent={{ md: 'center', lg: 'flex-end' }}>
 										<Flex
-											w={'20em'}
-											h={'10em'}
+											justifyContent={'center'}
+											h={'10%'}
 											position={'relative'}
 											direction={'column'}
-											textAlign={'end'}>
-												<Heading
-												color="blackAlpha.800"
+											textAlign={{ md: 'start', lg: 'end' }}>
+											<Heading
+												w={{ md: '100%', lg: '1.5em' }}
 												fontWeight={900}
+												color={'blackAlpha.800'}
 												fontSize={45}>
-													SKILLS
-												</Heading>
-												<Heading
+												SKILLS
+											</Heading>
+											<Heading
+												w={{ md: '100%', lg: '100%' }}
 												fontWeight={900}
 												position={'relative'}
-												textAlign={'end'}
+												textAlign={{ md: 'start', lg: 'end' }}
 												top={-7}>
-													&#x5f;
-												</Heading>
+												&#x5f;
+											</Heading>
 										</Flex>
 										<Flex
-										minW={'55em'}
-										w={'55em'}
-										bg={'whiteAlpha.600'}
-										backdropFilter='auto'
-										backdropBlur='5px'
-										boxShadow={'md'}
-										borderRadius={'20px'}>         
-												<Flex
+											position={'relative'}
+											flexDirection={{ md: 'center', lg: 'flex-end' }}
+											w={{ md: '100%', lg: '45em' }}
+											minW={'30%'}
+											gap={'1em'}
+											bg={'whiteAlpha.500'}
+											backdropFilter='auto'
+											backdropBlur='5px'
+											boxShadow={'md'}
+											borderRadius={'20px'}>
+											<Box
 												w={'100%'}
-													zIndex={1}
-													variants={subContainer}>
-														{skillsInfo()}
-												</Flex>
+												zIndex={1}
+												variants={subContainer}>
+												{skillsInfo()}
+
+											</Box>
 										</Flex>
 									</Flex>
 
@@ -234,10 +229,8 @@ const About = () => {
 				maxW={'full'}
 				w={'100%'}
 				h={'100%'}
-				top={'35%'}
-				
-				left={'60%'}
-			>
+				top={'35%'}			
+				left={'60%'}>
 				<Image
 					filter={'grayscale(40%)'}
 					fit='cover'
@@ -312,36 +305,27 @@ const selfPortrait = () => {
 
 const skillsInfo = () => { 
     return (
-        <Flex
-		gap={'3em'}
-		direction={'row'}>
 			<Flex
+			direction={'column'}
             as={motion.div}
             whileHover={{ scale: 1.025 }}
-            colSpan={2}
-            position='relative'
-            flex={1}>
+            position='relative'>
            		{skillText()}
 				<Flex
-				p={10}
+				pb={12}
+				px={12}
+				justify-content={'space-between'}
+				direction='row'
 				w={'100%'}>
-					<Center>
-						<ChakraBox
-						variants={skillsItem}>
-							<Flex
-							direction={'row'}
-							gap={10}>
-								{skillList(4)}
-								{skillList(4)}
-								{skillList(4)}
-								{skillList(4)}
-							</Flex> 
-						</ChakraBox>   
-					</Center> 
+					{skillList(4)}
+					<Spacer/>
+					{skillList(4)}
+					<Spacer />
+					{skillList(4)}
+					<Spacer />
+					{skillList(4)}
 				</Flex> 
         	</Flex>
-
-		</Flex>
     )
 }
 
@@ -363,16 +347,12 @@ const placeholderText = () => {
 const skillText = () => { 
     return ( 
             <Flex
-            py={10}
-			pl={10}
-			pr={'1em'}
+            p={10}
             direction={'column'}>
                 <ChakraBox
                 variants={item}>
-                </ChakraBox>
-                <ChakraBox
-                variants={item}>
                 <Text
+					textAlign={'justify'}
                     as={'p'}
 					color={'blackAlpha.800'}
 					fontSize={15}
@@ -399,12 +379,15 @@ const skillList = (items) => {
     const ic4 = SiChakraui
 
     return( 
-        <List spacing={8}>
-        {skillItem(name, ic)}
-        {skillItem(name2, ic2)}
-        {skillItem(name3, ic3)}
-        {skillItem(name4, ic4)}
-    	</List>        
+		<Flex>
+			<List spacing={8}>
+			{skillItem(name, ic)}
+			{skillItem(name2, ic2)}
+			{skillItem(name3, ic3)}
+			{skillItem(name4, ic4)}
+			{skillItem(name4, ic4)}
+			</List>   
+		</Flex>     
     )
 }
 
@@ -412,7 +395,7 @@ const skillItem = (name, ic) => {
     return(
         <ListItem>
             <Flex
-			w={'105%'}
+			w={'100%'}
 			alignItems={'center'}
             direction={'row'}>
                 <ListIcon as={ic} color='black.500'/>
