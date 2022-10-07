@@ -81,13 +81,13 @@ const About = () => {
 						justifyContent={'space-between'}
 						direction='column'>
 								<Heading
-							fontSize={{ md: '6em', lg: '7em' }}> 
+							fontSize={{ sm: '4em', md: '6em', lg: '7em' }}> 
 									About Me.
 								</Heading>
 								<Text
-								w={'35em'}
+								w={{sm: '25em', md: '35em', lg: '35em'}}
 								fontWeight={700}
-								fontSize={{ sm: '0.7em', md: '1em', lg: '1.2em' }}
+								fontSize={{ sm: 15, md: '1em', lg: '1.2em' }}
 								color={'blackAlpha.800'}>
 									"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that irrational fear holds us back.
 								</Text>
@@ -103,37 +103,38 @@ const About = () => {
 								direction={'column'}
 								gap={'5em'}>
 									<Flex
-									direction={{md:'column',lg:'row'}}
+									direction={{sm: 'column', md:'column',lg:'row'}}
 									w={'100%'}
-									gap={{ md: '1em', lg:'12%'}}
+									gap={{ sm: '0.5em', md: '1em', lg:'12%'}}
 									position={'relative'}
-									justifyContent={{ md: 'center', lg: 'flex-end' }}>						
+									justifyContent={{ sm: 'center', md: 'center', lg: 'flex-end' }}>						
 										<Flex
 											justifyContent={'center'}
 											h={'10%'}
 											position={'relative'}
 											direction={'column'}
-											textAlign={{ md: 'start', lg:'end'}}>
+											textAlign={{ sm: 'start', md: 'start', lg:'end'}}>
 												<Heading
-												w={{md: '100%', lg: '1.5em'}}
+												w={{ sm: '100%', md: '100%', lg: '1.5em'}}
+												
 												fontWeight={900}
 												color={'blackAlpha.800'}
-												fontSize={45}>
+												fontSize={{ sm: 35, md: 38, lg: 45 }}>
 													BACKGROUND
 												</Heading>
 												<Heading
-												w={{ md: '100%', lg: '100%' }}
+												w={{ sm: '100%', md: '100%', lg: '100%' }}
 												fontWeight={900}
 												position={'relative'}
-												textAlign={{ md: 'start', lg: 'end' }}
+												textAlign={{ sm: 'start', md: 'start', lg: 'end' }}
 												top={-7}>
 													&#x5f;
 												</Heading>
 										</Flex>						
 										<Flex
 										position={'relative'}
-										flexDirection={{md:'center', lg:'flex-end'}}
-										w={{md:'100%', lg:'45em'}}
+										flexDirection={{sm: 'center', md:'center', lg:'flex-end'}}
+										w={{sm: '100%', md:'100%', lg:'45em'}}
 										minW={'30%'}
 										gap={'1em'}
 										bg={'whiteAlpha.500'}
@@ -150,7 +151,7 @@ const About = () => {
 														p={10}
 														as={'p'}
 														color={'blackAlpha.800'}
-														fontSize={15}
+														fontSize={{sm: 13.5, md: 14, lg: 15}}
 														fontWeight={'700'}>
 															<Image
 															boxShadow={'xl'}
@@ -159,8 +160,8 @@ const About = () => {
 															float={'right'}
 															fit='cover'
 															borderRadius={'8px'}
-															h={'22em'}
-															w={'15em'}
+															h={{sm: '15em', md: '20em', lg: '22em'}}
+															w={{ sm: '10em', md: '15em', lg: '15em' }}
 															src={'https://i.imgur.com/7R4gnAa.jpg'} />
 															I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree. <br /><br />
 															My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.
@@ -173,37 +174,38 @@ const About = () => {
 										</Flex>
 									</Flex>
 									<Flex
-										direction={{ md: 'column', lg: 'row' }}
+										direction={{ sm: 'column', md: 'column', lg: 'row' }}
 										w={'100%'}
-										gap={{ md: '1em', lg: '12%' }}
+										gap={{ sm: '0.5em', md: '1em', lg: '12%' }}
 										position={'relative'}
-										justifyContent={{ md: 'center', lg: 'flex-end' }}>
+										justifyContent={{ sm: 'center', md: 'center', lg: 'flex-end' }}>
 										<Flex
 											justifyContent={'center'}
 											h={'10%'}
 											position={'relative'}
 											direction={'column'}
-											textAlign={{ md: 'start', lg: 'end' }}>
+											textAlign={{ sm: 'start', md: 'start', lg: 'end' }}>
 											<Heading
-												w={{ md: '100%', lg: '1.5em' }}
+												w={{ sm: '100%', md: '100%', lg: '1.5em' }}
+
 												fontWeight={900}
 												color={'blackAlpha.800'}
-												fontSize={45}>
+												fontSize={{ sm: 35, md: 38, lg: 45 }}>
 												SKILLS
 											</Heading>
 											<Heading
-												w={{ md: '100%', lg: '100%' }}
+												w={{ sm: '100%', md: '100%', lg: '100%' }}
 												fontWeight={900}
 												position={'relative'}
-												textAlign={{ md: 'start', lg: 'end' }}
+												textAlign={{ sm: 'start', md: 'start', lg: 'end' }}
 												top={-7}>
 												&#x5f;
 											</Heading>
 										</Flex>
 										<Flex
 											position={'relative'}
-											flexDirection={{ md: 'center', lg: 'flex-end' }}
-											w={{ md: '100%', lg: '45em' }}
+											flexDirection={{ sm: 'center', md: 'center', lg: 'flex-end' }}
+											w={{ sm: '100%', md: '100%', lg: '45em' }}
 											minW={'30%'}
 											gap={'1em'}
 											bg={'whiteAlpha.500'}
@@ -267,7 +269,7 @@ const pageIndicator = () => {
 						<Flex
 						direction='column'>
 							<Heading
-							fontSize={{md: '4em', lg: '4.5em'}}
+							fontSize={{ sm: '3.5em', md: '4em', lg: '4.5em'}}
 							color={'blackAlpha.800'}
 							fontWeight={900}
 							pb={8}>
@@ -277,7 +279,7 @@ const pageIndicator = () => {
 						<Flex
 						direction='column'>
 							<Heading
-							fontSize={{md: '4em', lg:'4.5em'}}
+							fontSize={{sm: '3.5em', md: '4em', lg:'4.5em'}}
 							color={'blackAlpha.300'}
 							fontWeight={900}
 							pb={8}>
@@ -355,7 +357,7 @@ const skillText = () => {
 					textAlign={'justify'}
                     as={'p'}
 					color={'blackAlpha.800'}
-					fontSize={15}
+					fontSize={{ sm: 13.5, md: 14, lg: 15 }}
 					fontWeight={'700'}>
                     Filler text filler text, this is my strength, filler text. I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
                 </Text>
@@ -401,7 +403,7 @@ const skillItem = (name, ic) => {
                 <ListIcon as={ic} color='black.500'/>
                 <Text
 					textAlign={'center'}
-                    fontSize={16}
+					fontSize={{ sm: 13.5, md: 14, lg: 15 }}
                     fontWeight={700}>
                     &thinsp;{name}
                 </Text>
