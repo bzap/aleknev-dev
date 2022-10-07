@@ -102,9 +102,28 @@ const About = () => {
 								justifyContent={'center'}
 								direction={'column'}
 								gap={'5em'}>
+					<Flex>
+						<Flex
+							position={'absolute'}
+							zIndex={0}
+							maxW={'full'}
+							w={'100%'}
+							h={'100%'}
+							top={'20%'}
+							left={'40%'}>
+							<Image
+								filter={'grayscale(40%)'}
+								fit='cover'
+								h={'70em'}
+								w={'85em'}
+								src={'aboutcorn.png'} />
+						</Flex>
+					</Flex>
 									<Flex
+									
 									direction={{sm: 'column', md:'column',lg:'row'}}
 									w={'100%'}
+									zIndex={10}
 									gap={{ sm: '0.5em', md: '1em', lg:'12%'}}
 									position={'relative'}
 									justifyContent={{ sm: 'center', md: 'center', lg: 'flex-end' }}>						
@@ -132,12 +151,13 @@ const About = () => {
 												</Heading>
 										</Flex>						
 										<Flex
+										
 										position={'relative'}
 										flexDirection={{sm: 'center', md:'center', lg:'flex-end'}}
 										w={{sm: '100%', md:'100%', lg:'45em'}}
 										minW={'30%'}
 										gap={'1em'}
-										bg={'whiteAlpha.500'}
+										bg={'whiteAlpha.600'}
 										backdropFilter='auto'
 										backdropBlur='5px'
 										boxShadow={'md'}
@@ -156,18 +176,16 @@ const About = () => {
 															<Image
 															boxShadow={'xl'}
 															ml={10}
-															mb={8}
+															mb={5}
 															float={'right'}
 															fit='cover'
 															borderRadius={'8px'}
 															h={{sm: '15em', md: '20em', lg: '22em'}}
 															w={{ sm: '10em', md: '15em', lg: '15em' }}
 															src={'https://i.imgur.com/7R4gnAa.jpg'} />
-															I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree. <br /><br />
+															I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree.
 															My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.
-															<br></br><br></br>
-															When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time.
-															<br></br><br></br>Currently I'm <b>looking for new opportunities</b> as a developer!
+															When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time.Currently I'm <b>looking for new opportunities</b> as a developer!
 													</Text>
 
 												</Box>
@@ -181,6 +199,7 @@ const About = () => {
 										justifyContent={{ sm: 'center', md: 'center', lg: 'flex-end' }}>
 										<Flex
 											justifyContent={'center'}
+											zIndex={10}
 											h={'10%'}
 											position={'relative'}
 											direction={'column'}
@@ -204,42 +223,37 @@ const About = () => {
 										</Flex>
 										<Flex
 											position={'relative'}
+											
 											flexDirection={{ sm: 'center', md: 'center', lg: 'flex-end' }}
 											w={{ sm: '100%', md: '100%', lg: '45em' }}
 											minW={'30%'}
 											gap={'1em'}
-											bg={'whiteAlpha.500'}
+											zIndex={10}
+											bg={'whiteAlpha.600'}
 											backdropFilter='auto'
 											backdropBlur='5px'
 											boxShadow={'md'}
 											borderRadius={'20px'}>
+
 											<Box
+												position={'relative'}
+												zIndex={10}			
 												w={'100%'}
-												zIndex={1}
+												
 												variants={subContainer}>
 												{skillsInfo()}
 
 											</Box>
+
 										</Flex>
+
+										
 									</Flex>
 
 								</Flex>
+								
                         </Flex>
-			<Flex
-				position={'absolute'}
-				zIndex={0}
-				maxW={'full'}
-				w={'100%'}
-				h={'100%'}
-				top={'35%'}			
-				left={'60%'}>
-				<Image
-					filter={'grayscale(40%)'}
-					fit='cover'
-					h={'50%'}
-					w={'50%'}
-					src={'aboutcorn.png'} />
-			</Flex>
+
     </Container>
     
 )}

@@ -15,6 +15,8 @@ import {
 		useColorModeValue,
 		Grid, 
 		GridItem,
+		Wrap, 
+		WrapItem,
 		Center,
 		ScaleFade,
 		transition, chakra, 
@@ -50,14 +52,14 @@ const ChakraBox = chakra(motion.div, {
 
 const Projects = () => ( 
 		<Container 
-	
-				position={'relative'}
-				maxW={'9xl'}
-				id='1' 
-				px={'10em'}
-				py={'10em'}
-				pb={'20em'}>	
-		<Flex
+		position={'relative'}
+		maxW={'100%'}
+		px={{ md: '4em', lg: '10em' }}
+		w={'100%'}
+		id='0'
+		pt='10em'
+		pb='40em'>
+			<Flex
 			position={'absolute'}
 			zIndex={0}
 			w={'100%'}
@@ -68,37 +70,35 @@ const Projects = () => (
 				h={'100%'}
 				w={'100%'}
 				src={'projblob1.png'} />
-		</Flex>	
+			</Flex>	
+		<Flex
+			justifyContent={'center'}
+			direction={'column'}
+			gap={'10em'}>
+			<Flex
+				justifyContent={'center'}
+				gap={'3em'}
+				direction='row'>
 				<Flex
-
-				direction='column'>
-					<Flex
-						direction='row'>
-						<Flex
-							pl={'2em'}
-							gap={2}
-							justifyContent={'space-between'}
-							direction='column'>
-							<Heading
-								fontSize={'7em'}>
-								Projects.
-							</Heading>
-							<Text
-								w={'35em'}
-								fontWeight={700}
-								fontSize={'1.2em'}
-								color={'blackAlpha.800'}>
-								"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that irrational fear holds us back.
-							</Text>
-						</Flex>
-						<Spacer />
-						{pageIndicator()}
-					</Flex>
-					
-
-
-
-
+					gap={2}
+					justifyContent={'space-between'}
+					direction='column'>
+					<Heading
+						fontSize={{ sm: '4em', md: '6em', lg: '7em' }}>
+						 Projects.
+					</Heading>
+					<Text
+						w={{ sm: '25em', md: '35em', lg: '35em' }}
+						fontWeight={700}
+						fontSize={{ sm: 15, md: '1em', lg: '1.2em' }}
+						color={'blackAlpha.800'}>
+						"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that irrational fear holds us back.
+					</Text>
+				</Flex>
+				<Spacer />
+				{pageIndicator()}
+			</Flex>
+		
 				<Flex
 				position={'relative'}
 				zIndex={10}
@@ -110,12 +110,17 @@ const Projects = () => (
 					initial={'hidden'}
 					whileInView={'visible'}
 					viewport={{once: false}}>	
-					<Flex 
+					<Flex
+
 					direction={'row'}
+					sx={{'flex-wrap':'wrap'}}
 					justifyContent={'space-between'}>
+								
 							{verticalItem('0em')}
 							{verticalItem('5em')}
 							{verticalItem('10em')}
+							{verticalItem('0em')}
+							{verticalItem('5em')}
 					</Flex>
 					</ChakraBox>
 					<ChakraBox
@@ -124,8 +129,7 @@ const Projects = () => (
 					whileInView={'visible'}
 					viewport={{once: true}}>	
 					<Grid templateColumns='repeat(3	, 1fr)' gap={'10em'}>
-							{verticalItem('0em')}
-							{verticalItem('5em')}
+
 					</Grid>
 					</ChakraBox>
 						{gitButton()}
@@ -148,6 +152,8 @@ const Projects = () => (
 		</Flex>	
 		</Container> 
 	)
+
+
 const pageIndicator = () => {
 	return (
 		<Flex
@@ -165,14 +171,13 @@ const pageIndicator = () => {
 				position={'absolute'}
 				direction={'column'}>
 				<Flex
+					left={'0.5em'}
 					direction={'row'}
-					position={'relative'}
-					top={'1.5em'}
-					left={'1rem'}>
+					position={'relative'}>
 					<Flex
 						direction='column'>
 						<Heading
-							fontSize={'4.5em'}
+							fontSize={{ sm: '3.5em', md: '4em', lg: '4.5em' }}
 							color={'blackAlpha.800'}
 							fontWeight={900}
 							pb={8}>
@@ -182,7 +187,7 @@ const pageIndicator = () => {
 					<Flex
 						direction='column'>
 						<Heading
-							fontSize={'4.5em'}
+							fontSize={{ sm: '3.5em', md: '4em', lg: '4.5em' }}
 							color={'blackAlpha.300'}
 							fontWeight={900}
 							pb={8}>
@@ -219,7 +224,7 @@ const verticalItem = (top) => {
 						</Heading>
 					</Flex>
 
-				<GridItem 
+				<Flex
 						as={motion.div}
 						whileHover={{ scale: 1.025 }}
 						viewport={{once:true, amount:0.8}}
@@ -235,7 +240,7 @@ const verticalItem = (top) => {
 						boxShadow={'md'} 
 						borderRadius={'22px'} >
 						<Preview/>
-				</GridItem>     
+				</Flex>     
 				</ChakraBox> 
 		)
 }

@@ -12,6 +12,8 @@ const Layout = ({ children, router }) => {
         margin='auto' 
         minH='100vh' 
         bg='#F2F2F2'
+        overflow={'hidden'}
+        left={0}
         > 
         
             <main>{children}</main> 
