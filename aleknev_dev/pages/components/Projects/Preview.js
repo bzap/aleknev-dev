@@ -149,10 +149,12 @@ const projectButton = (name, link, icon) => {
             textColor={'Black'}
             fontWeight={'bold'}
             whiteSpace={'nowrap'}
-            fontSize={15}>
+            fontSize={16}>
                 {name}&#160;&gt;
             
         </Flex>
+
+
     )
 
 }

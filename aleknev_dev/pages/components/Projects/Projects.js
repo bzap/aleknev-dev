@@ -70,30 +70,31 @@ const Projects = () => (
 				src={'projblob1.png'} />
 		</Flex>	
 				<Flex
+
 				direction='column'>
 					<Flex
-					direction='row'
-					pb={'5em'}>
+						direction='row'>
 						<Flex
-						pl={'2em'}
-						gap={2}
-						justifyContent={'space-between'}
-						direction='column'>
-								<Heading
-								fontSize={'7em'}> 
-									Projects.
-								</Heading>
-								<Text
-								w={'30em'}
-								fontWeight={600}
-								fontSize={'1.4em'}
-								color={'blackAlpha.700'}>
-									"fear != fate", a simple but meaningful mantra that I try to live by.
-								</Text>
+							pl={'2em'}
+							gap={2}
+							justifyContent={'space-between'}
+							direction='column'>
+							<Heading
+								fontSize={'7em'}>
+								Projects.
+							</Heading>
+							<Text
+								w={'35em'}
+								fontWeight={700}
+								fontSize={'1.2em'}
+								color={'blackAlpha.800'}>
+								"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that irrational fear holds us back.
+							</Text>
 						</Flex>
-						<Spacer/>
+						<Spacer />
 						{pageIndicator()}
 					</Flex>
+					
 
 
 
@@ -101,6 +102,7 @@ const Projects = () => (
 				<Flex
 				position={'relative'}
 				zIndex={10}
+				pt={'10em'}
 				direction='column'
 				gap={'10em'}>
 					<ChakraBox
@@ -146,65 +148,53 @@ const Projects = () => (
 		</Flex>	
 		</Container> 
 	)
-	const pageIndicator = () => { 
-		return ( 
-			<Flex
+const pageIndicator = () => {
+	return (
+		<Flex
 			w={'100%'}
 			position={'relative'}
 			direction="row"
 			justifyContent={'flex-end'}	>
-				<Flex
+			<Flex
 				w={'13em'}
 				transform={'rotate(90deg)'}
 				transformOrigin={'top left'}
+				top={'10px'}
 				left={'100%'}
 				justifyContent={'flex-end'}
 				position={'absolute'}
 				direction={'column'}>
-					<Flex
+				<Flex
 					direction={'row'}
 					position={'relative'}
 					top={'1.5em'}
-					left={'1rem'}
-					alignItems={'flex-start'}>
+					left={'1rem'}>
+					<Flex
+						direction='column'>
 						<Heading
-						fontSize={25}
-						fontWeight={900}>
-							&larr;
-						</Heading>
-						<Spacer/>
-					</Flex>
-					<Center>
-							<Heading
 							fontSize={'4.5em'}
+							color={'blackAlpha.800'}
 							fontWeight={900}
 							pb={8}>
-								02&thinsp;
-							</Heading>
-							<Heading
-							color={'blackAlpha.700'}
-							fontWeight={900}>
-								_&thinsp;03
-							</Heading>
-					</Center>
-					<Flex
-					direction={'row'}
-					position={'relative'}
-					bottom={'3em'}
-					right={'1rem'}
-					alignItems={'flex-end'}>
-						<Spacer/>
-						<Heading
-						fontSize={25}
-						color={'blackAlpha.700'}
-						fontWeight={900}>
-							&rarr;
+							01
 						</Heading>
-					</Flex>	
+					</Flex>
+					<Flex
+						direction='column'>
+						<Heading
+							fontSize={'4.5em'}
+							color={'blackAlpha.300'}
+							fontWeight={900}
+							pb={8}>
+							03
+						</Heading>
+					</Flex>
+
 				</Flex>
-		</Flex>	
-		)
-	}
+			</Flex>
+		</Flex>
+	)
+}
 
 
 
