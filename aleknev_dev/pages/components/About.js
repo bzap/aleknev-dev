@@ -48,7 +48,7 @@ const About = () => {
 		
         position={'relative'}
         maxW={'100%'} 
-        px={'10em'}
+        px={{md:'4em', lg:'10em'}}
         w={'100%'} 
         id='0' 
         pt='10em'
@@ -69,23 +69,25 @@ const About = () => {
 					src={'side2.png'} />
 			</Flex>
         <Flex
+				justifyContent={'center'}
         direction={'column'}
-        gap={'7em'}>
+        gap={'10em'}>
 					<Flex
+					justifyContent={'center'}
+					gap={'3em'}
 					direction='row'>
 						<Flex
-						pl={'2em'}
 						gap={2}
 						justifyContent={'space-between'}
 						direction='column'>
 								<Heading
-								fontSize={'7em'}> 
+							fontSize={{ md: '6em', lg: '7em' }}> 
 									About Me.
 								</Heading>
 								<Text
 								w={'35em'}
 								fontWeight={700}
-								fontSize={'1.2em'}
+								fontSize={{ sm: '0.7em', md: '1em', lg: '1.2em' }}
 								color={'blackAlpha.800'}>
 									"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that irrational fear holds us back.
 								</Text>
@@ -94,6 +96,7 @@ const About = () => {
 						{pageIndicator()}
 					</Flex>
 					<Flex
+								
 								position={'relative'}
 								zIndex={10}
 								w={'100%'}
@@ -101,59 +104,83 @@ const About = () => {
 								direction={'column'}
 								gap={'5em'}>
 									<Flex
-									direction={'row'}
+						bg='blue.200'
+									
+									direction={{md:'column',lg:'row'}}
 									w={'100%'}
-									gap={'7em'}
+									gap={{ md: '1em',  }}
 									position={'relative'}
-									justifyContent={'flex-end'}>						
+									justifyContent={{ md: 'center', lg: 'flex-end' }}>						
 										<Flex
-											w={'20em'}
-											h={'10em'}
+							bg='blue.100'	
+											minW={'20%'}
+											maxW={'80%'}
+											justifyContent={'center'}
+											h={'10%'}
 											position={'relative'}
 											direction={'column'}
-											textAlign={'end'}>
+											textAlign={{ md: 'start', lg: 'end' }}>
 												<Heading
+												w={{md: '100%', lg: '1.5em'}}
 												fontWeight={900}
 												color={'blackAlpha.800'}
 												fontSize={45}>
 													BACKGROUND
 												</Heading>
 												<Heading
+												w={{ md: '100%', lg: '1.7em' }}
 												fontWeight={900}
 												position={'relative'}
-												textAlign={'end'}
+												textAlign={{ md: 'start', lg: 'end' }}
 												top={-7}>
 													&#x5f;
 												</Heading>
 										</Flex>
+										<Spacer/>
 										<Flex
+										
 										position={'relative'}
-										flexDirection={'flex-end'}
-										minW={'55em'}
-										w={'55em'}
+										flexDirection={{md:'center', lg:'flex-end'}}
+										
+										w={{md:'100%', lg:'45em'}}
+										minW={'30%'}
+										gap={'1em'}
+
 										bg={'whiteAlpha.600'}
 										backdropFilter='auto'
 										backdropBlur='5px'
 										boxShadow={'md'}
 										borderRadius={'20px'}>         
-												<Flex
+												<Box
 												w={'100%'}
 													zIndex={1}
 													variants={subContainer}>
-														{backgroundInfo()}
-														<Stack
-														w={'40%'}
-														m={10}
-														boxShadow={'md'}
-														borderColor={'blackAlpha.400'}>                            
+													<Text
+														
+														textAlign={'justify'}
+														p={10}
+														as={'p'}
+														color={'blackAlpha.800'}
+														fontSize={15}
+														fontWeight={'700'}>
 															<Image
-																fit='cover'
-																borderRadius={'5px'}
-																h={'100%'}
-																w={'35em'}
-																src={'https://i.imgur.com/7R4gnAa.jpg'}/>
-														</Stack>
-												</Flex>
+															boxShadow={'xl'}
+															ml={10}
+															mb={8}
+															float={'right'}
+															fit='cover'
+															borderRadius={'5px'}
+															h={'22em'}
+															w={'15em'}
+															src={'https://i.imgur.com/7R4gnAa.jpg'} />
+															I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree. <br /><br />
+															My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.
+															<br></br><br></br>
+															When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time.
+															<br></br><br></br>Currently I'm <b>looking for new opportunities</b> as a developer!
+													</Text>
+
+												</Box>
 										</Flex>
 									</Flex>
 									<Flex
@@ -241,14 +268,13 @@ const pageIndicator = () => {
 			position={'absolute'}
 			direction={'column'}>
 					<Flex
+					left={'0.5em'}
 					direction={'row'}
-					position={'relative'}
-					top={'1.5em'}
-					left={'1rem'}>
+					position={'relative'}>
 						<Flex
 						direction='column'>
 							<Heading
-							fontSize={'4.5em'}
+							fontSize={{md: '4em', lg: '4.5em'}}
 							color={'blackAlpha.800'}
 							fontWeight={900}
 							pb={8}>
@@ -258,7 +284,7 @@ const pageIndicator = () => {
 						<Flex
 						direction='column'>
 							<Heading
-							fontSize={'4.5em'}
+							fontSize={{md: '4em', lg:'4.5em'}}
 							color={'blackAlpha.300'}
 							fontWeight={900}
 							pb={8}>
@@ -272,21 +298,6 @@ const pageIndicator = () => {
 	)
 }
 
-const backgroundInfo = () => { 
-    return ( 
-        <Flex 
-        as={motion.div}
-        whileHover={{ scale: 1.025 }}
-        direction={'row'}
-        gap={10}
-        w={'70%'}
-        justifyContent='center'>
-    
-            {placeholderText()}
-
-        </Flex>
-    )
-}
 
 
 const selfPortrait = () => { 
@@ -341,25 +352,10 @@ const skillsInfo = () => {
 
 const placeholderText = () => { 
     return (
-        <Flex
-        p={'3em'}
-        direction={'column'}>
             <ChakraBox
             variants={item}>
-            <Text
-                variants={item}
-                as={'p'}
-				color={'blackAlpha.800'}
-                fontSize={15}
-                fontWeight={'700'}>
-                I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree. <br/><br/> 
-                My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.   
-					<br></br><br></br>
-				When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time. 
-                Currently I'm <b>looking for new opportunities</b> as a developer!
-            </Text>
+
             </ChakraBox>
-        </Flex>
 
     )
 }
