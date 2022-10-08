@@ -58,7 +58,7 @@ const About = () => {
 				maxW={'100%'}
 				w={'full'}
 				h={'100em'}
-				top={'9em'}
+				top={'15em'}
 				left={0}>
 				<Center>
 				<Image
@@ -166,21 +166,34 @@ const About = () => {
 												<Box
 												w={'100%'}
 													zIndex={1}
+													p={12}	
 													variants={subContainer}>
+													<Heading
+													borderBottomWidth={'1px'}
+													borderColor={'blackAlpha.200'}>
+														<Text
+															pb='2'
+															fontWeight={900}
+															fontSize={30}>
+															&rarr;&thinsp;&rarr;
+														</Text>
+													</Heading>
 													<Text
 														textAlign={'justify'}
-														p={10}
+														pt={7}
 														as={'p'}
 														color={'blackAlpha.800'}
-														fontSize={{sm: 13.5, md: 14, lg: 15}}
+														fontSize={{sm: 13.5, md: 14, lg: 14.5}}
 														fontWeight={'700'}>
 															<Image
-															boxShadow={'xl'}
+															boxShadow={'md'}
 															ml={10}
 															mb={5}
 															float={'right'}
 															fit='cover'
-															borderRadius={'8px'}
+															borderRadius={'2px'}
+															borderWidth={'5px'}
+															borderColor={'black'}
 															h={{sm: '15em', md: '20em', lg: '22em'}}
 															w={{ sm: '10em', md: '15em', lg: '15em' }}
 															src={'https://i.imgur.com/7R4gnAa.jpg'} />
@@ -224,7 +237,6 @@ const About = () => {
 										</Flex>
 										<Flex
 											position={'relative'}
-											
 											flexDirection={{ sm: 'center', md: 'center', lg: 'flex-end' }}
 											w={{ sm: '100%', md: '100%', lg: '45em' }}
 											minW={'30%'}
@@ -326,11 +338,23 @@ const skillsInfo = () => {
 			direction={'column'}
             as={motion.div}
             whileHover={{ scale: 1.025 }}
-            position='relative'>
+            position='relative'
+			px={12}
+			pt={12}
+			>
+				<Heading
+				borderBottomWidth={'1px'}
+				borderColor={'blackAlpha.200'}>
+					<Text
+						pb={2}
+						fontWeight={900}
+						fontSize={30}>
+						&&thinsp;&
+					</Text>
+				</Heading>
            		{skillText()}
 				<Flex
 				pb={12}
-				px={12}
 				justify-content={'space-between'}
 				direction='row'
 				w={'100%'}>
@@ -364,7 +388,8 @@ const placeholderText = () => {
 const skillText = () => { 
     return ( 
             <Flex
-            p={10}
+			pt={7}
+			pb={7}
             direction={'column'}>
                 <ChakraBox
                 variants={item}>
@@ -372,7 +397,7 @@ const skillText = () => {
 					textAlign={'justify'}
                     as={'p'}
 					color={'blackAlpha.800'}
-					fontSize={{ sm: 13.5, md: 14, lg: 15 }}
+					fontSize={{ sm: 13.5, md: 14, lg: 14.5 }}
 					fontWeight={'700'}>
                     Filler text filler text, this is my strength, filler text. I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
                 </Text>

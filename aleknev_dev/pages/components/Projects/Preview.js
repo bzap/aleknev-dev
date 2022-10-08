@@ -145,18 +145,13 @@ const projectButton = (name, link, icon) => {
         pt={3}
         justifyContent={'flex-end'}
             flex={1}
-            colorScheme={'white'}
             textColor={'Black'}
             fontWeight={'bold'}
             whiteSpace={'nowrap'}
             fontSize={16}>
                 {name}&#160;&gt;
-            
         </Flex>
-
-
     )
-
 }
 //textShadow={"1px 1px gray.700"}
 export default Preview

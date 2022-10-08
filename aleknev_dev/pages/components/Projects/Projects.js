@@ -19,6 +19,8 @@ import {
 		WrapItem,
 		Center,
 		ScaleFade,
+		useBreakpoint,
+		useBreakpointValue,
 		transition, chakra, 
 		shouldForwardProp
 	} from '@chakra-ui/react';
@@ -28,6 +30,8 @@ import Parallax from '../layouts/Parallax';
 import { SiGithub  } from 'react-icons/si';
 import { projectContainer, projectSubContainer, skillsContainer, item, skillsItem, projecteem } from '../Variants/Variants'
 import Head from 'next/head';
+import { useState, useEffect } from 'react'
+
 
 
 const ChakraBox = chakra(motion.div, {
@@ -50,8 +54,14 @@ const ChakraBox = chakra(motion.div, {
 	};
 
 
-const Projects = () => ( 
-		<Container 
+const Projects = () => { 
+
+		const [projItem, setProjItem] = useState(['first', 'second', 'third', 'fourth', 'fifth'])
+	//console.log(useBreakpoint())
+		const breakPoint = useBreakpoint()
+		console.log(breakPoint)
+		return (
+		<Box
 		position={'relative'}
 		maxW={'100%'}
 		px={{ md: '4em', lg: '10em' }}
@@ -59,18 +69,22 @@ const Projects = () => (
 		id='0'
 		pt='10em'
 		pb='40em'>
-			<Flex
+		<Flex
 			position={'absolute'}
-			zIndex={0}
-			w={'100%'}
-			top={'-15%'}>
-			<Image
-				filter={'grayscale(40%)'}
-				fit='cover'
-				h={'100%'}
-				w={'100%'}
-				src={'projblob1.png'} />
-			</Flex>	
+			maxW={'100%'}
+			w={'full'}
+			h={'100em'}
+			top={'-10em'}
+			left={0}>
+			<Center>
+				<Image
+					filter={'grayscale(40%)'}
+
+					h={'120%'}
+					w={'100%'}
+					src={'projblob1.png'} />
+			</Center>
+		</Flex>
 		<Flex
 			justifyContent={'center'}
 			direction={'column'}
@@ -104,25 +118,32 @@ const Projects = () => (
 				zIndex={10}
 				pt={'10em'}
 				direction='column'
-				gap={'10em'}>
+				gap={'5em'}
+				justifyContent={'center'}>
 					<ChakraBox
 					variants={projectContainer}
 					initial={'hidden'}
 					whileInView={'visible'}
 					viewport={{once: false}}>	
-					<Flex
+							<Flex
+								direction={'row'}
+								justifyContent={'space-between'}
+								flexDirection='flex-start'
+								sx={{ 'flex-wrap': 'wrap' }}
+								>
+								{[...Array(6).keys()].map((item, idx) => (
+									<Box
+									
+									display={{sm:'flex', md:null}}
+									w={{sm:'100%', md: '100%', lg: '24em'}}
+									justifyContent={'center'}>
+										{verticalItem((idx * 5).toString()+'em', "0" + (idx + 1).toString())}
+									</Box> 
+								))}
+							</Flex>
+						</ChakraBox>
 
-					direction={'row'}
-					sx={{'flex-wrap':'wrap'}}
-					justifyContent={'space-between'}>
-								
-							{verticalItem('0em')}
-							{verticalItem('5em')}
-							{verticalItem('10em')}
-							{verticalItem('0em')}
-							{verticalItem('5em')}
-					</Flex>
-					</ChakraBox>
+				
 					<ChakraBox
 					variants={projectContainer}
 					initial={'hidden'}
@@ -150,8 +171,9 @@ const Projects = () => (
 				w={'100%'}
 				src={'centerproj.png'} />
 		</Flex>	
-		</Container> 
-	)
+	</Box> 
+		)
+}
 
 
 const pageIndicator = () => {
@@ -203,7 +225,7 @@ const pageIndicator = () => {
 
 
 
-const verticalItem = (top) => { 
+const verticalItem = (top, index) => { 
 		return ( 
 			<ChakraBox
 				variants={projectSubContainer}>
@@ -214,7 +236,7 @@ const verticalItem = (top) => {
 						<Heading
 						fontWeight={800}
 						fontSize={45}>
-							01
+							{index}
 						</Heading>
 						<Heading
 						position={'relative'}
@@ -231,8 +253,8 @@ const verticalItem = (top) => {
 						flex={1}
 						position={'relative'}
 						h={'30.5em'}
-						justifyContent={'flex-start'}
-						w={'24em'} 
+						justifyContent={'center'}
+						w={{sm:'24em', md:'24em', lg:'24em'}} 
 						top={top}
 						bg={'whiteAlpha.600'}
 						backdropFilter='auto'

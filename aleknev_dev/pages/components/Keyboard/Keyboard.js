@@ -37,9 +37,7 @@ const Keyboard = () => {
             camera={{ fov: 50 }}>
             <Suspense fallback={null}>
               <Stage preset="rembrandt" intensity={1} environment="city">
-                false
-                <Model />
-                false
+                <Model/>
               </Stage>
             </Suspense>
             <OrbitControls
