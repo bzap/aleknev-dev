@@ -14,7 +14,6 @@ const Header = ({pos}) => {
 	return (
 	<Container>
 		<Flex
-			
 			display={'flex'} 
 			justifyContent={'center'} 
 			pt={'2'}>
@@ -35,7 +34,7 @@ const Header = ({pos}) => {
 			
 				backdropFilter='auto' 
 				backdropBlur='8px'
-				maxW={'85%'}
+				maxW={{sm: '90%', md:'80%', lg:'80%'}}
 				position='fixed' 
 				w={'100%'}
 				zIndex={200} 
@@ -46,7 +45,7 @@ const Header = ({pos}) => {
 				justifyContent={'center'}
 				>
 				<Box
-					p={8}
+					p={3}
 					py={'10px'}>
 					<Flex
 						align={'center'}
@@ -78,7 +77,7 @@ const Header = ({pos}) => {
 						<ChakraBox
 									cursor={'pointer'}
 									as={motion.div}
-									whileHover={{scale:1.1}}
+									whileHover={{scale:1.1, y: -3}}
 									whileTap={{scale:0.9}}>
 										<Center>
 											<Icon 

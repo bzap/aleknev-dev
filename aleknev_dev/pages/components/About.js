@@ -27,12 +27,12 @@ import {
     shouldForwardProp
   } from '@chakra-ui/react';
 import { SiReact, SiChakraui, SiJavascript, SiPython } from 'react-icons/si';
-import { GrReturn } from 'react-icons/gr'
+import { MdOutlineSubdirectoryArrowRight } from 'react-icons/md'
 import { motion, useScroll, useTransform, isValidMotionProp } from "framer-motion";
 import Parallax from './layouts/Parallax';
 import { skillsContainer, subContainer, item, skillsItem, container } from './Variants/Variants';
 import Head from 'next/head';
-import { redirect } from 'next/dist/server/api-utils';
+import { redirect } from 'next/dist/server/api-utils'
 
 
 const ChakraBox = chakra(motion.div, {
@@ -40,31 +40,25 @@ const ChakraBox = chakra(motion.div, {
   });
 
 const About = () => {
-    //const { scrollYProgress } = useScroll() 
-    //const y1 = useTransform(scrollYProgress, [0, 300], [0, 200]);
-    //const y2 = useTransform(scrollYProgress, [0, 300], [0, -100]);
-  
     return(
     <Box
         position={'relative'}
         maxW={'100%'} 
-        px={{md:'4em', lg:'10em'}}
+        px={{sm: '5%', md: '10%', lg:'10%'}}
         w={'100%'} 
         id='0' 
-        pt='10em'
+        pt='5em'
         pb='40em'>
 			<Flex
-				
 				position={'absolute'}
 				maxW={'100%'}
 				w={'full'}
 				h={'100em'}
-				top={'15em'}
+				top={'9em'}
 				left={0}>
 				<Center>
 				<Image
-					filter={'grayscale(40%)'}
-					
+					filter={'grayscale(60%)'}
 					h={'150%'}
 					w={'100%'}
 					src={'side2.png'} />
@@ -73,10 +67,9 @@ const About = () => {
         <Flex
 		justifyContent={'center'}
         direction={'column'}
-        gap={'10em'}>
+        gap={'2em'}>
 					<Flex
 					justifyContent={'center'}
-					gap={'3em'}
 					direction='row'>
 						<Flex
 						gap={2}
@@ -87,9 +80,9 @@ const About = () => {
 									About Me.
 								</Heading>
 								<Text
-								w={{sm: '25em', md: '35em', lg: '35em'}}
+								w={{sm: '25em', md: '35em', lg: '40em'}}
 								fontWeight={700}
-								fontSize={{ sm: 15, md: '1em', lg: '1.2em' }}
+								fontSize={{ sm: 15, md: '1em', lg: '1.1em' }}
 								color={'blackAlpha.800'}>
 									"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that irrational fear holds us back.
 								</Text>
@@ -114,7 +107,7 @@ const About = () => {
 							top={'20%'}
 							left={'40%'}>
 							<Image
-								filter={'grayscale(40%)'}
+								filter={'grayscale(60%)'}
 								fit='cover'
 								h={'70em'}
 								w={'85em'}
@@ -125,7 +118,7 @@ const About = () => {
 									direction={{sm: 'column', md:'column',lg:'row'}}
 									w={'100%'}
 									zIndex={10}
-									gap={{ sm: '0.5em', md: '1em', lg:'12%'}}
+									gap={{ sm: '0.5em', md: '1em', lg:'8%'}}
 									position={'relative'}
 									justifyContent={{ sm: 'center', md: 'center', lg: 'flex-end' }}>						
 										<Flex
@@ -133,18 +126,19 @@ const About = () => {
 											position={'relative'}
 											direction={'column'}
 											textAlign={{ sm: 'start', md: 'start', lg:'end'}}>
-												<Icon 
-												as={GrReturn}
-												w={'6.5em'}
-												style={{ stroke: 'rgb(148, 205, 116)' }}
-												h={'6.5em'} 
-												transform={'scaleX(-1)'}/>
+											<Icon
+												as={MdOutlineSubdirectoryArrowRight}
+												w={{ sm: '4em', md: '5em', lg: '5.7em' }}
+												h={{ sm: '4em', md: '5em', lg: '5.7em' }}
+												color={'blackAlpha.800'}
+												transform={{ sm: 'rotate(-90deg) scaleX(-1)', md: 'rotate(-90deg) scaleX(-1)', lg: 'scale(1)' }} />
 										</Flex>						
 										<Flex
+										
 										position={'relative'}
 										flexDirection={{sm: 'center', md:'center', lg:'flex-end'}}
 										w={{sm: '100%', md:'100%', lg:'45em'}}
-										minW={'30%'}
+										minW={'50%'}
 										gap={'1em'}
 										bg={'whiteAlpha.600'}
 										backdropFilter='auto'
@@ -173,7 +167,7 @@ const About = () => {
 														pt={8}
 														pb={2}
 														color={'blackAlpha.800'}
-														fontSize={{sm: 13.5, md: 14, lg: 15}}
+														fontSize={{sm: 13.5, md: 14, lg: 14.5}}
 														fontWeight={'700'}>
 															<Image
 															justifyContent={'center'}
@@ -201,7 +195,7 @@ const About = () => {
 									<Flex
 										direction={{ sm: 'column', md: 'column', lg: 'row' }}
 										w={'100%'}
-										gap={{ sm: '0.5em', md: '1em', lg: '12%' }}
+										gap={{ sm: '0.5em', md: '1em', lg: '8%' }}
 										position={'relative'}
 										justifyContent={{ sm: 'center', md: 'center', lg: 'flex-end' }}>
 										<Flex
@@ -212,11 +206,11 @@ const About = () => {
 											direction={'column'}
 											textAlign={{ sm: 'start', md: 'start', lg: 'end' }}>
 											<Icon
-												as={GrReturn}
-												w={'6.5em'}
-												style={{ stroke: 'rgb(148, 205, 116)' }}
-												h={'6.5em'}
-												transform={'scaleX(-1)'} />
+												as={MdOutlineSubdirectoryArrowRight}
+												w={{sm: '4em', md: '5em', lg: '5.7em'}}
+												h={{ sm: '4em', md: '5em', lg: '5.7em' }}
+												color={'blackAlpha.800'}
+												transform={{ sm: 'rotate(-90deg) scaleX(-1)', md: 'rotate(-90deg) scaleX(-1)', lg: 'scale(1)'}}/>
 										</Flex>
 										<Flex
 											position={'relative'}
@@ -270,13 +264,13 @@ export const pageIndicator = (page) => {
 					direction={'column'}
 					position={'relative'}>
 						<Heading		
-						
 						position='relative'
 						sx={{ 'writing-mode': 'vertical-rl' }}
 						fontSize={{ sm: '3.5em', md: '4em', lg: '4.8em' }}
 						color={'blackAlpha.800'}
 						fontWeight={900}>
 								<Text
+								left={'20%'}
 								position={'relative'}>
 									{page}
 								</Text>
@@ -289,6 +283,7 @@ export const pageIndicator = (page) => {
 							color={'blackAlpha.300'}
 							fontWeight={900}>
 							<Text
+								left={'20%'}
 								position={'relative'}>
 									03
 							</Text>
@@ -347,7 +342,7 @@ const skillsInfo = () => {
 			</Heading>
            		{skillText()}
 				<Flex
-				pb={12}
+				pb={14}
 				justify-content={'space-between'}
 				direction='row'
 				w={'100%'}>
@@ -390,7 +385,7 @@ const skillText = () => {
 					textAlign={'justify'}
                     as={'p'}
 					color={'blackAlpha.800'}
-					fontSize={{ sm: 13.5, md: 14, lg: 15 }}
+					fontSize={{ sm: 13.5, md: 14, lg: 14.5 }}
 					fontWeight={'700'}>
                     Filler text filler text, this is my strength, filler text. I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
                 </Text>
@@ -436,7 +431,7 @@ const skillItem = (name, ic) => {
                 <ListIcon as={ic} color='black.500'/>
                 <Text
 					textAlign={'center'}
-					fontSize={{ sm: 13.5, md: 14, lg: 15.5 }}
+					fontSize={{ sm: 13.5, md: 14, lg: 15 }}
                     fontWeight={700}>
                     &thinsp;{name}
                 </Text>

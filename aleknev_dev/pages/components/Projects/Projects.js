@@ -56,16 +56,11 @@ const ChakraBox = chakra(motion.div, {
 
 
 const Projects = () => { 
-
-		const [projItem, setProjItem] = useState(['first', 'second', 'third', 'fourth', 'fifth'])
-	//console.log(useBreakpoint())
-		const breakPoint = useBreakpoint()
-		console.log(breakPoint)
 		return (
 		<Box
 		position={'relative'}
 		maxW={'100%'}
-		px={{ md: '4em', lg: '10em' }}
+		px={{ sm: '5%', md: '10%', lg: '10%' }}
 		w={'100%'}
 		id='0'
 		pt='10em'
@@ -79,8 +74,7 @@ const Projects = () => {
 			left={0}>
 			<Center>
 				<Image
-					filter={'grayscale(40%)'}
-
+					filter={'grayscale(60%)'}
 					h={'120%'}
 					w={'100%'}
 					src={'projblob1.png'} />
@@ -88,14 +82,11 @@ const Projects = () => {
 		</Flex>
 		<Flex
 			justifyContent={'center'}
-			direction={'column'}
-			gap={'10em'}>
+			direction={'column'}>
 			<Flex
 				justifyContent={'center'}
-				gap={'3em'}
 				direction='row'>
 				<Flex
-					gap={2}
 					justifyContent={'space-between'}
 					direction='column'>
 					<Heading
@@ -103,10 +94,10 @@ const Projects = () => {
 						 Projects.
 					</Heading>
 					<Text
-						w={{ sm: '25em', md: '35em', lg: '35em' }}
+						w={{ sm: '25em', md: '35em', lg: '40em' }}
 						fontWeight={700}
-						fontSize={{ sm: 15, md: '1em', lg: '1.2em' }}
-						color={'blackAlpha.800'}>
+						fontSize={{ sm: 15, md: '1em', lg: '1.1em' }}
+						color={'blackAlpha.700'}>
 						"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that irrational fear holds us back.
 					</Text>
 				</Flex>
@@ -206,6 +197,7 @@ const verticalItem = (top, index) => {
 						position={'relative'}
 						h={'30.5em'}
 						justifyContent={'center'}
+						gap
 						w={{sm:'24em', md:'24em', lg:'24em'}} 
 						top={top}
 						bg={'whiteAlpha.600'}
