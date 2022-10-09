@@ -31,7 +31,6 @@ const Header = ({pos}) => {
 					ease: "easeInOut",
 					delay: 0.2,
 				}}
-			
 				backdropFilter='auto' 
 				backdropBlur='8px'
 				maxW={{sm: '90%', md:'80%', lg:'80%'}}
@@ -45,8 +44,8 @@ const Header = ({pos}) => {
 				justifyContent={'center'}
 				>
 				<Box
-					p={3}
-					py={'10px'}>
+					p={8}
+					py={'12px'}>
 					<Flex
 						align={'center'}
 						justifyContent={'space-between'}
@@ -72,20 +71,6 @@ const Header = ({pos}) => {
 						</Link>
 						<Spacer/>
 						<AnimatedTabs pos={pos} />
-						<Spacer/>
-						
-						<ChakraBox
-									cursor={'pointer'}
-									as={motion.div}
-									whileHover={{scale:1.1, y: -3}}
-									whileTap={{scale:0.9}}>
-										<Center>
-											<Icon 
-											as={SiGithub} 
-											h={'2em'}
-											w={'2em'}/>
-										</Center>
-						</ChakraBox>  
 					</Flex>
 				</Box>
 			</ChakraBox>
@@ -105,8 +90,9 @@ const scrollBehaviour = (pos) => {
 		whileHover={{scale:1.1}}
 		whileTap={{scale:0.98}}>
 			<Text
-			fontSize={35}
-			fontWeight='bold'>
+			fontSize={30}
+			color={'blackAlpha.800'}
+			fontWeight='700'>
 				&lt;li&gt;
 			</Text>
 		</ChakraBox>

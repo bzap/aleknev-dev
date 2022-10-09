@@ -49,25 +49,24 @@ const About = () => {
         id='0' 
         pt='5em'
         pb='40em'>
-			<Flex
-				position={'absolute'}
-				maxW={'100%'}
-				w={'full'}
-				h={'100em'}
-				top={'9em'}
-				left={0}>
-				<Center>
-				<Image
-					filter={'grayscale(60%)'}
-					h={'150%'}
-					w={'100%'}
-					src={'side2.png'} />
-				</Center>
-			</Flex>
         <Flex
 		justifyContent={'center'}
         direction={'column'}
         gap={'2em'}>
+				<Flex
+					position={'absolute'}
+					w={'100%'}
+					h={'100%'}
+					top={{sm: '-20em', md: '-20em', lg: '-20em'}}
+					left={{sm: '-10em', md: '-15em', lg: '-15em'}}>
+					<Center>
+						<Image
+							filter={'grayscale(40%)'}
+							h={{sm: '70em', md: '70em', lg: '78em'}}
+							w={{sm: '70em', md: '70em', lg: '78em'}}
+							src={'blob2341.png'} />
+					</Center>
+				</Flex>
 					<Flex
 					justifyContent={'center'}
 					direction='row'>
@@ -104,13 +103,13 @@ const About = () => {
 							maxW={'full'}
 							w={'100%'}
 							h={'100%'}
-							top={'20%'}
-							left={'40%'}>
+							top={{sm: '60em', md: '50em', lg: '20em'}}
+							left={{sm: '5em', md: '15em', lg: '40em'}}>
 							<Image
-								filter={'grayscale(60%)'}
+								filter={'grayscale(40%)'}
 								fit='cover'
-								h={'70em'}
-								w={'85em'}
+								h={{sm: '60em', md: '70em', lg: '70em'}}
+								w={{sm: '60em', md: '85em', lg: '85em'}}
 								src={'aboutcorn.png'} />
 						</Flex>
 					</Flex>

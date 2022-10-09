@@ -65,21 +65,7 @@ const Projects = () => {
 		id='0'
 		pt='10em'
 		pb='40em'>
-		<Flex
-			position={'absolute'}
-			maxW={'100%'}
-			w={'full'}
-			h={'100em'}
-			top={'-10em'}
-			left={0}>
-			<Center>
-				<Image
-					filter={'grayscale(60%)'}
-					h={'120%'}
-					w={'100%'}
-					src={'projblob1.png'} />
-			</Center>
-		</Flex>
+
 		<Flex
 			justifyContent={'center'}
 			direction={'column'}>
@@ -112,6 +98,21 @@ const Projects = () => {
 				direction='column'
 				gap={'5em'}
 				justifyContent={'center'}>
+						<Flex
+							position={'absolute'}
+							maxW={'100%'}
+							w={{sm: '90em', md: '90em', lg: '100em'}}
+							h={{sm: '100em', md: '100em', lg: '100em' }}
+							top={{sm: '40em', md: '10em', lg: '-5em'}}
+							left={{ sm: '10em', md: '20em', lg: '20em' }}>
+							<Center>
+								<Image
+									filter={'grayscale(40%)'}
+									w={'100%'}
+									h={'100%'}
+									src={'newblob.png'} />
+							</Center>
+						</Flex>
 					<ChakraBox
 					variants={projectContainer}
 					initial={'hidden'}
@@ -153,13 +154,13 @@ const Projects = () => {
 			position={'absolute'}
 			zIndex={0}
 			w={'100%'}
-			top={'45%'}
+			top={{sm: '55%', md: '50%', lg: '45%'}}
 			left={'-20%'}>
 			<Image
 				filter={'grayscale(40%)'}
 				fit='cover'
-				h={'50%'}
-				w={'100%'}
+				h={{ sm: '50em', md: '70em', lg: '50%' }}
+				w={{ sm: '100%', md: '85em', lg: '90%' }}
 				src={'centerproj.png'} />
 		</Flex>	
 	</Box> 
@@ -173,40 +174,45 @@ const verticalItem = (top, index) => {
 			<ChakraBox
 				variants={projectSubContainer}>
 					<Flex
-					position={'relative'}
-					top={top}
-					direction={'column'}>
-						<Heading
-						fontWeight={800}
-						fontSize={45}>
-							{index}
-						</Heading>
-						<Heading
+					w={'100%'}
+					direction={{sm: 'column', md: 'row', lg: 'column'}}
+					justifyContent='space-between'
+					gap={{sm: '0em', md: '2em', lg:'0em'}}>
+						<Flex
 						position={'relative'}
-						top={-7}
-						pl={1}>
-							&#x5f;
-						</Heading>
-					</Flex>
-
-				<Flex
-						as={motion.div}
-						whileHover={{ scale: 1.025 }}
-						viewport={{once:true, amount:0.8}}
-						flex={1}
-						position={'relative'}
-						h={'30.5em'}
-						justifyContent={'center'}
-						gap
-						w={{sm:'24em', md:'24em', lg:'24em'}} 
 						top={top}
-						bg={'whiteAlpha.600'}
-						backdropFilter='auto'
-						backdropBlur='5px'
-						boxShadow={'md'} 
-						borderRadius={'22px'} >
-						<Preview/>
-				</Flex>     
+						direction={'column'}>
+							<Heading
+							fontWeight={800}
+							fontSize={45}>
+								{index}
+							</Heading>
+							<Heading
+							position={'relative'}
+							top={-7}
+							pl={1}>
+								&#x5f;
+							</Heading>
+						</Flex>
+						<Flex
+							as={motion.div}
+							whileHover={{ scale: 1.025 }}
+							viewport={{once:true, amount:0.8}}
+							flex={1}
+							position={'relative'}
+							h={'30.5em'}
+							justifyContent={'center'}
+							gap
+							w={{sm:'24em', md:'28em', lg:'24em'}} 
+							top={top}
+							bg={'whiteAlpha.600'}
+							backdropFilter='auto'
+							backdropBlur='5px'
+							boxShadow={'md'} 
+							borderRadius={'22px'} >
+							<Preview/>
+						</Flex> 
+				</Flex>   
 				</ChakraBox> 
 		)
 }

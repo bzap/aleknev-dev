@@ -70,7 +70,7 @@ const AnimatedTabs = ({pos}) => {
 				direction={'row'}
 				justify={'flex-end'}> 
 					<Flex
-					gap={'5em'}>
+					gap={'4em'}>
 						{tabs.map((item, idx) => (
 								<Link 
 								key={idx} 
@@ -85,9 +85,6 @@ const AnimatedTabs = ({pos}) => {
 										onClick={() => 
 													{setSelectedTab(item)
 													setPressed(true)
-													
-													// or use the variants to try and set it to white when active 
-													// use an onclick approach where it changes to white on press
 													setCurrItem(item)}}>
 											<ChakraBox
 											as={motion.div}
@@ -96,8 +93,8 @@ const AnimatedTabs = ({pos}) => {
 											whileTap={{scale:0.99, opacity:[1,0.5,0]}}>
 											<Center>
 												<Text
-												fontWeight={'600'}
-												color='black'>
+												fontWeight={'700'}
+												color='blackAlpha.800'>
 													{item.label}
 												</Text>	
 											</Center>
