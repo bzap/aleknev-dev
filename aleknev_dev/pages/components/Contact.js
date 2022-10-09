@@ -15,23 +15,38 @@ import {
 	IconProps,
 	useColorModeValue,
   } from '@chakra-ui/react';
+import Title from './Title'
 
 
 
 const Contact = () => ( 
-	<Container
-	id='2'
-	maxW={'7xl'}
-	direction={'column'}
-	flex={1}
-	px='7em'
-	pt={{ base: 20, md: '30em' }}
-	pb={{ base: 20, md: '40em' }}>
-		<Heading>
-            temp contact component
+	<Box
+		position={'relative'}
+		maxW={'100%'}
+		px={{ sm: '5%', md: '10%', lg: '10%' }}
+		w={'100%'}
+		id='0'
+		pt='10em'
+		pb='16em'>
 
-        </Heading>
-	</Container>
+		<Flex
+		direction={'column'}
+		gap={'2em'}>
+			<Title
+				title={'Contact.'}
+				desc={'Reach out! Whether you want to get in touch for work or collaborations, or even just for a chat.'}
+				page={'03'} />
+
+			<Flex
+			bg={'whiteAlpha.600'}
+			boxShadow={'md'}
+			borderRadius={'22px'}
+			h={'20em'}>
+				lol
+			</Flex>
+		</Flex>
+
+	</Box>
 
   );
 

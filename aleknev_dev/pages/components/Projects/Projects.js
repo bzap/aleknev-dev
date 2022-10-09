@@ -32,6 +32,7 @@ import { projectContainer, projectSubContainer, skillsContainer, item, skillsIte
 import Head from 'next/head';
 import { useState, useEffect } from 'react'
 import { pageIndicator } from '../About';
+import Title from '../Title'
 
 
 
@@ -69,28 +70,10 @@ const Projects = () => {
 		<Flex
 			justifyContent={'center'}
 			direction={'column'}>
-			<Flex
-				justifyContent={'center'}
-				direction='row'>
-				<Flex
-					justifyContent={'space-between'}
-					direction='column'>
-					<Heading
-						fontSize={{ sm: '4em', md: '6em', lg: '7em' }}>
-						 Projects.
-					</Heading>
-					<Text
-						w={{ sm: '25em', md: '35em', lg: '40em' }}
-						fontWeight={700}
-						fontSize={{ sm: 15, md: '1em', lg: '1.1em' }}
-						color={'blackAlpha.700'}>
-						"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that irrational fear holds us back.
-					</Text>
-				</Flex>
-				<Spacer />
-				{pageIndicator('02')}
-			</Flex>
-		
+				<Title
+				title={'Projects.'}			
+				desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'} 
+				page={'02'}/>
 				<Flex
 				position={'relative'}
 				zIndex={10}

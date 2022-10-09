@@ -33,6 +33,7 @@ import Parallax from './layouts/Parallax';
 import { skillsContainer, subContainer, item, skillsItem, container } from './Variants/Variants';
 import Head from 'next/head';
 import { redirect } from 'next/dist/server/api-utils'
+import Title from './Title'
 
 
 const ChakraBox = chakra(motion.div, {
@@ -47,8 +48,8 @@ const About = () => {
         px={{sm: '5%', md: '10%', lg:'10%'}}
         w={'100%'} 
         id='0' 
-        pt='5em'
-        pb='40em'>
+        pt='10em'
+        pb='16em'>
         <Flex
 		justifyContent={'center'}
         direction={'column'}
@@ -67,28 +68,10 @@ const About = () => {
 							src={'blob2341.png'} />
 					</Center>
 				</Flex>
-					<Flex
-					justifyContent={'center'}
-					direction='row'>
-						<Flex
-						gap={2}
-						justifyContent={'space-between'}
-						direction='column'>
-								<Heading
-								fontSize={{ sm: '4em', md: '6em', lg: '7em' }}> 
-									About Me.
-								</Heading>
-								<Text
-								w={{sm: '25em', md: '35em', lg: '40em'}}
-								fontWeight={700}
-								fontSize={{ sm: 15, md: '1em', lg: '1.1em' }}
-								color={'blackAlpha.800'}>
-									"fear != fate", a simple but meaningful mantra that I try to live by. I often feel that irrational fear holds us back.
-								</Text>
-						</Flex>
-						<Spacer/>
-						{pageIndicator('01')}
-					</Flex>
+						<Title 
+						title={'About Me.'}
+						desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'}
+						page={'01'}/>
 						<Flex
 									position={'relative'}
 									zIndex={10}
@@ -116,16 +99,20 @@ const About = () => {
 									<Flex
 									direction={{sm: 'column', md:'column',lg:'row'}}
 									w={'100%'}
+									
 									zIndex={10}
 									gap={{ sm: '0.5em', md: '1em', lg:'8%'}}
 									position={'relative'}
 									justifyContent={{ sm: 'center', md: 'center', lg: 'flex-end' }}>						
 										<Flex
+
 											justifyContent={'flex-start'}
 											position={'relative'}
 											direction={'column'}
 											textAlign={{ sm: 'start', md: 'start', lg:'end'}}>
 											<Icon
+												top={'2%'}
+												position={'relative'}
 												as={MdOutlineSubdirectoryArrowRight}
 												w={{ sm: '4em', md: '5em', lg: '5.7em' }}
 												h={{ sm: '4em', md: '5em', lg: '5.7em' }}
@@ -215,7 +202,7 @@ const About = () => {
 											position={'relative'}
 											flexDirection={{ sm: 'center', md: 'center', lg: 'flex-end' }}
 											w={{ sm: '100%', md: '100%', lg: '45em' }}
-											minW={'30%'}
+											minW={'50%'}
 											gap={'1em'}
 											zIndex={10}
 											bg={'whiteAlpha.600'}
@@ -223,7 +210,6 @@ const About = () => {
 											backdropBlur='5px'
 											boxShadow={'md'}
 											borderRadius={'20px'}>
-
 											<Box
 												position={'relative'}
 												zIndex={10}			
@@ -249,49 +235,7 @@ const About = () => {
 
 
 
-export const pageIndicator = (page) => { 
-	return ( 
-		<Flex
-		w={'100%'}
-		position={'relative'}
-		direction="row"
-		justifyContent={'flex-end'}>
-			<Flex
-			justifyContent={'center'}
-				direction={'column'}>
-					<Flex
-					direction={'column'}
-					position={'relative'}>
-						<Heading		
-						position='relative'
-						sx={{ 'writing-mode': 'vertical-rl' }}
-						fontSize={{ sm: '3.5em', md: '4em', lg: '4.8em' }}
-						color={'blackAlpha.800'}
-						fontWeight={900}>
-								<Text
-								left={'20%'}
-								position={'relative'}>
-									{page}
-								</Text>
-						</Heading>
-						<Heading
-							
-							position='relative'
-							sx={{ 'writing-mode': 'vertical-rl' }}
-							fontSize={{ sm: '3.5em', md: '4em', lg: '4.8em' }}
-							color={'blackAlpha.300'}
-							fontWeight={900}>
-							<Text
-								left={'20%'}
-								position={'relative'}>
-									03
-							</Text>
-						</Heading>
-					</Flex>
-			</Flex>
-	</Flex>	
-	)
-}
+
 
 const draw = {
 	hidden: { pathLength: 0, opacity: 0 },

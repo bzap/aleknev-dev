@@ -22,14 +22,14 @@ import Keyboard from './Keyboard/Keyboard'
 const Hero = () => ( 
 	<Container
 	id={'home'}
-	maxW={'7xl'}
+    maxW={'100%'} 
+    px={{sm: '5%', md: '10%', lg:'10%'}}
 	h={'100%'}
 	direction={'column'}
 	flex={1}
-	pt={{ base: 20, md: '20em' }}
-	pb={{ base: 20, md: '40em' }}>
+	pt={{ base: 20, md: '10em' }}
+	pb={{ base: 20, md: '16em' }}>
 		<Flex
-			
 			position={'absolute'}
 			maxW={'full'}
 			w={'50%'}
@@ -43,35 +43,33 @@ const Hero = () => (
 				src={'heroblob23big.png'} />
 		</Flex>
 		<Flex
+		bg='blue.200'
 		h={'40em'}
-		w={'80em'}
+		w={'100%'}
 		position={'relative'}
-		gap={'2em'}
 		direction={'row'}>
 			<Flex
-			
-			w={'auto'}
+			justifyContent={'center'}
+			w={'65%'}
 			position={'relative'}
-			alignItems={'flex-start'}>
+			alignItems={'center '}>
 				{introText()}
 			</Flex>
-			{animation()}
+			{keyboard()}
 		</Flex>
 	</Container>
 )
 
 
-const animation = () => { 
+const keyboard = () => { 
 	return (
 		<Flex
-		w={'70em'}
-		h={'60em'}
-		position={'absolute'}
-		right={'-20%'}
-		top={'-50%'}
+		bg='black'
+		w={'35%'}
+		h={'100%'}
 		zIndex={0}
-		justifyContent={'center'}>
-			<Keyboard/>
+		justifyContent={'flex-end'}>
+			
 		</Flex>		
 	) 
 	
@@ -81,25 +79,27 @@ const animation = () => {
 const introText = () => { 
 	return ( 
 		<Flex
-
+		bg='green.100'
 		position={'relative'}
 		zIndex={1}
 		w={'100%'}
 		direction={'column'}
 		alignItems={'flex-end'}>
 			<Heading> 
-				 
 				<Text 
+				
 					as='span'
 					color={'blackAlpha.800'}
 					fontWeight='700'
-					fontSize={{ base: '20', sm: '30', lg: '50' }}>
+					fontSize={{ base: '20', sm: '30', lg: '100%' }}>
 					Hey, I'm
 				</Text>
 				<Text 
 					as={'span'} 
 					color={'blackAlpha.800'}
 					fontWeight='900'
+					w={'4em'}
+					h={'4em'}
 					pl={8}
 					fontSize={{ base: '40', sm: '50', lg: '4em' }}>  
 					Linas
