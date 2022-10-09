@@ -27,6 +27,7 @@ import {
     shouldForwardProp
   } from '@chakra-ui/react';
 import { SiReact, SiChakraui, SiJavascript, SiPython } from 'react-icons/si';
+import { GrReturn } from 'react-icons/gr'
 import { motion, useScroll, useTransform, isValidMotionProp } from "framer-motion";
 import Parallax from './layouts/Parallax';
 import { skillsContainer, subContainer, item, skillsItem, container } from './Variants/Variants';
@@ -45,7 +46,6 @@ const About = () => {
   
     return(
     <Box
-		
         position={'relative'}
         maxW={'100%'} 
         px={{md:'4em', lg:'10em'}}
@@ -54,6 +54,7 @@ const About = () => {
         pt='10em'
         pb='40em'>
 			<Flex
+				
 				position={'absolute'}
 				maxW={'100%'}
 				w={'full'}
@@ -82,7 +83,7 @@ const About = () => {
 						justifyContent={'space-between'}
 						direction='column'>
 								<Heading
-							fontSize={{ sm: '4em', md: '6em', lg: '7em' }}> 
+								fontSize={{ sm: '4em', md: '6em', lg: '7em' }}> 
 									About Me.
 								</Heading>
 								<Text
@@ -94,16 +95,16 @@ const About = () => {
 								</Text>
 						</Flex>
 						<Spacer/>
-						{pageIndicator()}
+						{pageIndicator('01')}
 					</Flex>
-					<Flex
-								position={'relative'}
-								zIndex={10}
-								w={'100%'}
-								justifyContent={'center'}
-								direction={'column'}
-								gap={'5em'}>
-					<Flex>
+						<Flex
+									position={'relative'}
+									zIndex={10}
+									w={'100%'}
+									justifyContent={'center'}
+									direction={'column'}
+									gap={'5em'}>
+						<Flex>
 						<Flex
 							position={'absolute'}
 							zIndex={0}
@@ -121,7 +122,6 @@ const About = () => {
 						</Flex>
 					</Flex>
 									<Flex
-									
 									direction={{sm: 'column', md:'column',lg:'row'}}
 									w={'100%'}
 									zIndex={10}
@@ -129,30 +129,18 @@ const About = () => {
 									position={'relative'}
 									justifyContent={{ sm: 'center', md: 'center', lg: 'flex-end' }}>						
 										<Flex
-											justifyContent={'center'}
-											h={'10%'}
+											justifyContent={'flex-start'}
 											position={'relative'}
 											direction={'column'}
 											textAlign={{ sm: 'start', md: 'start', lg:'end'}}>
-												<Heading
-												w={{ sm: '100%', md: '100%', lg: '1.5em'}}
-												
-												fontWeight={900}
-												color={'blackAlpha.800'}
-												fontSize={{ sm: 35, md: 38, lg: 45 }}>
-													BACKGROUND
-												</Heading>
-												<Heading
-												w={{ sm: '100%', md: '100%', lg: '100%' }}
-												fontWeight={900}
-												position={'relative'}
-												textAlign={{ sm: 'start', md: 'start', lg: 'end' }}
-												top={-7}>
-													&#x5f;
-												</Heading>
+												<Icon 
+												as={GrReturn}
+												w={'6.5em'}
+												style={{ stroke: 'rgb(148, 205, 116)' }}
+												h={'6.5em'} 
+												transform={'scaleX(-1)'}/>
 										</Flex>						
 										<Flex
-										
 										position={'relative'}
 										flexDirection={{sm: 'center', md:'center', lg:'flex-end'}}
 										w={{sm: '100%', md:'100%', lg:'45em'}}
@@ -166,32 +154,37 @@ const About = () => {
 												<Box
 												w={'100%'}
 													zIndex={1}
-													p={12}	
+													py={{ sm: 10, md: 12, lg: 12 }}
+													px={{ sm: 8, md: 12, lg: 12 }}	
 													variants={subContainer}>
-													<Heading
-													borderBottomWidth={'1px'}
-													borderColor={'blackAlpha.200'}>
+													<Heading>
 														<Text
-															pb='2'
+															pb={4}
+															borderBottomWidth={'2px'}
+															borderBottomColor={'blackAlpha.100'}
+															color='blackAlpha.800'
 															fontWeight={900}
-															fontSize={30}>
-															&rarr;&thinsp;&rarr;
+															fontSize={{ sm: 35, md: 38, lg: 40 }}>
+															BACKGROUND
 														</Text>
 													</Heading>
 													<Text
 														textAlign={'justify'}
-														pt={7}
-														as={'p'}
+														pt={8}
+														pb={2}
 														color={'blackAlpha.800'}
-														fontSize={{sm: 13.5, md: 14, lg: 14.5}}
+														fontSize={{sm: 13.5, md: 14, lg: 15}}
 														fontWeight={'700'}>
 															<Image
+															justifyContent={'center'}
+															position={'relative'}
 															boxShadow={'md'}
 															ml={10}
 															mb={5}
+															mt={'7px'}
 															float={'right'}
 															fit='cover'
-															borderRadius={'2px'}
+															borderRadius={'3px'}
 															borderWidth={'5px'}
 															borderColor={'black'}
 															h={{sm: '15em', md: '20em', lg: '22em'}}
@@ -218,22 +211,12 @@ const About = () => {
 											position={'relative'}
 											direction={'column'}
 											textAlign={{ sm: 'start', md: 'start', lg: 'end' }}>
-											<Heading
-												w={{ sm: '100%', md: '100%', lg: '1.5em' }}
-
-												fontWeight={900}
-												color={'blackAlpha.800'}
-												fontSize={{ sm: 35, md: 38, lg: 45 }}>
-												SKILLS
-											</Heading>
-											<Heading
-												w={{ sm: '100%', md: '100%', lg: '100%' }}
-												fontWeight={900}
-												position={'relative'}
-												textAlign={{ sm: 'start', md: 'start', lg: 'end' }}
-												top={-7}>
-												&#x5f;
-											</Heading>
+											<Icon
+												as={GrReturn}
+												w={'6.5em'}
+												style={{ stroke: 'rgb(148, 205, 116)' }}
+												h={'6.5em'}
+												transform={'scaleX(-1)'} />
 										</Flex>
 										<Flex
 											position={'relative'}
@@ -273,54 +256,63 @@ const About = () => {
 
 
 
-const pageIndicator = () => { 
+export const pageIndicator = (page) => { 
 	return ( 
 		<Flex
 		w={'100%'}
 		position={'relative'}
 		direction="row"
-		justifyContent={'flex-end'}	>
+		justifyContent={'flex-end'}>
 			<Flex
-			w={'13em'}
-			transform={'rotate(90deg)'}
-			transformOrigin={'top left'}
-			top={'10px'}
-			left={'100%'}
-			justifyContent={'flex-end'}
-			position={'absolute'}
-			direction={'column'}>
+			justifyContent={'center'}
+				direction={'column'}>
 					<Flex
-					left={'0.5em'}
-					direction={'row'}
+					direction={'column'}
 					position={'relative'}>
-						<Flex
-						direction='column'>
-							<Heading
-							fontSize={{ sm: '3.5em', md: '4em', lg: '4.5em'}}
-							color={'blackAlpha.800'}
-							fontWeight={900}
-							pb={8}>
-								01
-							</Heading>
-						</Flex>
-						<Flex
-						direction='column'>
-							<Heading
-							fontSize={{sm: '3.5em', md: '4em', lg:'4.5em'}}
+						<Heading		
+						
+						position='relative'
+						sx={{ 'writing-mode': 'vertical-rl' }}
+						fontSize={{ sm: '3.5em', md: '4em', lg: '4.8em' }}
+						color={'blackAlpha.800'}
+						fontWeight={900}>
+								<Text
+								position={'relative'}>
+									{page}
+								</Text>
+						</Heading>
+						<Heading
+							
+							position='relative'
+							sx={{ 'writing-mode': 'vertical-rl' }}
+							fontSize={{ sm: '3.5em', md: '4em', lg: '4.8em' }}
 							color={'blackAlpha.300'}
-							fontWeight={900}
-							pb={8}>
-								03
-							</Heading>
-						</Flex>
-					
+							fontWeight={900}>
+							<Text
+								position={'relative'}>
+									03
+							</Text>
+						</Heading>
 					</Flex>
 			</Flex>
 	</Flex>	
 	)
 }
 
-
+const draw = {
+	hidden: { pathLength: 0, opacity: 0 },
+	visible: (i) => {
+		const delay = 1 + i * 0.5;
+		return {
+			pathLength: 1,
+			opacity: 1,
+			transition: {
+				pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
+				opacity: { delay, duration: 0.01 }
+			}
+		};
+	}
+};
 
 const selfPortrait = () => { 
     return ( 
@@ -339,19 +331,20 @@ const skillsInfo = () => {
             as={motion.div}
             whileHover={{ scale: 1.025 }}
             position='relative'
-			px={12}
+			px={{sm: 8, md: 12, lg: 12}}
 			pt={12}
 			>
-				<Heading
-				borderBottomWidth={'1px'}
-				borderColor={'blackAlpha.200'}>
-					<Text
-						pb={2}
-						fontWeight={900}
-						fontSize={30}>
-						&&thinsp;&
-					</Text>
-				</Heading>
+			<Heading>
+				<Text
+					pb={4}
+					borderBottomWidth={'2px'}
+					borderBottomColor={'blackAlpha.100'}
+					color='blackAlpha.800'
+					fontWeight={900}
+					fontSize={{ sm: 35, md: 38, lg: 40 }}>
+					SKILLS
+				</Text>
+			</Heading>
            		{skillText()}
 				<Flex
 				pb={12}
@@ -388,8 +381,8 @@ const placeholderText = () => {
 const skillText = () => { 
     return ( 
             <Flex
-			pt={7}
-			pb={7}
+			pt={8}
+			pb={8}
             direction={'column'}>
                 <ChakraBox
                 variants={item}>
@@ -397,7 +390,7 @@ const skillText = () => {
 					textAlign={'justify'}
                     as={'p'}
 					color={'blackAlpha.800'}
-					fontSize={{ sm: 13.5, md: 14, lg: 14.5 }}
+					fontSize={{ sm: 13.5, md: 14, lg: 15 }}
 					fontWeight={'700'}>
                     Filler text filler text, this is my strength, filler text. I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
                 </Text>
@@ -443,7 +436,7 @@ const skillItem = (name, ic) => {
                 <ListIcon as={ic} color='black.500'/>
                 <Text
 					textAlign={'center'}
-					fontSize={{ sm: 13.5, md: 14, lg: 15 }}
+					fontSize={{ sm: 13.5, md: 14, lg: 15.5 }}
                     fontWeight={700}>
                     &thinsp;{name}
                 </Text>

@@ -31,6 +31,7 @@ import { SiGithub  } from 'react-icons/si';
 import { projectContainer, projectSubContainer, skillsContainer, item, skillsItem, projecteem } from '../Variants/Variants'
 import Head from 'next/head';
 import { useState, useEffect } from 'react'
+import { pageIndicator } from '../About';
 
 
 
@@ -110,7 +111,7 @@ const Projects = () => {
 					</Text>
 				</Flex>
 				<Spacer />
-				{pageIndicator()}
+				{pageIndicator('02')}
 			</Flex>
 		
 				<Flex
@@ -129,8 +130,7 @@ const Projects = () => {
 								direction={'row'}
 								justifyContent={'space-between'}
 								flexDirection='flex-start'
-								sx={{ 'flex-wrap': 'wrap' }}
-								>
+								sx={{ 'flex-wrap': 'wrap' }}>
 								{[...Array(6).keys()].map((item, idx) => (
 									<Box
 									
@@ -173,54 +173,6 @@ const Projects = () => {
 		</Flex>	
 	</Box> 
 		)
-}
-
-
-const pageIndicator = () => {
-	return (
-		<Flex
-			w={'100%'}
-			position={'relative'}
-			direction="row"
-			justifyContent={'flex-end'}	>
-			<Flex
-				w={'13em'}
-				transform={'rotate(90deg)'}
-				transformOrigin={'top left'}
-				top={'10px'}
-				left={'100%'}
-				justifyContent={'flex-end'}
-				position={'absolute'}
-				direction={'column'}>
-				<Flex
-					left={'0.5em'}
-					direction={'row'}
-					position={'relative'}>
-					<Flex
-						direction='column'>
-						<Heading
-							fontSize={{ sm: '3.5em', md: '4em', lg: '4.5em' }}
-							color={'blackAlpha.700'}
-							fontWeight={900}
-							pb={8}>
-							01
-						</Heading>
-					</Flex>
-					<Flex
-						direction='column'>
-						<Heading
-							fontSize={{ sm: '3.5em', md: '4em', lg: '4.5em' }}
-							color={'blackAlpha.300'}
-							fontWeight={900}
-							pb={8}>
-							03
-						</Heading>
-					</Flex>
-
-				</Flex>
-			</Flex>
-		</Flex>
-	)
 }
 
 
