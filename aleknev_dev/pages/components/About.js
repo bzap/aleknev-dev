@@ -122,7 +122,7 @@ const About = () => {
 								variants={background}
 								initial={'hidden'}
 								whileInView={'visible'}
-								viewport={{ once: true, amount: 0.58 }}>
+								viewport={{ once: true, amount: 0.8 }}>
 									<Flex
 									
 									direction={{sm: 'column', md:'column',lg:'row'}}
@@ -279,34 +279,6 @@ const About = () => {
 )}
 
 
-
-
-
-const draw = {
-	hidden: { pathLength: 0, opacity: 0 },
-	visible: (i) => {
-		const delay = 1 + i * 0.5;
-		return {
-			pathLength: 1,
-			opacity: 1,
-			transition: {
-				pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
-				opacity: { delay, duration: 0.01 }
-			}
-		};
-	}
-};
-
-const selfPortrait = () => { 
-    return ( 
-            <Flex
-            flex={1}
-            w={'30em'}>
-                    {pictureFrame('0%', '0%', '0%', '0%', 'https://i.imgur.com/7R4gnAa.jpg', 8, 'full', 'full')}
-            </Flex>
-    )
-}
-
 const skillsInfo = () => { 
     return (
 			<Flex
@@ -354,20 +326,6 @@ const skillsInfo = () => {
     )
 }
 
-//<Heading as={'u'}>
-//  A few projects&nbsp;&nbsp;&nbsp;&nbsp;
-//</Heading>
-
-
-const placeholderText = () => { 
-    return (
-            <ChakraBox
-            variants={item}>
-
-            </ChakraBox>
-
-    )
-}
 
 const skillText = () => { 
     return ( 
@@ -434,45 +392,6 @@ const skillItem = (name, ic) => {
         </ListItem>
     )
 }
-
-const pictureFrame = (top, left, bottom, right, url, ind, w, h) => {
-    return (
-            <Flex
-                as={motion.div}
-                whileHover={{ scale: 1.025 }}
-                flex={1}
-                position={'relative'}>
-                <Flex  
-                    overflow={'hidden'}
-                    h={'30em'}>
-                <Image
-                    filter={'grayscale(70%)'}
-                    borderRadius={'12px'}
-                    boxShadow={'md'}
-                    borderWidth={'5em'}
-                    zIndex={ind}
-                    w={w}
-                    h={h}
-                    position={'absolute'}
-                    top={top}
-                    left={left}
-                    bottom={bottom}
-                    right={right}
-                    fit={'cover'}
-                    align={'center'}
-                    src={url}/>
-                </Flex>
-            </Flex>
-    )
-    
-}
-
-
-
-
-//{stackedImage('45%', '30%', 'https://staticg.sportskeeda.com/editor/2022/02/af653-16442505538786-1920.jpg', 7, '11em', '11em')}
-//{stackedImage('79%', '60%', 'https://i.imgur.com/P9IVqkS.jpeg', 8, '7em', '7em')}
-
 
 export default About
 

@@ -28,7 +28,7 @@ import Preview from './Preview'
 import { motion, isValidMotionProp } from "framer-motion";
 import Parallax from '../layouts/Parallax';
 import { SiGithub  } from 'react-icons/si';
-import { projectContainer, projectSubContainer, gradient, gradient3, skillsContainer, item, skillsItem, about } from '../Variants/Variants'
+import { projectContainer, projectSubContainer, gradient, gradient3, gradient4, skillsContainer, item, skillsItem, about } from '../Variants/Variants'
 import Head from 'next/head';
 import { useState, useEffect } from 'react'
 import { pageIndicator } from '../About';
@@ -90,7 +90,7 @@ const Projects = () => {
 				gap={'4em'}
 				justifyContent={'center'}>
 						<ChakraBox
-							variants={gradient}
+							variants={gradient4}
 							initial={'hidden'}
 							whileInView={'visible'}
 							viewport={{ once: true }}>
@@ -114,7 +114,7 @@ const Projects = () => {
 					variants={projectContainer}
 					initial={'hidden'}
 					whileInView={'visible'} 
-					viewport={{once: true, amount: 0.2}}>	
+					viewport={{once: true, amount: 0.15}}>	
 							<Flex
 								direction={'row'}
 								justifyContent={'space-between'}

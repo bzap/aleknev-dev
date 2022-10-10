@@ -15,6 +15,8 @@ import {
 	createIcon,
 	IconProps,
 	useColorModeValue,
+	useBreakpoint,
+	Spacer,
   } from '@chakra-ui/react';
 import Head from 'next/head';
 import Keyboard from './Keyboard/Keyboard'
@@ -30,31 +32,19 @@ const Hero = () => (
 	pt={{ base: 20, md: '10em' }}
 	pb={{ base: 20, md: '16em' }}>
 		<Flex
-			position={'absolute'}
-			maxW={'full'}
-			w={'50%'}
-			top={'-3%'}
-			left={'0%'}>
-			<Image
-				filter={'grayscale(40%)'}
-				fit='cover'
-				h={'100%'}
-				w={'100%'}
-				src={'heroblob23big.png'} />
-		</Flex>
-		<Flex
-		bg='blue.200'
 		h={'40em'}
 		w={'100%'}
 		position={'relative'}
-		direction={'row'}>
+		justifyContent={'space-between'}
+		direction={{sm: 'column', md: 'column', lg: 'row'}}>
 			<Flex
 			justifyContent={'center'}
-			w={'65%'}
+			w={{sm: '100%', md: '100%', lg: '65%'}}
 			position={'relative'}
-			alignItems={'center '}>
+			alignItems={'center'}>
 				{introText()}
 			</Flex>
+			<Spacer/>
 			{keyboard()}
 		</Flex>
 	</Container>
@@ -62,14 +52,28 @@ const Hero = () => (
 
 
 const keyboard = () => { 
+	const bp = useBreakpoint()
 	return (
 		<Flex
-		bg='black'
-		w={'35%'}
+		w={{sm: '100%', md: '100%', lg: '35%'}}
 		h={'100%'}
 		zIndex={0}
-		justifyContent={'flex-end'}>
-			
+		justifyContent={'flex-end'}>	
+			{bp == 'lg' && (
+				<Keyboard newFov={70}/>
+			)}
+			{bp == 'xl' && (
+				<Keyboard newFov={55}/>
+			)}
+			{bp == '2xl' && (
+				<Keyboard newFov={50}/>
+			)}
+			{bp == 'sm' && (
+				<Keyboard newFov={45}/>
+			)}
+			{bp == 'md' && (
+				<Keyboard newFov={40}/>
+			)}
 		</Flex>		
 	) 
 	
@@ -79,19 +83,17 @@ const keyboard = () => {
 const introText = () => { 
 	return ( 
 		<Flex
-		bg='green.100'
 		position={'relative'}
 		zIndex={1}
-		w={'100%'}
+		w={'auto'}
 		direction={'column'}
 		alignItems={'flex-end'}>
 			<Heading> 
 				<Text 
-				
 					as='span'
 					color={'blackAlpha.800'}
 					fontWeight='700'
-					fontSize={{ base: '20', sm: '30', lg: '100%' }}>
+					fontSize={{ sm: '90%', md:'80%', lg: '80%', xl: '100%' }}>
 					Hey, I'm
 				</Text>
 				<Text 
@@ -101,36 +103,38 @@ const introText = () => {
 					w={'4em'}
 					h={'4em'}
 					pl={8}
-					fontSize={{ base: '40', sm: '50', lg: '4em' }}>  
+					fontSize={{ sm: '2em', md: '2.5em', lg: '2.6em', xl: '3.5em', '2xl': '4em' }}>  
 					Linas
 				</Text>    
 				<Text 
 					as={'span'} 
 					color={'black'} 
-					fontSize={{ base: '20', sm: '30', lg: '50' }}>  
+					fontSize={{ sm: '1em', md: '1.1em', lg: '1.1em', xl: '1.1em', '2xl': '1.2em' }}>  
 					.
 				</Text> 
 			</Heading> 
 			<Heading>				
 				<Text
 					as={'span'}
-					color={'blackAlpha.800'}
+					color={'blackAlpha.900'}
 					fontWeight='700'
-					fontSize={{ base: '20', sm: '30', lg: '27' }}>
+					fontSize={{ sm: '0.6em', md: '0.6em', lg: '0.6em', xl: '0.7em', '2xl': '0.7em' }}>
 					A developer based in
 				</Text>
 				<Text 
+					position={'relative'}
+					justifyContent={'flex-end'}
 					as={'span'} 
 					color={'blackAlpha.800'} 
 					fontWeight='900'
-					fontSize={{ base: '40', sm: '50', lg: '50' }}>  
+					fontSize={{ sm: '1.3em', md: '1.4em', lg: '1.3em', xl: '1.5em', '2xl': '1.8em' }}>  
 					&thinsp;Toronto
 				</Text>      
 				<Text 
 					as={'span'} 
 					color={'blackAlpha.800'}
 					fontWeight='800'
-					fontSize={{ base: '20', sm: '30', lg: '35' }}>  
+					fontSize={{ sm: '1em', md: '1.1em', lg: '1.1em', xl: '1.1em', '2xl': '1.2em' }}>  
 					,
 				</Text> 
 			</Heading>
@@ -138,16 +142,16 @@ const introText = () => {
 			pt={'2'}>
 				<Text 
 					as={'span'}
-					fontWeight={'semibold'}
+					fontWeight={700}
 					color={'blackAlpha.800'}
-					fontSize={{ base: '20', sm: '30', lg: '22' }}>
+					fontSize={{ sm: '0.5em', md: '0.55em', lg: '0.55em', xl: '0.6em', '2xl': '0.62em' }}>
 					that's on a pursuit for
 				</Text>  
 				<Text 
 					as={'span'} 
 					color={'blackAlpha.800'}
 					fontWeight='900'
-					fontSize={{ base: '40', sm: '50', lg: '32' }}>  
+					fontSize={{ sm: '1em', md: '1.1em', lg: '1.1em', xl: '1.1em', '2xl': '1.2em' }}>  
 					&thinsp;&thinsp;growth.
 				</Text>      
 			</Heading> 	

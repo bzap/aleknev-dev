@@ -23,7 +23,7 @@ import { Canvas } from "@react-three/fiber"
 import { Suspense } from "react"
 import { Environment, Stage, OrbitControls } from "@react-three/drei";
 
-const Keyboard = () => {
+const Keyboard = ({newFov}) => {
     return (
     <Flex
     w={'100%'}>
@@ -34,7 +34,7 @@ const Keyboard = () => {
           <Canvas
             shadows
             dpr={[1, 2]}
-            camera={{ fov: 50 }}>
+            camera={{ fov: newFov }}>
             <Suspense fallback={null}>
               <Stage preset="rembrandt" intensity={1} environment="city">
                 <Model/>
@@ -49,13 +49,15 @@ const Keyboard = () => {
         </Flex>
         <Flex
         position={'absolute'}
-        maxW={'full'}
-        w={'100%'}>
+        w={'100%'}
+        h={'100%'}
+        top={{ sm: '25%', md: '15%', lg: '0%', xl: '0%', '2xl': '-20%' }}
+        left={{sm: '0%', md: '0%', lg: '40%', xl: '50%', '2xl': '45%'}}>
           <Image
             filter={'grayscale(20%)'}
             fit='cover'
-            h={'100%'}
-            w={'100%'}
+            h={{ sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
+            w={{ sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
             src={'heroblur2.png'} />
         </Flex>
     </Flex>
