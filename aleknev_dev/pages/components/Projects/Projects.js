@@ -100,7 +100,7 @@ const Projects = () => {
 					variants={projectContainer}
 					initial={'hidden'}
 					whileInView={'visible'}
-					viewport={{once: false}}>	
+					viewport={{once: true }}>	
 							<Flex
 								direction={'row'}
 								justifyContent={'space-between'}

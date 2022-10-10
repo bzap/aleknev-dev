@@ -197,7 +197,7 @@ export const about = {
 	visible: {
 		opacity: 1,
 		transition: {
-			delayChildren: 0.7,
+			delayChildren: 1,
 			staggerChildren: 0.1
 		}
 	}
@@ -244,7 +244,8 @@ export const background = {
 	visible: {
 		opacity: 1,
 		transition: {
-			delayChildren: 0.05,
+			delay:0.3,
+			delayChildren: 0.3,
 			staggerChildren: 0.1
 		}
 	}
@@ -278,5 +279,32 @@ export const currentSkills = {
 		},
 		opacity: 1,
 		scale: 1 
+	}
+};
+
+
+export const gradient = {
+	hidden: { opacity: 0 },
+	visible: {
+		transition: {
+			duration: 1,
+			delay: 1.2,
+			delayChildren: 1,
+			staggerChildren: 15
+		},
+		opacity: 1
+	}
+};
+
+
+export const gradient2 = {
+	hidden: { opacity: 0 },
+	visible: {
+		transition: {
+			duration: 1,
+			delay: 2.5,
+			
+		},
+		opacity: 1
 	}
 };

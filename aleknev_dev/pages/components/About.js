@@ -35,7 +35,7 @@ import Head from 'next/head';
 import { redirect } from 'next/dist/server/api-utils'
 import Title from './Title'
 import Wave from './Variants/Wave'
-import { about, currentSkills, background, title, itemIcon, itemText, itemTitle, aboutItem, titleContainer, projectSubContainer, projectContainer } from './Variants/Variants'
+import { about, gradient, gradient2, currentSkills, background, title, itemIcon, itemText, itemTitle, aboutItem, titleContainer, projectSubContainer, projectContainer } from './Variants/Variants'
 
 
 const ChakraBox = chakra(motion.div, {
@@ -56,6 +56,11 @@ const About = () => {
 		justifyContent={'center'}
         direction={'column'}
         gap={'2em'}>
+			<ChakraBox
+			variants={gradient}
+			initial={'hidden'}
+			whileInView={'visible'}
+			viewport={{ once: true }}>
 						<Flex
 							position={'absolute'}
 							w={'100%'}
@@ -70,6 +75,7 @@ const About = () => {
 									src={'blob2341.png'} />
 							</Center>
 						</Flex>
+				</ChakraBox>
 						<ChakraBox
 							as={motion.div}
 							variants={about}
@@ -89,6 +95,11 @@ const About = () => {
 									direction={'column'}
 									gap={'5em'}>
 						<Flex>
+						<ChakraBox
+							variants={gradient2}
+							initial={'hidden'}
+							whileInView={'visible'}
+							viewport={{ once: true, amount: 0.99}}>
 						<Flex
 							position={'absolute'}
 							zIndex={0}
@@ -104,6 +115,7 @@ const About = () => {
 								w={{sm: '60em', md: '85em', lg: '85em'}}
 								src={'aboutcorn.png'} />
 						</Flex>
+						</ChakraBox>
 						</Flex>
 							<ChakraBox
 								as={motion.div}
