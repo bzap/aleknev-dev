@@ -26,34 +26,53 @@ import {
     Spacer,
     shouldForwardProp
 } from '@chakra-ui/react';
+import { motion, Variants, HTMLMotionProps, isValidMotionProp } from "framer-motion";
+import Wave from './Variants/Wave'
+import { textContainer, titleContainer, subTitleContainer, indicators} from './Variants/Variants'
 
 
 const Title = ({title, desc, page}) => { 
     return ( 
-        <Flex
-            justifyContent={'center'}
-            direction='row'>
+        <ChakraBox
+        as={motion.div}
+        variants={titleContainer}
+        initial={'hidden'}
+        whileInView={'visible'}
+        viewport={{ once: true }}>
             <Flex
-                justifyContent={'space-between'}
-                direction='column'>
-                <Heading
-                    lineHeight={'0.8em'}
-                    fontSize={{ sm: '4em', md: '6em', lg: '7em' }}>
-                    {title}
-                </Heading>
-                <Text
-                    w={{ sm: '25em', md: '35em', lg: '35em' }}
-                    fontWeight={700}
-                    fontSize={{ sm: 15, md: '1em', lg: '1.2em' }}
-                    color={'blackAlpha.800'}>
-                    {desc}
-                </Text>
+                justifyContent={'center'}
+                direction='row'>
+                <Flex
+                    justifyContent={'space-between'}
+                    direction='column'>
+                    <Heading
+                        lineHeight={'0.8em'}
+                        fontSize={{ sm: '4em', md: '6em', lg: '7em' }}>
+                        <Wave text={title}/>
+                    </Heading>
+                    <ChakraBox   
+                    variants={subTitleContainer}>
+                        <Text
+                            w={{ sm: '25em', md: '35em', lg: '35em' }}
+                            fontWeight={700}
+                            fontSize={{ sm: 15, md: '1em', lg: '1.2em' }}
+                            color={'blackAlpha.800'}>
+                            {desc}
+                        </Text>
+                    </ChakraBox>
+                </Flex>
+                <Spacer />
+                {pageIndicator(page)}
             </Flex>
-            <Spacer />
-            {pageIndicator(page)}
-        </Flex>
+        </ChakraBox>
     )
 }
+
+
+const ChakraBox = chakra(motion.div, {
+    shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
+});
+
 
 const pageIndicator = (page) => {
     return (
@@ -72,27 +91,30 @@ const pageIndicator = (page) => {
                     <Heading
 
                         position='relative'
-                        sx={{ 'writing-mode': 'vertical-rl' }}
+                        sx={{ 'writingMode': 'vertical-rl' }}
                         fontSize={{ sm: '3.5em', md: '4em', lg: '4.8em' }}
                         color={'blackAlpha.800'}
                         fontWeight={900}>
-                        <Text
+                        <ChakraBox
                             left={'20%'}
-                            position={'relative'}>
+                            position={'relative'}
+                            variants={indicators}>
                             {page}
-                        </Text>
+                        </ChakraBox> 
+                         
                     </Heading>
                     <Heading
                         position='relative'
-                        sx={{ 'writing-mode': 'vertical-rl' }}
+                        sx={{ 'writingMode': 'vertical-rl' }}
                         fontSize={{ sm: '3.5em', md: '4em', lg: '4.8em' }}
                         color={'blackAlpha.300'}
                         fontWeight={900}>
-                        <Text
-                            left={'20%'}
-                            position={'relative'}>
+                        <ChakraBox
+                        left={'20%'}
+                        position={'relative'}
+                        variants={indicators}>
                             03
-                        </Text>
+                        </ChakraBox>
                     </Heading>
                 </Flex>
             </Flex>

@@ -85,8 +85,8 @@ export const projectSubContainer = {
 		duration:0.3,
 		delayChildren: 0.4,
 		staggerChildren: 0.15
-	  }
-	}
+	  }  
+	}  
   } 
 
 
@@ -221,4 +221,54 @@ export const heroBG = {
 	  transition: { duration: 0.2 }
 	}
 }
-  //pskillsItem, imageItem, skillsTextItem, previewContainer, item, skillsItem, pillItem
+
+
+export const titleContainer = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+
+			delayChildren: 0.9,
+			staggerChildren: 0.3
+		}
+	}
+}   
+
+export const subTitleContainer = {
+	hidden: { opacity: 0, y: 20 },
+	visible: {
+		y: 0,
+		opacity: 1, 
+	},
+	transition: {
+		type: "spring",
+		damping: 12,
+		stiffness: 200,
+	}
+}
+export const indicators = {
+	hidden: { opacity: 0, x: 20 },
+	visible: {
+		x: 0,
+		opacity: 1,
+	},
+	transition: {
+		type: "spring",
+		damping: 12,
+		stiffness: 200,
+	}
+}
+
+export const textContainer = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: { 
+            staggerChildren: 0.07, 
+            delayChildren: 0.1 
+        }
+    }
+};

@@ -111,7 +111,6 @@ const About = () => {
 											direction={'column'}
 											textAlign={{ sm: 'start', md: 'start', lg:'end'}}>
 											<Icon
-												top={'2%'}
 												position={'relative'}
 												as={MdOutlineSubdirectoryArrowRight}
 												w={{ sm: '4em', md: '5em', lg: '5.7em' }}
@@ -120,7 +119,6 @@ const About = () => {
 												transform={{ sm: 'rotate(-90deg) scaleX(-1)', md: 'rotate(-90deg) scaleX(-1)', lg: 'scale(1)' }} />
 										</Flex>						
 										<Flex
-										
 										position={'relative'}
 										flexDirection={{sm: 'center', md:'center', lg:'flex-end'}}
 										w={{sm: '100%', md:'100%', lg:'45em'}}
@@ -134,8 +132,8 @@ const About = () => {
 												<Box
 												w={'100%'}
 													zIndex={1}
-													py={{ sm: 10, md: 12, lg: 12 }}
-													px={{ sm: 8, md: 12, lg: 12 }}	
+													py={{ sm: 8, md: 10, lg: 10 }}
+													px={{ sm: 8, md: 10, lg: 10 }}	
 													variants={subContainer}>
 													<Heading>
 														<Text
@@ -144,7 +142,7 @@ const About = () => {
 															borderBottomColor={'blackAlpha.100'}
 															color='blackAlpha.800'
 															fontWeight={900}
-															fontSize={{ sm: 35, md: 38, lg: 40 }}>
+															fontSize={{ sm: 35, md: 38, lg: 38 }}>
 															BACKGROUND
 														</Text>
 													</Heading>
@@ -174,7 +172,6 @@ const About = () => {
 															My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.
 															When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time.Currently I'm <b>looking for new opportunities</b> as a developer!
 													</Text>
-
 												</Box>
 										</Flex>
 									</Flex>
@@ -214,7 +211,6 @@ const About = () => {
 												position={'relative'}
 												zIndex={10}			
 												w={'100%'}
-												
 												variants={subContainer}>
 												{skillsInfo()}
 
@@ -269,8 +265,8 @@ const skillsInfo = () => {
             as={motion.div}
             whileHover={{ scale: 1.025 }}
             position='relative'
-			px={{sm: 8, md: 12, lg: 12}}
-			pt={12}
+			px={{sm: 8, md: 12, lg: 10}}
+			pt={10}
 			>
 			<Heading>
 				<Text

@@ -105,10 +105,10 @@ const Projects = () => {
 								direction={'row'}
 								justifyContent={'space-between'}
 								flexDirection='flex-start'
-								sx={{ 'flex-wrap': 'wrap' }}>
+								sx={{ 'flexWrap': 'wrap' }}>
 								{[...Array(6).keys()].map((item, idx) => (
 									<Box
-									
+									key={idx}
 									display={{sm:'flex', md:null}}
 									w={{sm:'100%', md: '100%', lg: '24em'}}
 									justifyContent={'center'}>

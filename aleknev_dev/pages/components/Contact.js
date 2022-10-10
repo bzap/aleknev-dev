@@ -29,6 +29,7 @@ const Contact = () => (
 		pt='10em'
 		pb='16em'>
 
+
 		<Flex
 		direction={'column'}
 		gap={'2em'}>
