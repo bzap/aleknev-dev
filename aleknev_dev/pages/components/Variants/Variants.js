@@ -139,89 +139,6 @@ export const gitItem = {
   }
 
 
-export const aboutBar = {
-	active: {
-		backgroundColor: "#E4E4EA",
-		transition: { duration: 0.7 }
-
-	},
-	inactive: {
-	  transition: { duration: 0.2 }
-	}
-}
-export const heroBar = {
-	active: {
-		backgroundColor: "#EEEEEE",
-		transition: { duration: 0.7 }
-	},
-	inactive: {
-	  transition: { duration: 0.1 }
-	}
-}
-export const projBar = {
-	active: {
-		backgroundColor: "#e8edf3",
-		transition: { duration: 0.7 }
-	},
-	inactive: {
-	  transition: { duration: 0.2 }
-	}
-}
-
-export const contactBar = {
-	active: {
-		backgroundColor: "#E7EEE9",
-		transition: { duration: 0.7 }
-	},
-	inactive: {
-	  transition: { duration: 0.2 }
-	}
-}
-
-export const contactBG = {
-	active: {
-		backgroundColor: "#EDF2F0",
-		transition: { duration: 0.7 }
-	},
-	inactive: {
-	
-	  transition: { duration: 0.2 }
-	}
-}
-
-export const projBG = {
-	active: {
-		backgroundColor: "#edf2f8",
-		transition: { duration: 0.7 }
-	},
-	inactive: {
-	
-	  transition: { duration: 0.2 }
-	}
-}
-
-
-export const aboutBG = {
-	active: {
-		backgroundColor: "#E9E9F0",
-		transition: { duration: 0.7 }
-		
-	},
-	inactive: {
-	
-	  transition: { duration: 0.2 }
-	}
-}
-export const heroBG = {
-	active: {
-		backgroundColor: "#F2F2F2",
-		transition: { duration: 0.7 }
-	},
-	inactive: {
-	  transition: { duration: 0.2 }
-	}
-}
-
 
 export const titleContainer = {
 	hidden: { opacity: 0 },
@@ -271,4 +188,95 @@ export const textContainer = {
             delayChildren: 0.1 
         }
     }
+};
+
+
+
+export const about = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			delayChildren: 0.7,
+			staggerChildren: 0.1
+		}
+	}
+}   
+
+export const title = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			delayChildren: 0.9,
+			staggerChildren: 0.3
+		}
+	}
+}   
+
+
+
+export const itemTitle = {
+	hidden: { opacity: 0, y: 20 },
+	visible: {
+		opacity: 1,
+		y: 0
+	}
+}   
+
+export const itemText = {
+	hidden: { y: 20, opacity: 0 },
+	visible: {
+		transition: {
+			type: "spring",
+			damping: 17,
+			stiffness: 200,
+			duration: 0.4
+		},
+		y: 0,
+		opacity: 1
+	}
+};
+
+
+export const background = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			delayChildren: 0.05,
+			staggerChildren: 0.1
+		}
+	}
+}   
+
+export const aboutItem = {
+	hidden: { opacity: 0, y: 20 },
+	visible: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			type: "spring",
+			damping: 18,
+			stiffness: 200,
+			duration: 0.3,
+			delayChildren: 0.15,
+			staggerChildren: 0.25
+		}
+	}
+} 
+
+
+export const currentSkills = {
+	hidden: { opacity: 0, scale: 0.95 },
+	visible: {
+		transition: {
+			type: "spring",
+			damping: 17,
+			stiffness: 200,
+			duration: 0.4
+		},
+		opacity: 1,
+		scale: 1 
+	}
 };

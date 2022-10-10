@@ -33,12 +33,6 @@ import { textContainer, titleContainer, subTitleContainer, indicators} from './V
 
 const Title = ({title, desc, page}) => { 
     return ( 
-        <ChakraBox
-        as={motion.div}
-        variants={titleContainer}
-        initial={'hidden'}
-        whileInView={'visible'}
-        viewport={{ once: true }}>
             <Flex
                 justifyContent={'center'}
                 direction='row'>
@@ -64,7 +58,6 @@ const Title = ({title, desc, page}) => {
                 <Spacer />
                 {pageIndicator(page)}
             </Flex>
-        </ChakraBox>
     )
 }
 

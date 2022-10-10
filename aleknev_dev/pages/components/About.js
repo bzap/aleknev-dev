@@ -34,6 +34,8 @@ import { skillsContainer, subContainer, item, skillsItem, container } from './Va
 import Head from 'next/head';
 import { redirect } from 'next/dist/server/api-utils'
 import Title from './Title'
+import Wave from './Variants/Wave'
+import { about, currentSkills, background, title, itemIcon, itemText, itemTitle, aboutItem, titleContainer, projectSubContainer, projectContainer } from './Variants/Variants'
 
 
 const ChakraBox = chakra(motion.div, {
@@ -54,24 +56,31 @@ const About = () => {
 		justifyContent={'center'}
         direction={'column'}
         gap={'2em'}>
-				<Flex
-					position={'absolute'}
-					w={'100%'}
-					h={'100%'}
-					top={{sm: '-20em', md: '-20em', lg: '-20em'}}
-					left={{sm: '-10em', md: '-15em', lg: '-15em'}}>
-					<Center>
-						<Image
-							filter={'grayscale(40%)'}
-							h={{sm: '70em', md: '70em', lg: '78em'}}
-							w={{sm: '70em', md: '70em', lg: '78em'}}
-							src={'blob2341.png'} />
-					</Center>
-				</Flex>
+						<Flex
+							position={'absolute'}
+							w={'100%'}
+							h={'100%'}
+							top={{sm: '-20em', md: '-20em', lg: '-20em'}}
+							left={{sm: '-10em', md: '-15em', lg: '-15em'}}>
+							<Center>
+								<Image
+									filter={'grayscale(40%)'}
+									h={{sm: '70em', md: '70em', lg: '78em'}}
+									w={{sm: '70em', md: '70em', lg: '78em'}}
+									src={'blob2341.png'} />
+							</Center>
+						</Flex>
+						<ChakraBox
+							as={motion.div}
+							variants={about}
+							initial={'hidden'}
+							whileInView={'visible'}
+							viewport={{ once: true}}>
 						<Title 
-						title={'About Me.'}
-						desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'}
-						page={'01'}/>
+							title={'About Me.'}
+							desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'}
+							page={'01'}/>
+						</ChakraBox>
 						<Flex
 									position={'relative'}
 									zIndex={10}
@@ -95,29 +104,40 @@ const About = () => {
 								w={{sm: '60em', md: '85em', lg: '85em'}}
 								src={'aboutcorn.png'} />
 						</Flex>
-					</Flex>
+						</Flex>
+							<ChakraBox
+								as={motion.div}
+								variants={background}
+								initial={'hidden'}
+								whileInView={'visible'}
+								viewport={{ once: true, amount: 0.58 }}>
 									<Flex
+									
 									direction={{sm: 'column', md:'column',lg:'row'}}
 									w={'100%'}
-									
 									zIndex={10}
 									gap={{ sm: '0.5em', md: '1em', lg:'8%'}}
 									position={'relative'}
-									justifyContent={{ sm: 'center', md: 'center', lg: 'flex-end' }}>						
-										<Flex
-
-											justifyContent={'flex-start'}
-											position={'relative'}
-											direction={'column'}
-											textAlign={{ sm: 'start', md: 'start', lg:'end'}}>
-											<Icon
+									justifyContent={{ sm: 'center', md: 'center', lg: 'flex-end' }}>	
+										<ChakraBox
+										variants={aboutItem}>			
+											<Flex
+												justifyContent={'flex-start'}
 												position={'relative'}
-												as={MdOutlineSubdirectoryArrowRight}
-												w={{ sm: '4em', md: '5em', lg: '5.7em' }}
-												h={{ sm: '4em', md: '5em', lg: '5.7em' }}
-												color={'blackAlpha.800'}
-												transform={{ sm: 'rotate(-90deg) scaleX(-1)', md: 'rotate(-90deg) scaleX(-1)', lg: 'scale(1)' }} />
-										</Flex>						
+												direction={'column'}
+												textAlign={{ sm: 'start', md: 'start', lg:'end'}}>
+												<Icon
+													position={'relative'}
+													as={MdOutlineSubdirectoryArrowRight}
+													w={{ sm: '4em', md: '5em', lg: '5.7em' }}
+													h={{ sm: '4em', md: '5em', lg: '5.7em' }}
+													color={'blackAlpha.800'}
+													transform={{ sm: 'rotate(-90deg) scaleX(-1)', md: 'rotate(-90deg) scaleX(-1)', lg: 'scale(1)' }} />
+											</Flex>
+										</ChakraBox>		
+										<ChakraBox
+										whileHover={{ scale: 1.025 }}
+										variants={aboutItem}>			
 										<Flex
 										position={'relative'}
 										flexDirection={{sm: 'center', md:'center', lg:'flex-end'}}
@@ -129,30 +149,34 @@ const About = () => {
 										backdropBlur='5px'
 										boxShadow={'md'}
 										borderRadius={'20px'}>         
-												<Box
-												w={'100%'}
+												<ChakraBox
+													w={'100%'}
 													zIndex={1}
 													py={{ sm: 8, md: 10, lg: 10 }}
-													px={{ sm: 8, md: 10, lg: 10 }}	
-													variants={subContainer}>
-													<Heading>
-														<Text
-															pb={4}
-															borderBottomWidth={'2px'}
-															borderBottomColor={'blackAlpha.100'}
-															color='blackAlpha.800'
-															fontWeight={900}
-															fontSize={{ sm: 35, md: 38, lg: 38 }}>
-															BACKGROUND
-														</Text>
-													</Heading>
+													px={{ sm: 8, md: 10, lg: 10 }}	>
+													<ChakraBox
+													variants={aboutItem}>
+														<Heading>
+															<Text
+																pb={4}
+																borderBottomWidth={'2px'}
+																borderBottomColor={'blackAlpha.100'}
+																color='blackAlpha.800'
+																fontWeight={900}
+																fontSize={{ sm: 35, md: 38, lg: 38 }}>
+																BACKGROUND 
+															</Text>
+														</Heading>
+													</ChakraBox>
+													<ChakraBox
+													variants={itemText}>	
 													<Text
 														textAlign={'justify'}
 														pt={8}
 														pb={2}
 														color={'blackAlpha.800'}
 														fontSize={{sm: 13.5, md: 14, lg: 14.5}}
-														fontWeight={'700'}>
+														fontWeight={'700'}>	
 															<Image
 															justifyContent={'center'}
 															position={'relative'}
@@ -167,34 +191,49 @@ const About = () => {
 															borderColor={'black'}
 															h={{sm: '15em', md: '20em', lg: '22em'}}
 															w={{ sm: '10em', md: '15em', lg: '15em' }}
-															src={'https://i.imgur.com/7R4gnAa.jpg'} />
+															src={'https://i.imgur.com/7R4gnAa.jpg'} />								
 															I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree.
 															My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.
 															When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time.Currently I'm <b>looking for new opportunities</b> as a developer!
 													</Text>
-												</Box>
-										</Flex>
+													</ChakraBox>
+												</ChakraBox>
+											</Flex>
+										</ChakraBox>			
 									</Flex>
+
+									</ChakraBox>
+									<ChakraBox
+										as={motion.div}
+										variants={background}
+										initial={'hidden'}
+										whileInView={'visible'}
+										viewport={{ once: true, amount: 0.5 }}>
 									<Flex
 										direction={{ sm: 'column', md: 'column', lg: 'row' }}
 										w={'100%'}
 										gap={{ sm: '0.5em', md: '1em', lg: '8%' }}
 										position={'relative'}
 										justifyContent={{ sm: 'center', md: 'center', lg: 'flex-end' }}>
-										<Flex
-											justifyContent={'center'}
-											zIndex={10}
-											h={'10%'}
-											position={'relative'}
-											direction={'column'}
-											textAlign={{ sm: 'start', md: 'start', lg: 'end' }}>
-											<Icon
-												as={MdOutlineSubdirectoryArrowRight}
-												w={{sm: '4em', md: '5em', lg: '5.7em'}}
-												h={{ sm: '4em', md: '5em', lg: '5.7em' }}
-												color={'blackAlpha.800'}
-												transform={{ sm: 'rotate(-90deg) scaleX(-1)', md: 'rotate(-90deg) scaleX(-1)', lg: 'scale(1)'}}/>
-										</Flex>
+										<ChakraBox
+										variants={aboutItem}>	
+											<Flex
+												justifyContent={'center'}
+												zIndex={10}
+												position={'relative'}
+												direction={'column'}
+												textAlign={{ sm: 'start', md: 'start', lg: 'end' }}>
+												<Icon
+													as={MdOutlineSubdirectoryArrowRight}
+													w={{sm: '4em', md: '5em', lg: '5.7em'}}
+													h={{ sm: '4em', md: '5em', lg: '5.7em' }}
+													color={'blackAlpha.800'}
+													transform={{ sm: 'rotate(-90deg) scaleX(-1)', md: 'rotate(-90deg) scaleX(-1)', lg: 'scale(1)'}}/>
+											</Flex>
+										</ChakraBox>
+										<ChakraBox
+											whileHover={{ scale: 1.025 }}
+											variants={aboutItem}>
 										<Flex
 											position={'relative'}
 											flexDirection={{ sm: 'center', md: 'center', lg: 'flex-end' }}
@@ -210,21 +249,19 @@ const About = () => {
 											<Box
 												position={'relative'}
 												zIndex={10}			
-												w={'100%'}
-												variants={subContainer}>
+												w={'100%'}>
 												{skillsInfo()}
-
 											</Box>
 
 										</Flex>
-
+										</ChakraBox>
+									
 										
 									</Flex>
-
+									</ChakraBox>
 								</Flex>
 								
                         </Flex>
-
     </Box>
     
 )}
@@ -263,11 +300,12 @@ const skillsInfo = () => {
 			<Flex
 			direction={'column'}
             as={motion.div}
-            whileHover={{ scale: 1.025 }}
             position='relative'
 			px={{sm: 8, md: 12, lg: 10}}
 			pt={10}
 			>
+			<ChakraBox
+			variants={aboutItem}>	
 			<Heading>
 				<Text
 					pb={4}
@@ -279,7 +317,13 @@ const skillsInfo = () => {
 					SKILLS
 				</Text>
 			</Heading>
+			</ChakraBox>
+			<ChakraBox
+			variants={itemText}>
            		{skillText()}
+			</ChakraBox>
+			<ChakraBox
+			variants={currentSkills}>
 				<Flex
 				pb={14}
 				justify-content={'space-between'}
@@ -292,7 +336,8 @@ const skillsInfo = () => {
 					{skillList(4)}
 					<Spacer />
 					{skillList(4)}
-				</Flex> 
+				</Flex>
+			</ChakraBox> 
         	</Flex>
     )
 }
@@ -329,7 +374,6 @@ const skillText = () => {
                     Filler text filler text, this is my strength, filler text. I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
                 </Text>
                 </ChakraBox>
-
             </Flex>
     )
 }
