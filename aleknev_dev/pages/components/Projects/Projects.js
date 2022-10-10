@@ -28,11 +28,12 @@ import Preview from './Preview'
 import { motion, isValidMotionProp } from "framer-motion";
 import Parallax from '../layouts/Parallax';
 import { SiGithub  } from 'react-icons/si';
-import { projectContainer, projectSubContainer, skillsContainer, item, skillsItem, projecteem } from '../Variants/Variants'
+import { projectContainer, projectSubContainer, gradient, gradient3, skillsContainer, item, skillsItem, about } from '../Variants/Variants'
 import Head from 'next/head';
 import { useState, useEffect } from 'react'
 import { pageIndicator } from '../About';
 import Title from '../Title'
+
 
 
 
@@ -70,17 +71,29 @@ const Projects = () => {
 		<Flex
 			justifyContent={'center'}
 			direction={'column'}>
+				<ChakraBox
+						as={motion.div}
+						variants={about}
+						initial={'hidden'}
+						whileInView={'visible'}
+						viewport={{ once: true }}>
 				<Title
 				title={'Projects.'}			
 				desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'} 
 				page={'02'}/>
+				</ChakraBox>
 				<Flex
 				position={'relative'}
 				zIndex={10}
-				pt={'10em'}
+				pt={'5em'}
 				direction='column'
-				gap={'5em'}
+				gap={'4em'}
 				justifyContent={'center'}>
+						<ChakraBox
+							variants={gradient}
+							initial={'hidden'}
+							whileInView={'visible'}
+							viewport={{ once: true }}>
 						<Flex
 							position={'absolute'}
 							maxW={'100%'}
@@ -96,11 +109,12 @@ const Projects = () => {
 									src={'newblob.png'} />
 							</Center>
 						</Flex>
-					<ChakraBox
+						</ChakraBox>
+					<ChakraBox 
 					variants={projectContainer}
 					initial={'hidden'}
-					whileInView={'visible'}
-					viewport={{once: true }}>	
+					whileInView={'visible'} 
+					viewport={{once: true, amount: 0.2}}>	
 							<Flex
 								direction={'row'}
 								justifyContent={'space-between'}
@@ -132,7 +146,11 @@ const Projects = () => {
 				</Flex>
 
 				</Flex>
-
+		<ChakraBox
+			variants={gradient3}
+			initial={'hidden'}
+			whileInView={'visible'}
+			viewport={{ once: true }}>
 		<Flex
 			position={'absolute'}
 			zIndex={0}
@@ -146,6 +164,7 @@ const Projects = () => {
 				w={{ sm: '100%', md: '85em', lg: '90%' }}
 				src={'centerproj.png'} />
 		</Flex>	
+		</ChakraBox>
 	</Box> 
 		)
 }

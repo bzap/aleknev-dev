@@ -69,8 +69,9 @@ export const projectContainer = {
 	  y:0,
 	  opacity: 1,
 	  transition: {
-		duration:0.3,
-		delayChildren: 0.4,
+		delay:0.8,
+		duration: 0.3,
+		delayChildren: 0.8,  
 		staggerChildren: 1
 	  }
 	}
@@ -304,6 +305,18 @@ export const gradient2 = {
 			duration: 1,
 			delay: 2.5,
 			
+		},
+		opacity: 1
+	}
+};
+
+export const gradient3 = {
+	hidden: { opacity: 0 },
+	visible: {
+		transition: {
+			duration: 1,
+			delay: 1,
+
 		},
 		opacity: 1
 	}
