@@ -28,7 +28,7 @@ import {
 } from '@chakra-ui/react';
 import { motion, Variants, HTMLMotionProps, isValidMotionProp } from "framer-motion";
 import Wave from './Variants/Wave'
-import { textContainer, titleContainer, subTitleContainer, indicators} from '../../styles/Variants'
+import { textContainer, titleContainer, subTitleContainer, indicators } from '../styles/Variants'
 
 
 const Title = ({title, desc, page}) => { 

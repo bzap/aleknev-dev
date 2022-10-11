@@ -27,7 +27,7 @@ import {
 import Preview from './Preview'
 import { motion, isValidMotionProp } from "framer-motion";
 import { SiGithub  } from 'react-icons/si';
-import { projectContainer, projectSubContainer, gradient, gradient3, gradient4, skillsContainer, item, skillsItem, about } from '../../../styles/Variants'
+import { projectContainer, projectSubContainer, gradient, gradient3, gradient4, skillsContainer, item, skillsItem, about } from '../../styles/Variants'
 import Head from 'next/head';
 import { useState, useEffect } from 'react'
 import { pageIndicator } from '../About';

@@ -32,7 +32,7 @@ import {
     shouldForwardProp
   } from '@chakra-ui/react';
 import { InfoOutlineIcon, WarningTwoIcon, ArrowForwardIcon } from '@chakra-ui/icons'
-import { pskillsItem, item, pillItem } from '../../../styles/Variants'
+import { pskillsItem, item, pillItem } from '../../styles/Variants'
 import { motion, isValidMotionProp } from "framer-motion";
 import { SiReact, SiPython, SiAngular, SiVuedotjs  } from 'react-icons/si';
 import { useState, useEffect, useRef } from 'react'
