@@ -1,6 +1,6 @@
 
 import { useMemo, useEffect, useState } from "react";
-import { tabs } from "./TabContent"
+import { tabs } from "../../../public/data/TabContent"
 import {
 	Container,
 	Stack,

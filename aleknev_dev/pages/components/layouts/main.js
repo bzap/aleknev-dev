@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, Container } from '@chakra-ui/react'
 import Stripes from '../Stripes'
-import Stripesv2 from '../Stripesv2'
 
 const Layout = ({ children, router }) => { 
    //maxWidth='100^' minHeight='100vh'
@@ -15,9 +14,7 @@ const Layout = ({ children, router }) => {
         overflow={'hidden'}
         left={0}
         pl={0}
-        pr={0}
-        > 
-        
+        pr={0}> 
             <main>{children}</main> 
         </Container> 
     )   

@@ -29,13 +29,12 @@ import {
 import { SiReact, SiChakraui, SiJavascript, SiPython } from 'react-icons/si';
 import { MdOutlineSubdirectoryArrowRight } from 'react-icons/md'
 import { motion, useScroll, useTransform, isValidMotionProp } from "framer-motion";
-import Parallax from './layouts/Parallax';
-import { skillsContainer, subContainer, item, skillsItem, container } from './Variants/Variants';
+import { skillsContainer, subContainer, item, skillsItem, container } from '../../styles/Variants';
 import Head from 'next/head';
 import { redirect } from 'next/dist/server/api-utils'
 import Title from './Title'
 import Wave from './Variants/Wave'
-import { about, gradient, gradient2, currentSkills, background, title, itemIcon, itemText, itemTitle, aboutItem, titleContainer, projectSubContainer, projectContainer } from './Variants/Variants'
+import { about, gradient, gradient2, currentSkills, background, title, itemIcon, itemText, itemTitle, aboutItem, titleContainer, projectSubContainer, projectContainer } from '../../styles/Variants'
 
 
 const ChakraBox = chakra(motion.div, {

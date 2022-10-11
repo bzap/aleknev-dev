@@ -12,9 +12,8 @@ import Stripes from './components/Stripes'
 import AnimatedTabs from './components/Tabs/Tabs'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import { useState, useEffect } from 'react'
-import { tabs } from "./components/Tabs/TabContent"
+import { tabs } from "../public/data/TabContent"
 import { motion, useScroll } from 'framer-motion'
-import Stripesv2 from './components/Stripesv2'
 
 
  
@@ -54,7 +53,6 @@ const Home = () => {
         
         <Header pos={{views:{aboutView, setAboutView, projView, 
                            setProjView, setContactView, heroView, homeView, contactView}}}/>
-        <Stripesv2 pos={{aboutView, heroView, projView, contactView}}/> 
         <Hero />
         <About/>
         <Projects/>

@@ -66,7 +66,7 @@ const Header = ({pos}) => {
 							onHoverStart={() => setIsShown(false)}
 							onHoverEnd={() => setIsShown(true)}
 							fontSize={{ base: '4xl', sm: '4xl', lg: '1xl' }}>   
-								{scrollBehaviour(pos)}
+								{scrollBehaviour()}
 						</Heading> 
 						</Link>
 						<Spacer/>
@@ -79,7 +79,7 @@ const Header = ({pos}) => {
 	)
 }
 
-const scrollBehaviour = (pos) => { 
+const scrollBehaviour = () => { 
 	// if scroll distance gap/speed is big don't change these titles 
 	// if gap > 150, then don't apply the title changes, else do? 
 	return (
