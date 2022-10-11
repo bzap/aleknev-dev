@@ -24,7 +24,9 @@ import {
     ListIcon,
     ListItem,
     Spacer,
-    shouldForwardProp
+    shouldForwardProp,
+	useBreakpointValue,
+	useBreakpoint
   } from '@chakra-ui/react';
 import { SiReact, SiChakraui, SiJavascript, SiPython } from 'react-icons/si';
 import { MdOutlineSubdirectoryArrowRight } from 'react-icons/md'
@@ -42,6 +44,8 @@ const ChakraBox = chakra(motion.div, {
   });
 
 const About = () => {
+	const bp = useBreakpoint()
+	console.log(bp)
     return(
     <Box
         position={'relative'}
