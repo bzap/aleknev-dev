@@ -37,6 +37,7 @@ import Title from '../Title'
 
 
 
+
 const ChakraBox = chakra(motion.div, {
 		shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 	});
@@ -67,7 +68,6 @@ const Projects = () => {
 		id='0'
 		pt='10em'
 		pb='40em'>
-
 		<Flex
 			justifyContent={'center'}
 			direction={'column'}>
@@ -114,7 +114,7 @@ const Projects = () => {
 					variants={projectContainer}
 					initial={'hidden'}
 					whileInView={'visible'} 
-					viewport={{once: true, amount: 0.15}}>	
+					viewport={{once: false, amount: 0.15}}>	
 							<Flex
 								direction={'row'}
 								justifyContent={'space-between'}
@@ -212,7 +212,7 @@ const verticalItem = (top, index) => {
 							backdropBlur='5px'
 							boxShadow={'md'} 
 							borderRadius={'22px'} >
-							<Preview/>
+							<Preview proj={index}/>
 						</Flex> 
 				</Flex>   
 				</ChakraBox> 

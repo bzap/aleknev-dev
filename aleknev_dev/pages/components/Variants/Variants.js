@@ -276,7 +276,7 @@ export const currentSkills = {
 			type: "spring",
 			damping: 17,
 			stiffness: 200,
-			duration: 0.4
+			duration: 0.7
 		},
 		opacity: 1,
 		scale: 1 

@@ -152,8 +152,15 @@ const introText = () => {
 					color={'blackAlpha.800'}
 					fontWeight='900'
 					fontSize={{ sm: '1em', md: '1.1em', lg: '1.1em', xl: '1.1em', '2xl': '1.2em' }}>  
-					&thinsp;&thinsp;growth.
-				</Text>      
+					&thinsp;&thinsp;growth
+				</Text>  
+				<Text
+					as={'span'}
+					color={'blackAlpha.800'}
+					fontWeight='800'
+					fontSize={{ sm: '1em', md: '1.1em', lg: '1.1em', xl: '1.1em', '2xl': '1.2em' }}>
+					.
+				</Text> 
 			</Heading> 	
 		</Flex>
 	)

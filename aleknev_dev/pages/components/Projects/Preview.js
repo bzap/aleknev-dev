@@ -8,6 +8,7 @@ import {
     Box,
     Heading,
     Text,
+    useDisclosure,
     Button,
     Image,
     Icon,
@@ -15,6 +16,13 @@ import {
     createIcon,
     IconProps,
     useColorModeValue,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalCloseButton,
+    ModalBody,
+    Modal,
+    ModalFooter,
     Grid, 
     GridItem,
     ButtonGroup,
@@ -27,15 +35,16 @@ import { InfoOutlineIcon, WarningTwoIcon, ArrowForwardIcon } from '@chakra-ui/ic
 import { pskillsItem, item, pillItem } from '../Variants/Variants'
 import { motion, isValidMotionProp } from "framer-motion";
 import { SiReact, SiPython, SiAngular, SiVuedotjs  } from 'react-icons/si';
+import { useState, useEffect, useRef } from 'react'
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
   });
 
 
-const Preview = () => (
-    <Stack 
-        maxW={'7x1'}>
+const Preview = ({proj}) => {
+    return (
+    <Stack >
         <Flex
             justifyContent={'center'}
             flexShrink={1}
@@ -70,14 +79,15 @@ const Preview = () => (
                 </Center>
             </ChakraBox>
             <Flex>
-            {projectButton('Learn More', 'temp', <InfoOutlineIcon/>)}  
+            {projectButton('Learn More', proj, <InfoOutlineIcon/>)}  
             <Spacer/>    
-            {projectButton('Live Demo', 'temp', <WarningTwoIcon/>)}   
+            {projectButton('Live Demo', proj, <WarningTwoIcon/>)}   
             </Flex>
 
         </Stack>
     </Stack>
-)
+    )
+}
 
 
 const projectImages = (props) => { 
@@ -140,19 +150,70 @@ const projectDesc = (props) => {
 
 
 const projectButton = (name, link, icon) => { 
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const btnRef = useRef([])
     return (
         <Flex 
         pt={3}
+        as={motion.div}
+        cursor={'pointer'}
         justifyContent={'flex-end'}
-            flex={1}
-            textColor={'Black'}
-            fontWeight={'bold'}
-            whiteSpace={'nowrap'}
-            fontSize={16}>
-                {name}&#160;&gt;
+        flex={1}
+        textColor={'Black'}
+        ref={btnRef}
+        fontWeight={'bold'}
+        whiteSpace={'nowrap'}
+        onClick={onOpen}
+        whileTap={{scale: 0.9}}
+        whileHover={{scale:1.05}}
+        fontSize={16}>
+            {name}&#160;&gt;
+            {contentModal(btnRef, isOpen, onOpen, onClose, link )}
         </Flex>
     )
 }
+
+
+const contentModal = (ref, io, oo, oc, link) => { 
+    return ( 
+        <Modal
+            isCentered
+            onClose={oc}
+            finalFocusRef={ref}
+            isOpen={io}
+            scrollBehavior={'inside'}>
+                <ModalOverlay />
+                {link == '01' && (
+                <ModalContent>
+                    <ModalHeader
+                        fontSize={35}
+                        fontWeight={900}>GONIGO</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        this would be something like data.modalBody
+                    </ModalBody>
+                    <ModalFooter>
+                    </ModalFooter>
+                </ModalContent>
+                )}
+                {link == '02' && (
+                    <ModalContent>
+                        <ModalHeader
+                            fontSize={35}
+                            fontWeight={900}>ARD UTIL</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>
+                            LEBRAN JAEWMS
+                        </ModalBody>
+                        <ModalFooter>
+                        </ModalFooter>
+                    </ModalContent>
+                )}
+        </Modal>
+    )
+}
+
+
 //textShadow={"1px 1px gray.700"}
 export default Preview
 
