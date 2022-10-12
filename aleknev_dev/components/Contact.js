@@ -23,8 +23,9 @@ import {
 	Textarea,
 	chakra,
 	shouldForwardProp,
+	useToast,
 	FormHelperText,
-  } from '@chakra-ui/react';
+} from '@chakra-ui/react';
 import Title from './Title'
 import { useState, useEffect } from 'react'
 import { useForm, ValidationError } from "@formspree/react"
@@ -38,9 +39,25 @@ const ChakraBox = chakra(motion.div, {
 
 
 const Contact = () => {
-
 	const [state, handleSubmit] = useForm('xlevlwkn');
-	return ( 
+	const toast = useToast() 
+	useEffect(() => {
+		if (state.succeeded && !toast.isActive('good')) {
+				toast({
+					id: 'good',
+					title: 'Submitted.',
+					containerStyle: {
+						color: 'black'
+					},
+					variant: 'subtle',
+					description: "Thanks for reaching out!",
+					status: 'success',
+					duration: 3000,
+					isClosable: true,
+				})	
+		}
+	}, [state.submitting])
+	return (
 		<Box
 			position={'relative'}
 			maxW={'100%'}
@@ -63,116 +80,101 @@ const Contact = () => {
 					bg={'whiteAlpha.600'}
 					boxShadow={'md'}
 					borderRadius={'22px'}
-					h={'100%'}>						
-					{state.succeeded ? (
-						<Center>
-							<Text
-							fontsize={30}
-							fontWeight={800}
-							color={'blackAlpha.700'}>	Thank you for the submission!
-							</Text>
-						</Center> 
-					) : (
-						<form 
-						style={{ flex: 1, width: "100%" }}
-						onSubmit={handleSubmit}>
+					h={'100%'}>
+						<form
+							style={{ flex: 1, width: "100%" }}
+							onSubmit={handleSubmit}>
 							<Flex
-							gap={'1em'}
-							direction={'column'}>
-
-							
-
-									<FormControl
-										isRequired>
+								gap={'1em'}
+								direction={'column'}>
+								<FormControl
+									isRequired>
+									<Flex
+										h={'100%'}
+										w={'100%'}
+										direction={'row'}
+										gap={'2em'}>
 										<Flex
 											h={'100%'}
 											w={'100%'}
-											direction={'row'}
-											gap={'2em'}>
-											<Flex
-												h={'100%'}
+											direction={'column'}>
+											<FormLabel
+												requiredIndicator
+												fontSize={30}
+												fontWeight={900}>
+												EMAIL
+											</FormLabel>
+											<Input
+												fontSize={17}
+												fontWeight={600}
+												color={'blackAlpha.800'}
+												focusBorderColor={'blackAlpha.700'}
 												w={'100%'}
-												direction={'column'}>
-												<FormLabel
-													requiredIndicator
-													fontSize={30}
-													fontWeight={900}>
-													EMAIL
-												</FormLabel>
-												<Input
-													fontSize={17}
-													fontWeight={600}
-													color={'blackAlpha.800'}
-													focusBorderColor={'blackAlpha.700'}
-													w={'100%'}
-													size={'lg'}
-													id='email'
-													type='email'
-													name='email'
-													placeholder='Email' />
-												<FormLabel
-													requiredIndicator
-													pt={4}
-													fontSize={30}
-													fontWeight={900}>
-													NAME
-												</FormLabel>
-												<Input
-													fontSize={17}
-													fontWeight={600}
-													color={'blackAlpha.800'}
-													focusBorderColor={'blackAlpha.700'}
-													name='name'
-													size={'lg'}
-													id='name'
-													placeholder='Name' />
-											</Flex>
-											<Flex
-												direction={'column'}
-												h={'container'}
-												w={'100%'}>
-												<FormLabel
-													requiredIndicator
-													fontSize={30}
-													fontWeight={900}>
-													YOUR MESSAGE
-												</FormLabel>
-												<Textarea
-													fontWeight={600}
-													color={'blackAlpha.800'}
-													h={'100%'}
-													focusBorderColor={'blackAlpha.700'}
-													name='message'
-													placeholder='Your message'
-													resize={'none'}
-													id='message' />
-											</Flex>
+												size={'lg'}
+												id='email'
+												type='email'
+												name='email'
+												placeholder='Email' />
+											<FormLabel
+												requiredIndicator
+												pt={4}
+												fontSize={30}
+												fontWeight={900}>
+												NAME
+											</FormLabel>
+											<Input
+												fontSize={17}
+												fontWeight={600}
+												color={'blackAlpha.800'}
+												focusBorderColor={'blackAlpha.700'}
+												name='name'
+												size={'lg'}
+												id='name'
+												placeholder='Name' />
 										</Flex>
-									</FormControl>
-									
-									<Button
-										w={'100%'}
-										mt={4}
-										colorScheme={'blackAlpha'}
-										variant={'ghost'}
-										borderRadius={'12px'}
-										borderWidth={'1px'}
-										borderColor={'gray.500'}
-										textColor={'white'}
-										bg={'blackAlpha.800'}
-										disabled={state.submitting}
-										type='submit'>
-										SUBMIT
-									</Button>
+										<Flex
+											direction={'column'}
+											h={'container'}
+											w={'100%'}>
+											<FormLabel
+												requiredIndicator
+												fontSize={30}
+												fontWeight={900}>
+												YOUR MESSAGE
+											</FormLabel>
+											<Textarea
+												fontWeight={600}
+												color={'blackAlpha.800'}
+												h={'100%'}
+												focusBorderColor={'blackAlpha.700'}
+												name='message'
+												placeholder='Your message'
+												resize={'none'}
+												id='message' />
+										</Flex>
+									</Flex>
+								</FormControl>
+
+								<Button
+									w={'100%'}
+									mt={4}
+									colorScheme={'blackAlpha'}
+									variant={'ghost'}
+									borderRadius={'12px'}
+									borderWidth={'1px'}
+									borderColor={'gray.500'}
+									textColor={'white'}
+									bg={'blackAlpha.800'}
+									disabled={state.submitting}
+									type='submit'>
+									SUBMIT
+								</Button>
 							</Flex>
 						</form>
-					)}
 				</Flex>
 			</Flex>
-
 		</Box>
 	)
 }
-
 
 export default Contact

@@ -333,4 +333,16 @@ export const gradient4 = {
 		},
 		opacity: 1
 	}
-};
+}
+
+
+export const submission = {
+	hidden: { opacity: 0 },
+	visible: {
+		transition: {
+			duration: 0.7
+		},
+		opacity: 1,
+		scale: [0.5, 1.01, 1]
+	}
+}
