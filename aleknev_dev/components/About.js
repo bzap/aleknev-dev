@@ -144,10 +144,10 @@ const About = () => {
 												<Icon
 													position={'relative'}
 													as={MdOutlineSubdirectoryArrowRight}
-													w={{ base: 0, sm: '4em', md: '5em', lg: '5.7em' }}
-													h={{ base: 0, sm: '4em', md: '5em', lg: '5.7em' }}
+													w={{ base: 0, sm: '0em', md: '0em', lg: '5.7em' }}
+													h={{ base: 0, sm: '0em', md: '0em', lg: '5.7em' }}
 													color={'blackAlpha.800'}
-													transform={{ sm: 'rotate(-90deg) scaleX(-1)', md: 'rotate(-90deg) scaleX(-1)', lg: 'scale(1)' }} />
+													transform={{ lg: 'scale(1)' }} />
 											</Flex>
 										</ChakraBox>		
 										<ChakraBox
@@ -240,10 +240,10 @@ const About = () => {
 												textAlign={{ base: 'start', sm: 'start', md: 'start', lg: 'end' }}>
 												<Icon
 													as={MdOutlineSubdirectoryArrowRight}
-													w={{base: '0em', sm: '4em', md: '5em', lg: '5.7em'}}
-													h={{base: '0em', sm: '4em', md: '5em', lg: '5.7em' }}
+													w={{base: '0em', sm: '0em', md: '0em', lg: '5.7em'}}
+													h={{base: '0em', sm: '0em', md: '0em', lg: '5.7em' }}
 													color={'blackAlpha.800'}
-													transform={{ sm: 'rotate(-90deg) scaleX(-1)', md: 'rotate(-90deg) scaleX(-1)', lg: 'scale(1)'}}/>
+													transform={{ lg: 'scale(1)'}}/>
 											</Flex>
 										</ChakraBox>
 										<ChakraBox
