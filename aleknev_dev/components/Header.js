@@ -87,8 +87,6 @@ const desktopContent = (pos, isShown, setIsShown) => {
 			<Spacer />
 			<AnimatedTabs pos={pos} />
 		</Flex>
-
-
 	)
 }
 
@@ -109,8 +107,8 @@ const mobileContent = (isOpen, onToggle) => {
 							icon={
 								isOpen ?
 								<CloseIcon
-									w={5}
-									h={5} /> :
+									w={3}
+									h={3} /> :
 										<HamburgerIcon
 											w={5}
 											h={5} />

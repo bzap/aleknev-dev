@@ -2,8 +2,17 @@ import '../styles/globals.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '../components/layouts/main'
 import Fonts from '../components/Fonts/Fonts'
-import theme from '../styles/theme'
 
+import { extendTheme } from '@chakra-ui/react'
+import { Global } from '@emotion/react'
+import '../styles/styles.css'
+
+const theme = extendTheme({
+  fonts: {
+    heading: `'SF Mono', 'sf_monomedium'`,
+    body: `'SF Mono', 'sf_monomedium'`,
+  },
+})
 
 function MyApp({ Component, pageProps, router }) {
   return (

@@ -1,0 +1,13 @@
+
+@font-face {
+    font-family: 'sf_monomedium';
+    src:
+        url('../public/sfmonomedium.otf') format('otf'),
+        url('../public/sf-mono-medium-webfont.woff2') format('woff2'),
+        url('../public/sf-mono-medium-webfont.woff') format('woff');
+        
+    font-weight: normal;
+    font-style: normal;
+    text-rendering:optimizeLegibility;
+    -webkit-font-feature-settings: "kern" 1;
+}
