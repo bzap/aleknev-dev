@@ -28,6 +28,7 @@ const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
   });
 
+
 const AnimatedTabs = ({pos}) => {
 	
 	// allows it to hover buttons on scroll as well as when pressed

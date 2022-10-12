@@ -70,7 +70,6 @@ const Projects = () => {
 				zIndex={10}
 				pt={{ base: '2em', sm: '4em', md: '7em', lg: '7em' }}
 				direction='column'
-				
 				justifyContent={'center'}>
 						<ChakraBox
 							variants={gradient4}

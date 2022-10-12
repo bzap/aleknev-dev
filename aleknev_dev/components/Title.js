@@ -71,7 +71,6 @@ const ChakraBox = chakra(motion.div, {
 const pageIndicator = (page) => {
     return (
         <Flex
-        
             w={'100%'}
             h={'100%'}
             position={'relative'}
@@ -84,8 +83,6 @@ const pageIndicator = (page) => {
                 justifyContent={'center'}
                 direction={'column'}>
                 <Flex
-                
-                
                     direction={'column'}
                     position={'relative'}>
                     <Heading
