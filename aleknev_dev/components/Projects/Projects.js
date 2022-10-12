@@ -41,28 +41,12 @@ const ChakraBox = chakra(motion.div, {
 		shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 	});
 
-	const cardVariants = {
-		offscreen: {
-			y: 0
-		},
-		onscreen: {
-			y: 0,
-		
-			transition: {
-				type: "spring",
-				bounce: 0.4,
-				duration: 0.8
-			}
-		}
-	};
-
-
 const Projects = () => { 
 		return (
 		<Box
 		position={'relative'}
 		maxW={'100%'}
-		px={{ sm: '5%', md: '10%', lg: '10%' }}
+		px={{ base: '3%', sm: '5%', md: '10%', lg: '10%' }}
 		w={'100%'}
 		id='0'
 		pt='10em'
@@ -84,9 +68,9 @@ const Projects = () => {
 				<Flex
 				position={'relative'}
 				zIndex={10}
-				pt={'5em'}
+				pt={{ base: '2em', sm: '4em', md: '7em', lg: '7em' }}
 				direction='column'
-				gap={'4em'}
+				
 				justifyContent={'center'}>
 						<ChakraBox
 							variants={gradient4}
@@ -96,10 +80,10 @@ const Projects = () => {
 						<Flex
 							position={'absolute'}
 							maxW={'100%'}
-							w={{sm: '90em', md: '90em', lg: '100em'}}
-							h={{sm: '100em', md: '100em', lg: '100em' }}
-							top={{sm: '40em', md: '10em', lg: '-5em'}}
-							left={{ sm: '10em', md: '20em', lg: '20em' }}>
+							w={{base: '0em', sm: '90em', md: '90em', lg: '100em'}}
+							h={{base: '0em', sm: '100em', md: '100em', lg: '100em' }}
+							top={{base: '0em', sm: '40em', md: '10em', lg: '-5em'}}
+							left={{base: '0em', sm: '10em', md: '20em', lg: '20em' }}>
 							<Center>
 								<Image
 									filter={'grayscale(40%)'}
@@ -113,7 +97,7 @@ const Projects = () => {
 					variants={projectContainer}
 					initial={'hidden'}
 					whileInView={'visible'} 
-					viewport={{once: false, amount: 0.3}}>	
+					viewport={{once: false}}>	
 							<Flex
 								direction={'row'}
 								justifyContent={'space-between'}
@@ -130,16 +114,6 @@ const Projects = () => {
 								))}
 							</Flex>
 						</ChakraBox>
-
-				
-					<ChakraBox
-					variants={projectContainer}
-					initial={'hidden'}
-					whileInView={'visible'}
-					viewport={{once: true}}>	
-					<Grid templateColumns='repeat(3	, 1fr)' gap={'10em'}>
-					</Grid>
-					</ChakraBox>
 						{gitButton()}
 				</Flex>
 				</Flex>
@@ -152,13 +126,13 @@ const Projects = () => {
 			position={'absolute'}
 			zIndex={0}
 			w={'100%'}
-			top={{sm: '55%', md: '50%', lg: '45%'}}
+			top={{base: '0em', sm: '55%', md: '50%', lg: '45%'}}
 			left={'-20%'}>
 			<Image
 				filter={'grayscale(40%)'}
 				fit='cover'
-				h={{ sm: '50em', md: '70em', lg: '50%' }}
-				w={{ sm: '100%', md: '85em', lg: '90%' }}
+				h={{ base: '0em', sm: '50em', md: '70em', lg: '50%' }}
+				w={{ base: '0em', sm: '100%', md: '85em', lg: '90%' }}
 				src={'centerproj.png'} />
 		</Flex>	
 		</ChakraBox>
@@ -166,24 +140,22 @@ const Projects = () => {
 		)
 }
 
-
-
 const verticalItem = (top, index) => { 
 		return ( 
 			<ChakraBox
 				variants={projectSubContainer}>
 					<Flex
 					w={'100%'}
-					direction={{sm: 'column', md: 'row', lg: 'column'}}
+					direction={{base: 'column', sm: 'column', md: 'row', lg: 'column'}}
 					justifyContent='space-between'
-					gap={{sm: '0em', md: '2em', lg:'0em'}}>
+					gap={{base:'0em', sm: '0em', md: '2em', lg:'0em'}}>
 						<Flex
 						position={'relative'}
 						top={top}
 						direction={'column'}>
 							<Heading
 							fontWeight={800}
-							fontSize={45}>
+							fontSize={{base: 34, sm: 37, md: 40, lg: 45}}>
 								{index}
 							</Heading>
 							<Heading
@@ -202,7 +174,7 @@ const verticalItem = (top, index) => {
 							h={'30.5em'}
 							justifyContent={'center'}
 							gap
-							w={{sm:'24em', md:'28em', lg:'24em'}} 
+							w={{base: '100%', sm:'24em', md:'28em', lg:'24em'}} 
 							top={top}
 							bg={'whiteAlpha.600'}
 							backdropFilter='auto'
@@ -250,7 +222,6 @@ const gitButton = () => {
 											HERE
 										</Text>
 									</Flex>  
-									
 									<ChakraBox
 									cursor={'pointer'}
 									as={motion.div}
@@ -266,12 +237,6 @@ const gitButton = () => {
 				</GridItem>
 		)
 }
-
-//<Heading as={'u'}>
-//  A few projects&nbsp;&nbsp;&nbsp;&nbsp;
-//</Heading>
-
-
 
 export default Projects
 

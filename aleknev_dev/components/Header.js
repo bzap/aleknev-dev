@@ -33,7 +33,7 @@ const Header = ({pos}) => {
 				}}
 				backdropFilter='auto' 
 				backdropBlur='8px'
-				maxW={{sm: '90%', md:'80%', lg:'80%'}}
+				maxW={{base: '94%', sm: '90%', md:'80%', lg:'80%'}}
 				position='fixed' 
 				w={'100%'}
 				zIndex={200} 

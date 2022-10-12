@@ -37,17 +37,17 @@ const Title = ({title, desc, page}) => {
                 w={'100%'}
                 justifyContent={'center'}
                 direction='row'>
-                <Flex
+                <Flex         
                     justifyContent={'space-between'}
                     direction='column'>
                     <Heading
-                        lineHeight={'0.8em'}
                         fontSize={{ base: '3.5em', sm: '4em', md: '6em', lg: '7em' }}>
                         <Wave text={title}/>
                     </Heading>
                     <ChakraBox   
                     variants={subTitleContainer}>
                         <Text
+                       
                             w={{ base: '100%', sm: '25em', md: '35em', lg: '35em' }}
                             fontWeight={700}
                             fontSize={{ base: 13, sm: 15, md: '1em', lg: '1.2em' }}
@@ -71,19 +71,24 @@ const ChakraBox = chakra(motion.div, {
 const pageIndicator = (page) => {
     return (
         <Flex
+        
             w={'100%'}
             h={'100%'}
             position={'relative'}
             direction="row"
             justifyContent={'flex-end'}>
             <Flex
+                top={'1em'}
+                h={'100%'}
+                position={'relative'}
                 justifyContent={'center'}
                 direction={'column'}>
                 <Flex
+                
+                
                     direction={'column'}
                     position={'relative'}>
                     <Heading
-
                         position='relative'
                         sx={{ 'writingMode': 'vertical-rl' }}
                         fontSize={{ base: '0em', sm: '3.5em', md: '4em', lg: '4.8em' }}

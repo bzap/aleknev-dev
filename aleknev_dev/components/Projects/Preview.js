@@ -52,7 +52,7 @@ const Preview = ({proj}) => {
             {projectImages('https://i.pinimg.com/564x/af/26/42/af2642d7d8ed1d60959f0825e545d92c.jpg')}
         </Flex>
         <Stack
-            px={9}
+            px={{base: 4, sm: 9, md: 9, lg: 9}}
             pt={4}
             spacing={-1}>
             <ChakraBox
@@ -71,7 +71,7 @@ const Preview = ({proj}) => {
         </Stack> 
         <Stack
             pb={5}
-            px={9}>
+            px={{ base: 4, sm: 9, md: 9, lg: 9 }}>
             <ChakraBox
             variants={item}>
                 <Center>
@@ -107,7 +107,7 @@ const projectImages = (props) => {
 const projectTitle = (props) => { 
     return ( 
         <Text
-            fontSize={40}
+            fontSize={{ base: 30, sm: 40, md: 40, lg: 40 }}
             fontWeight={800}> 
             {props} 
         </Text>
@@ -125,7 +125,7 @@ const projectSkill = (props, icon) => {
                 direction={'row'}>
                     <Icon as={icon} w={3} h={3} color='black.500' />
                     <Text
-                        fontSize={12}
+                        fontSize={{ base: 10, sm: 12, md: 12, lg: 12 }}
                         fontWeight={800}>
                         &thinsp;{props}
                     </Text>
@@ -138,9 +138,8 @@ const projectDesc = (props) => {
     return ( 
         <Text 
             py={2}
-            
             as='p'
-            fontSize={'14'}
+            fontSize={{ base: 12, sm: 14, md: 14, lg: 14 }}
             fontWeight={'700'}
             color={'gray.600'}>  
             {props}
@@ -166,7 +165,7 @@ const projectButton = (name, link, icon) => {
         onClick={onOpen}
         whileTap={{scale: 0.9}}
         whileHover={{scale:1.03}}
-        fontSize={16}>
+            fontSize={{ base: 14, sm: 16, md: 16, lg: 16 }}>
             {name}&#160;&gt;
             {contentModal(btnRef, isOpen, onOpen, onClose, link )}
         </Flex>
