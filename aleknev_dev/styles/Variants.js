@@ -83,13 +83,25 @@ export const projectSubContainer = {
 	  y:0,
 	  opacity: 1,
 	  transition: {
+		delay:0.3,
 		duration:0.3,
-		delayChildren: 0.4,
+		delayChildren: 0.3,
 		staggerChildren: 0.15
 	  }  
 	}  
   } 
-
+export const projectRowContainer = {
+	hidden: { opacity: 0, y: 20 },
+	visible: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			duration: 0.3,
+			delayChildren: 0.4,
+			staggerChildren: 1
+		}
+	}
+} 
 
 
 export const pskillsItem = {
@@ -110,7 +122,7 @@ export const pillItem = {
 		  duration:0.8
 	  },
 	  opacity: 1,
-	  scale:[0.5, 1.1, 1]
+	  scale:[0.7, 1.02, 1]
 	}
   };
 
@@ -229,10 +241,7 @@ export const itemText = {
 	hidden: { y: 20, opacity: 0 },
 	visible: {
 		transition: {
-			type: "spring",
-			damping: 17,
-			stiffness: 200,
-			duration: 0.4
+			duration: 0.3
 		},
 		y: 0,
 		opacity: 1
@@ -245,24 +254,21 @@ export const background = {
 	visible: {
 		opacity: 1,
 		transition: {
-			delay:0.3,
-			delayChildren: 0.3,
+			delay: 0.2,
+			delayChildren: 0.2,
 			staggerChildren: 0.1
 		}
 	}
 }   
 
 export const aboutItem = {
-	hidden: { opacity: 0, y: 20 },
+	hidden: { opacity: 0, y: 10 },
 	visible: {
 		y: 0,
 		opacity: 1,
 		transition: {
-			type: "spring",
-			damping: 18,
-			stiffness: 200,
-			duration: 0.3,
-			delayChildren: 0.15,
+			duration: 0.4,
+			delayChildren: 0.10,
 			staggerChildren: 0.25
 		}
 	}
@@ -273,10 +279,7 @@ export const currentSkills = {
 	hidden: { opacity: 0, scale: 0.95 },
 	visible: {
 		transition: {
-			type: "spring",
-			damping: 17,
-			stiffness: 200,
-			duration: 0.7
+			duration: 0.4
 		},
 		opacity: 1,
 		scale: 1 

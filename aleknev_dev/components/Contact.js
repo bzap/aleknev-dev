@@ -30,6 +30,7 @@ import Title from './Title'
 import { useState, useEffect } from 'react'
 import { useForm, ValidationError } from "@formspree/react"
 import { isValidMotionProp, motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
+import { about, gradient, gradient2, currentSkills, background, title, itemIcon, itemText, itemTitle, aboutItem, titleContainer, projectSubContainer, projectContainer } from '../styles/Variants'
 
 
 
@@ -63,17 +64,24 @@ const Contact = () => {
 			maxW={'100%'}
 			px={{ base: '3%', sm: '5%', md: '10%', lg: '10%' }}
 			w={'100%'}
-			id='0'
-			pt='10em'
-			pb='16em'>
+			id='2'
+			pt={{ base: '7em', sm: '10em', md: '10em', lg: '10em' }}
+			pb={{ base: '7em', sm: '10em', md: '16em', lg: '16em' }}>
 			<Flex
 			
 				direction={'column'}
 				gap={{ base: '2em', sm: '4em', md: '7em', lg: '8em' }}>
-				<Title
-					title={'Contact.'}
-					desc={'Reach out! Whether you want to get in touch for work, collaborations, or even just to chat.'}
-					page={'03'} />
+				<ChakraBox
+					as={motion.div}
+					variants={about}
+					initial={'hidden'}
+					whileInView={'visible'}
+					viewport={{ once: true, amount: 0.5 }}>
+					<Title
+						title={'Contact.'}
+						desc={'Reach out! Whether you want to get in touch for work, collaborations, or even just to chat.'}
+						page={'03'} />
+				</ChakraBox>
 				<Flex
 					p={{base: '2em', sm: '2.5em', md: '4em', lg: '5em'}}
 					w={'100%'}
@@ -155,7 +163,6 @@ const Contact = () => {
 										</Flex>
 									</Flex>
 								</FormControl>
-
 								<Button
 									w={'100%'}
 									mt={4}

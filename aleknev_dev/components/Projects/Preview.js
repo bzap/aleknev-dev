@@ -78,11 +78,15 @@ const Preview = ({proj}) => {
                     {projectDesc('This is a temporary description before I set it up to look nice and do things. This line is way too long and will be fixed when I introduce some JSON data.')}
                 </Center>
             </ChakraBox>
-            <Flex>
-            {projectButton('Learn More', proj, <InfoOutlineIcon/>)}  
-            <Spacer/>    
-            {projectButton('Live Demo', proj, <WarningTwoIcon/>)}   
-            </Flex>
+            <ChakraBox
+                variants={pillItem}>
+                    <Flex>
+                        {projectButton('Learn More', proj, <InfoOutlineIcon />)}
+                        <Spacer />
+                        {projectButton('Live Demo', proj, <WarningTwoIcon />)}
+                    </Flex>
+            </ChakraBox>
+
 
         </Stack>
     </Stack>

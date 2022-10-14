@@ -53,8 +53,8 @@ const About = () => {
         px={{base: '3%', sm: '5%', md: '10%', lg:'10%'}}
         w={'100%'} 
         id='0' 
-        pt='10em'
-        pb='16em'>
+		pt={{ base: '7em', sm:'10em', md: '10em', lg: '10em'}}
+		pb={{ base: '7em', sm: '10em', md: '16em', lg: '16em' }}>
         <Flex
 		justifyContent={'center'}
         direction={'column'}
@@ -84,7 +84,7 @@ const About = () => {
 							variants={about}
 							initial={'hidden'}
 							whileInView={'visible'}
-							viewport={{ once: true}}>
+							viewport={{ once: true, amount: 0.5}}>
 						<Title 
 							title={'About Me.'}
 							desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'}
@@ -125,9 +125,13 @@ const About = () => {
 								variants={background}
 								initial={'hidden'}
 								whileInView={'visible'}
-								viewport={{ once: true}}>
-									<Flex
-									
+								viewport={
+										bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.85 }) 
+											: bp == 'md' ? ({ once: true, amount: 0.75 }) 
+												: bp == 'sm' ? ({ once: true, amount: 0.5 }) 
+													: bp == 'base' ? ({ once: true, amount: 0.5 })
+														: ({ once: true })}>
+									<Flex		
 									direction={{base: 'column', sm: 'column', md:'column',lg:'row'}}
 									w={'100%'}
 									zIndex={10}
@@ -223,7 +227,12 @@ const About = () => {
 										variants={background}
 										initial={'hidden'}
 										whileInView={'visible'}
-										viewport={{ once: true }}>
+										viewport={
+												bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.80 })
+													: bp == 'md' ? ({ once: true, amount: 0.75 })
+														: bp == 'sm' ? ({ once: true, amount: 0.5 })
+															: bp == 'base' ? ({ once: true, amount: 0.5 })
+																: ({ once: true })}>
 									<Flex
 										direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }}
 										w={'100%'}

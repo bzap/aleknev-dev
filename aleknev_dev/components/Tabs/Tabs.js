@@ -35,7 +35,6 @@ const AnimatedTabs = ({pos}) => {
 	const [selectedTab, setSelectedTab] = useState(tabs[3])
 	const [pressed, setPressed] = useState(false)
 	const [currItem, setCurrItem] = useState(tabs[3])
-
 	useMemo(() => {
 		if (currItem != undefined){
 			if (currItem.label == 'About' && pos.views.aboutView){

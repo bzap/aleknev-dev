@@ -42,15 +42,16 @@ const ChakraBox = chakra(motion.div, {
 	});
 
 const Projects = () => { 
+		const bp = useBreakpoint()
 		return (
 		<Box
 		position={'relative'}
 		maxW={'100%'}
 		px={{ base: '3%', sm: '5%', md: '10%', lg: '10%' }}
 		w={'100%'}
-		id='0'
-		pt='10em'
-		pb='40em'>
+		id='1'
+		pt={{ base: '4em', sm:'6em', md: '6em', lg: '6em'}}
+		pb={{ base: '20em', sm: '20em', md: '22em', lg: '26em' }}>
 		<Flex
 			justifyContent={'center'}
 			direction={'column'}>
@@ -59,7 +60,7 @@ const Projects = () => {
 						variants={about}
 						initial={'hidden'}
 						whileInView={'visible'}
-						viewport={{ once: true }}>
+						viewport={{ once: true, amount: 0.5 }}>
 				<Title
 				title={'Projects.'}			
 				desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'} 
@@ -93,10 +94,7 @@ const Projects = () => {
 						</Flex>
 						</ChakraBox>
 					<ChakraBox 
-					variants={projectContainer}
-					initial={'hidden'}
-					whileInView={'visible'} 
-					viewport={{once: false}}>	
+					variants={projectContainer}>	
 							<Flex
 								direction={'row'}
 								justifyContent={'space-between'}
@@ -140,17 +138,27 @@ const Projects = () => {
 }
 
 const verticalItem = (top, index) => { 
+	const bp = useBreakpoint()
 		return ( 
-			<ChakraBox
-				variants={projectSubContainer}>
 					<Flex
 					w={'100%'}
+					position={'relative'}
+					top={top}
 					direction={{base: 'column', sm: 'column', md: 'row', lg: 'column'}}
 					justifyContent='space-between'
 					gap={{base:'0em', sm: '0em', md: '2em', lg:'0em'}}>
+						<ChakraBox
+						variants={projectSubContainer}
+						initial={'hidden'}
+						whileInView={'visible'}
+						viewport={
+							bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.75 })
+								: bp == 'md' ? ({ once: true, amount: 0.75 })
+									: bp == 'sm' ? ({ once: true, amount: 0.7 })
+										: bp == 'base' ? ({ once: true, amount: 0.8 })
+											: ({ once: true })}>						
 						<Flex
 						position={'relative'}
-						top={top}
 						direction={'column'}>
 							<Heading
 							fontWeight={800}
@@ -174,7 +182,7 @@ const verticalItem = (top, index) => {
 							justifyContent={'center'}
 							gap
 							w={{base: '100%', sm:'24em', md:'28em', lg:'24em'}} 
-							top={top}
+							
 							bg={'whiteAlpha.600'}
 							backdropFilter='auto'
 							backdropBlur='5px'
@@ -182,8 +190,8 @@ const verticalItem = (top, index) => {
 							borderRadius={'22px'} >
 							<Preview proj={index}/>
 						</Flex> 
+						</ChakraBox>
 				</Flex>   
-				</ChakraBox> 
 		)
 }
 
