@@ -72,10 +72,10 @@ const About = () => {
 							left={{sm: '-10em', md: '-15em', lg: '-15em'}}>
 							<Center>
 								<Image
-									filter={'grayscale(40%)'}
+									
 									h={{base: '0em', sm: '70em', md: '70em', lg: '78em'}}
 									w={{base: '0em', sm: '70em', md: '70em', lg: '78em'}}
-									src={'blob2341.png'} />
+									src={'topabout.webp'} />
 							</Center>
 						</Flex>
 				</ChakraBox>
@@ -112,11 +112,10 @@ const About = () => {
 							top={{sm: '60em', md: '50em', lg: '20em'}}
 							left={{sm: '5em', md: '15em', lg: '40em'}}>
 							<Image
-								filter={'grayscale(40%)'}
 								fit='cover'
 								h={{ base: '0em', sm: '60em', md: '70em', lg: '70em'}}
 								w={{base: '0em', sm: '60em', md: '85em', lg: '85em'}}
-								src={'aboutcorn.png'} />
+								src={'cornerabout.webp'} />
 						</Flex>
 						</ChakraBox>
 						</Flex>

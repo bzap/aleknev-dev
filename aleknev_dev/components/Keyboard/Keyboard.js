@@ -56,11 +56,10 @@ const Keyboard = ({props}) => {
         top={{ sm: '25%', md: '15%', lg: '0%', xl: '0%', '2xl': '-20%' }}
         left={{sm: '0%', md: '0%', lg: '40%', xl: '50%', '2xl': '45%'}}>
           <Image
-            filter={'grayscale(20%)'}
             fit='cover'
             h={{ sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
             w={{ sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
-            src={'heroblur2.png'} />
+            src={'hero.webp'} />
         </Flex>
     </Flex>
     )

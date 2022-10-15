@@ -86,10 +86,9 @@ const Projects = () => {
 							left={{base: '0em', sm: '10em', md: '20em', lg: '20em' }}>
 							<Center>
 								<Image
-									filter={'grayscale(40%)'}
 									w={'100%'}
 									h={'100%'}
-									src={'newblob.png'} />
+									src={'topproj.webp'} />
 							</Center>
 						</Flex>
 						</ChakraBox>
@@ -127,11 +126,10 @@ const Projects = () => {
 			top={{base: '0em', sm: '55%', md: '50%', lg: '45%'}}
 			left={'-20%'}>
 			<Image
-				filter={'grayscale(40%)'}
 				fit='cover'
 				h={{ base: '0em', sm: '50em', md: '70em', lg: '50%' }}
 				w={{ base: '0em', sm: '100%', md: '85em', lg: '90%' }}
-				src={'centerproj.png'} />
+				src={'centerproj.webp'} />
 		</Flex>	
 		</ChakraBox>
 		{gitButton()}
