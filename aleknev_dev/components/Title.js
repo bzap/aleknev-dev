@@ -115,7 +115,7 @@ const pageIndicator = (page) => {
                             <Text
                                 position={'relative'}
                                 left={'1rem'}>
-                                03
+                                    03
                             </Text>
                         </ChakraBox>
                     </Heading>

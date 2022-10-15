@@ -41,37 +41,45 @@ const Hero = ({loading}) => {
 					h={'100%'}
 					direction={'column'}
 					flex={1}
-					pt={{ base: '7em', sm: '10em', md: '10em', lg: '10em' }}
-					pb={{ base: '7em', sm: '10em', md: '16em', lg: '10em' }}>
+					pt={{ base: '7em', sm: '10em', md: '10em', lg: '3em' }}
+					pb={{ base: '7em', sm: '10em', md: '16em', lg: '16em' }}>
 						<ChakraBox
 							as={motion.div}
 							variants={background}
 							initial={{ opacity: 0 }}
 							whileInView={'visible'}
 							viewport={{ once: true }}>
-						<Flex
-							h={'40em'}
-							w={'100%'}
+								<Flex
+									h={'40em'}
+									w={'100%'}
+									position={'relative'}
+									justifyContent={'space-between'}
+									direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }}>
+									<Flex
+										justifyContent={'center'}
+										w={{ base: '100%', sm: '100%', md: '100%', lg: '65%' }}
+										position={'relative'}
+										alignItems={'center'}>
+											{introText()}				
+									</Flex>
+									<Spacer/>
+									{keyboard(loading)}
+								</Flex>
+						</ChakraBox>
+						<ChakraBox
+							h={{base: '5em', sm: '8em', md: '8em', lg: '15em'}}
 							position={'relative'}
-							justifyContent={'space-between'}
-							direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }}>
+							as={motion.div}
+							variants={background}
+							initial={{ opacity: 0 }}
+							whileInView={'visible'}
+							viewport={{ once: true }}>
 							<Flex
 								justifyContent={'center'}
-								w={{ base: '100%', sm: '100%', md: '100%', lg: '65%' }}
-								position={'relative'}
-								alignItems={'center'}>
-									{introText()}				
+								w={'100%'}>
+									<ScrollIndicator />
 							</Flex>
-							<Spacer/>
-							{keyboard(loading)}
-						</Flex>
-					</ChakraBox>
-				<Flex
-					justifyContent={'center'}
-					w={'100%'}>
-						<ScrollIndicator />
-				</Flex>
-				
+						</ChakraBox>
 				</Container>
 	)
 }

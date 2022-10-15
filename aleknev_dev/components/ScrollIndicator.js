@@ -31,50 +31,46 @@ const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 });
 
-
 const ScrollIndicator = () => { 
     return ( 
         <Flex
-        position={'relative'}
-        top={'2em'}>
-            <AnimatePresence exitBeforeEnter>
+        bottom={0}
+        position={'absolute'}>
+            <AnimatePresence mode='wait'>
                 <ChakraBox
                     as={motion.div}
                     initial={'hidden'}
                     animate={'visible'}
                     variants={arrowContainer}>
                     <Flex
-                    
                     alignItems={'center'}
-                    direction={'column'}>
+                    direction={'row'}>
                         <ChakraBox
                             as={motion.div}
                             variants={gitGT}>
                             <Icon
-                                w={'4em'}
-                                h={'4em'}
+                                w={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
+                                h={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
                                 as={HiChevronDown}
                             />
                         </ChakraBox>
                         <ChakraBox
                             position={'relative'}
-                            top={'-2.5rem'}
                             as={motion.div}
                             variants={gitGT}>
                             <Icon
-                                w={'3.2em'}
-                                h={'3.2em'}
+                                w={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
+                                h={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
                                 as={HiChevronDown}
                             />
                         </ChakraBox>
                         <ChakraBox
                             position={'relative'}
-                            top={'-4.5rem'}
                             as={motion.div}
                             variants={gitGT}>
                             <Icon
-                                w={'2.5em'}
-                                h={'2.5em'}
+                                w={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
+                                h={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
                                 as={HiChevronDown}
                             />
                         </ChakraBox>
