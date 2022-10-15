@@ -23,16 +23,15 @@ import {
 import Head from 'next/head';
 import Keyboard from './Keyboard/Keyboard'
 import { AnimatePresence, motion, useScroll, isValidMotionProp } from 'framer-motion'
-import { background } from '../styles/Variants';
+import { background, heroContainer, heroDesc, heroTitle, heroKeyboard, scrollArrows } from '../styles/Variants';
 import ScrollIndicator from './ScrollIndicator';
+import Wave from './Variants/Wave';
 
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 });
 
 const Hero = ({loading}) => {
-	console.log(!loading.states.isLoading, 'hero load')
-	console.log(loading.states.isLoading, 'hero load2')
 	return (
 				<Container
 					id={'home'}
@@ -41,12 +40,12 @@ const Hero = ({loading}) => {
 					h={'100%'}
 					direction={'column'}
 					flex={1}
-					pt={{ base: '7em', sm: '10em', md: '10em', lg: '3em' }}
+					pt={{ base: '7em', sm: '10em', md: '10em', lg: '4em' }}
 					pb={{ base: '7em', sm: '10em', md: '16em', lg: '16em' }}>
 						<ChakraBox
 							as={motion.div}
-							variants={background}
-							initial={{ opacity: 0 }}
+							variants={heroContainer}
+							initial={'hidden'}
 							whileInView={'visible'}
 							viewport={{ once: true }}>
 								<Flex
@@ -66,20 +65,19 @@ const Hero = ({loading}) => {
 									{keyboard(loading)}
 								</Flex>
 						</ChakraBox>
-						<ChakraBox
-							h={{base: '5em', sm: '8em', md: '8em', lg: '15em'}}
-							position={'relative'}
-							as={motion.div}
-							variants={background}
-							initial={{ opacity: 0 }}
-							whileInView={'visible'}
-							viewport={{ once: true }}>
-							<Flex
-								justifyContent={'center'}
-								w={'100%'}>
-									<ScrollIndicator />
-							</Flex>
-						</ChakraBox>
+				<ChakraBox
+					h={{ base: '5em', sm: '8em', md: '8em', lg: '15em' }}
+					position={'relative'}
+					as={motion.div}
+					variants={scrollArrows}
+					initial={'hidden'}
+					whileInView={'visible'}>
+					<Flex
+						justifyContent={'center'}
+						w={'100%'}>
+						<ScrollIndicator />
+					</Flex>
+				</ChakraBox>
 				</Container>
 	)
 }
@@ -118,88 +116,46 @@ const keyboard = (loading) => {
 
 const introText = () => { 
 	return ( 
+
 		<Flex
 		position={'relative'}
 		zIndex={1}
-		w={'auto'}
 		direction={'column'}
-		alignItems={'flex-end'}>
-			<Heading> 
+		>
+			<Flex>	
+				<ChakraBox
+					as={motion.div}
+					variants={heroDesc}> 	
+					
 				<Text 
-					as='span'
-					color={'blackAlpha.800'}
-					fontWeight='700'
-					fontSize={{ base: '75%', sm: '90%', md:'80%', lg: '80%', xl: '100%' }}>
-					Hey, I'm
+						as={'span'}
+						position={'relative'}
+						color={'blackAlpha.800'}
+						fontWeight='800'
+						fontSize={'5.7em'}>
+						<Wave text={'Hey! I\'m Linas.'} />
 				</Text>
-				<Text 
-					as={'span'} 
-					color={'blackAlpha.800'}
-					fontWeight='900'
-					w={'4em'}
-					h={'4em'}
-					pl={8}
-					fontSize={{ base: '1.7em', sm: '2em', md: '2.5em', lg: '2.6em', xl: '3.5em', '2xl': '4em' }}>  
-					Linas
-				</Text>    
-				<Text 
-					as={'span'} 
-					color={'black'} 
-					fontSize={{ base: '0.7em', sm: '1em', md: '1.1em', lg: '1.1em', xl: '1.1em', '2xl': '1.2em' }}>  
-					.
-				</Text> 
-			</Heading> 
-			<Heading>				
-				<Text
-					as={'span'}
-					color={'blackAlpha.900'}
-					fontWeight='700'
-					fontSize={{ base: '0.5em', sm: '0.6em', md: '0.6em', lg: '0.6em', xl: '0.7em', '2xl': '0.7em' }}>
-					A developer based in
-				</Text>
-				<Text 
-					position={'relative'}
-					justifyContent={'flex-end'}
-					as={'span'} 
-					color={'blackAlpha.800'} 
-					fontWeight='900'
-					fontSize={{ base: '1.1em', sm: '1.3em', md: '1.4em', lg: '1.3em', xl: '1.5em', '2xl': '1.8em' }}>  
-					&thinsp;Toronto
-				</Text>      
-				<Text 
-					as={'span'} 
-					color={'blackAlpha.800'}
-					fontWeight='800'
-					fontSize={{ base: '0.7em', sm: '1em', md: '1.1em', lg: '1.1em', xl: '1.1em', '2xl': '1.2em' }}>  
-					,
-				</Text> 
-			</Heading>
-			<Heading
-			pt={'2'}>
-				<Text 
-					as={'span'}
-					fontWeight={700}
-					color={'blackAlpha.800'}
-					fontSize={{ base: '0.4em', sm: '0.5em', md: '0.55em', lg: '0.55em', xl: '0.6em', '2xl': '0.62em' }}>
-					that's on a pursuit for
-				</Text>  
-				<Text 
-					as={'span'} 
-					color={'blackAlpha.800'}
-					fontWeight='900'
-					fontSize={{ base: '0.9em', sm: '1em', md: '1.1em', lg: '1.1em', xl: '1.1em', '2xl': '1.2em' }}>  
-					&thinsp;&thinsp;growth
-				</Text>  
-				<Text
-					as={'span'}
-					color={'blackAlpha.800'}
-					fontWeight='800'
-					fontSize={{ base: '0.7em', sm: '1em', md: '1.1em', lg: '1.1em', xl: '1.1em', '2xl': '1.2em' }}>
-					.
-				</Text> 
-			</Heading> 	
+				</ChakraBox>
+			</Flex>
+			<Flex>	
+				<ChakraBox
+					as={motion.div}
+					variants={heroDesc}> 	
+					<Text
+						as={'span'}
+						position={'relative'}
+						color={'blackAlpha.800'}
+						fontWeight='700'
+						fontSize={'2em'}>
+						I'm a developer based in Toronto, that's on a pursuit for growth.
+					</Text>
+				</ChakraBox>
+			</Flex>
 		</Flex>
+		
 	)
 }
+
+
 
 export default Hero

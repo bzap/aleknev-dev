@@ -72,9 +72,9 @@ const Wave = ({text}) => {
     const letters = Array.from(text)
     return ( 
         <ChakraBox
-        as={motion.div}
-        variants={textContainer}
-        initial={'hidden'}
+            as={motion.div}
+            variants={textContainer}
+            initial={'hidden'}
             whileInView={'visible'}
             viewport={{ once: true }}>
             <Flex

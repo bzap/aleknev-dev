@@ -6,7 +6,7 @@ import { AnimatePresence, motion, isValidMotionProp } from "framer-motion";
 import { SiGit, SiGithub } from 'react-icons/si';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import MobileTabs from './Tabs/MobileTabs';
-import { background } from '../styles/Variants'
+import { background, navContainer } from '../styles/Variants'
 
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -22,10 +22,9 @@ const Header = ({ pos }) => {
 				pt={'2'}>
 				<ChakraBox
 					as={motion.div}
-					initial={{ opacity: 0 }}
-					variants={background}
+					initial={'hidden'}
+					variants={navContainer}
 					whileInView={'visible'}
-					viewport={{ once: true }}
 					backdropFilter='auto'
 					backdropBlur='8px'
 					maxW={{ base: '94%', sm: '90%', md: '80%', lg: '80%' }}

@@ -23,6 +23,7 @@ import {
   } from '@chakra-ui/react';
 import { isValidMotionProp, motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { Link } from "react-scroll/modules"
+import { navItem, navButton } from "../../styles/Variants";
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -84,7 +85,6 @@ const AnimatedTabs = ({pos}) => {
 													setPressed(true)
 													setCurrItem(item)}}>
 											<ChakraBox
-											as={motion.div}
 											cursor={'pointer'}
 											whileHover={{scale:1.05}}
 											whileTap={{scale:0.99, opacity:[1,0.5,0]}}>
@@ -127,17 +127,17 @@ const AnimatedTabs = ({pos}) => {
 												</Text>
 												</ChakraBox>
 
-												
+								
 												</ChakraBox>
 												) : (
 													null
 												)}
 										</AnimatePresence>
-									
 									</Center>
 								</Link>
 							))}
 						</Flex>
+		
 					</Stack>
 	)
 }

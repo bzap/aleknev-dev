@@ -60,7 +60,7 @@ const Projects = () => {
 						variants={about}
 						initial={'hidden'}
 						whileInView={'visible'}
-						viewport={{ once: true, amount: 0.5 }}>
+						viewport={{ once: true, amount: 0.85 }}>
 				<Title
 				title={'Projects.'}			
 				desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'} 
@@ -141,6 +141,8 @@ const verticalItem = (top, index) => {
 	const bp = useBreakpoint()
 		return ( 
 			<ChakraBox
+				position={'relative'}
+				top={top}
 				variants={projectSubContainer}
 				initial={'hidden'}
 				whileInView={'visible'}
@@ -153,7 +155,6 @@ const verticalItem = (top, index) => {
 					<Flex
 					w={'100%'}
 					position={'relative'}
-					top={top}
 					direction={{base: 'column', sm: 'column', md: 'row', lg: 'column'}}
 					justifyContent='space-between'
 					gap={{base:'0em', sm: '0em', md: '2em', lg:'0em'}}>

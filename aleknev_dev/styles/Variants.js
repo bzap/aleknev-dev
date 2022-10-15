@@ -391,3 +391,101 @@ export const gitLT = {
 		opacity: [0, 1, 0],
 	}
 }
+
+
+export const heroContainer = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			ease: 'easeInOut',
+			staggerChildren: 1.1
+		}
+	}
+}   
+
+
+export const heroDesc = {
+	hidden: { y: 20, opacity: 0 },
+	visible: {
+		y: 0,
+		opacity: 1,
+			transition: {
+			type: "spring",
+			damping: 20,
+			stiffness: 200,
+		}
+	},
+
+}
+
+export const heroTitle = {
+	hidden: { y: 0 },
+	visible: {
+		y: 0
+	}
+}
+
+export const heroKeyboard = {
+	hidden: { opacity: 0, y: 20 },
+	visible: {
+		y: 0,
+		opacity: 1,
+	},
+	transition: {
+		type: "spring",
+		damping: 12,
+		stiffness: 150,
+	}
+}
+
+
+export const navContainer = {
+	hidden: { opacity: 0, y: -20 },
+	visible: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			delay: 2.5,
+			ease: 'easeInOut',
+		}
+	}
+}   
+
+
+export const navItem = {
+	hidden: { opacity: 1 },
+	visible: {
+		opacity: 1,
+	},
+	transition: {
+		ease: 'easeInOut',
+		staggerChildren: 3,
+		delayChildren: 3
+	}
+	
+}
+
+export const navButton = {
+	hidden: { y: 10, opacity: 0 },
+	visible: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			type: "spring",
+			damping: 20,
+			stiffness: 200,
+		}
+	},
+}
+
+export const scrollArrows = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			ease: 'easeInOut',
+			delay: 1.2,
+		}
+	}
+}   

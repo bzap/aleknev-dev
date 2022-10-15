@@ -156,7 +156,7 @@ const projectButton = (name, link, icon) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef([])
     return (
-        <Flex 
+        <ChakraBox
         pt={3}
         as={motion.div}
         cursor={'pointer'}
@@ -172,7 +172,7 @@ const projectButton = (name, link, icon) => {
             fontSize={{ base: 14, sm: 16, md: 16, lg: 16 }}>
             {name}&#160;&gt;
             {contentModal(btnRef, isOpen, onOpen, onClose, link )}
-        </Flex>
+        </ChakraBox>
     )
 }
 

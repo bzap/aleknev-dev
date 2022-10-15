@@ -125,8 +125,8 @@ const About = () => {
 								initial={'hidden'}
 								whileInView={'visible'}
 								viewport={
-										bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.76 }) 
-											: bp == 'md' ? ({ once: true, amount: 0.75 }) 
+										bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.65 }) 
+											: bp == 'md' ? ({ once: true, amount: 0.65 }) 
 												: bp == 'sm' ? ({ once: true, amount: 0.5 }) 
 													: bp == 'base' ? ({ once: true, amount: 0.5 })
 														: ({ once: true })}>
