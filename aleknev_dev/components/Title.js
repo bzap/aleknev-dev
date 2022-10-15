@@ -92,10 +92,14 @@ const pageIndicator = (page) => {
                         color={'blackAlpha.800'}
                         fontWeight={900}>
                         <ChakraBox
-                            left={'20%'}
-                            position={'relative'}
+                        position={'relative'}
                             variants={indicators}>
-                            {page}
+                            <Text
+                            position={'relative'}
+                            left={'1rem'}>
+                                {page}
+                            </Text>
+                            
                         </ChakraBox> 
                          
                     </Heading>
@@ -106,10 +110,13 @@ const pageIndicator = (page) => {
                         color={'blackAlpha.300'}
                         fontWeight={900}>
                         <ChakraBox
-                        left={'20%'}
                         position={'relative'}
                         variants={indicators}>
-                            03
+                            <Text
+                                position={'relative'}
+                                left={'1rem'}>
+                                03
+                            </Text>
                         </ChakraBox>
                     </Heading>
                 </Flex>
