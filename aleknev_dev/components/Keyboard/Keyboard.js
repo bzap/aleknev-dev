@@ -23,7 +23,8 @@ import { Canvas } from "@react-three/fiber"
 import { Suspense } from "react"
 import { Environment, Stage, OrbitControls } from "@react-three/drei";
 
-const Keyboard = ({newFov}) => {
+const Keyboard = ({props}) => {
+ // console.log(props.loading.isLoading, l)
     return (
     <Flex
     w={'100%'}>
@@ -34,10 +35,10 @@ const Keyboard = ({newFov}) => {
           <Canvas
             shadows
             dpr={[1, 2]}
-            camera={{ fov: newFov }}>
+            camera={{ fov: 70 }}>
             <Suspense fallback={null}>
               <Stage preset="rembrandt" intensity={1} environment="city">
-                <Model/>
+                <Model innerLoading={props}/>
               </Stage>
             </Suspense>
             <OrbitControls
@@ -65,8 +66,15 @@ const Keyboard = ({newFov}) => {
 }
 
 
-const Model = () => {
+const Model = (innerLoading) => {
+    const loadingStates = innerLoading.innerLoading.outerLoading.states
+    console.log(loadingStates.isLoading, 'before')
+    console.log(innerLoading.innerLoading.outerLoading.states, 'haha')
     const gltf = useLoader(GLTFLoader, "scene.gltf");
+    loadingStates.setLoading(false)
+  console.log(loadingStates.isLoading, 'after')
+    //innerLoading.innerLoading.states.setLoading(false)
+    //console.log(innerLoading.innerLoading.states.isLoading, 'oh2')
     return (
         <primitive object={gltf.scene} scale={1} />
     )

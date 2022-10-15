@@ -21,38 +21,46 @@ import {
 import Head from 'next/head';
 import Keyboard from './Keyboard/Keyboard'
 
-const Hero = () => ( 
-	<Container
-	id={'home'}
-    maxW={'100%'} 
-    px={{sm: '5%', md: '10%', lg:'10%'}}
-	h={'100%'}
-	direction={'column'}
-	flex={1}
-	pt={{ base: '7em', sm:'10em', md: '10em', lg: '10em'}}
-	pb={{ base: '7em', sm: '10em', md: '16em', lg: '10em' }}>
-		<Flex
-		h={'40em'}
-		w={'100%'}
-		position={'relative'}
-		justifyContent={'space-between'}
-		direction={{base: 'column', sm: 'column', md: 'column', lg: 'row'}}>
+const Hero = ({loading}) => {
+	console.log(loading.states)
+	return (
+		<Container
+			id={'home'}
+			maxW={'100%'}
+			px={{ sm: '5%', md: '10%', lg: '10%' }}
+			h={'100%'}
+			direction={'column'}
+			flex={1}
+			pt={{ base: '7em', sm: '10em', md: '10em', lg: '10em' }}
+			pb={{ base: '7em', sm: '10em', md: '16em', lg: '10em' }}>
 			<Flex
-			justifyContent={'center'}
-			w={{base: '100%', sm: '100%', md: '100%', lg: '65%'}}
-			position={'relative'}
-			alignItems={'center'}>
-				{introText()}
+				h={'40em'}
+				w={'100%'}
+				position={'relative'}
+				justifyContent={'space-between'}
+				direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }}>
+				<Flex
+					justifyContent={'center'}
+					w={{ base: '100%', sm: '100%', md: '100%', lg: '65%' }}
+					position={'relative'}
+					alignItems={'center'}>
+					{introText()}
+				</Flex>
+				<Spacer />
+				{keyboard(loading)}
 			</Flex>
-			<Spacer/>
-			{keyboard()}
-		</Flex>
-	</Container>
-)
+		</Container>
+	)
+
+}
+	
 
 
-const keyboard = () => { 
+
+
+const keyboard = (loading) => { 
 	const bp = useBreakpoint()
+	//console.log(loading, 'lol')
 	return (
 		<Flex
 		w={{base: '100%', sm: '100%', md: '100%', lg: '35%'}}
@@ -60,7 +68,7 @@ const keyboard = () => {
 		zIndex={0}
 		justifyContent={'flex-end'}>	
 			{bp == 'lg' && (
-				<Keyboard newFov={70}/>
+				<Keyboard props={{newFov: 70, outerLoading: loading}}/>
 			)}
 			{bp == 'xl' && (
 				<Keyboard newFov={55}/>

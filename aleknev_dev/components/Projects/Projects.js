@@ -25,9 +25,9 @@ import {
 		shouldForwardProp
 	} from '@chakra-ui/react';
 import Preview from './Preview'
-import { motion, isValidMotionProp } from "framer-motion";
+import { motion, AnimatePresence, isValidMotionProp } from "framer-motion";
 import { SiGithub  } from 'react-icons/si';
-import { projectContainer, projectSubContainer, gradient, gradient3, gradient4, skillsContainer, item, skillsItem, about } from '../../styles/Variants'
+import { projectContainer, gitGT, gitLT, arrowContainer, projectSubContainer, gradient, gradient3, gradient4, skillsContainer, item, skillsItem, about } from '../../styles/Variants'
 import Head from 'next/head';
 import { useState, useEffect } from 'react'
 import { pageIndicator } from '../About';
@@ -110,10 +110,11 @@ const Projects = () => {
 									</Box> 
 								))}
 							</Flex>
-						</ChakraBox>
-						{gitButton()}
+					</ChakraBox>
+					
 				</Flex>
 				</Flex>
+				
 		<ChakraBox
 			variants={gradient3}
 			initial={'hidden'}
@@ -133,6 +134,7 @@ const Projects = () => {
 				src={'centerproj.png'} />
 		</Flex>	
 		</ChakraBox>
+		{gitButton()}
 	</Box> 
 		)
 }
@@ -182,7 +184,6 @@ const verticalItem = (top, index) => {
 							justifyContent={'center'}
 							gap
 							w={{base: '100%', sm:'24em', md:'28em', lg:'24em'}} 
-							
 							bg={'whiteAlpha.600'}
 							backdropFilter='auto'
 							backdropBlur='5px'
@@ -197,51 +198,64 @@ const verticalItem = (top, index) => {
 
 const gitButton = () => { 
 		return ( 
-				<GridItem 
-						flex={1}
-						justifyContent={'center'}
-						position={'relative'}
-						w='full' 
-						pl={'3em'}
-						top={'10em'}>
 						<Flex
-						direction={'column'}>
-								<Flex
-								direction={'row'}>
-									<Flex
-									as={motion.div}
-									pt={'2em'}
-									direction={'column'}
-									alignItems={'flex-end'}>
+						position={'relative'}
+						top={'30em'}
+						bg='blue.100'
+						direction={'row'}>
+				<AnimatePresence exitBeforeEnter>
+				<ChakraBox
+					as={motion.div}
+					initial={'hidden'}
+					animate={'visible'}
+					variants={arrowContainer}>
+								<Center>
+
+										<ChakraBox
+										as={motion.div}
+										variants={gitGT}>
+											<Text 
+												fontSize={40}>
+												&gt;
+											</Text>
+										</ChakraBox>
+										<ChakraBox
+										as={motion.div}
+										variants={gitGT}>
+											<Text
+												fontSize={40}>
+												&gt;
+											</Text>
+										</ChakraBox>									
+										<ChakraBox
+										as={motion.div}
+										variants={gitGT}>
+											<Text
+												fontSize={40}>
+												&gt;
+											</Text>
+										</ChakraBox>									
+									<Center
+										direction={'row'}>
 										<Text
-										fontSize={26}
-										fontWeight={'bold'}>
-											MORE&#160;&#160;&#160;&#160;
+											fontSize={26}
+											fontWeight={'bold'}>
+											MY GITHUB
 										</Text> 
-										<Text
-										fontSize={26}
-										fontWeight={'bold'}>
-											CODE&#160;&#160;
-										</Text>
-										<Text
-										fontSize={26}
-										fontWeight={'bold'}>
-											HERE
-										</Text>
-									</Flex>  
-									<ChakraBox
-									cursor={'pointer'}
-									as={motion.div}
-									whileHover={{scale:1.1}}
-									whileTap={{scale:0.9}}>
-										<Icon 
-										as={SiGithub} 
-										h={'6em'}
-										w={'6em'}/>
-									</ChakraBox>               
-								</Flex>
+										<ChakraBox
+											cursor={'pointer'}
+											as={motion.div}
+											whileHover={{ scale: 1.1 }}
+											whileTap={{ scale: 0.9 }}>
+											<Icon
+												as={SiGithub}
+											 />
+										</ChakraBox>       
+									</Center>
+								</Center> 
+				</ChakraBox>
+				</AnimatePresence>
 						</Flex>
-				</GridItem>
 		)
 }
 

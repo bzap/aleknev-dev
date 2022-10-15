@@ -70,7 +70,6 @@ const letterContainer = {
 
 const Wave = ({text}) => { 
     const letters = Array.from(text)
-    console.log(letters)
     return ( 
         <ChakraBox
         as={motion.div}

@@ -84,9 +84,9 @@ export const projectSubContainer = {
 	  opacity: 1,
 	  transition: {
 		delay:0.3,
-		duration:0.3,
+		duration:0.5,
 		delayChildren: 0.3,
-		staggerChildren: 0.15
+		staggerChildren: 0.1
 	  }  
 	}  
   } 
@@ -241,6 +241,7 @@ export const itemText = {
 	hidden: { y: 20, opacity: 0 },
 	visible: {
 		transition: {
+			ease: 'easeInOut',
 			duration: 0.3
 		},
 		y: 0,
@@ -254,6 +255,7 @@ export const background = {
 	visible: {
 		opacity: 1,
 		transition: {
+			ease: 'easeInOut',
 			delay: 0.2,
 			delayChildren: 0.2,
 			staggerChildren: 0.1
@@ -267,6 +269,7 @@ export const aboutItem = {
 		y: 0,
 		opacity: 1,
 		transition: {
+			ease: 'easeInOut',
 			duration: 0.4,
 			delayChildren: 0.10,
 			staggerChildren: 0.25
@@ -279,6 +282,7 @@ export const currentSkills = {
 	hidden: { opacity: 0, scale: 0.95 },
 	visible: {
 		transition: {
+			ease: 'easeInOut',
 			duration: 0.4
 		},
 		opacity: 1,
@@ -347,5 +351,43 @@ export const submission = {
 		},
 		opacity: 1,
 		scale: [0.5, 1.01, 1]
+	}
+}
+
+
+export const arrowContainer = {
+	hidden: { opacity: 1 },
+	visible: {
+		transition: { 
+			delayChildren: 0.1,
+			staggerChildren: 0.5,
+			repeat: Infinity
+		}
+	}
+}
+
+
+export const gitGT = {
+	hidden: { opacity: 0 },
+	visible: {
+		transition: {
+			duration: 1.5,
+
+			repeat: Infinity,
+			staggerChildren: 1,
+		},
+		opacity: [0.2,1,0.2],
+	}
+}
+
+export const gitLT = {
+	hidden: { opacity: 1 },
+	visible: {
+		transition: {
+			duration: 1.6,
+			repeat: Infinity,
+			repeatType: "reverse",
+		},
+		opacity: [0, 1, 0],
 	}
 }

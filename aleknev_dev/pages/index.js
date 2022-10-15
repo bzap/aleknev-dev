@@ -14,19 +14,21 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import { useState, useEffect } from 'react'
 import { tabs } from "../public/data/TabContent"
 import { motion, useScroll } from 'framer-motion'
+import LoadingWrapper from '../components/LoadingWrapper'
+import {
+  Fade
 
+} from '@chakra-ui/react';
 
  
 
-const Home = () => { 
-
-
+const Home = () => {
   const [aboutView, setAboutView] = useState(false)
   const [projView, setProjView] = useState(false)
   const [heroView, setHeroView] = useState(true)
   const [homeView, setHomeView] = useState(true)
   const [contactView, setContactView] = useState(false)
-
+  const [isLoading, setLoading] = useState(true)
   const { scrollY } = useScroll() 
 
   useEffect(() => {
@@ -37,7 +39,6 @@ const Home = () => {
       const isShowHome = latest >  1171 
       const isShowContact = latest >= 5150
       
-
       if (isShowAbout !== aboutView) setAboutView(isShowAbout)
       if (isShowProj !== projView) setProjView(isShowProj)
       if (isShowHero !== heroView) setHeroView(isShowHero)
@@ -48,19 +49,24 @@ const Home = () => {
   
 
   return ( 
-    <Layout
-    >
-        
-        <Header pos={{views:{aboutView, setAboutView, projView, 
+    <Layout>
+        {isLoading && (
+          <Fade 
+          unmountOnExit
+          in={isLoading}>
+            <LoadingWrapper/>
+          </Fade>
+        )}
+        <Header pos={{views: {aboutView, setAboutView, projView, 
                            setProjView, setContactView, heroView, homeView, contactView}}}/>
-        <Hero />
+        <Hero loading={{states: {isLoading, setLoading}}}/>
         <About/>
         <Projects/>
         <Contact/>
-        
     </Layout>
 
   )
 }
+
 
 export default Home
