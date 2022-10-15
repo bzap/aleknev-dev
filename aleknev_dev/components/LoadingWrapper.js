@@ -30,19 +30,20 @@ const ChakraBox = chakra(motion.div, {
 
 const LoadingWrapper = () => { 
     return (
-        <Container
-                as={motion.div}
-                maxW='100%'
-                width='100%'
-                margin='auto'
+        <ChakraBox
+            as={motion.div}
+            maxW='100%'
+            width='100%'
+            margin='auto'
+            minH='100vh'>
+                <Center
+                w={'100%'}
                 minH='100vh'>
-                        <Center>
-                            <HashLoader
-                                color={'#373737'}
-                                size={80}
-                            />
-                        </Center>
-        </Container>
+                    <HashLoader
+                        color={'#373737'}
+                        size={80}/>
+                </Center>
+        </ChakraBox>
     )
 }
 

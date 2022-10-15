@@ -66,7 +66,6 @@ const Keyboard = ({props}) => {
     )
 }
 
-
 const Model = (innerLoading) => {
     const loadingStates = innerLoading.innerLoading.outerLoading.states 
     const gltf = useLoader(GLTFLoader, "scene.gltf");
