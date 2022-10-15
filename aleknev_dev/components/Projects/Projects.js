@@ -102,8 +102,9 @@ const Projects = () => {
 								sx={{ 'flexWrap': 'wrap' }}>
 								{[...Array(6).keys()].map((item, idx) => (
 									<Box
+									bg='blue.100'
 									key={idx}
-									display={{sm:'flex', md:null}}
+									display={{base: 'flex', sm:'flex', md: 'flex'}}
 									w={{sm:'100%', md: '100%', lg: '24em'}}
 									justifyContent={'center'}>
 										{verticalItem((idx * 5).toString()+'em', "0" + (idx + 1).toString())}
@@ -142,6 +143,16 @@ const Projects = () => {
 const verticalItem = (top, index) => { 
 	const bp = useBreakpoint()
 		return ( 
+			<ChakraBox
+				variants={projectSubContainer}
+				initial={'hidden'}
+				whileInView={'visible'}
+				viewport={
+					bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.75 })
+						: bp == 'md' ? ({ once: true, amount: 0.75 })
+							: bp == 'sm' ? ({ once: true, amount: 0.7 })
+								: bp == 'base' ? ({ once: true, amount: 0.8 })
+									: ({ once: true })}>	
 					<Flex
 					w={'100%'}
 					position={'relative'}
@@ -149,16 +160,7 @@ const verticalItem = (top, index) => {
 					direction={{base: 'column', sm: 'column', md: 'row', lg: 'column'}}
 					justifyContent='space-between'
 					gap={{base:'0em', sm: '0em', md: '2em', lg:'0em'}}>
-						<ChakraBox
-						variants={projectSubContainer}
-						initial={'hidden'}
-						whileInView={'visible'}
-						viewport={
-							bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.75 })
-								: bp == 'md' ? ({ once: true, amount: 0.75 })
-									: bp == 'sm' ? ({ once: true, amount: 0.7 })
-										: bp == 'base' ? ({ once: true, amount: 0.8 })
-											: ({ once: true })}>						
+					
 						<Flex
 						position={'relative'}
 						direction={'column'}>
@@ -191,8 +193,8 @@ const verticalItem = (top, index) => {
 							borderRadius={'22px'} >
 							<Preview proj={index}/>
 						</Flex> 
-						</ChakraBox>
 				</Flex>   
+			</ChakraBox>
 		)
 }
 
