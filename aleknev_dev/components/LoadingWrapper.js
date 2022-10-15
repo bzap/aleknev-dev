@@ -21,7 +21,7 @@ import {
     shouldForwardProp,
     Spacer,
 } from '@chakra-ui/react';
-import { motion, useScroll, useTransform, isValidMotionProp } from "framer-motion"
+import { motion, useScroll, useTransform, isValidMotionProp, AnimatePresence } from "framer-motion"
 import HashLoader from "react-spinners/HashLoader";
 
 const ChakraBox = chakra(motion.div, {
@@ -29,20 +29,19 @@ const ChakraBox = chakra(motion.div, {
 });
 
 const LoadingWrapper = () => { 
-    return ( 
+    return (
         <Container
-            as={motion.div}
-            maxW='100%'
-            width='100%'
-            margin='auto'
-            minH='100vh'
-            bg='#D9D9D9'>
-                    <Center>
-                        <HashLoader
-                            color={'#373737'}
-                            size={80}
-                        />
-                    </Center>
+                as={motion.div}
+                maxW='100%'
+                width='100%'
+                margin='auto'
+                minH='100vh'>
+                        <Center>
+                            <HashLoader
+                                color={'#373737'}
+                                size={80}
+                            />
+                        </Center>
         </Container>
     )
 }

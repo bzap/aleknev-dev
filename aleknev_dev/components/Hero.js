@@ -60,7 +60,7 @@ const Hero = ({loading}) => {
 
 const keyboard = (loading) => { 
 	const bp = useBreakpoint()
-	//console.log(loading, 'lol')
+	console.log(loading, 'lol')
 	return (
 		<Flex
 		w={{base: '100%', sm: '100%', md: '100%', lg: '35%'}}
@@ -71,19 +71,19 @@ const keyboard = (loading) => {
 				<Keyboard props={{newFov: 70, outerLoading: loading}}/>
 			)}
 			{bp == 'xl' && (
-				<Keyboard newFov={55}/>
+				<Keyboard props={{ newFov: 55, outerLoading: loading }}/>
 			)}
 			{bp == '2xl' && (
-				<Keyboard newFov={50}/>
+				<Keyboard props={{ newFov: 50, outerLoading: loading }} />
 			)}
 			{bp == 'sm' && (
-				<Keyboard newFov={45}/>
+				<Keyboard props={{ newFov: 45, outerLoading: loading }} />
 			)}
 			{bp == 'md' && (
-				<Keyboard newFov={40}/>
+				<Keyboard props={{ newFov: 40, outerLoading: loading }} />
 			)}
 			{bp == 'base' && (
-				<Keyboard newFov={45} />
+				<Keyboard props={{ newFov: 45, outerLoading: loading }} />
 			)}
 		</Flex>		
 	) 
