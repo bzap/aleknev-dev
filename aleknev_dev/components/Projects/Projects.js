@@ -102,7 +102,6 @@ const Projects = () => {
 								sx={{ 'flexWrap': 'wrap' }}>
 								{[...Array(6).keys()].map((item, idx) => (
 									<Box
-									bg='blue.100'
 									key={idx}
 									display={{base: 'flex', sm:'flex', md: 'flex'}}
 									w={{sm:'100%', md: '100%', lg: '24em'}}
@@ -200,10 +199,9 @@ const verticalItem = (top, index) => {
 
 const gitButton = () => { 
 		return ( 
-						<Flex
+				<Flex
 						position={'relative'}
 						top={'30em'}
-						bg='blue.100'
 						direction={'row'}>
 				<AnimatePresence exitBeforeEnter>
 				<ChakraBox
@@ -212,7 +210,6 @@ const gitButton = () => {
 					animate={'visible'}
 					variants={arrowContainer}>
 								<Center>
-
 										<ChakraBox
 										as={motion.div}
 										variants={gitGT}>

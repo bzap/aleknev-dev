@@ -376,7 +376,7 @@ export const gitGT = {
 			repeat: Infinity,
 			staggerChildren: 1,
 		},
-		opacity: [0.2,1,0.2],
+		opacity: [0.1,1,0.1],
 	}
 }
 

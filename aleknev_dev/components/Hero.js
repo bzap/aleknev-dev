@@ -24,6 +24,7 @@ import Head from 'next/head';
 import Keyboard from './Keyboard/Keyboard'
 import { AnimatePresence, motion, useScroll, isValidMotionProp } from 'framer-motion'
 import { background } from '../styles/Variants';
+import ScrollIndicator from './ScrollIndicator';
 
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -65,6 +66,12 @@ const Hero = ({loading}) => {
 							{keyboard(loading)}
 						</Flex>
 					</ChakraBox>
+				<Flex
+					justifyContent={'center'}
+					w={'100%'}>
+						<ScrollIndicator />
+				</Flex>
+				
 				</Container>
 	)
 }

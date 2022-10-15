@@ -50,7 +50,6 @@ const Home = () => {
     })
   }, [aboutView, projView, heroView, homeView, contactView])
   
-
   return ( 
     <Layout>
       <AnimatePresence mode='wait'>
