@@ -103,9 +103,9 @@ const Projects = () => {
 									<Box
 									key={idx}
 									display={{base: 'flex', sm:'flex', md: 'flex'}}
-									w={{sm:'100%', md: '100%', lg: '24em'}}
+									w={{sm:'100%', md: '100%', lg: '28em'}}
 									justifyContent={'center'}>
-										{verticalItem((idx * 5).toString()+'em', "0" + (idx + 1).toString())}
+										{verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())}
 									</Box> 
 								))}
 							</Flex>
@@ -138,27 +138,20 @@ const Projects = () => {
 }
 
 const verticalItem = (top, index) => { 
-	const bp = useBreakpoint()
 		return ( 
 			<ChakraBox
 				position={'relative'}
-				top={top}
+				pt={top}
 				variants={projectSubContainer}
 				initial={'hidden'}
 				whileInView={'visible'}
-				viewport={
-					bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.75 })
-						: bp == 'md' ? ({ once: true, amount: 0.75 })
-							: bp == 'sm' ? ({ once: true, amount: 0.7 })
-								: bp == 'base' ? ({ once: true, amount: 0.8 })
-									: ({ once: true })}>	
+				viewport={{once: true}}>	
 					<Flex
 					w={'100%'}
 					position={'relative'}
 					direction={{base: 'column', sm: 'column', md: 'row', lg: 'column'}}
 					justifyContent='space-between'
 					gap={{base:'0em', sm: '0em', md: '2em', lg:'0em'}}>
-					
 						<Flex
 						position={'relative'}
 						direction={'column'}>

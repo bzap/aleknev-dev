@@ -50,7 +50,7 @@ const Title = ({title, desc, page}) => {
                        
                             w={{ base: '100%', sm: '25em', md: '35em', lg: '35em' }}
                             fontSize={{ base: 13, sm: 15, md: '1em', lg: '1.2em' }}
-                            color={'blackAlpha.800'}>
+                            color={'blackAlpha.700'}>
                             {desc}
                         </Text>
                     </ChakraBox>
@@ -87,7 +87,7 @@ const pageIndicator = (page) => {
                     <Heading
                         position='relative'
                         sx={{ 'writingMode': 'vertical-rl' }}
-                        fontSize={{ base: '0em', sm: '3.5em', md: '4em', lg: '4.8em' }}
+                        fontSize={{ base: '0em', sm: '3.5em', md: '4em', lg: '5.4em' }}
                         color={'blackAlpha.800'}
                         fontWeight={900}>
                         <ChakraBox
@@ -104,7 +104,7 @@ const pageIndicator = (page) => {
                     <Heading
                         position='relative'
                         sx={{ 'writingMode': 'vertical-rl' }}
-                        fontSize={{ base: '0em', sm: '3.5em', md: '4em', lg: '4.8em' }}
+                        fontSize={{ base: '0em', sm: '3.5em', md: '4em', lg: '5.4em' }}
                         color={'blackAlpha.300'}
                         fontWeight={900}>
                         <ChakraBox

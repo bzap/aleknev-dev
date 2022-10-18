@@ -128,7 +128,7 @@ const About = () => {
 										bp == 'lg' || bp == 'xl' || bp == '2xl' ? ({ once: true, amount: 0.65 }) 
 											: bp == 'md' ? ({ once: true, amount: 0.65 }) 
 												: bp == 'sm' ? ({ once: true, amount: 0.5 }) 
-													: bp == 'base' ? ({ once: true, amount: 0.5 })
+													: bp == 'base' ? ({ once: true})
 														: ({ once: true })}>
 									<Flex		
 									direction={{base: 'column', sm: 'column', md:'column',lg:'row'}}

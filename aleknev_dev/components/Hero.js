@@ -40,44 +40,55 @@ const Hero = ({loading}) => {
 					h={'100%'}
 					direction={'column'}
 					flex={1}
-					pt={{ base: '7em', sm: '10em', md: '10em', lg: '4em' }}
-					pb={{ base: '7em', sm: '10em', md: '16em', lg: '16em' }}>
-						<ChakraBox
-							as={motion.div}
-							variants={heroContainer}
-							initial={'hidden'}
-							whileInView={'visible'}
-							viewport={{ once: true }}>
+					pt={{ base: '7em', sm: '7em', md: 0, lg: 0 }}
+					pb={{ base: '7em', sm: '10em', md: '16em', lg: '10em', xl: '16em' }}>
+						<Flex
+						direction={'column'}>
+							<ChakraBox
+								minH='90vh'
+								as={motion.div}
+								variants={heroContainer}
+								display={'flex'}
+								alignItems={{ base: null, sm: null, md: 'center', lg: 'center' }}
+								justifyContent={'center'}
+								initial={'hidden'}
+								whileInView={'visible'}
+								viewport={{ once: true }}>
 								<Flex
 									h={'40em'}
 									w={'100%'}
 									position={'relative'}
 									justifyContent={'space-between'}
-									direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }}>
+									direction={{ base: 'column', sm: 'column', md: 'column', lg: 'column', xl: 'row', '2xl': 'row' }}>
 									<Flex
 										justifyContent={'center'}
-										w={{ base: '100%', sm: '100%', md: '100%', lg: '65%' }}
+										w={{ base: '100%', sm: '100%', md: '100%', lg: '100%', 'xl': '65%', '2xl': '65%' }}
 										position={'relative'}
 										alignItems={'center'}>
-											{introText()}				
+										{introText()}
 									</Flex>
-									<Spacer/>
+									<Spacer />
 									{keyboard(loading)}
 								</Flex>
-						</ChakraBox>
-				<ChakraBox
-					h={{ base: '5em', sm: '8em', md: '8em', lg: '15em' }}
-					position={'relative'}
-					as={motion.div}
-					variants={scrollArrows}
-					initial={'hidden'}
-					whileInView={'visible'}>
-					<Flex
-						justifyContent={'center'}
-						w={'100%'}>
-						<ScrollIndicator />
-					</Flex>
-				</ChakraBox>
+							</ChakraBox>							
+
+						
+							<ChakraBox
+								h={'100%'}
+								position={'relative'}
+								as={motion.div}
+								variants={scrollArrows}
+								initial={'hidden'}
+								whileInView={'visible'}>
+								<Flex
+									justifyContent={'center'}
+									w={'100%'}>
+										<ScrollIndicator />
+								</Flex>
+							</ChakraBox>
+						</Flex>
+
+
 				</Container>
 	)
 }
@@ -86,28 +97,11 @@ const keyboard = (loading) => {
 	const bp = useBreakpoint()
 	return (
 		<Flex
-		w={{base: '100%', sm: '100%', md: '100%', lg: '35%'}}
+		w={{base: '100%', sm: '100%', md: '100%', lg: '100%', xl: '35%', '2xl': '35%'}}
 		h={'100%'}
 		zIndex={0}
 		justifyContent={'flex-end'}>	
-			{bp == 'lg' && (
-				<Keyboard props={{newFov: 70, outerLoading: loading}}/>
-			)}
-			{bp == 'xl' && (
-				<Keyboard props={{ newFov: 55, outerLoading: loading }}/>
-			)}
-			{bp == '2xl' && (
-				<Keyboard props={{ newFov: 50, outerLoading: loading }} />
-			)}
-			{bp == 'sm' && (
-				<Keyboard props={{ newFov: 45, outerLoading: loading }} />
-			)}
-			{bp == 'md' && (
-				<Keyboard props={{ newFov: 40, outerLoading: loading }} />
-			)}
-			{bp == 'base' && (
-				<Keyboard props={{ newFov: 45, outerLoading: loading }} />
-			)}
+			<Keyboard props={{ newFov: 30, outerLoading: loading }} />
 		</Flex>		
 	) 
 	
@@ -116,38 +110,44 @@ const keyboard = (loading) => {
 
 const introText = () => { 
 	return ( 
-
 		<Flex
 		position={'relative'}
 		zIndex={1}
 		direction={'column'}
-		>
-			<Flex>	
+		justifyContent={'center'}
+		w={'100%'}>
+			<Flex
+			position={'relative'}
+			justifyContent={{base: 'center', sm: 'center', md: 'center', lg: 'center', xl: 'flex-start'}}
+			h={'100%'}>	
 				<ChakraBox
 					as={motion.div}
-					variants={heroDesc}> 	
-					
+					variants={heroDesc}
+					> 		
 				<Text 
 						as={'span'}
 						position={'relative'}
 						color={'blackAlpha.800'}
 						fontWeight={800}
-						textRend
-						fontSize={'5.7em'}>
+						fontSize={{ base: '9vw', sm: '9vw', md: '8vw', lg: '7vw', xl: '6.5vw', '2xl': '7em' }}>
 						<Wave text={'Hey! I\'m Linas.'} />
 				</Text>
 				</ChakraBox>
 			</Flex>
-			<Flex>	
+			<Flex
+			position={'relative'}
+			justifyContent={{base: 'center', sm: 'center', md: 'center', lg: 'center', xl: 'flex-start'}}>	
 				<ChakraBox
+					px={{base: 6, sm: 6, md: 6, lg: 0}}
 					as={motion.div}
 					variants={heroDesc}> 	
 					<Text
+					
 						as={'span'}
 						position={'relative'}
-						color={'blackAlpha.800'}
+						color={'blackAlpha.700'}
 						fontWeight='700'
-						fontSize={'2em'}>
+						fontSize={{ base: '1em', sm: '1.2em', md: '1.3em', lg: '1.3em', xl: '1.5em', '2xl': '1.8em' }}>
 						I'm a developer based in Toronto, that's on a pursuit for growth.
 					</Text>
 				</ChakraBox>

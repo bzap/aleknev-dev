@@ -83,9 +83,9 @@ export const projectSubContainer = {
 	  y:0,
 	  opacity: 1,
 	  transition: {
-		delay:0.3,
-		duration:0.5,
-		delayChildren: 0.3,
+		delay: 0.8,
+		duration: 0.5,
+		delayChildren: 0.8,
 		staggerChildren: 0.1
 	  }  
 	}  
@@ -116,13 +116,13 @@ export const pskillsItem = {
   }
 
 export const pillItem = {
-	hidden: { opacity: 0 },
+	hidden: { opacity: 0, y: 5 },
 	visible: {
 	  transition: {
-		  duration:0.8
+		  duration:0.4
 	  },
 	  opacity: 1,
-	  scale:[0.7, 1.02, 1]
+	  y: 0
 	}
   };
 
@@ -210,7 +210,7 @@ export const about = {
 	visible: {
 		opacity: 1,
 		transition: {
-			delayChildren: 1,
+			delayChildren: 0.4,
 			staggerChildren: 0.1
 		}
 	}
@@ -271,8 +271,8 @@ export const aboutItem = {
 		transition: {
 			ease: 'easeInOut',
 			duration: 0.4,
-			delayChildren: 0.10,
-			staggerChildren: 0.25
+			delayChildren: 0.1,
+			staggerChildren: 0.1
 		}
 	}
 } 
@@ -283,7 +283,7 @@ export const currentSkills = {
 	visible: {
 		transition: {
 			ease: 'easeInOut',
-			duration: 0.4
+			duration: 0.3
 		},
 		opacity: 1,
 		scale: 1 
