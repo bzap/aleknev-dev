@@ -26,7 +26,7 @@ import { Canvas } from "@react-three/fiber"
 import { Suspense, useRef, useEffect, useState } from "react"
 import { Environment, Stage, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { AnimatePresence, motion, useScroll, isValidMotionProp } from 'framer-motion'
-import { heroKeyboard } from '../../styles/Variants';
+import { heroKeyboard, heroGradient, keyboardContainer } from '../../styles/Variants';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -64,7 +64,12 @@ const Keyboard = ({props}) => {
     return (
       <ChakraBox
         w={'100%'}
-        h={{base: '25em', sm: '25em', md: '30em', lg: '30em', xl: '40em', '2xl': '40em'}}
+        h={{base: '25em', sm: '25em', md: '25em', lg: '30em', xl: '40em', '2xl': '40em'}}
+        as={motion.div}
+        variants={keyboardContainer}> 
+      <ChakraBox
+          w={'100%'}
+          h={{ base: '25em', sm: '25em', md: '30em', lg: '30em', xl: '40em', '2xl': '40em' }}
         as={motion.div}
         variants={heroKeyboard}> 	
         <Flex
@@ -73,8 +78,7 @@ const Keyboard = ({props}) => {
         h={'100%'}
         w={'100%'}>
           <Canvas
-            dpr={[1, 2]}
-            >
+            dpr={[1, 2]}>
             <PerspectiveCamera 
             position={[0, 0, 0]} 
             fov={fov} 
@@ -95,9 +99,14 @@ const Keyboard = ({props}) => {
             />
           </Canvas>
         </Flex>
-        <Flex
-          position={'absolute'}
+
+      </ChakraBox>
+
+      <ChakraBox
           w={'100%'}
+          variants={heroGradient}
+          as={motion.div}
+          position={'absolute'}
           h={'100%'}
           top={{ sm: '25%', md: '15%', lg: '0%', xl: '0%', '2xl': '-20%' }}
           left={{ sm: '0%', md: '0%', lg: '0%', xl: '50%', '2xl': '45%' }}>
@@ -106,21 +115,11 @@ const Keyboard = ({props}) => {
             h={{ sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
             w={{ sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
             src={'hero.webp'} />
-        </Flex>
-      </ChakraBox>
+        </ChakraBox>
+
+        </ChakraBox>
     )
 }
-
-/*
-const Camera = (props) => {
-  const ref = useRef();
-  const set = useThree((state) => state.set);
-  useEffect(() => void set({ camera: ref.current }), []);
-  useFrame(() => ref.current.updateMatrixWorld());
-  return <perspectiveCamera ref={ref} {...props} />;
-};
-
-*/
 
 const Model = (innerLoading) => {
     const loadingStates = innerLoading.innerLoading.outerLoading.states 

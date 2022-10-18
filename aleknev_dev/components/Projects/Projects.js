@@ -110,7 +110,6 @@ const Projects = () => {
 								))}
 							</Flex>
 					</ChakraBox>
-					
 				</Flex>
 				</Flex>
 				

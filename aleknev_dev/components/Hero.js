@@ -71,14 +71,9 @@ const Hero = ({loading}) => {
 									{keyboard(loading)}
 								</Flex>
 							</ChakraBox>							
-
-
 						</Flex>
-
-
 			<ChakraBox
-				position={'absolute'}
-				bottom={0}
+				position={'relative'}
 				as={motion.div}
 				variants={scrollArrows}
 				initial={'hidden'}

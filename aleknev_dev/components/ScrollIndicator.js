@@ -33,8 +33,9 @@ const ChakraBox = chakra(motion.div, {
 
 const ScrollIndicator = () => { 
     return ( 
-            <AnimatePresence mode='wait'>
+            <AnimatePresence mode='wait'>   
                 <ChakraBox
+                    bg='blue.100'
                     as={motion.div}
                     initial={'hidden'}
                     animate={'visible'}

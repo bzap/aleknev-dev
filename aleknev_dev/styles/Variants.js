@@ -426,18 +426,7 @@ export const heroTitle = {
 	}
 }
 
-export const heroKeyboard = {
-	hidden: { opacity: 0, y: 20 },
-	visible: {
-		y: 0,
-		opacity: 1,
-	},
-	transition: {
-		type: "spring",
-		damping: 12,
-		stiffness: 150,
-	}
-}
+
 
 
 export const navContainer = {
@@ -489,3 +478,31 @@ export const scrollArrows = {
 		}
 	}
 }   
+
+
+export const heroGradient = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1
+		}
+	}
+
+export const keyboardContainer = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			ease: 'easeInOut',
+			staggerChildren: 0.3
+		}
+	}
+}   
+
+export const heroKeyboard = {
+	hidden: { y: 20, opacity: 0 },
+	visible: {
+		y: 0, 
+		opacity: 1
+	},
+
+}
