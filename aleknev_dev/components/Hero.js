@@ -131,7 +131,8 @@ const introText = () => {
 						as={'span'}
 						position={'relative'}
 						color={'blackAlpha.800'}
-						fontWeight='800'
+						fontWeight={800}
+						textRend
 						fontSize={'5.7em'}>
 						<Wave text={'Hey! I\'m Linas.'} />
 				</Text>

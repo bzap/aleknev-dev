@@ -129,8 +129,7 @@ const projectSkill = (props, icon) => {
                 direction={'row'}>
                     <Icon as={icon} w={3} h={3} color='black.500' />
                     <Text
-                        fontSize={{ base: 10, sm: 12, md: 12, lg: 12 }}
-                        fontWeight={800}>
+                        fontSize={{ base: 10, sm: 12, md: 12, lg: 12 }}>
                         &thinsp;{props}
                     </Text>
                 </Center>
@@ -144,7 +143,6 @@ const projectDesc = (props) => {
             py={2}
             as='p'
             fontSize={{ base: 12, sm: 14, md: 14, lg: 14 }}
-            fontWeight={'700'}
             color={'gray.600'}>  
             {props}
         </Text>
@@ -164,7 +162,6 @@ const projectButton = (name, link, icon) => {
         flex={1}
         textColor={'Black'}
         ref={btnRef}
-        fontWeight={'bold'}
         whiteSpace={'nowrap'}
         onClick={onOpen}
         whileTap={{scale: 0.9}}

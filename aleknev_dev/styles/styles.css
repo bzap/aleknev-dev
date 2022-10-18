@@ -1,8 +1,8 @@
 
 @font-face {
-    font-family: 'SF Mono';
-    src: url('sf-mono-medium-webfont.woff2');
-    src: local('SF Mono'), local('sf_monomedium'),
-        url('sf-mono-medium-webfont.woff') format('woff');
-
-    }       
+    font-family: 'sf_monoheavy';
+    src: url('../public/sfmono-heavy-webfont.woff2') format('woff2'),
+        url('../public/sfmono-heavy-webfont.woff') format('woff');
+    font-style: normal;
+    -webkit-font-smoothing: subpixel-antialiased;
+}

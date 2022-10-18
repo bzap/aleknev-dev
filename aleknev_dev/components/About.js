@@ -193,8 +193,7 @@ const About = () => {
 														pt={8}
 														pb={2}
 														color={'blackAlpha.800'}
-														fontSize={{base: 13, sm: 13.5, md: 14, lg: 14.5}}
-														fontWeight={'700'}>	
+														fontSize={{base: 13, sm: 13.5, md: 14, lg: 14.5}}>	
 															<Image
 															justifyContent={'center'}
 															position={'relative'}
@@ -348,8 +347,7 @@ const skillText = () => {
 					textAlign={'justify'}
                     as={'p'}
 					color={'blackAlpha.800'}
-					fontSize={{ base: 13, sm: 13.5, md: 14, lg: 14.5 }}
-					fontWeight={'700'}>
+					fontSize={{ base: 13, sm: 13.5, md: 14, lg: 14.5 }}>
                     Filler text filler text, this is my strength, filler text. I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
                 </Text>
                 </ChakraBox>
@@ -394,8 +392,7 @@ const skillItem = (name, ic) => {
                 <ListIcon as={ic} color='black.500'/>
                 <Text
 					textAlign={'center'}
-					fontSize={{ base: 12, sm: 13.5, md: 14, lg: 15 }}
-                    fontWeight={700}>
+					fontSize={{ base: 12, sm: 13.5, md: 14, lg: 15 }}>
                     &thinsp;{name}
                 </Text>
             </Flex>

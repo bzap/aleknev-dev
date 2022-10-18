@@ -163,7 +163,6 @@ const verticalItem = (top, index) => {
 						position={'relative'}
 						direction={'column'}>
 							<Heading
-							fontWeight={800}
 							fontSize={{base: 34, sm: 37, md: 40, lg: 45}}>
 								{index}
 							</Heading>
@@ -182,7 +181,6 @@ const verticalItem = (top, index) => {
 							position={'relative'}
 							h={'30.5em'}
 							justifyContent={'center'}
-							gap
 							w={{base: '100%', sm:'24em', md:'28em', lg:'24em'}} 
 							bg={'whiteAlpha.600'}
 							backdropFilter='auto'

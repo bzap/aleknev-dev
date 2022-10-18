@@ -49,7 +49,6 @@ const Title = ({title, desc, page}) => {
                         <Text
                        
                             w={{ base: '100%', sm: '25em', md: '35em', lg: '35em' }}
-                            fontWeight={700}
                             fontSize={{ base: 13, sm: 15, md: '1em', lg: '1.2em' }}
                             color={'blackAlpha.800'}>
                             {desc}
@@ -99,7 +98,6 @@ const pageIndicator = (page) => {
                             left={'1rem'}>
                                 {page}
                             </Text>
-                            
                         </ChakraBox> 
                          
                     </Heading>

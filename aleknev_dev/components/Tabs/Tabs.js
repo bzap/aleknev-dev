@@ -90,7 +90,6 @@ const AnimatedTabs = ({pos}) => {
 											whileTap={{scale:0.99, opacity:[1,0.5,0]}}>
 											<Center>
 												<Text
-												fontWeight={'700'}
 												color='blackAlpha.800'>
 													{item.label}
 												</Text>	
@@ -121,7 +120,6 @@ const AnimatedTabs = ({pos}) => {
 												as={motion.div}>
 												<Text 
 												alignItems={'center'}
-												fontWeight={'600'}
 												color={'white'}>
 													{item.label}
 												</Text>
