@@ -62,7 +62,7 @@ const Contact = () => {
 		<Box
 			position={'relative'}
 			maxW={'100%'}
-			px={{ base: '3%', sm: '5%', md: '10%', lg: '10%' }}
+			px={{ base: '6.5%', sm: '5%', md: '10%', lg: '10%' }}
 			w={'100%'}
 			id='2'
 			pt={{ base: '7em', sm: '10em', md: '10em', lg: '10em' }}
@@ -70,7 +70,7 @@ const Contact = () => {
 			<Flex
 			
 				direction={'column'}
-				gap={{ base: '2em', sm: '4em', md: '7em', lg: '8em' }}>
+				gap={{ base: '2em', sm: '4em', md: '7em', lg: '10em' }}>
 				<ChakraBox
 					as={motion.div}
 					variants={about}
@@ -83,7 +83,7 @@ const Contact = () => {
 						page={'03'} />
 				</ChakraBox>
 				<Flex
-					p={{base: '2em', sm: '2.5em', md: '4em', lg: '5em'}}
+					p={{base: '2em', sm: '2.5em', md: '4em', lg: '3em'}}
 					w={'100%'}
 					position={'relative'}
 					bg={'whiteAlpha.600'}
@@ -102,44 +102,38 @@ const Contact = () => {
 										h={'100%'}
 										w={'100%'}
 										direction={{base:'column', sm: 'column', md: 'row', lg: 'row'}}
-										gap={'2em'}>
+										gap={'3em'}>
 										<Flex
 											h={'100%'}
 											w={'100%'}
 											direction={'column'}>
 											<FormLabel
 												requiredIndicator
-												fontSize={{ base: 22, sm: 23, md: 28, lg: 30 }}
-												fontWeight={900}>
+												fontSize={{ base: 22, sm: 23, md: 28, lg: 30 }}>
 												EMAIL
 											</FormLabel>
 											<Input
 												fontSize={17}
-												fontWeight={600}
 												color={'blackAlpha.800'}
 												focusBorderColor={'blackAlpha.700'}
 												w={'100%'}
 												size={'lg'}
 												id='email'
 												type='email'
-												name='email'
-												placeholder='Email' />
+												name='email'/>
 											<FormLabel
 												requiredIndicator
 												pt={4}
-												fontSize={{ base: 22, sm: 23, md: 28, lg: 30 }}
-												fontWeight={900}>
+												fontSize={{ base: 22, sm: 23, md: 28, lg: 30 }}>
 												NAME
 											</FormLabel>
 											<Input
 												fontSize={17}
-												fontWeight={600}
 												color={'blackAlpha.800'}
 												focusBorderColor={'blackAlpha.700'}
 												name='name'
 												size={'lg'}
-												id='name'
-												placeholder='Name' />
+												id='name'/>
 										</Flex>
 										<Flex
 											direction={'column'}
@@ -147,17 +141,14 @@ const Contact = () => {
 											w={'100%'}>
 											<FormLabel
 												requiredIndicator
-												fontSize={{ base: 22, sm: 23, md: 28, lg: 30 }}
-												fontWeight={900}>
+												fontSize={{ base: 22, sm: 23, md: 28, lg: 30 }}>
 												YOUR MESSAGE
 											</FormLabel>
 											<Textarea
-												fontWeight={600}
 												color={'blackAlpha.800'}
 												h={'100%'}
 												focusBorderColor={'blackAlpha.700'}
 												name='message'
-												placeholder='Your message'
 												resize={'none'}
 												id='message' />
 										</Flex>

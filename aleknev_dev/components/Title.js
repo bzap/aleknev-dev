@@ -24,7 +24,8 @@ import {
     ListIcon,
     ListItem,
     Spacer,
-    shouldForwardProp
+    shouldForwardProp,
+    useBreakpoint
 } from '@chakra-ui/react';
 import { motion, Variants, HTMLMotionProps, isValidMotionProp } from "framer-motion";
 import Wave from './Variants/Wave'
@@ -32,22 +33,28 @@ import { textContainer, titleContainer, subTitleContainer, indicators } from '..
 
 
 const Title = ({title, desc, page}) => { 
+    const bp = useBreakpoint()
+    console.log(bp, 'bp')
     return ( 
             <Flex
                 w={'100%'}
-                justifyContent={'center'}
                 direction='row'>
                 <Flex         
                     justifyContent={'space-between'}
                     direction='column'>
+                    <Flex
+                    position={'relative'}
+                    w={'20em'}>
                     <Heading
+                        position={'relative'}
                         fontSize={{ base: '3.5em', sm: '4em', md: '6em', lg: '7em' }}>
                         <Wave text={title}/>
                     </Heading>
+                </Flex>
                     <ChakraBox   
+                    w={'100%'}
                     variants={subTitleContainer}>
                         <Text
-                       
                             w={{ base: '100%', sm: '25em', md: '35em', lg: '35em' }}
                             fontSize={{ base: 13, sm: 15, md: '1em', lg: '1.2em' }}
                             color={'blackAlpha.700'}>
@@ -56,6 +63,9 @@ const Title = ({title, desc, page}) => {
                     </ChakraBox>
                 </Flex>
                 <Spacer />
+                {bp == 'sm' || bp == 'md' || bp == 'lg' || bp == 'xl' || bp == '2xl' && (
+                    <Spacer/>
+                )}
                 {pageIndicator(page)}
             </Flex>
     )
@@ -70,8 +80,8 @@ const ChakraBox = chakra(motion.div, {
 const pageIndicator = (page) => {
     return (
         <Flex
-            w={'100%'}
-            h={'100%'}
+            w={{base: 0, sm: '100%', md: '100%', lg: '100%'}}
+            h={{ base: 0, sm: '100%', md: '100%', lg: '100%' }}
             position={'relative'}
             direction="row"
             justifyContent={'flex-end'}>

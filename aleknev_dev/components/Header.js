@@ -27,7 +27,7 @@ const Header = ({ pos }) => {
 					whileInView={'visible'}
 					backdropFilter='auto'
 					backdropBlur='8px'
-					maxW={{ base: '94%', sm: '90%', md: '80%', lg: '80%' }}
+					maxW={{ base: '88%', sm: '90%', md: '80%', lg: '80%' }}
 					position='fixed'
 					w={'100%'}
 					zIndex={200}

@@ -113,7 +113,7 @@ const introText = () => {
 			<Flex
 			position={'relative'}
 			justifyContent={{base: 'center', sm: 'center', md: 'center', lg: 'center', xl: 'flex-start'}}
-			h={'100%'}>	
+			>	
 				<ChakraBox
 					as={motion.div}
 					variants={heroDesc}
@@ -130,15 +130,17 @@ const introText = () => {
 			</Flex>
 			<Flex
 			position={'relative'}
-			justifyContent={{base: 'center', sm: 'center', md: 'center', lg: 'center', xl: 'flex-start'}}>	
+			justifyContent={{base: 'center', sm: 'center', md: 'center', lg: 'center', xl: 'flex-start'}}	
+			textAlign={{base: 'center', sm: 'center', md: 'center', lg: 'start'}}>
 				<ChakraBox
-					px={{base: 6, sm: 6, md: 6, lg: 0}}
+					px={{base: 0, sm: 0, md: 6, lg: 0}}
 					as={motion.div}
 					variants={heroDesc}> 	
 					<Text
 					
 						as={'span'}
 						position={'relative'}
+						textAlign={'center'}
 						color={'blackAlpha.700'}
 						fontWeight='700'
 						fontSize={{ base: '1em', sm: '1.2em', md: '1.3em', lg: '1.3em', xl: '1.5em', '2xl': '1.8em' }}>

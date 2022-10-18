@@ -52,7 +52,7 @@ const Preview = ({proj}) => {
             {projectImages('https://i.pinimg.com/564x/af/26/42/af2642d7d8ed1d60959f0825e545d92c.jpg')}
         </Flex>
         <Stack
-            px={{base: 4, sm: 9, md: 9, lg: 9}}
+            px={{base: 6, sm: 9, md: 9, lg: 9}}
             pt={4}
             spacing={-1}>
             <ChakraBox
@@ -71,7 +71,7 @@ const Preview = ({proj}) => {
         </Stack> 
         <Stack
             pb={5}
-            px={{ base: 4, sm: 9, md: 9, lg: 9 }}>
+            px={{ base: 6, sm: 9, md: 9, lg: 9 }}>
             <ChakraBox
             variants={item}>
                 <Center>

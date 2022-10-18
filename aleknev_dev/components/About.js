@@ -50,7 +50,7 @@ const About = () => {
     <Box
         position={'relative'}
         maxW={'100%'} 
-        px={{base: '3%', sm: '5%', md: '10%', lg:'10%'}}
+        px={{base: '6.5%', sm: '5%', md: '10%', lg:'10%'}}
         w={'100%'} 
         id='0' 
 		pt={{ base: '7em', sm:'10em', md: '10em', lg: '10em'}}
@@ -68,23 +68,23 @@ const About = () => {
 							position={'absolute'}
 							w={'100%'}
 							h={'100%'}
-							top={{sm: '-20em', md: '-20em', lg: '-20em'}}
+							top={{sm: '-15em', md: '-20em', lg: '-20em'}}
 							left={{sm: '-10em', md: '-15em', lg: '-15em'}}>
 							<Center>
 								<Image
-									
-									h={{base: '0em', sm: '70em', md: '70em', lg: '78em'}}
-									w={{base: '0em', sm: '70em', md: '70em', lg: '78em'}}
+									h={{base: '0em', sm: '60em', md: '70em', lg: '78em'}}
+									w={{base: '0em', sm: '60em', md: '70em', lg: '78em'}}
 									src={'topabout.webp'} />
 							</Center>
 						</Flex>
 				</ChakraBox>
 						<ChakraBox
+						position={'relative'}
 							as={motion.div}
 							variants={about}
 							initial={'hidden'}
 							whileInView={'visible'}
-							viewport={{ once: true, amount: 0.5}}>
+							viewport={{ once: false, amount: 0.5}}>
 						<Title 
 							title={'About Me.'}
 							desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'}
@@ -109,12 +109,12 @@ const About = () => {
 							maxW={'full'}
 							w={'100%'}
 							h={'100%'}
-							top={{sm: '60em', md: '50em', lg: '20em'}}
+							top={{sm: '50em', md: '40em', lg: '20em'}}
 							left={{sm: '5em', md: '15em', lg: '40em'}}>
 							<Image
 								fit='cover'
-								h={{ base: '0em', sm: '60em', md: '70em', lg: '70em'}}
-								w={{base: '0em', sm: '60em', md: '85em', lg: '85em'}}
+								h={{ base: '0em', sm: '50em', md: '70em', lg: '70em'}}
+								w={{ base: '0em', sm: '50em', md: '85em', lg: '85em'}}
 								src={'cornerabout.webp'} />
 						</Flex>
 						</ChakraBox>
@@ -170,8 +170,8 @@ const About = () => {
 												<ChakraBox
 													w={'100%'}
 													zIndex={1}
-													py={{ base: 7, sm: 8, md: 10, lg: 10 }}
-													px={{ base: 7, sm: 8, md: 10, lg: 10 }}	>
+													py={{ base: 6, sm: 8, md: 10, lg: 10 }}
+													px={{ base: 6, sm: 8, md: 10, lg: 10 }}	>
 													<ChakraBox
 													variants={aboutItem}>
 														<Heading>
@@ -295,8 +295,8 @@ const skillsInfo = () => {
 			direction={'column'}
             as={motion.div}
             position='relative'
-			px={{base: 7, sm: 8, md: 12, lg: 10}}
-			pt={10}
+			px={{base: 6, sm: 8, md: 12, lg: 10}}
+			pt={{ base: 6, sm: 8, md: 12, lg: 10 }}
 			>
 			<ChakraBox
 			variants={aboutItem}>	
@@ -319,7 +319,7 @@ const skillsInfo = () => {
 			<ChakraBox
 			variants={currentSkills}>
 				<Flex
-				pb={14}
+					pb={{ base: 8, sm: 10, md: 14, lg: 14 }}
 				justify-content={'space-between'}
 				direction='row'
 				w={'100%'}>
@@ -339,7 +339,7 @@ const skillText = () => {
     return ( 
             <Flex
 			pt={8}
-			pb={8}
+			pb={4}
             direction={'column'}>
                 <ChakraBox
                 variants={item}>

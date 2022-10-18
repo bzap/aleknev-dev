@@ -47,7 +47,7 @@ const Projects = () => {
 		<Box
 		position={'relative'}
 		maxW={'100%'}
-		px={{ base: '3%', sm: '5%', md: '10%', lg: '10%' }}
+		px={{ base: '6.5%', sm: '5%', md: '10%', lg: '10%' }}
 		w={'100%'}
 		id='1'
 		pt={{ base: '4em', sm:'6em', md: '6em', lg: '6em'}}

@@ -64,7 +64,7 @@ const Keyboard = ({props}) => {
     return (
       <ChakraBox
         w={'100%'}
-        h={{base: '25em', sm: '25em', md: '25em', lg: '30em', xl: '40em', '2xl': '40em'}}
+        h={{base: '10em', sm: '25em', md: '25em', lg: '30em', xl: '40em', '2xl': '40em'}}
         as={motion.div}
         variants={keyboardContainer}> 
       <ChakraBox
@@ -80,6 +80,7 @@ const Keyboard = ({props}) => {
           <Canvas
             dpr={[1, 2]}>
             <PerspectiveCamera 
+            overflow={'scroll'}
             position={[0, 0, 0]} 
             fov={fov} 
             onUpdate={self => self.updateMatrixWorld()}
@@ -95,7 +96,7 @@ const Keyboard = ({props}) => {
               makeDefault
               autoRotate
               enableZoom={false}
-              enableRotate={bp == 'base' || bp == 'sm' ? false : true} 
+              
             />
           </Canvas>
         </Flex>
@@ -112,8 +113,8 @@ const Keyboard = ({props}) => {
           left={{ sm: '0%', md: '0%', lg: '0%', xl: '50%', '2xl': '45%' }}>
           <Image
             fit='cover'
-            h={{ sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
-            w={{ sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
+            h={{ base: 0, sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
+            w={{ base: 0, sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
             src={'hero.webp'} />
         </ChakraBox>
 
