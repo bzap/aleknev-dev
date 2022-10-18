@@ -33,9 +33,6 @@ const ChakraBox = chakra(motion.div, {
 
 const ScrollIndicator = () => { 
     return ( 
-        <Flex
-        bottom={0}
-        position={'absolute'}>
             <AnimatePresence mode='wait'>
                 <ChakraBox
                     as={motion.div}
@@ -49,8 +46,8 @@ const ScrollIndicator = () => {
                             as={motion.div}
                             variants={gitGT}>
                             <Icon
-                                w={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
-                                h={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
+                                w={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
+                                h={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
                                 as={HiChevronDown}
                             />
                         </ChakraBox>
@@ -59,8 +56,8 @@ const ScrollIndicator = () => {
                             as={motion.div}
                             variants={gitGT}>
                             <Icon
-                                w={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
-                                h={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
+                                w={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
+                                h={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
                                 as={HiChevronDown}
                             />
                         </ChakraBox>
@@ -69,15 +66,14 @@ const ScrollIndicator = () => {
                             as={motion.div}
                             variants={gitGT}>
                             <Icon
-                                w={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
-                                h={{ base: '2.2em', sm: '2.4', md: '2.7em', lg: '2.7em' }}
+                                w={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
+                                h={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
                                 as={HiChevronDown}
                             />
                         </ChakraBox>
                     </Flex>
                 </ChakraBox>
             </AnimatePresence>
-        </Flex>
     
     )
 

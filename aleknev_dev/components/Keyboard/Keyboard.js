@@ -42,7 +42,7 @@ const Keyboard = ({props}) => {
       const interval = setInterval(() => set((state) => !state), 1000)
       return () => clearInterval(interval)
     }, []) */
-    let fov = 100
+    let fov = 20
     if (bp == 'base'){ 
       fov = 60
     }
@@ -60,12 +60,11 @@ const Keyboard = ({props}) => {
     }
     else if (bp == '2xl'){ 
       fov = 45
-    }
-
+    } 
     return (
       <ChakraBox
         w={'100%'}
-        h={'100%'}
+        h={{base: '25em', sm: '25em', md: '30em', lg: '30em', xl: '40em', '2xl': '40em'}}
         as={motion.div}
         variants={heroKeyboard}> 	
         <Flex
@@ -77,9 +76,9 @@ const Keyboard = ({props}) => {
             dpr={[1, 2]}
             >
             <PerspectiveCamera 
-            position={[0, 0, 1]} 
+            position={[0, 0, 0]} 
             fov={fov} 
-            onUpdate={self => self.updateProjectionMatrix()}
+            onUpdate={self => self.updateMatrixWorld()}
             makeDefault={true} />
             <Suspense fallback={null}>
               <Stage preset="rembrandt" intensity={1} environment="city">

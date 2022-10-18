@@ -103,7 +103,7 @@ const Projects = () => {
 									<Box
 									key={idx}
 									display={{base: 'flex', sm:'flex', md: 'flex'}}
-									w={{sm:'100%', md: '100%', lg: '28em'}}
+									w={{sm:'100%', md: '100%', lg: '26em'}}
 									justifyContent={'center'}>
 										{verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())}
 									</Box> 

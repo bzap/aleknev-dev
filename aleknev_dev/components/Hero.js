@@ -40,12 +40,12 @@ const Hero = ({loading}) => {
 					h={'100%'}
 					direction={'column'}
 					flex={1}
-					pt={{ base: '7em', sm: '7em', md: 0, lg: 0 }}
+					pt={'7em'}
 					pb={{ base: '7em', sm: '10em', md: '16em', lg: '10em', xl: '16em' }}>
 						<Flex
 						direction={'column'}>
-							<ChakraBox
-								minH='90vh'
+							<ChakraBox	
+								h={'40em'}
 								as={motion.div}
 								variants={heroContainer}
 								display={'flex'}
@@ -55,7 +55,7 @@ const Hero = ({loading}) => {
 								whileInView={'visible'}
 								viewport={{ once: true }}>
 								<Flex
-									h={'40em'}
+									h={'100%'}
 									w={'100%'}
 									position={'relative'}
 									justifyContent={'space-between'}
@@ -72,23 +72,22 @@ const Hero = ({loading}) => {
 								</Flex>
 							</ChakraBox>							
 
-						
-							<ChakraBox
-								h={'100%'}
-								position={'relative'}
-								as={motion.div}
-								variants={scrollArrows}
-								initial={'hidden'}
-								whileInView={'visible'}>
-								<Flex
-									justifyContent={'center'}
-									w={'100%'}>
-										<ScrollIndicator />
-								</Flex>
-							</ChakraBox>
+
 						</Flex>
 
 
+			<ChakraBox
+				position={'absolute'}
+				bottom={0}
+				as={motion.div}
+				variants={scrollArrows}
+				initial={'hidden'}
+				whileInView={'visible'}>
+				<Flex
+					justifyContent={'center'}>
+					<ScrollIndicator />
+				</Flex>
+			</ChakraBox>
 				</Container>
 	)
 }
