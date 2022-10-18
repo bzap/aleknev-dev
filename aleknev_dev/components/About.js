@@ -84,7 +84,7 @@ const About = () => {
 							variants={about}
 							initial={'hidden'}
 							whileInView={'visible'}
-							viewport={{ once: false, amount: 0.5}}>
+							viewport={{ once: true, amount: 0.5}}>
 						<Title 
 							title={'About Me.'}
 							desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'}

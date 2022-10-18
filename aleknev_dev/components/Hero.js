@@ -33,11 +33,12 @@ const ChakraBox = chakra(motion.div, {
 
 const Hero = ({loading}) => {
 	return (
+		<>
 				<Container
 					id={'home'}
 					maxW={'100%'}
 					px={{ sm: '5%', md: '10%', lg: '10%' }}
-					h={'100%'}
+					h={'90vh'}
 					direction={'column'}
 					flex={1}
 					pt={'7em'}
@@ -72,18 +73,19 @@ const Hero = ({loading}) => {
 								</Flex>
 							</ChakraBox>							
 						</Flex>
-			<ChakraBox
-				position={'relative'}
-				as={motion.div}
-				variants={scrollArrows}
-				initial={'hidden'}
-				whileInView={'visible'}>
-				<Flex
-					justifyContent={'center'}>
-					<ScrollIndicator />
-				</Flex>
-			</ChakraBox>
 				</Container>
+				<ChakraBox
+					position={'relative'}
+					as={motion.div}
+					variants={scrollArrows}
+					initial={'hidden'}
+					whileInView={'visible'}>
+					<Flex
+						justifyContent={'center'}>
+						<ScrollIndicator />
+					</Flex>
+				</ChakraBox>
+			</>
 	)
 }
 	
