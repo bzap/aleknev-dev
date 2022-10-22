@@ -506,3 +506,16 @@ export const heroKeyboard = {
 	},
 
 }
+
+export const gitText = {
+	hidden: { y: 20, opacity: 0 },
+	visible: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			ease: 'easeInOut',
+			delay: 0.3,
+		}
+	},
+
+}

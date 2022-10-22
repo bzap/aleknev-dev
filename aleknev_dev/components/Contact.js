@@ -109,7 +109,7 @@ const Contact = () => {
 											direction={'column'}>
 											<FormLabel
 												requiredIndicator
-												fontSize={{ base: 22, sm: 23, md: 28, lg: 30 }}>
+												fontSize={{ base: 22, sm: 23, md: 28, lg: 28 }}>
 												EMAIL
 											</FormLabel>
 											<Input
@@ -124,7 +124,7 @@ const Contact = () => {
 											<FormLabel
 												requiredIndicator
 												pt={4}
-												fontSize={{ base: 22, sm: 23, md: 28, lg: 30 }}>
+												fontSize={{ base: 22, sm: 23, md: 28, lg: 28 }}>
 												NAME
 											</FormLabel>
 											<Input
@@ -141,7 +141,7 @@ const Contact = () => {
 											w={'100%'}>
 											<FormLabel
 												requiredIndicator
-												fontSize={{ base: 22, sm: 23, md: 28, lg: 30 }}>
+												fontSize={{ base: 22, sm: 23, md: 28, lg: 28 }}>
 												YOUR MESSAGE
 											</FormLabel>
 											<Textarea

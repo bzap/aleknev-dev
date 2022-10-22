@@ -90,6 +90,7 @@ const AnimatedTabs = ({pos}) => {
 											whileTap={{scale:0.99, opacity:[1,0.5,0]}}>
 											<Center>
 												<Text
+												
 												color='blackAlpha.800'>
 													{item.label}
 												</Text>	
@@ -101,7 +102,7 @@ const AnimatedTabs = ({pos}) => {
 												as={motion.div}
 												cursor={'pointer'}
 												whileTap={{scale:0.9}}
-												zIndex={0}
+												zIndex={15}
 												layout
 												key='overlayBox'
 												position={'absolute'}
@@ -120,7 +121,7 @@ const AnimatedTabs = ({pos}) => {
 												as={motion.div}>
 												<Text 
 												alignItems={'center'}
-												color={'white'}>
+												color={'whiteAlpha.900'}>
 													{item.label}
 												</Text>
 												</ChakraBox>

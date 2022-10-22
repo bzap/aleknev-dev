@@ -26,8 +26,9 @@ import {
 	} from '@chakra-ui/react';
 import Preview from './Preview'
 import { motion, AnimatePresence, isValidMotionProp } from "framer-motion";
+import { IoMdReturnRight } from 'react-icons/io'
 import { SiGithub  } from 'react-icons/si';
-import { projectContainer, gitGT, gitLT, arrowContainer, projectSubContainer, gradient, gradient3, gradient4, skillsContainer, item, skillsItem, about } from '../../styles/Variants'
+import { projectContainer, gitGT, gitLT, arrowContainer, gitText, projectSubContainer, gradient, gradient3, gradient4, skillsContainer, item, skillsItem, about } from '../../styles/Variants'
 import Head from 'next/head';
 import { useState, useEffect } from 'react'
 import { pageIndicator } from '../About';
@@ -101,9 +102,10 @@ const Projects = () => {
 								sx={{ 'flexWrap': 'wrap' }}>
 								{[...Array(6).keys()].map((item, idx) => (
 									<Box
+									
 									key={idx}
 									display={{base: 'flex', sm:'flex', md: 'flex'}}
-									w={{sm:'100%', md: '100%', lg: '26em'}}
+									w={{sm:'100%', md: '100%', lg: '25em'}}
 									justifyContent={'center'}>
 										{verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())}
 									</Box> 
@@ -131,7 +133,14 @@ const Projects = () => {
 				src={'centerproj.webp'} />
 		</Flex>	
 		</ChakraBox>
+		<ChakraBox
+					as={motion.div}
+					initial={'hidden'}
+					whileInView={'visible'}
+					viewport={{ once: true, amount: 0.8}}
+					variants={gitText}>
 		{gitButton()}
+		</ChakraBox>
 	</Box> 
 		)
 }
@@ -139,6 +148,7 @@ const Projects = () => {
 const verticalItem = (top, index) => { 
 		return ( 
 			<ChakraBox
+				
 				position={'relative'}
 				pt={top}
 				variants={projectSubContainer}
@@ -173,7 +183,7 @@ const verticalItem = (top, index) => {
 							position={'relative'}
 							h={'30.5em'}
 							justifyContent={'center'}
-							w={{base: '100%', sm:'24em', md:'28em', lg:'24em'}} 
+							w={{base: '100%', sm:'24em', md:'28em', lg:'100%'}} 
 							bg={'whiteAlpha.600'}
 							backdropFilter='auto'
 							backdropBlur='5px'
@@ -190,59 +200,34 @@ const gitButton = () => {
 		return ( 
 				<Flex
 						position={'relative'}
-						top={'30em'}
-						direction={'row'}>
-				<AnimatePresence exitBeforeEnter>
+						pt={{base: '6em', sm: '6em', md: '7em', lg: '10em'}}
+						justifyContent={{base: 'center', sm: 'center', md: 'center', lg: 'flex-end'}}>
 				<ChakraBox
-					as={motion.div}
-					initial={'hidden'}
-					animate={'visible'}
-					variants={arrowContainer}>
+					as={motion.div}>
 								<Center>
-										<ChakraBox
-										as={motion.div}
-										variants={gitGT}>
-											<Text 
-												fontSize={40}>
-												&gt;
-											</Text>
-										</ChakraBox>
-										<ChakraBox
-										as={motion.div}
-										variants={gitGT}>
-											<Text
-												fontSize={40}>
-												&gt;
-											</Text>
-										</ChakraBox>									
-										<ChakraBox
-										as={motion.div}
-										variants={gitGT}>
-											<Text
-												fontSize={40}>
-												&gt;
-											</Text>
-										</ChakraBox>									
-									<Center
+								<ChakraBox
+									as={motion.div}>
+									<Icon
+										w={{ base: '3.3em', sm: '3.8em', md: '5em', lg: '5em' }}
+										h={{ base: '3.3em', sm: '3.8em', md: '5em', lg: '5em' }}
+										color={'blackAlpha.800'}
+										as={IoMdReturnRight}
+									/>
+								</ChakraBox>   								
+									<ChakraBox
+									cursor={'pointer'}
+									as={motion.div}
+									whileHover={{ scale: 1.05 }}
+									whileTap={{ scale: 0.95 }}
 										direction={'row'}>
 										<Text
-											fontSize={26}
+											fontSize={{ base: 34, sm: 37, md: 40, lg: 45 }}
 											fontWeight={'bold'}>
-											MY GITHUB
+											&nbsp;GITHUB
 										</Text> 
-										<ChakraBox
-											cursor={'pointer'}
-											as={motion.div}
-											whileHover={{ scale: 1.1 }}
-											whileTap={{ scale: 0.9 }}>
-											<Icon
-												as={SiGithub}
-											 />
-										</ChakraBox>       
-									</Center>
+									</ChakraBox>
 								</Center> 
 				</ChakraBox>
-				</AnimatePresence>
 						</Flex>
 		)
 }
