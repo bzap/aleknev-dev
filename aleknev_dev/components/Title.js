@@ -44,6 +44,7 @@ const Title = ({title, desc, page}) => {
                     direction='column'>
                     <Flex
                     position={'relative'}
+                    zIndex={0}
                     w={'20em'}>
                     <Heading
                         position={'relative'}

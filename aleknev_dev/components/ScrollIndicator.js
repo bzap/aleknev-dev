@@ -26,6 +26,7 @@ import { AnimatePresence, motion, useScroll, isValidMotionProp } from 'framer-mo
 import { background } from '../styles/Variants';
 import { arrowContainer, gitGT } from '../styles/Variants';
 import { HiChevronDown } from 'react-icons/hi';
+import { CgChevronDown } from 'react-icons/cg'
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -48,7 +49,7 @@ const ScrollIndicator = () => {
                             <Icon
                                 w={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
                                 h={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
-                                as={HiChevronDown}
+                                as={CgChevronDown}
                             />
                         </ChakraBox>
                         <ChakraBox
@@ -58,7 +59,7 @@ const ScrollIndicator = () => {
                             <Icon
                                 w={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
                                 h={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
-                                as={HiChevronDown}
+                                as={CgChevronDown}
                             />
                         </ChakraBox>
                         <ChakraBox
@@ -68,7 +69,7 @@ const ScrollIndicator = () => {
                             <Icon
                                 w={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
                                 h={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
-                                as={HiChevronDown}
+                                as={CgChevronDown}
                             />
                         </ChakraBox>
                     </Flex>
