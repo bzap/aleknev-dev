@@ -77,7 +77,7 @@ const Projects = () => {
 							variants={gradient4}
 							initial={'hidden'}
 							whileInView={'visible'}
-							viewport={{ once: true }}>
+							viewport={{ once: false }}>
 						<Flex
 							position={'absolute'}
 							maxW={'100%'}
@@ -154,7 +154,7 @@ const verticalItem = (top, index) => {
 				variants={projectSubContainer}
 				initial={'hidden'}
 				whileInView={'visible'}
-				viewport={{once: true}}>	
+				viewport={{once: false}}>	
 					<Flex
 					w={'100%'}
 					position={'relative'}
@@ -178,7 +178,7 @@ const verticalItem = (top, index) => {
 						<Flex
 							as={motion.div}
 							whileHover={{ scale: 1.025 }}
-							viewport={{once:true, amount:0.8}}
+							viewport={{once: true, amount:0.8}}
 							flex={1}
 							position={'relative'}
 							h={'30.5em'}
@@ -189,7 +189,7 @@ const verticalItem = (top, index) => {
 							backdropBlur='5px'
 							boxShadow={'md'} 
 							borderRadius={'22px'} >
-							<Preview proj={index}/>
+							<Preview index={index.slice(1,2)}/>
 						</Flex> 
 				</Flex>   
 			</ChakraBox>

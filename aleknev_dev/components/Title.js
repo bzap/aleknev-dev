@@ -34,7 +34,6 @@ import { textContainer, titleContainer, subTitleContainer, indicators } from '..
 
 const Title = ({title, desc, page}) => { 
     const bp = useBreakpoint()
-    console.log(bp, 'bp')
     return ( 
             <Flex
                 w={'100%'}

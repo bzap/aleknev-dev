@@ -79,6 +79,10 @@ const AnimatedTabs = ({pos}) => {
 								offset={0} 
 								duration={2200}>
 									<Center
+									cursor={'pointer'}
+									as={motion.div} 
+									whileHover={{ scale: 1.03 }}
+									whileTap={{ scale: 0.99, opacity: [1, 0.5, 0] }}
 										className={item === selectedTab ? 'selected' : ''}
 										onClick={() => 
 													{setSelectedTab(item)
@@ -86,8 +90,8 @@ const AnimatedTabs = ({pos}) => {
 													setCurrItem(item)}}>
 											<ChakraBox
 											cursor={'pointer'}
-											whileHover={{scale:1.05}}
-											whileTap={{scale:0.99, opacity:[1,0.5,0]}}>
+											position={'relative'}
+											zIndex={16}>
 											<Center>
 												<Text
 												
@@ -110,18 +114,17 @@ const AnimatedTabs = ({pos}) => {
 												initial={{opacity:0}}
 												animate={{opacity:1}}
 												exit={{opacity:0}}	
-												bg='blackAlpha.800'
+												
+												bg='whiteAlpha.900'
 												px={4}
 												py={2}
 												borderRadius={'12px'}
-												borderWidth={'1px'}
-												borderColor={'gray.500'}
 												boxShadow={'md'}>
-												<ChakraBox
+												<ChakraBox 
 												as={motion.div}>
 												<Text 
 												alignItems={'center'}
-												color={'whiteAlpha.900'}>
+												opacity={0}>
 													{item.label}
 												</Text>
 												</ChakraBox>

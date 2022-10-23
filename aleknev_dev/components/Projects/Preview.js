@@ -36,13 +36,15 @@ import { pskillsItem, item, pillItem } from '../../styles/Variants'
 import { motion, isValidMotionProp } from "framer-motion";
 import { SiReact, SiPython, SiAngular, SiVuedotjs  } from 'react-icons/si';
 import { useState, useEffect, useRef } from 'react'
+import Projects from '../../public/data/ProjectText'
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
   });
 
 
-const Preview = ({proj}) => {
+const Preview = ({index}) => {
+    console.log(Projects[1].tech.length)
     return (
     <Stack >
         <Flex
@@ -57,33 +59,30 @@ const Preview = ({proj}) => {
             spacing={-1}>
             <ChakraBox
             variants={item}>
-                {projectTitle('GONI-GO')}
+                {projectTitle(Projects[index].name)}
             </ChakraBox>
             <Flex>
-                    <div>{projectSkill('React', SiReact)}</div>
-                    <Spacer/>
-                    <div>{projectSkill('Angular', SiAngular)}</div>
-                    <Spacer/>
-                    <div>{projectSkill('Vue', SiVuedotjs)}</div>
-                    <Spacer/>
-                    <div>{projectSkill('Python', SiPython)}</div>
-            </Flex>
+                    {Projects[index].tech.map((x, idx) => (
+                         projectSkill(x, Projects[index].icons[idx])   
+                    ))}
+
+            </Flex> 
         </Stack> 
         <Stack
-            pb={5}
+            pb={10}
             px={{ base: 6, sm: 9, md: 9, lg: 9 }}>
             <ChakraBox
             variants={item}>
                 <Center>
-                    {projectDesc('This is a temporary description before I set it up to look nice and do things. This line is way too long and will be fixed when I introduce some JSON data.')}
+                        {projectDesc(Projects[index].desc)}
                 </Center>
             </ChakraBox>
             <ChakraBox
                 variants={pillItem}>
                     <Flex>
-                        {projectButton('Learn More', proj, <InfoOutlineIcon />)}
+                        {projectButton('Learn More', index, <InfoOutlineIcon />)}
                         <Spacer />
-                        {projectButton('Live Demo', proj, <WarningTwoIcon />)}
+                        {projectButton('Live Demo', index, <WarningTwoIcon />)}
                     </Flex>
             </ChakraBox>
 
@@ -120,8 +119,8 @@ const projectTitle = (props) => {
 }
 
 const projectSkill = (props, icon) => {
-    // make this map from a future json object 
     return (
+        <>
         <ChakraBox
         px={1}
         variants={pskillsItem}>
@@ -134,6 +133,8 @@ const projectSkill = (props, icon) => {
                     </Text>
                 </Center>
         </ChakraBox>   
+        <Spacer/>
+        </>
     )
 }
 
