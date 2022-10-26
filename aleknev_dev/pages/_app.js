@@ -8,8 +8,8 @@ import { Global } from '@emotion/react'
 import '../styles/styles.css'
 const theme = extendTheme({
   fonts: {
-    heading: `'sf_monoheavy'`,
-    body: `'sf_monoheavy'`,
+    heading: `'sfheavy'`,
+    body: `'sfbold'`,
   },
 })
 

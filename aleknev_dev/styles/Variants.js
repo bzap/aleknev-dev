@@ -270,7 +270,7 @@ export const aboutItem = {
 		opacity: 1,
 		transition: {
 			ease: 'easeInOut',
-			duration: 0.4,
+			duration: 0.3,
 			delayChildren: 0.1,
 			staggerChildren: 0.1
 		}

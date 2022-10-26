@@ -94,7 +94,7 @@ const AnimatedTabs = ({pos}) => {
 											zIndex={16}>
 											<Center>
 												<Text
-												
+												fontWeight={900}
 												color='blackAlpha.800'>
 													{item.label}
 												</Text>	

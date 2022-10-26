@@ -6,3 +6,18 @@
     font-style: normal;
     -webkit-font-smoothing: subpixel-antialiased;
 }
+
+@font-face {
+    font-family: 'sfheavy';
+    src: url('../public/SFMono-Heavy.otf');
+    font-style: normal;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+
+@font-face {
+    font-family: 'sfbold';
+    src: url('../public/SFMono-Bold.otf');
+    font-style: normal;
+    -webkit-font-smoothing: subpixel-antialiased;
+}

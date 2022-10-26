@@ -68,12 +68,12 @@ const About = () => {
 							position={'absolute'}
 							w={'100%'}
 							h={'100%'}
-							top={{sm: '-15em', md: '-20em', lg: '-20em'}}
-							left={{sm: '-10em', md: '-15em', lg: '-15em'}}>
+							top={{sm: '0em', md: '-20em', lg: '-10em'}}
+							left={{sm: '0em', md: '-15em', lg: '-15em'}}>
 							<Center>
 								<Image
-									h={{base: '0em', sm: '60em', md: '70em', lg: '78em'}}
-									w={{base: '0em', sm: '60em', md: '70em', lg: '78em'}}
+									h={{base: '0em', sm: '0', md: '0em', lg: '78em'}}
+									w={{base: '0em', sm: '0', md: '0em', lg: '78em'}}
 									src={'topabout.webp'} />
 							</Center>
 						</Flex>
@@ -110,11 +110,11 @@ const About = () => {
 							w={'100%'}
 							h={'100%'}
 							top={{sm: '50em', md: '40em', lg: '20em'}}
-							left={{sm: '5em', md: '15em', lg: '40em'}}>
+							left={{sm: '5em', md: '15em', lg: '50em'}}>
 							<Image
 								fit='cover'
-								h={{ base: '0em', sm: '50em', md: '70em', lg: '70em'}}
-								w={{ base: '0em', sm: '50em', md: '85em', lg: '85em'}}
+								h={{ base: '0em', sm: '0em', md: '0em', lg: '70em'}}
+								w={{ base: '0em', sm: '0em', md: '0em', lg: '85em'}}
 								src={'cornerabout.webp'} />
 						</Flex>
 						</ChakraBox>
@@ -174,16 +174,14 @@ const About = () => {
 													px={{ base: 6, sm: 8, md: 10, lg: 10 }}	>
 													<ChakraBox
 													variants={aboutItem}>
-														<Heading>
-															<Text
-																pb={4}
+														<Heading
+																														pb={4}
 																borderBottomWidth={'2px'}
 																borderBottomColor={'blackAlpha.100'}
 																color='blackAlpha.800'
 																fontWeight={900}
-																fontSize={{ base: 30, sm: 35, md: 38, lg: 38 }}>
+																fontSize={{ base: 30, sm: 35, md: 38, lg: 40 }}>
 																BACKGROUND 
-															</Text>
 														</Heading>
 													</ChakraBox>
 													<ChakraBox
@@ -192,8 +190,8 @@ const About = () => {
 														textAlign={'justify'}
 														pt={8}
 														pb={2}
-														color={'blackAlpha.800'}
-														fontSize={{base: 13, sm: 13.5, md: 14, lg: 14.5}}>	
+														color={'gray.700'}
+														fontSize={{base: 13, sm: 13.5, md: 14, lg: 14}}>	
 															<Image
 															justifyContent={'center'}
 															position={'relative'}
@@ -203,14 +201,18 @@ const About = () => {
 															mt={'7px'}
 															float={'right'}
 															fit='cover'
-															borderRadius={'3px'}
+															borderRadius={'9px'}
 															borderWidth={'5px'}
 															borderColor={'black'}
 															h={{ base: '12em', sm: '15em', md: '20em', lg: '22em'}}
 															w={{ base: '9em', sm: '10em', md: '15em', lg: '15em' }}
 															src={'https://i.imgur.com/7R4gnAa.jpg'} />								
 															I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree.
+															
+												
 															My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.
+												<br></br><br></br>
+															
 															When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time.Currently I'm <b>looking for new opportunities</b> as a developer!
 													</Text>
 													</ChakraBox>
@@ -300,16 +302,13 @@ const skillsInfo = () => {
 			>
 			<ChakraBox
 			variants={aboutItem}>	
-			<Heading>
-				<Text
+			<Heading
 					pb={4}
 					borderBottomWidth={'2px'}
 					borderBottomColor={'blackAlpha.100'}
 					color='blackAlpha.800'
-					fontWeight={900}
 					fontSize={{ base: 30, sm: 35, md: 38, lg: 40 }}>
 					SKILLS
-				</Text>
 			</Heading>
 			</ChakraBox>
 			<ChakraBox
@@ -339,15 +338,15 @@ const skillText = () => {
     return ( 
             <Flex
 			pt={8}
-			pb={4}
+			pb={8}
             direction={'column'}>
                 <ChakraBox
                 variants={item}>
                 <Text
 					textAlign={'justify'}
                     as={'p'}
-					color={'blackAlpha.800'}
-					fontSize={{ base: 13, sm: 13.5, md: 14, lg: 14.5 }}>
+					color={'gray.700'}
+					fontSize={{ base: 13, sm: 13.5, md: 14, lg: 14 }}>
                     Filler text filler text, this is my strength, filler text. I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
                 </Text>
                 </ChakraBox>
@@ -357,13 +356,13 @@ const skillText = () => {
 
 const skillList = (items) => { 
     // get from mdx here
-    const name = 'React'
+    const name = 'REACT'
     const ic = SiReact
 
     // temp icons for test 
-    const name2 = 'Python'
+    const name2 = 'PYTHON'
     const name3 = 'JS'
-    const name4 = 'Chakra'
+    const name4 = 'CHAKRA'
     const ic2 = SiPython
     const ic3 = SiJavascript
     const ic4 = SiChakraui
@@ -392,6 +391,8 @@ const skillItem = (name, ic) => {
                 <ListIcon as={ic} color='black.500'/>
                 <Text
 					textAlign={'center'}
+					color={'blackAlpha.800'}
+					fontWeight={900}
 					fontSize={{ base: 12, sm: 13.5, md: 14, lg: 15 }}>
                     &thinsp;{name}
                 </Text>

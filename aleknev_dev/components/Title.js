@@ -56,8 +56,8 @@ const Title = ({title, desc, page}) => {
                     variants={subTitleContainer}>
                         <Text
                             w={{ base: '100%', sm: '25em', md: '35em', lg: '35em' }}
-                            fontSize={{ base: 13, sm: 15, md: '1em', lg: '1.2em' }}
-                            color={'blackAlpha.700'}>
+                            fontSize={{ base: 13, sm: 15, md: '1em', lg: '1.1em' }}
+                            color={'gray.700'}>
                             {desc}
                         </Text>
                     </ChakraBox>

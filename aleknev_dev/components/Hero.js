@@ -120,14 +120,13 @@ const introText = () => {
 					as={motion.div}
 					variants={heroDesc}
 					> 		
-				<Text 
+				<Heading
 						as={'span'}
 						position={'relative'}
 						color={'blackAlpha.800'}
-						fontWeight={800}
 						fontSize={{ base: '9vw', sm: '9vw', md: '8vw', lg: '7vw', xl: '6.5vw', '2xl': '7em' }}>
 						<Wave text={'Hey! I\'m Linas.'} />
-				</Text>
+				</Heading>
 				</ChakraBox>
 			</Flex>
 			<Flex
@@ -138,16 +137,15 @@ const introText = () => {
 					px={{base: 0, sm: 0, md: 6, lg: 0}}
 					as={motion.div}
 					variants={heroDesc}> 	
-					<Text
+					<Heading
 					
 						as={'span'}
 						position={'relative'}
 						textAlign={'center'}
 						color={'blackAlpha.700'}
-						fontWeight='700'
 						fontSize={{ base: '1em', sm: '1.2em', md: '1.3em', lg: '1.3em', xl: '1.5em', '2xl': '1.8em' }}>
 						I'm a developer based in Toronto, that's on a pursuit for growth.
-					</Text>
+					</Heading>
 				</ChakraBox>
 			</Flex>
 		</Flex>

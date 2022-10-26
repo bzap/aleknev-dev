@@ -110,8 +110,8 @@ const Contact = () => {
 											<FormLabel
 												requiredIndicator
 												fontSize={{ base: 22, sm: 23, md: 28, lg: 28 }}>
-												EMAIL
-											</FormLabel>
+													EMAIL											
+												</FormLabel>
 											<Input
 												fontSize={17}
 												color={'blackAlpha.800'}

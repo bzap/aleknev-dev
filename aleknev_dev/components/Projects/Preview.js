@@ -55,9 +55,10 @@ const Preview = ({index}) => {
         </Flex>
         <Stack
             px={{base: 6, sm: 9, md: 9, lg: 9}}
-            pt={4}
+            pt={{base: 4, sm: 4, md: 9, lg: 4}}
             spacing={-1}>
             <ChakraBox
+            pb={1}
             variants={item}>
                 {projectTitle(Projects[index].name)}
             </ChakraBox>
@@ -65,11 +66,10 @@ const Preview = ({index}) => {
                     {Projects[index].tech.map((x, idx) => (
                          projectSkill(x, Projects[index].icons[idx])   
                     ))}
-
             </Flex> 
         </Stack> 
         <Stack
-            pb={10}
+            pb={{base: 8, sm: 8, md: '0em', lg: 8}}
             px={{ base: 6, sm: 9, md: 9, lg: 9 }}>
             <ChakraBox
             variants={item}>
@@ -109,11 +109,11 @@ const projectImages = (props) => {
 
 const projectTitle = (props) => { 
     return ( 
-        <Text
+        <Heading
             fontSize={{ base: 30, sm: 40, md: 40, lg: 40 }}
             fontWeight={800}> 
             {props} 
-        </Text>
+        </Heading>
         
     )
 }
@@ -167,8 +167,13 @@ const projectButton = (name, link, icon) => {
         onClick={onOpen}
         whileTap={{scale: 0.9}}
         whileHover={{scale:1.03}}
-            fontSize={{ base: 14, sm: 16, md: 16, lg: 16 }}>
-            {name}&#160;&gt;
+            >
+            <Heading
+                color={'blackAlpha.800'}
+                fontSize={{ base: 14, sm: 16, md: 16, lg: 16 }}>
+                {name}&#160;&gt;
+            </Heading>
+           
             {contentModal(btnRef, isOpen, onOpen, onClose, link )}
         </ChakraBox>
     )

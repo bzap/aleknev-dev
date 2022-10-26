@@ -124,7 +124,7 @@ const logoHeader = (size) => {
 			align={'flex-start'}>
 			<ChakraBox
 				as={motion.div}
-				whileHover={{ scale: 1.1 }}
+				whileHover={{ scale: 1.05 }}
 				whileTap={{ scale: 0.98 }}>
 				<Text
 					fontSize={size}

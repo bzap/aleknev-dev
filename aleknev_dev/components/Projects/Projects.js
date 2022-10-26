@@ -70,7 +70,7 @@ const Projects = () => {
 				<Flex
 				position={'relative'}
 				zIndex={10}
-				pt={{ base: '2em', sm: '4em', md: '7em', lg: '7em' }}
+				pt={{ base: '2em', sm: '4em', md: '5em', lg: '5em' }}
 				direction='column'
 				justifyContent={'center'}>
 						<ChakraBox
@@ -81,10 +81,10 @@ const Projects = () => {
 						<Flex
 							position={'absolute'}
 							maxW={'100%'}
-							w={{base: '0em', sm: '90em', md: '90em', lg: '100em'}}
-							h={{base: '0em', sm: '100em', md: '100em', lg: '100em' }}
-							top={{base: '0em', sm: '40em', md: '10em', lg: '-5em'}}
-							left={{base: '0em', sm: '10em', md: '20em', lg: '20em' }}>
+							w={{base: '0em', sm: '0em', md: '0em', lg: '90em'}}
+							h={{base: '0em', sm: '0em', md: '0em', lg: '90em' }}
+							top={{base: '0em', sm: '0em', md: '0em', lg: '5em'}}
+							left={{base: '0em', sm: '0em', md: '0em', lg: '40em' }}>
 							<Center>
 								<Image
 									w={'100%'}
@@ -106,6 +106,7 @@ const Projects = () => {
 									key={idx}
 									display={{base: 'flex', sm:'flex', md: 'flex'}}
 									w={{sm:'100%', md: '100%', lg: '25em'}}
+									
 									justifyContent={'center'}>
 										{verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())}
 									</Box> 
@@ -125,11 +126,11 @@ const Projects = () => {
 			zIndex={0}
 			w={'100%'}
 			top={{base: '0em', sm: '55%', md: '50%', lg: '45%'}}
-			left={'-20%'}>
+			left={'-15%'}>
 			<Image
 				fit='cover'
-				h={{ base: '0em', sm: '50em', md: '70em', lg: '50%' }}
-				w={{ base: '0em', sm: '100%', md: '85em', lg: '90%' }}
+				h={{ base: '0em', sm: '0em', md: '0em', lg: '65em' }}
+				w={{ base: '0em', sm: '0em', md: '0em', lg: '65em' }}
 				src={'centerproj.webp'} />
 		</Flex>	
 		</ChakraBox>
@@ -157,14 +158,16 @@ const verticalItem = (top, index) => {
 				viewport={{once: false}}>	
 					<Flex
 					w={'100%'}
+				
 					position={'relative'}
 					direction={{base: 'column', sm: 'column', md: 'row', lg: 'column'}}
 					justifyContent='space-between'
-					gap={{base:'0em', sm: '0em', md: '2em', lg:'0em'}}>
+					gap={{base:'0em', sm: '0em', md: '6em', lg:'0em'}}>
 						<Flex
 						position={'relative'}
 						direction={'column'}>
 							<Heading
+							fontWeight={900}
 							fontSize={{base: 34, sm: 37, md: 40, lg: 45}}>
 								{index}
 							</Heading>
@@ -220,11 +223,11 @@ const gitButton = () => {
 									whileHover={{ scale: 1.05 }}
 									whileTap={{ scale: 0.95 }}
 										direction={'row'}>
-										<Text
+										<Heading
 											fontSize={{ base: 34, sm: 37, md: 40, lg: 45 }}
 											fontWeight={'bold'}>
 											&nbsp;GITHUB
-										</Text> 
+										</Heading> 
 									</ChakraBox>
 								</Center> 
 				</ChakraBox>

@@ -109,12 +109,12 @@ const Keyboard = ({props}) => {
           as={motion.div}
           position={'absolute'}
           h={'100%'}
-          top={{ sm: '25%', md: '15%', lg: '0%', xl: '0%', '2xl': '-20%' }}
-          left={{ sm: '0%', md: '0%', lg: '0%', xl: '50%', '2xl': '45%' }}>
+          top={{ sm: '25%', md: '15%', lg: '0%', xl: '0%', '2xl': '0%' }}
+          left={{ sm: '0%', md: '0%', lg: '0%', xl: '50%', '2xl': '55%' }}>
           <Image
             fit='cover'
-            h={{ base: 0, sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
-            w={{ base: 0, sm: '35em', md: '50em', lg: '50em', xl: '50em', '2xl': '70em' }}
+            h={{ base: '0em', sm: '0em', md: '0em', lg: '50em', xl: '50em', '2xl': '50em' }}
+            w={{ base: '0em', sm: '0em', md: '0em', lg: '50em', xl: '50em', '2xl': '50em' }}
             src={'hero.webp'} />
         </ChakraBox>
 
