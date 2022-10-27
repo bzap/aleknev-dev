@@ -181,6 +181,17 @@ const projectButton = (name, link, icon) => {
 
 
 const contentModal = (ref, io, oo, oc, link) => { 
+    // slideshow == 1 ? do slideshow : nothing
+    console.log(link, 'here')
+    let body, title = ''
+    if (link == 1){ 
+        title = 'GONI-GO'
+        body = 'yeah bro'
+    }
+    else if (link == 2){ 
+        title = 'ARD UTIL'
+        body = 'yeah bro lebron'
+    }
     return ( 
         <Modal
             isCentered
@@ -189,32 +200,17 @@ const contentModal = (ref, io, oo, oc, link) => {
             isOpen={io}
             scrollBehavior={'inside'}>
                 <ModalOverlay />
-                {link == '01' && (
                 <ModalContent>
                     <ModalHeader
                         fontSize={35}
-                        fontWeight={900}>GONIGO</ModalHeader>
+                        fontWeight={900}>{title}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        this would be something like data.modalBody
+                        {body}
                     </ModalBody>
                     <ModalFooter>
                     </ModalFooter>
                 </ModalContent>
-                )}
-                {link == '02' && (
-                    <ModalContent>
-                        <ModalHeader
-                            fontSize={35}
-                            fontWeight={900}>ARD UTIL</ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>
-                            LEBRAN JAEWMS
-                        </ModalBody>
-                        <ModalFooter>
-                        </ModalFooter>
-                    </ModalContent>
-                )}
         </Modal>
     )
 }

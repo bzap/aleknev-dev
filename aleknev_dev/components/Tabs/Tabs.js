@@ -94,8 +94,8 @@ const AnimatedTabs = ({pos}) => {
 											zIndex={16}>
 											<Center>
 												<Text
-												fontWeight={900}
-												color='blackAlpha.800'>
+												fontSize={16}
+												color='black'>
 													{item.label}
 												</Text>	
 											</Center>
@@ -117,19 +117,17 @@ const AnimatedTabs = ({pos}) => {
 												
 												bg='whiteAlpha.900'
 												px={4}
-												py={2}
+												py={'7px'}
 												borderRadius={'12px'}
 												boxShadow={'md'}>
 												<ChakraBox 
 												as={motion.div}>
-												<Text 
-												alignItems={'center'}
-												opacity={0}>
-													{item.label}
-												</Text>
+													<Text 
+													alignItems={'center'}
+													opacity={0}>
+														{item.label}
+													</Text>
 												</ChakraBox>
-
-								
 												</ChakraBox>
 												) : (
 													null

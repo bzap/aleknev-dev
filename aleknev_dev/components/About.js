@@ -87,7 +87,7 @@ const About = () => {
 							viewport={{ once: true, amount: 0.5}}>
 						<Title 
 							title={'About Me.'}
-							desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'}
+							desc={'"fear != fate", a simple but meaningful mantra that I try to live by. It\'s a reminder to try and shrug off irrational fear.'}
 							page={'01'}/>
 						</ChakraBox>
 						<Flex

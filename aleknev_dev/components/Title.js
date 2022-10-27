@@ -46,6 +46,7 @@ const Title = ({title, desc, page}) => {
                     zIndex={0}
                     w={'20em'}>
                     <Heading
+                        color={'blackAlpha.800'}
                         position={'relative'}
                         fontSize={{ base: '3.5em', sm: '4em', md: '6em', lg: '7em' }}>
                         <Wave text={title}/>
@@ -57,7 +58,7 @@ const Title = ({title, desc, page}) => {
                         <Text
                             w={{ base: '100%', sm: '25em', md: '35em', lg: '35em' }}
                             fontSize={{ base: 13, sm: 15, md: '1em', lg: '1.1em' }}
-                            color={'gray.700'}>
+                            color={'gray.600'}>
                             {desc}
                         </Text>
                     </ChakraBox>

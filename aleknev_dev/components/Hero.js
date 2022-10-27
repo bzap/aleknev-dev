@@ -137,7 +137,7 @@ const introText = () => {
 					px={{base: 0, sm: 0, md: 6, lg: 0}}
 					as={motion.div}
 					variants={heroDesc}> 	
-					<Heading
+					<Text
 					
 						as={'span'}
 						position={'relative'}
@@ -145,7 +145,7 @@ const introText = () => {
 						color={'blackAlpha.700'}
 						fontSize={{ base: '1em', sm: '1.2em', md: '1.3em', lg: '1.3em', xl: '1.5em', '2xl': '1.8em' }}>
 						I'm a developer based in Toronto, that's on a pursuit for growth.
-					</Heading>
+					</Text>
 				</ChakraBox>
 			</Flex>
 		</Flex>

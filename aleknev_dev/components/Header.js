@@ -53,7 +53,7 @@ const desktopContent = (pos, isShown, setIsShown) => {
 	return ( 
 		<Flex	
 			px={8}
-			py={3}
+			py={3.5}
 			align={'center'}
 			justifyContent={'space-between'}
 			direction={'row'}>
@@ -63,18 +63,13 @@ const desktopContent = (pos, isShown, setIsShown) => {
 				smooth={true}
 				offset={0}
 				duration={2500}>
-				<Heading
+				<Center
 					cursor={'pointer'}
 					as={motion.div}
-					fontWeight={600}
 					variants={'container'}
-					initial="hidden"
-					animate={!isShown ? 'show' : ''}
-					onHoverStart={() => setIsShown(false)}
-					onHoverEnd={() => setIsShown(true)}
-					fontSize={{ base: '4xl', sm: '4xl', lg: '1xl' }}>
+					initial="hidden">
 					{logoHeader(30)}
-				</Heading>
+				</Center>
 			</Link>
 			<Spacer />
 			<AnimatedTabs pos={pos} />
@@ -126,12 +121,11 @@ const logoHeader = (size) => {
 				as={motion.div}
 				whileHover={{ scale: 1.05 }}
 				whileTap={{ scale: 0.98 }}>
-				<Text
-					fontSize={size}
-					color={'blackAlpha.800'}
-					fontWeight='700'>
-					&lt;li&gt;
-				</Text>
+				<Heading
+					fontSize={24}
+					color={'blackAlpha.800'}>
+					&lt;&thinsp;li&thinsp;&gt;
+				</Heading>
 			</ChakraBox>
 		</Flex>
 	)

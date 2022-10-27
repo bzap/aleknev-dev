@@ -64,7 +64,7 @@ const Projects = () => {
 						viewport={{ once: true, amount: 0.85 }}>
 				<Title
 				title={'Projects.'}			
-				desc={'"fear != fate", a simple but meaningful mantra that I try to live by.I often feel that irrational fear holds us back.'} 
+				desc={'These are .'} 
 				page={'02'}/>
 				</ChakraBox>
 				<Flex

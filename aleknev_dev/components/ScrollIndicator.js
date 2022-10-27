@@ -47,8 +47,8 @@ const ScrollIndicator = () => {
                             as={motion.div}
                             variants={gitGT}>
                             <Icon
-                                w={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
-                                h={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
+                                w={'2.2em'}
+                                h={'2.2em'}
                                 as={CgChevronDown}
                             />
                         </ChakraBox>
@@ -57,8 +57,8 @@ const ScrollIndicator = () => {
                             as={motion.div}
                             variants={gitGT}>
                             <Icon
-                                w={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
-                                h={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
+                                w={'2.2em'}
+                                h={'2.2em'}
                                 as={CgChevronDown}
                             />
                         </ChakraBox>
@@ -67,8 +67,8 @@ const ScrollIndicator = () => {
                             as={motion.div}
                             variants={gitGT}>
                             <Icon
-                                w={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
-                                h={{ base: '2.2em', sm: '2.4em', md: '2.7em', lg: '2.7em' }}
+                                w={'2.2em'}
+                                h={'2.2em'}
                                 as={CgChevronDown}
                             />
                         </ChakraBox>
