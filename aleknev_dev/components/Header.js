@@ -27,7 +27,7 @@ const Header = ({ pos }) => {
 					whileInView={'visible'}
 					backdropFilter='auto'
 					backdropBlur='8px'
-					maxW={{ base: '88%', sm: '90%', md: '80%', lg: '80%' }}
+					maxW={{ base: '88%', sm: '90%', md: '80%', lg: '76%' }}
 					position='fixed'
 					w={'100%'}
 					zIndex={200}
@@ -115,19 +115,16 @@ const mobileContent = (isOpen, onToggle) => {
 
 const logoHeader = (size) => {
 	return (
-		<Flex
-			align={'flex-start'}>
 			<ChakraBox
 				as={motion.div}
 				whileHover={{ scale: 1.05 }}
 				whileTap={{ scale: 0.98 }}>
 				<Heading
-					fontSize={24}
+					fontSize={23}
 					color={'blackAlpha.800'}>
-					&lt;&thinsp;li&thinsp;&gt;
+					&lt;&thinsp;LI&thinsp;&gt;
 				</Heading>
 			</ChakraBox>
-		</Flex>
 	)
 }
 

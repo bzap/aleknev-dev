@@ -44,7 +44,6 @@ const ChakraBox = chakra(motion.div, {
 
 
 const Preview = ({index}) => {
-    console.log(Projects[1].tech.length)
     return (
     <Stack >
         <Flex
@@ -182,7 +181,6 @@ const projectButton = (name, link, icon) => {
 
 const contentModal = (ref, io, oo, oc, link) => { 
     // slideshow == 1 ? do slideshow : nothing
-    console.log(link, 'here')
     let body, title = ''
     if (link == 1){ 
         title = 'GONI-GO'

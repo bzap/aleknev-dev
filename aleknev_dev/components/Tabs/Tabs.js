@@ -93,11 +93,11 @@ const AnimatedTabs = ({pos}) => {
 											position={'relative'}
 											zIndex={16}>
 											<Center>
-												<Text
+												<Heading
 												fontSize={16}
-												color='black'>
+												color='blackAlpha.800'>
 													{item.label}
-												</Text>	
+												</Heading>	
 											</Center>
 											</ChakraBox>
 										<AnimatePresence mode='wait'>

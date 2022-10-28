@@ -48,7 +48,7 @@ const Projects = () => {
 		<Box
 		position={'relative'}
 		maxW={'100%'}
-		px={{ base: '6.5%', sm: '5%', md: '10%', lg: '10%' }}
+		px={{ base: '6.5%', sm: '5%', md: '10%', lg: '12%' }}
 		w={'100%'}
 		id='1'
 		pt={{ base: '4em', sm:'6em', md: '6em', lg: '6em'}}
@@ -56,17 +56,21 @@ const Projects = () => {
 		<Flex
 			justifyContent={'center'}
 			direction={'column'}>
-				<ChakraBox
-						as={motion.div}
-						variants={about}
-						initial={'hidden'}
-						whileInView={'visible'}
-						viewport={{ once: true, amount: 0.85 }}>
-				<Title
-				title={'Projects.'}			
-				desc={'These are .'} 
-				page={'02'}/>
-				</ChakraBox>
+				<Flex
+					position={'relative'}
+					justifyContent={{ base: 'center', sm: 'center', md: 'center', lg: 'start' }}>
+						<ChakraBox
+								as={motion.div}
+								variants={about}
+								initial={'hidden'}
+								whileInView={'visible'}
+								viewport={{ once: true, amount: 0.85 }}>
+						<Title
+						title={'Projects.'}			
+						desc={'These are.'} 
+						page={'02'}/>
+						</ChakraBox>
+				</Flex>
 				<Flex
 				position={'relative'}
 				zIndex={10}
@@ -81,8 +85,8 @@ const Projects = () => {
 						<Flex
 							position={'absolute'}
 							maxW={'100%'}
-							w={{base: '0em', sm: '0em', md: '0em', lg: '90em'}}
-							h={{base: '0em', sm: '0em', md: '0em', lg: '90em' }}
+							w={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '90em' }}
+							h={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '90em' }}
 							top={{base: '0em', sm: '0em', md: '0em', lg: '5em'}}
 							left={{base: '0em', sm: '0em', md: '0em', lg: '40em' }}>
 							<Center>
@@ -129,8 +133,8 @@ const Projects = () => {
 			left={'-15%'}>
 			<Image
 				fit='cover'
-				h={{ base: '0em', sm: '0em', md: '0em', lg: '65em' }}
-				w={{ base: '0em', sm: '0em', md: '0em', lg: '65em' }}
+				h={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '65em' }}
+				w={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '65em' }}
 				src={'centerproj.webp'} />
 		</Flex>	
 		</ChakraBox>

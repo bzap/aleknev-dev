@@ -62,7 +62,7 @@ const Contact = () => {
 		<Box
 			position={'relative'}
 			maxW={'100%'}
-			px={{ base: '6.5%', sm: '5%', md: '10%', lg: '10%' }}
+			px={{ base: '6.5%', sm: '5%', md: '10%', lg: '12%' }}
 			w={'100%'}
 			id='2'
 			pt={{ base: '7em', sm: '10em', md: '10em', lg: '10em' }}
@@ -70,26 +70,30 @@ const Contact = () => {
 			<Flex
 			
 				direction={'column'}
-				gap={{ base: '2em', sm: '4em', md: '7em', lg: '10em' }}>
-				<ChakraBox
-					as={motion.div}
-					variants={about}
-					initial={'hidden'}
-					whileInView={'visible'}
-					viewport={{ once: false, amount: 0.5 }}>
-					<Title
-						title={'Contact.'}
-						desc={'Reach out! Whether you want to get in touch for work, collaborations, or even just to chat.'}
-						page={'03'} />
-				</ChakraBox>
+				gap={{ base: '2em', sm: '2em', md: '3em', lg: '5em' }}>
+				<Flex
+					position={'relative'}
+					justifyContent={{ base: 'center', sm: 'center', md: 'center', lg: 'start' }}>
+						<ChakraBox
+							as={motion.div}
+							variants={about}
+							initial={'hidden'}
+							whileInView={'visible'}
+							viewport={{ once: false, amount: 0.5 }}>
+							<Title
+								title={'Contact.'}/>
+						</ChakraBox>
+				</Flex>
 				<Flex
 					p={{base: '2em', sm: '2.5em', md: '4em', lg: '3em'}}
 					w={'100%'}
 					position={'relative'}
 					bg={'whiteAlpha.600'}
 					boxShadow={'md'}
+					direction={'column'}
 					borderRadius={'22px'}
-					h={'100%'}>
+					h={'100%'}
+					gap={'3em'}>
 						<form
 							style={{ flex: 1, width: "100%" }}
 							onSubmit={handleSubmit}>
@@ -107,11 +111,16 @@ const Contact = () => {
 											h={'100%'}
 											w={'100%'}
 											direction={'column'}>
+											
 											<FormLabel
-												requiredIndicator
-												fontSize={{ base: 22, sm: 23, md: 28, lg: 28 }}>
-													EMAIL											
-												</FormLabel>
+												requiredIndicator>
+													<Heading
+													color={'blackAlpha.800'}
+													fontSize={{ base: 22, sm: 23, md: 25, lg: 25 }}>
+														EMAIL	
+													</Heading>										
+											</FormLabel>
+											
 											<Input
 												fontSize={17}
 												color={'blackAlpha.800'}
@@ -122,10 +131,13 @@ const Contact = () => {
 												type='email'
 												name='email'/>
 											<FormLabel
-												requiredIndicator
-												pt={4}
-												fontSize={{ base: 22, sm: 23, md: 28, lg: 28 }}>
-												NAME
+												pt={5}
+												requiredIndicator>
+												<Heading
+													color={'blackAlpha.800'}
+													fontSize={{ base: 22, sm: 23, md: 25, lg: 25 }}>
+													NAME
+												</Heading>
 											</FormLabel>
 											<Input
 												fontSize={17}
@@ -140,9 +152,12 @@ const Contact = () => {
 											h={'container'}
 											w={'100%'}>
 											<FormLabel
-												requiredIndicator
-												fontSize={{ base: 22, sm: 23, md: 28, lg: 28 }}>
-												YOUR MESSAGE
+												requiredIndicator>
+												<Heading
+													color={'blackAlpha.800'}
+													fontSize={{ base: 22, sm: 23, md: 25, lg: 25 }}>
+													YOUR MESSAGE
+												</Heading>
 											</FormLabel>
 											<Textarea
 												color={'blackAlpha.800'}

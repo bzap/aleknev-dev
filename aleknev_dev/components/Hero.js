@@ -37,7 +37,7 @@ const Hero = ({loading}) => {
 				<Container
 					id={'home'}
 					maxW={'100%'}
-					px={{ sm: '5%', md: '10%', lg: '10%' }}
+					px={{ base: '6.5%', sm: '5%', md: '10%', lg: '12%' }}
 					h={'90vh'}
 					direction={'column'}
 					flex={1}

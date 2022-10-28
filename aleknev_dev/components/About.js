@@ -50,15 +50,14 @@ const About = () => {
     <Box
         position={'relative'}
         maxW={'100%'} 
-        px={{base: '6.5%', sm: '5%', md: '10%', lg:'10%'}}
+        px={{base: '6.5%', sm: '5%', md: '10%', lg:'12%'}}
         w={'100%'} 
         id='0' 
 		pt={{ base: '7em', sm:'10em', md: '10em', lg: '10em'}}
 		pb={{ base: '7em', sm: '10em', md: '16em', lg: '16em' }}>
         <Flex
 		justifyContent={'center'}
-        direction={'column'}
-        gap={'2em'}>
+        direction={'column'}>
 			<ChakraBox
 			variants={gradient}
 			initial={'hidden'}
@@ -72,24 +71,31 @@ const About = () => {
 							left={{sm: '0em', md: '-15em', lg: '-15em'}}>
 							<Center>
 								<Image
-									h={{base: '0em', sm: '0', md: '0em', lg: '78em'}}
-									w={{base: '0em', sm: '0', md: '0em', lg: '78em'}}
+								h={{ base: '0em', sm: '0', md: '0em', lg: '0em', xl: '78em' }}
+								w={{ base: '0em', sm: '0', md: '0em', lg: '0em', xl: '78em' }}
 									src={'topabout.webp'} />
 							</Center>
 						</Flex>
 				</ChakraBox>
-						<ChakraBox
+						<Flex
 						position={'relative'}
-							as={motion.div}
-							variants={about}
-							initial={'hidden'}
-							whileInView={'visible'}
-							viewport={{ once: true, amount: 0.5}}>
-						<Title 
-							title={'About Me.'}
-							desc={'"fear != fate", a simple but meaningful mantra that I try to live by. It\'s a reminder to try and shrug off irrational fear.'}
-							page={'01'}/>
-						</ChakraBox>
+						direction={'column'}
+						alignItems={{base: 'center', sm: 'center', md: 'center', lg: 'start'}}>
+							<ChakraBox
+								position={'relative'}
+
+								as={motion.div}
+								variants={about}
+								initial={'hidden'}
+								whileInView={'visible'}
+								viewport={{ once: false, amount: 0.5 }}>
+								<Title
+									title={'About Me.'}
+									desc={'"fear != fate", a simple but meaningful mantra that I try to live by. It\'s a reminder to try and shrug off irrational fear.'}
+									page={'01'} />
+							</ChakraBox>
+						</Flex>
+
 						<Flex
 							position={'relative'}
 							zIndex={10}
@@ -113,8 +119,8 @@ const About = () => {
 							left={{sm: '5em', md: '15em', lg: '50em'}}>
 							<Image
 								fit='cover'
-								h={{ base: '0em', sm: '0em', md: '0em', lg: '70em'}}
-								w={{ base: '0em', sm: '0em', md: '0em', lg: '85em'}}
+									h={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '70em' }}
+									w={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '85em' }}
 								src={'cornerabout.webp'} />
 						</Flex>
 						</ChakraBox>
@@ -134,7 +140,7 @@ const About = () => {
 									direction={{base: 'column', sm: 'column', md:'column',lg:'row'}}
 									w={'100%'}
 									zIndex={10}
-									gap={{ base: '0.5em', sm: '0.5em', md: '1em', lg:'8%'}}
+									gap={{ base: '0.5em', sm: '0.5em', md: '1em', lg:'6.5%'}}
 									position={'relative'}
 									justifyContent={{ base: 'center', sm: 'center', md: 'center', lg: 'flex-end' }}>	
 										<ChakraBox
@@ -236,7 +242,7 @@ const About = () => {
 									<Flex
 										direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }}
 										w={'100%'}
-										gap={{ base: '0.5em', sm: '0.5em', md: '1em', lg: '8%' }}
+										gap={{ base: '0.5em', sm: '0.5em', md: '1em', lg: '6.5%' }}
 										position={'relative'}
 										justifyContent={{ base: 'center', sm: 'center', md: 'center', lg: 'flex-end' }}>
 										<ChakraBox
