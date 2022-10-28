@@ -36,8 +36,9 @@ import Head from 'next/head';
 import { redirect } from 'next/dist/server/api-utils'
 import Title from './Title'
 import Wave from './Variants/Wave'
+import aboutText from '../public/data/AboutText'
 import { about, gradient, gradient2, currentSkills, background, title, itemIcon, itemText, itemTitle, aboutItem, titleContainer, projectSubContainer, projectContainer } from '../styles/Variants'
-
+import { CgSmile } from 'react-icons/cg';
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -45,7 +46,6 @@ const ChakraBox = chakra(motion.div, {
 
 const About = () => {
 	const bp = useBreakpoint()
-	console.log(bp)
     return(
     <Box
         position={'relative'}
@@ -88,7 +88,7 @@ const About = () => {
 								variants={about}
 								initial={'hidden'}
 								whileInView={'visible'}
-								viewport={{ once: false, amount: 0.5 }}>
+								viewport={{ once: true, amount: 0.5 }}>
 								<Title
 									title={'About Me.'}
 									desc={'"fear != fate", a simple but meaningful mantra that I try to live by. It\'s a reminder to try and shrug off irrational fear.'}
@@ -155,8 +155,7 @@ const About = () => {
 													as={MdOutlineSubdirectoryArrowRight}
 													w={{ base: 0, sm: '0em', md: '0em', lg: '5.7em' }}
 													h={{ base: 0, sm: '0em', md: '0em', lg: '5.7em' }}
-													color={'blackAlpha.800'}
-													transform={{ lg: 'scale(1)' }} />
+													color={'blackAlpha.800'}/>
 											</Flex>
 										</ChakraBox>		
 										<ChakraBox
@@ -193,9 +192,12 @@ const About = () => {
 													<ChakraBox
 													variants={itemText}>	
 													<Text
+														lineHeight={'1.3em'}
+														display={'inline-block'}
 														textAlign={'justify'}
 														pt={8}
 														pb={2}
+														whiteSpace={'pre-line'}
 														color={'gray.700'}
 														fontSize={{base: 13, sm: 13.5, md: 14, lg: 14}}>	
 															<Image
@@ -213,14 +215,19 @@ const About = () => {
 															h={{ base: '12em', sm: '15em', md: '20em', lg: '22em'}}
 															w={{ base: '9em', sm: '10em', md: '15em', lg: '15em' }}
 															src={'https://i.imgur.com/7R4gnAa.jpg'} />								
-															I'm a recent Computer Science graduate from <b>McMaster University</b> with a BaSc. degree.
-															
-												
-															My initial interest in web development came around 2017 when I had my first real introduction to making a website using nothing more than HTML, CSS, and JS. Soon after that I fiddled with IOS and Android app development. Cross platform programming presented a challenge and so naturally soon after that I picked up React Native development.
-												<br></br><br></br>
-															
-															When I'm not developing something I'm always in the pursuit of some of the best dan-dan noodles in the area (Szechuan Noodle Bowl anyone?), or on the quest for an endgame mechanical keyboard. The latter of which by now I can say is a paradox. Something about the style of my apps and why I ended up using rounded corners and dropshadows for a long time.Currently I'm <b>looking for new opportunities</b> as a developer!
+																{aboutText.background}
+																<Icon
+																	pl={'3px'}
+																	as={CgSmile}
+																	h={'1.3em'}
+																	w={'1.3em'}
+																	verticalAlign={'bottom'}
+																	color={'blackAlpha.800'}/>
 													</Text>
+
+
+
+												
 													</ChakraBox>
 												</ChakraBox>
 											</Flex>
@@ -257,8 +264,7 @@ const About = () => {
 													as={MdOutlineSubdirectoryArrowRight}
 													w={{base: '0em', sm: '0em', md: '0em', lg: '5.7em'}}
 													h={{base: '0em', sm: '0em', md: '0em', lg: '5.7em' }}
-													color={'blackAlpha.800'}
-													transform={{ lg: 'scale(1)'}}/>
+													color={'blackAlpha.800'}/>
 											</Flex>
 										</ChakraBox>
 										<ChakraBox
@@ -297,6 +303,8 @@ const About = () => {
 )}
 
 
+
+
 const skillsInfo = () => { 
     return (
 			<Flex
@@ -328,11 +336,11 @@ const skillsInfo = () => {
 				justify-content={'space-between'}
 				direction='row'
 				w={'100%'}>
-					{skillList(4)}
+					{skillList(1)}
 					<Spacer/>
-					{skillList(4)}
+					{skillList(2)}
 					<Spacer />
-					{skillList(4)}
+					{skillList(3)}
 				</Flex>
 			</ChakraBox> 
         	</Flex>
@@ -351,46 +359,37 @@ const skillText = () => {
                 <Text
 					textAlign={'justify'}
                     as={'p'}
+					lineHeight={'1.3em'}
 					color={'gray.700'}
 					fontSize={{ base: 13, sm: 13.5, md: 14, lg: 14 }}>
-                    Filler text filler text, this is my strength, filler text. I love that the field is ever evolving, and I find it fun to familiarize myself with new things on an ongoing basis! That said, here's a list of things I've used the most over time:  
+                    	{aboutText.skillBackground}
                 </Text>
                 </ChakraBox>
             </Flex>
     )
 }
 
-const skillList = (items) => { 
-    // get from mdx here
-    const name = 'REACT'
-    const ic = SiReact
-
-    // temp icons for test 
-    const name2 = 'PYTHON'
-    const name3 = 'JS'
-    const name4 = 'CHAKRA'
-    const ic2 = SiPython
-    const ic3 = SiJavascript
-    const ic4 = SiChakraui
-
+const skillList = (pos) => { 
     return( 
 		<Flex>
 			<List spacing={8}>
-			{skillItem(name, ic)}
-			{skillItem(name2, ic2)}
-			{skillItem(name3, ic3)}
-			{skillItem(name4, ic4)}
-			{skillItem(name4, ic4)}
-			{skillItem(name4, ic4)}
+					{pos == 1 && [...Array(6)].map((item, idx) => (
+							skillItem(aboutText.skills[idx][0], aboutText.skills[idx][1])))}
+					{pos == 2 && [...Array(6)].map((item, idx) => (
+						skillItem(aboutText.skills[idx + 6][0], aboutText.skills[idx + 6][1])))}
+					{pos == 3 && [...Array(6)].map((item, idx) => (
+						skillItem(aboutText.skills[idx + 12][0], aboutText.skills[idx + 12][1])))}
 			</List>   
 		</Flex>     
     )
 }
 
 const skillItem = (name, ic) => { 
-    return(
-        <ListItem>
+	return(
+        <ListItem
+		key={name}>
             <Flex
+			key={name}
 			w={'100%'}
 			alignItems={'center'}
             direction={'row'}>

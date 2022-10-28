@@ -81,7 +81,7 @@ const Projects = () => {
 							variants={gradient4}
 							initial={'hidden'}
 							whileInView={'visible'}
-							viewport={{ once: false }}>
+							viewport={{ once: true }}>
 						<Flex
 							position={'absolute'}
 							maxW={'100%'}
