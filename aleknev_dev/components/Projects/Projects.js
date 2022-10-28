@@ -171,11 +171,13 @@ const verticalItem = (top, index) => {
 						position={'relative'}
 						direction={'column'}>
 							<Heading
+							color={'blackAlpha.800'}
 							fontWeight={900}
 							fontSize={{base: 34, sm: 37, md: 40, lg: 45}}>
 								{index}
 							</Heading>
 							<Heading
+							color={'blackAlpha.800'}
 							position={'relative'}
 							top={-7}
 							pl={1}>
@@ -228,6 +230,7 @@ const gitButton = () => {
 									whileTap={{ scale: 0.95 }}
 										direction={'row'}>
 										<Heading
+											color={'blackAlpha.800'}
 											fontSize={{ base: 34, sm: 37, md: 40, lg: 45 }}
 											fontWeight={'bold'}>
 											&nbsp;GITHUB

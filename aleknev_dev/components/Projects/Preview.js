@@ -36,7 +36,7 @@ import { pskillsItem, item, pillItem } from '../../styles/Variants'
 import { motion, isValidMotionProp } from "framer-motion";
 import { SiReact, SiPython, SiAngular, SiVuedotjs  } from 'react-icons/si';
 import { useState, useEffect, useRef } from 'react'
-import Projects from '../../public/data/ProjectText'
+import projects from '../../public/data/ProjectText'
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -59,11 +59,14 @@ const Preview = ({index}) => {
             <ChakraBox
             pb={1}
             variants={item}>
-                {projectTitle(Projects[index].name)}
+                {projectTitle(projects[index].name)}
             </ChakraBox>
             <Flex>
-                    {Projects[index].tech.map((x, idx) => (
-                         projectSkill(x, Projects[index].icons[idx])   
+                    {projects[index].tech.map((x, idx) => (
+                         <>
+                         {projectSkill(x, projects[index].icons[idx], idx)}
+                         <Spacer/>
+                        </>
                     ))}
             </Flex> 
         </Stack> 
@@ -73,7 +76,7 @@ const Preview = ({index}) => {
             <ChakraBox
             variants={item}>
                 <Center>
-                        {projectDesc(Projects[index].desc)}
+                        {projectDesc(projects[index].desc)}
                 </Center>
             </ChakraBox>
             <ChakraBox
@@ -109,31 +112,31 @@ const projectImages = (props) => {
 const projectTitle = (props) => { 
     return ( 
         <Heading
-            fontSize={{ base: 30, sm: 40, md: 40, lg: 40 }}
-            fontWeight={800}> 
+            color={'blackAlpha.800'}
+            fontSize={{ base: 30, sm: 40, md: 40, lg: 40 }}> 
             {props} 
         </Heading>
         
     )
 }
 
-const projectSkill = (props, icon) => {
+const projectSkill = (props, icon, idx) => {
     return (
-        <>
         <ChakraBox
         px={1}
+        key={props}
         variants={pskillsItem}>
                 <Center
+                
                 direction={'row'}>
                     <Icon as={icon} w={3} h={3} color='black.500' />
                     <Text
+                        
                         fontSize={{ base: 10, sm: 12, md: 12, lg: 12 }}>
                         &thinsp;{props}
                     </Text>
                 </Center>
         </ChakraBox>   
-        <Spacer/>
-        </>
     )
 }
 
@@ -142,6 +145,7 @@ const projectDesc = (props) => {
         <Text 
             py={2}
             as='p'
+            lineHeight={'1.3em'}
             fontSize={{ base: 12, sm: 14, md: 14, lg: 14 }}
             color={'gray.600'}>  
             {props}
@@ -181,30 +185,75 @@ const projectButton = (name, link, icon) => {
 
 const contentModal = (ref, io, oo, oc, link) => { 
     // slideshow == 1 ? do slideshow : nothing
-    let body, title = ''
-    if (link == 1){ 
-        title = 'GONI-GO'
-        body = 'yeah bro'
-    }
-    else if (link == 2){ 
-        title = 'ARD UTIL'
-        body = 'yeah bro lebron'
-    }
+
+    const background = projects[link].popup.background
+    const breakdown = projects[link].popup.breakdown
+    const other = projects[link].popup.other
+    const title = projects[link].name
     return ( 
         <Modal
+            motionPreset='slideInBottom'
             isCentered
+            size={'xl'}
             onClose={oc}
             finalFocusRef={ref}
             isOpen={io}
             scrollBehavior={'inside'}>
                 <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader
-                        fontSize={35}
-                        fontWeight={900}>{title}</ModalHeader>
+                <ModalContent
+                maxW={{base: '90%', sm: '90%', md: '70%', lg: '70%', xl: '70%'}}>
+                    <ModalHeader>
+                            <Heading
+                                fontSize={{ base: 30, sm: 40, md: 40, lg: 40 }}>
+                                {title}
+                            </Heading>
+                    </ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        {body}
+                        <Flex
+                        direction={'column'}
+                        gap={'2em'}>
+                            <Flex
+                            direction={'column'}>  
+                                <Heading
+                                    fontSize={{ base: 26, sm: 27, md: 28, lg: 30 }}>
+                                    BACKGROUND
+                                </Heading>
+                                <Text
+                                fontSize={{ base: 12, sm: 14, md: 14, lg: 14 }}
+                                lineHeight={'1.3em'}
+                                whiteSpace={'pre-line'}>
+                                    {background}
+                                </Text>
+                            </Flex> 
+                            
+                            <Flex
+                            direction={'column'}>  
+                                <Heading
+                                    fontSize={{ base: 26, sm: 27, md: 28, lg: 30 }}>
+                                    BREAKDOWN
+                                </Heading>
+                                <Text
+                                fontSize={{ base: 12, sm: 14, md: 14, lg: 14 }}
+                                lineHeight={'1.3em'}
+                                whiteSpace={'pre-line'}>
+                                    {breakdown}
+                                </Text>
+                            </Flex>
+                            <Flex
+                                direction={'column'}>  
+                                <Heading
+                                    fontSize={{ base: 26, sm: 27, md: 28, lg: 30 }}>
+                                    OTHER NOTES
+                                </Heading>
+                                <Text
+                                whiteSpace={'pre-line'}
+                                fontSize={{ base: 12, sm: 14, md: 14, lg: 14 }}
+                                lineHeight={'1.3em'}>
+                                    {other}
+                                </Text>  
+                            </Flex>
+                        </Flex>                  
                     </ModalBody>
                     <ModalFooter>
                     </ModalFooter>

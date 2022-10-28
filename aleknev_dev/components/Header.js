@@ -122,7 +122,7 @@ const logoHeader = (size) => {
 				<Heading
 					fontSize={23}
 					color={'blackAlpha.800'}>
-					&lt;&thinsp;LA&thinsp;&gt;
+					&lt;&thinsp;la&thinsp;&gt;
 				</Heading>
 			</ChakraBox>
 	)

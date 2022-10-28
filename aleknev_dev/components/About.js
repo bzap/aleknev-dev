@@ -224,10 +224,6 @@ const About = () => {
 																	verticalAlign={'bottom'}
 																	color={'blackAlpha.800'}/>
 													</Text>
-
-
-
-												
 													</ChakraBox>
 												</ChakraBox>
 											</Flex>
