@@ -38,15 +38,15 @@ const AnimatedTabs = ({pos}) => {
 	const [currItem, setCurrItem] = useState(tabs[3])
 	useMemo(() => {
 		if (currItem != undefined){
-			if (currItem.label == 'ABOUT' && pos.views.aboutView){
+			if (currItem.label == 'About' && pos.views.aboutView){
 				setSelectedTab(tabs[0])
 				setPressed(false)
 			}
-			else if (currItem.label == 'PROJECTS' && pos.views.projView){
+			else if (currItem.label == 'Projects' && pos.views.projView){
 				setSelectedTab(tabs[1])
 				setPressed(false)
 			}
-			else if (currItem.label == 'CONTACT' && pos.views.contactView){
+			else if (currItem.label == 'Contact' && pos.views.contactView){
 				setSelectedTab(tabs[2])
 				setPressed(false)
 			}
@@ -93,11 +93,11 @@ const AnimatedTabs = ({pos}) => {
 											position={'relative'}
 											zIndex={16}>
 											<Center>
-												<Heading
+												<Text
 												fontSize={16}
 												color='blackAlpha.800'>
 													{item.label}
-												</Heading>	
+												</Text>	
 											</Center>
 											</ChakraBox>
 										<AnimatePresence mode='wait'>

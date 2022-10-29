@@ -37,6 +37,12 @@ import { motion, isValidMotionProp } from "framer-motion";
 import { SiReact, SiPython, SiAngular, SiVuedotjs  } from 'react-icons/si';
 import { useState, useEffect, useRef } from 'react'
 import projects from '../../public/data/ProjectText'
+import { MDXProvider } from '@mdx-js/react'
+import MDXComponents from '../../projects/MDXComponents';
+
+
+import dynamic from 'next/dynamic'
+
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -54,7 +60,7 @@ const Preview = ({index}) => {
         </Flex>
         <Stack
             px={{base: 6, sm: 9, md: 9, lg: 9}}
-            pt={{base: 4, sm: 4, md: 9, lg: 4}}
+            pt={{base: 4, sm: 4, md: '2.5em', lg: 4}}
             spacing={-1}>
             <ChakraBox
             pb={1}
@@ -127,14 +133,16 @@ const projectSkill = (props, icon, idx) => {
         key={props}
         variants={pskillsItem}>
                 <Center
-                
-                direction={'row'}>
-                    <Icon as={icon} w={3} h={3} color='black.500' />
-                    <Text
-                        
-                        fontSize={{ base: 10, sm: 12, md: 12, lg: 12 }}>
-                        &thinsp;{props}
-                    </Text>
+                    direction={'row'}>
+                        <Icon 
+                            as={icon} 
+                            w={{base: 3, sm: 3, md: 3, lg: 3.5}} 
+                            h={{base: 3, sm: 3, md: 3, lg: 3.5}} 
+                            color='black.500'/>
+                        <Text
+                            fontSize={{ base: 10, sm: 12, md: 12, lg: 13 }}>
+                            &thinsp;{props}
+                        </Text>
                 </Center>
         </ChakraBox>   
     )
@@ -184,11 +192,7 @@ const projectButton = (name, link, icon) => {
 
 
 const contentModal = (ref, io, oo, oc, link) => { 
-    // slideshow == 1 ? do slideshow : nothing
-
-    const background = projects[link].popup.background
-    const breakdown = projects[link].popup.breakdown
-    const other = projects[link].popup.other
+    const Content = dynamic(import(`../../projects/${'Proj' + link}.mdx`))
     const title = projects[link].name
     return ( 
         <Modal
@@ -201,59 +205,25 @@ const contentModal = (ref, io, oo, oc, link) => {
             scrollBehavior={'inside'}>
                 <ModalOverlay />
                 <ModalContent
+                borderRadius={'12px'}
                 maxW={{base: '90%', sm: '90%', md: '70%', lg: '70%', xl: '70%'}}>
-                    <ModalHeader>
+                    <ModalHeader
+                    px={{ base: '1.9em', sm: '1.9em', md: '1.9em', lg: '3em' }}>    
                             <Heading
-                                fontSize={{ base: 30, sm: 40, md: 40, lg: 40 }}>
+                                pt={{ base: 0, sm: 0, md: 1, lg: 2}}
+                                fontSize={{ base: 33, sm: 38, md: 40, lg: 40 }}>
                                 {title}
                             </Heading>
                     </ModalHeader>
+                    <Flex
+                    px={{ base: '1.9em', sm: '1.9em', md: '1.9em', lg: '3em' }}>
+                        <Divider />
+                    </Flex>
                     <ModalCloseButton />
                     <ModalBody>
-                        <Flex
-                        direction={'column'}
-                        gap={'2em'}>
-                            <Flex
-                            direction={'column'}>  
-                                <Heading
-                                    fontSize={{ base: 26, sm: 27, md: 28, lg: 30 }}>
-                                    BACKGROUND
-                                </Heading>
-                                <Text
-                                fontSize={{ base: 12, sm: 14, md: 14, lg: 14 }}
-                                lineHeight={'1.3em'}
-                                whiteSpace={'pre-line'}>
-                                    {background}
-                                </Text>
-                            </Flex> 
-                            
-                            <Flex
-                            direction={'column'}>  
-                                <Heading
-                                    fontSize={{ base: 26, sm: 27, md: 28, lg: 30 }}>
-                                    BREAKDOWN
-                                </Heading>
-                                <Text
-                                fontSize={{ base: 12, sm: 14, md: 14, lg: 14 }}
-                                lineHeight={'1.3em'}
-                                whiteSpace={'pre-line'}>
-                                    {breakdown}
-                                </Text>
-                            </Flex>
-                            <Flex
-                                direction={'column'}>  
-                                <Heading
-                                    fontSize={{ base: 26, sm: 27, md: 28, lg: 30 }}>
-                                    OTHER NOTES
-                                </Heading>
-                                <Text
-                                whiteSpace={'pre-line'}
-                                fontSize={{ base: 12, sm: 14, md: 14, lg: 14 }}
-                                lineHeight={'1.3em'}>
-                                    {other}
-                                </Text>  
-                            </Flex>
-                        </Flex>                  
+                        <MDXProvider components={MDXComponents}>
+                            <Content />
+                        </MDXProvider>
                     </ModalBody>
                     <ModalFooter>
                     </ModalFooter>

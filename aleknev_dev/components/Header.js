@@ -53,7 +53,7 @@ const desktopContent = (pos, isShown, setIsShown) => {
 	return ( 
 		<Flex	
 			px={8}
-			py={3.5}
+			py={3}
 			align={'center'}
 			justifyContent={'space-between'}
 			direction={'row'}>
@@ -119,11 +119,11 @@ const logoHeader = (size) => {
 				as={motion.div}
 				whileHover={{ scale: 1.05 }}
 				whileTap={{ scale: 0.98 }}>
-				<Heading
+				<Text
 					fontSize={23}
 					color={'blackAlpha.800'}>
-					&lt;&thinsp;la&thinsp;&gt;
-				</Heading>
+					&lt;li&gt;
+				</Text>
 			</ChakraBox>
 	)
 }
