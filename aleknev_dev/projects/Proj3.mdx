@@ -20,6 +20,7 @@ import {
     ModalContent,
     ModalHeader,
     ModalCloseButton,
+    AspectRatio,
     ModalBody,
     Modal,
     ModalFooter,
@@ -35,11 +36,52 @@ import projects from '../public/data/ProjectText';
 
 
 ## Background
-
 Admittedly, this was a project from a web development course I was taking. The original goal was to create a website that displayed items and allowed a user to interact and submit their own content. I tried to use this as an additional opportunity to better grasp the usage of the Google Maps API and maintaining a local database. 
 <br/>
+
+## Breakdown
 The current iteration of the website has the following set of key components and functionalities – user account creation and caching, account login/logout, restaurant location submission, restaurant search, commenting and rating under a selected location, Google Maps geolocation and pin placement (to show local restaurants).
 <br/>
+<Center
+    py={'1em'}
+    position={'relative'}
+    direction={'row'}>
+            <Center>
+                ![The home screen.](/screenshots/rest2.png)
+            </Center>
+            <Center>
+                ![The assessment screen.](/screenshots/rest1.png)
+            </Center>
+</Center>
 Each of the account and submission related functionalities are processed using PHP to a MySQL database. To that note, I also implemented custom input and form validation, and parametrized queries to prevent SQL injection and/or broken queries to be sent. 
 <br/>
+<Center
+    position={'relative'}
+    direction={'row'}>
+            <Center
+                pt={'1em'}
+                px={'3em'}>
+                    ![The home screen.](/screenshots/rest3.png)
+            </Center>
+</Center>
+<Center
+    position={'relative'}
+    direction={'column'}>
+            <Center
+                pb={'1em'}
+                px={'3em'}>
+                    ![The home screen.](/screenshots/rest4.png)
+            </Center>
+</Center>
+## Other Notes
 Outside of general query difficulties, I was surprised that implementing persistent location from the Google Maps API presented the biggest challenge overall. Each time the user would navigate to a new page their location data and geolocation permission would reset, leading to errors loading related content. The solution entailed storing the user’s location data within a PHP session variable and adding specific checks to ensure the location request happens on initial load, as well as on a specific page if the user arrives by URL. Simple as it may sound, it ended up being quite time consuming.
+<br/>
+<Center
+    position={'relative'}
+    direction={'row'}>
+            <Center
+                pt={'1em'}
+                px={'3em'}>
+                    ![The home screen.](/screenshots/rest5.png)
+            </Center>
+</Center>

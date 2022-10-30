@@ -17,6 +17,7 @@ import {
     IconProps,
     useColorModeValue,
     ModalOverlay,
+    Link,
     ModalContent,
     ModalHeader,
     ModalCloseButton,
@@ -54,20 +55,22 @@ const Preview = ({index}) => {
     <Stack >
         <Flex
             justifyContent={'center'}
-            flexShrink={1}
             overflow='hidden'>
             {projectImages('https://i.pinimg.com/564x/af/26/42/af2642d7d8ed1d60959f0825e545d92c.jpg')}
         </Flex>
-        <Stack
-            px={{base: 6, sm: 9, md: 9, lg: 9}}
-            pt={{base: 4, sm: 4, md: '2.5em', lg: 4}}
+        <Flex
+            direction={'column'}
+            px={{base: 6, sm: 9, md: 9, lg: '2.5em'}}
+            pt={{base: 4, sm: 4, md: '2em', lg: 4}}
             spacing={-1}>
             <ChakraBox
             pb={1}
             variants={item}>
                 {projectTitle(projects[index].name)}
             </ChakraBox>
-            <Flex>
+            <Flex
+            position={'relative'}
+            justifyContent={'center'}>
                     {projects[index].tech.map((x, idx) => (
                          <>
                          {projectSkill(x, projects[index].icons[idx], idx)}
@@ -75,10 +78,10 @@ const Preview = ({index}) => {
                         </>
                     ))}
             </Flex> 
-        </Stack> 
+        </Flex> 
         <Stack
             pb={{base: 8, sm: 8, md: '0em', lg: 8}}
-            px={{ base: 6, sm: 9, md: 9, lg: 9 }}>
+            px={{ base: 6, sm: 9, md: 9, lg: '2.5em' }}>
             <ChakraBox
             variants={item}>
                 <Center>
@@ -88,12 +91,11 @@ const Preview = ({index}) => {
             <ChakraBox
                 variants={pillItem}>
                     <Flex>
-                        {projectButton('Learn More', index, <InfoOutlineIcon />)}
+                        {modalButton(projects[index].buttons[0], index)}
                         <Spacer />
-                        {projectButton('Live Demo', index, <WarningTwoIcon />)}
+                        {projectButton(projects[index].buttons[1], projects[index].link)}
                     </Flex>
             </ChakraBox>
-
 
         </Stack>
     </Stack>
@@ -129,7 +131,6 @@ const projectTitle = (props) => {
 const projectSkill = (props, icon, idx) => {
     return (
         <ChakraBox
-        px={1}
         key={props}
         variants={pskillsItem}>
                 <Center
@@ -151,7 +152,7 @@ const projectSkill = (props, icon, idx) => {
 const projectDesc = (props) => { 
     return ( 
         <Text 
-            py={2}
+            py={{ base: 2, sm: 2, md: 5, lg: 2 }}
             as='p'
             lineHeight={'1.3em'}
             fontSize={{ base: 12, sm: 14, md: 14, lg: 14 }}
@@ -162,12 +163,13 @@ const projectDesc = (props) => {
 }
 
 
-const projectButton = (name, link, icon) => { 
+const modalButton = (name, link) => { 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef([])
     return (
         <ChakraBox
-        pt={3}
+        pt={{base: 1, sm: 1, md: 3, lg: 1}}
+        pb={{ base: 1, sm: 1, md: 2, lg: 1 }}
         as={motion.div}
         cursor={'pointer'}
         justifyContent={'flex-end'}
@@ -177,8 +179,7 @@ const projectButton = (name, link, icon) => {
         whiteSpace={'nowrap'}
         onClick={onOpen}
         whileTap={{scale: 0.9}}
-        whileHover={{scale:1.03}}
-            >
+        whileHover={{scale:1.03}}>
             <Heading
                 color={'blackAlpha.800'}
                 fontSize={{ base: 14, sm: 16, md: 16, lg: 16 }}>
@@ -187,6 +188,34 @@ const projectButton = (name, link, icon) => {
            
             {contentModal(btnRef, isOpen, onOpen, onClose, link )}
         </ChakraBox>
+    )
+}
+
+const projectButton = (name, link) => {
+    return (
+        <Link
+        isExternal
+        style={{ 'textDecoration': 'none' }}
+        href={link}>
+        <ChakraBox
+            flex={1}
+            alignItems={'center'}
+            justifyContent={'flex-end'}
+            as={motion.div}
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.03 }}
+            pt={{ base: 1, sm: 1, md: 3, lg: 1 }}
+            pb={{ base: 1, sm: 1, md: 2, lg: 1 }}        
+            cursor={'pointer'}   
+            textColor={'Black'} 
+            whiteSpace={'nowrap'}>
+                <Heading
+                    color={'blackAlpha.800'}
+                    fontSize={{ base: 14, sm: 16, md: 16, lg: 16 }}>
+                    {name}&#160;&gt;
+                </Heading>
+        </ChakraBox>
+        </Link >
     )
 }
 
@@ -206,7 +235,7 @@ const contentModal = (ref, io, oo, oc, link) => {
                 <ModalOverlay />
                 <ModalContent
                 borderRadius={'12px'}
-                maxW={{base: '90%', sm: '90%', md: '70%', lg: '70%', xl: '70%'}}>
+                maxW={{base: '90%', sm: '90%', md: '70%', lg: '70%', xl: '50%'}}>
                     <ModalHeader
                     px={{ base: '1.9em', sm: '1.9em', md: '1.9em', lg: '3em' }}>    
                             <Heading
@@ -220,7 +249,8 @@ const contentModal = (ref, io, oo, oc, link) => {
                         <Divider />
                     </Flex>
                     <ModalCloseButton />
-                    <ModalBody>
+                    <ModalBody
+                    pt={3}>
                         <MDXProvider components={MDXComponents}>
                             <Content />
                         </MDXProvider>

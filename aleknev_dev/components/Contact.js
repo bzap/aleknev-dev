@@ -81,7 +81,7 @@ const Contact = () => {
 							whileInView={'visible'}
 							viewport={{ once: false, amount: 0.5 }}>
 							<Title
-								title={'Contact.'}/>
+								title={'Contact Me!'}/>
 						</ChakraBox>
 				</Flex>
 				<Flex

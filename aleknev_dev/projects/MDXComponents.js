@@ -47,7 +47,7 @@ const MDXComponents = {
                         px={{ base: '0.5em', sm: '0.5em', md: '1em', lg: '2em' }}>
                             <Text 
                             fontSize={{ base: 12, sm: 14, md: 14, lg: 14 }}
-                            as={'p'} 
+                            as={'span'} 
                             lineHeight={'1.3em'} 
                             color={'blackAlpha.800'} 
                             {...props} />
@@ -55,11 +55,13 @@ const MDXComponents = {
 
     img: (props) => 
                     <Flex
-                        px={{ base: '0.5em', sm: '0.5em', md: '1em', lg: '10em' }}
-                        py={{ base: '1em', sm: '1em', md: '1em', lg: '3em' }}>
+                        borderRadius={'11px'}
+                        boxShadow={'xl'}
+                        mb={{ base: '1em', sm: '1em', md: '1.5em', lg: '3em' }}>
                             <Image 
-                                borderRadius={'9px'} 
-                                boxShadow={'lg'} 
+                              
+                                maxH={'40em'}
+                                borderRadius={'11px'} 
                                 {...props} />
                     </Flex>
 }

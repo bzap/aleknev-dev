@@ -26,12 +26,14 @@ import {
     Grid,
     GridItem,
     ButtonGroup,
+    AspectRatio,
     ListIcon,
     Spacer,
     chakra,
     shouldForwardProp
 } from '@chakra-ui/react';
 import projects from '../public/data/ProjectText';
+
 
 
 ## Background
@@ -41,8 +43,59 @@ One of my main goals was to have smooth, and consistent CSS animations when inte
 <br/>
 Towards the end of development, I found I was having trouble with animating the dropdown menus, where it became tedious trying to combine multiple animations at the same time, while still balancing the color of certain elements. I ended up breaking my rules and using jQuery for that alone. The use of jQuery greatly simplified these DOM and CSS manipulations.
 <br/>
+<Flex
+    px={'2em'}
+    pt={'1em'}
+    pb={'2em'}>
+    <Flex
+    borderRadius="11px"
+    boxShadow={'xl'}>
+        <Flex
+            boxShadow={'xl'}
+            as='video'
+            width='100%'
+            autoPlay
+            loop
+            src='/screenshots/dog2.webm'
+            objectFit='cover'
+            sx={{
+                aspectRatio: '16/9',
+                pointerEvents: 'none',
+                borderRadius: '12px',
+                bg: 'blue.100'
+            }}
+        />
+    </Flex>
+</Flex>
+<br/>
+## Breakdown
 The primary script is split into a few different key operations. The first is the word (sentence) generator that takes a JSON of sample words and uses a simple algorithm to randomize them by their length. 
 <br/>
 The second is a counter that keeps track of the time elapsed and updates the statistics based on it. This one proved tricky at first as I was accustomed to the way state works in frameworks such as React. This meant continuously updating elements was not as simple as creating a state and having it update on its own.
 <br/>
-The last key operation is what I used to alleviate this. It’s a rendering call based on the time elapsed, used to calculate the correct statistics and display them to the user.
+<Flex
+    px={'2em'}
+    py={'1em'}
+    >
+    <Flex
+    borderRadius="11px"
+    boxShadow={'xl'}>
+        <Flex
+            boxShadow={'xl'}
+            as='video'
+            width='100%'
+            autoPlay
+            loop
+            src='/screenshots/dog1.webm'
+            objectFit='cover'
+            sx={{
+                aspectRatio: '16/9',
+                pointerEvents: 'none',
+                borderRadius: '12px',
+                bg: 'blue.100'
+            }}
+        />
+    </Flex>
+</Flex>
+<br/>
+The last key operation is what I used to alleviate the previously mentioned problem. It’s a rendering call based on the time elapsed, used to calculate the correct statistics and display them to the user.

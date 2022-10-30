@@ -7,6 +7,7 @@ import {
 		Text,
 		Button,
 		Image,
+		Link,
 		Spacer,
 		Icon,
 		IconButton,
@@ -228,13 +229,20 @@ const gitButton = () => {
 									as={motion.div}
 									whileHover={{ scale: 1.05 }}
 									whileTap={{ scale: 0.95 }}
+									
 										direction={'row'}>
-										<Heading
-											color={'blackAlpha.800'}
-											fontSize={{ base: 34, sm: 37, md: 40, lg: 45 }}
-											fontWeight={'bold'}>
-											&nbsp;GITHUB
-										</Heading> 
+										<Link
+											style={{ 'textDecoration': 'none' }}
+											href={'https://github.com/bzap'}
+											isExternal>
+											<Heading
+											
+												color={'blackAlpha.800'}
+												fontSize={{ base: 34, sm: 37, md: 40, lg: 45 }}
+												fontWeight={'bold'}>
+												&nbsp;GITHUB
+											</Heading> 
+										</Link>
 									</ChakraBox>
 								</Center> 
 				</ChakraBox>

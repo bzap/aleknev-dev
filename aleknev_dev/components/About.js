@@ -194,7 +194,9 @@ const About = () => {
 													<Text
 														lineHeight={'1.3em'}
 														display={'inline-block'}
+													
 														textAlign={'justify'}
+														sx={{hypens: 'auto'}}
 														pt={8}
 														pb={2}
 														whiteSpace={'pre-line'}
@@ -203,10 +205,10 @@ const About = () => {
 															<Image
 															justifyContent={'center'}
 															position={'relative'}
-															boxShadow={'md'}
+															boxShadow={'xl'}
 															ml={10}
 															mb={5}
-															mt={'7px'}
+															mt={'2px'}
 															float={'right'}
 															fit='cover'
 															borderRadius={'9px'}
@@ -214,9 +216,11 @@ const About = () => {
 															borderColor={'black'}
 															h={{ base: '12em', sm: '15em', md: '20em', lg: '22em'}}
 															w={{ base: '9em', sm: '10em', md: '15em', lg: '15em' }}
+														
 															src={'https://i.imgur.com/7R4gnAa.jpg'} />								
 																{aboutText.background}
 																<Icon
+																	boxShadow={'xl'}
 																	pl={'3px'}
 																	as={CgSmile}
 																	h={'1.3em'}
