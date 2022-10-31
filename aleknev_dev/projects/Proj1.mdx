@@ -33,6 +33,9 @@ import {
 } from '@chakra-ui/react';
 import projects from '../public/data/ProjectText';
 
+import { useState } from "react";
+import { motion, isValidMotionProp } from "framer-motion";
+
 
 ## Background
 This was a collaborative effort by my groupmates (Kenneth Mak, Kalindu Sembakutti, Claire Elchuk) and I for our Capstone project. We initially recognized that there was an absence in post-op support in breast cancer patients, especially when it came to treating and keeping track of range-of-motion issues. In turn, we sought to create a mobile application that can take different measurements, track results and help inform the patient of their situation.
@@ -59,7 +62,8 @@ For other times, when the user just wanted to track their progress, we created a
     position={'relative'}
     gap={{base: '2em', sm: '2em', md:'4em', lg: '7em'}}
     direction={'row'}>
-            <Center>
+            <Center
+            onLoad={() => console.log('loaded this')}>
                 ![The home screen.](/screenshots/go3.png)
             </Center>
             <Center>
