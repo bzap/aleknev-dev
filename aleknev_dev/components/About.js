@@ -194,7 +194,7 @@ const About = () => {
 													<Text
 														lineHeight={'1.3em'}
 														display={'inline-block'}
-													
+														wordBreak={{base: 'break-all', sm: 'break-all', md: 'normal', lg: 'normal'}}
 														textAlign={'justify'}
 														sx={{hypens: 'auto'}}
 														pt={8}
@@ -332,7 +332,7 @@ const skillsInfo = () => {
 			<ChakraBox
 			variants={currentSkills}>
 				<Flex
-					pb={{ base: 8, sm: 10, md: 14, lg: 14 }}
+				pb={{ base: 8, sm: 10, md: 14, lg: 14 }}
 				justify-content={'space-between'}
 				direction='row'
 				w={'100%'}>
@@ -372,7 +372,7 @@ const skillText = () => {
 const skillList = (pos) => { 
     return( 
 		<Flex>
-			<List spacing={8}>
+			<List spacing={{base: 4, sm: 8, md: 8, lg: 8}}>
 					{pos == 1 && [...Array(6)].map((item, idx) => (
 							skillItem(aboutText.skills[idx][0], aboutText.skills[idx][1])))}
 					{pos == 2 && [...Array(6)].map((item, idx) => (
@@ -393,12 +393,12 @@ const skillItem = (name, ic) => {
 			w={'100%'}
 			alignItems={'center'}
             direction={'row'}>
-                <ListIcon as={ic} color='black.500'/>
+                <ListIcon as={ic} color='black.800'/>
                 <Text
 					textAlign={'center'}
 					color={'blackAlpha.800'}
 					fontWeight={900}
-					fontSize={{ base: 12, sm: 13.5, md: 14, lg: 15 }}>
+					fontSize={{ base: 0, sm: 13.5, md: 14, lg: 15 }}>
                     &thinsp;{name}
                 </Text>
             </Flex>

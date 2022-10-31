@@ -43,16 +43,6 @@ const projects = {
         buttons: ['Explanation', 'Git Repo'],
         link: 'https://github.com/bzap/ARD_Util'
     },
-
-    4: {
-        name: 'RESTO REVIEW',
-        tech: ['JS', 'PHP', 'MySQL', 'Bootstrap'],
-        icons: [SiJavascript, SiPhp, SiMysql, SiBootstrap],
-        desc: 'A website that provides users with the opportunity to search and submit reviews on local restaurants.',
-        image: ['/screenshots/ard.png'],
-        buttons: ['Explanation', 'Git Repo'],
-        link: 'https://github.com/bzap/resto_reviews'
-    },
     3: {
         name: 'WPM DOG',
         tech: ['JS', 'HTML', 'CSS', 'JQuery'],
@@ -62,6 +52,15 @@ const projects = {
         buttons: ['Explanation', 'Presentation'],
         link: 'https://wpm-dog.vercel.app/'
     }, 
+    4: {
+        name: 'RESTO REVIEW',
+        tech: ['JS', 'PHP', 'MySQL', 'Bootstrap'],
+        icons: [SiJavascript, SiPhp, SiMysql, SiBootstrap],
+        desc: 'A website that provides users with the opportunity to search and submit reviews on local restaurants.',
+        image: ['/screenshots/ard.png'],
+        buttons: ['Explanation', 'Git Repo'],
+        link: 'https://github.com/bzap/resto_reviews'
+    },
     5: {
         name: 'P0 JKERNEL',
         tech: ['Python', 'Jupyter', 'P0', 'WebAssembly'],

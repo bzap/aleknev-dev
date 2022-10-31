@@ -12,7 +12,7 @@ const Title = ({title}) => {
                             <Heading
                                 color={'blackAlpha.800'}
                                 position={'relative'}
-                                fontSize={{ base: '3.5em', sm: '4.5em', md: '6em', lg: '7em' }}>
+                                fontSize={{ base: '2.8em', sm: '3.6em', md: '6em', lg: '7em' }}>
                                     <Wave text={title}/>
                             </Heading>
                     </Flex>

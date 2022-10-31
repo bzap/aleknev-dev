@@ -120,7 +120,7 @@ const logoHeader = (size) => {
 				whileHover={{ scale: 1.05 }}
 				whileTap={{ scale: 0.98 }}>
 				<Text
-					fontSize={23}
+					fontSize={{base: 19, sm: 19, md: 21, lg: 21}}
 					color={'blackAlpha.800'}>
 					&lt;&thinsp;linas&thinsp;&gt;
 				</Text>

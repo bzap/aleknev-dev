@@ -40,10 +40,7 @@ import { useState, useEffect, useRef } from 'react'
 import projects from '../../public/data/ProjectText'
 import { MDXProvider } from '@mdx-js/react'
 import MDXComponents from '../../projects/MDXComponents';
-
-
 import dynamic from 'next/dynamic'
-
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),

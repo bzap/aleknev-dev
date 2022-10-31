@@ -20,13 +20,13 @@ import {
     ModalContent,
     ModalHeader,
     ModalCloseButton,
-    AspectRatio,
     ModalBody,
     Modal,
     ModalFooter,
     Grid,
     GridItem,
     ButtonGroup,
+    AspectRatio,
     ListIcon,
     Spacer,
     chakra,
@@ -35,53 +35,32 @@ import {
 import projects from '../public/data/ProjectText';
 
 
-## Background
-Admittedly, this was a project from a web development course I was taking. The original goal was to create a website that displayed items and allowed a user to interact and submit their own content. I tried to use this as an additional opportunity to better grasp the usage of the Google Maps API and maintaining a local database. 
-<br/>
 
+## Background
+Prior to working on this project, I had little experience with building websites without the use of frameworks and UI tools such as React and Material UI. To combat this and deepen my knowledge, I set out to see what kind of design and implementation I could come up with using plain and simple HTML and CSS. 
+<br/>
+One of my main goals was to have smooth, and consistent CSS animations when interacting with the interface. Aspects like word highlighting and satisfying dropdown menus were a priority. This project taught me a lot about animating keyframes and syncing elements between transitions. 
+<br/>
+Towards the end of development, I found I was having trouble with animating the dropdown menus, where it became tedious trying to combine multiple animations at the same time, while still balancing the color of certain elements. I ended up breaking my rules and using jQuery for that alone. The use of jQuery greatly simplified these DOM and CSS manipulations.
+<br/>
+<Center
+    pt={'1em'}
+    alignItems={'center'}>
+        <Center>
+            ![The home screen.](/screenshots/dog2.png)
+        </Center>
+</Center>
+<br/>
 ## Breakdown
-The current iteration of the website has the following set of key components and functionalities – user account creation and caching, account login/logout, restaurant location submission, restaurant search, commenting and rating under a selected location, Google Maps geolocation and pin placement (to show local restaurants).
+The primary script is split into a few different key operations. The first is the word (sentence) generator that takes a JSON of sample words and uses a simple algorithm to randomize them by their length. 
+<br/>
+The second is a counter that keeps track of the time elapsed and updates the statistics based on it. This one proved tricky at first as I was accustomed to the way state works in frameworks such as React. This meant continuously updating elements was not as simple as creating a state and having it update on its own.
 <br/>
 <Center
-    py={'1em'}
-    position={'relative'}
-    direction={'row'}>
-            <Center>
-                ![The home screen.](/screenshots/rest2.png)
-            </Center>
-            <Center>
-                ![The assessment screen.](/screenshots/rest1.png)
-            </Center>
+    pt={'1em'}
+    alignItems={'center'}>
+        <Center>
+            ![The home screen.](/screenshots/dog1.png)
+        </Center>
 </Center>
-Each of the account and submission related functionalities are processed using PHP to a MySQL database. To that note, I also implemented custom input and form validation, and parametrized queries to prevent SQL injection and/or broken queries to be sent. 
-<br/>
-<Center
-    position={'relative'}
-    direction={'row'}>
-            <Center
-                pt={'1em'}
-                px={'3em'}>
-                    ![The home screen.](/screenshots/rest3.png)
-            </Center>
-</Center>
-<Center
-    position={'relative'}
-    direction={'column'}>
-            <Center
-                pb={'1em'}
-                px={'3em'}>
-                    ![The home screen.](/screenshots/rest4.png)
-            </Center>
-</Center>
-## Other Notes
-Outside of general query difficulties, I was surprised that implementing persistent location from the Google Maps API presented the biggest challenge overall. Each time the user would navigate to a new page their location data and geolocation permission would reset, leading to errors loading related content. The solution entailed storing the user’s location data within a PHP session variable and adding specific checks to ensure the location request happens on initial load, as well as on a specific page if the user arrives by URL. Simple as it may sound, it ended up being quite time consuming.
-<br/>
-<Center
-    position={'relative'}
-    direction={'row'}>
-            <Center
-                pt={'1em'}
-                px={'3em'}>
-                    ![The home screen.](/screenshots/rest5.png)
-            </Center>
-</Center>
+The last key operation is what I used to alleviate the previously mentioned problem. It’s a rendering call based on the time elapsed, used to calculate the correct statistics and display them to the user.
