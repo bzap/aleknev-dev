@@ -33,43 +33,59 @@ import {
     ListIcon,
     Spacer,
     chakra,
-    shouldForwardProp
+    shouldForwardProp,
+    calc
 } from '@chakra-ui/react';
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 });
 
-const LazyImageAnimator = ({props}) => {
+const LazyImageAnimator = ({ props }) => {
     const [img, setImg] = useState(true);
     const isLoading = () => {
         setImg(false)
     }
+    const imageData = props.src.split('_')
+    console.log(imageData[0], imageData[1], imageData[2])
+    const src = { src: imageData[0], alt: props.alt }
     return (
+        <Flex
+            borderRadius={'11px'}
+            position={'relative'}>
+            <ChakraBox
 
-                <ChakraBox   
-                    boxShadow={'xl'}
-                    borderRadius={'11px'} 
-                    
-                    initial={{ 
-                        height: '16em',
-                        opacity: 0 
-                    }}
-                    animate={{
-                        height: img ? '16em' : 'auto',
-                        opacity: img ? 0 : 1
-                    }}
-                    transition={{
-                        opacity: {
-                            delay: 0.3,
-                            duration: 0.4
-                        }}}>
-                            <Image
-                                borderRadius={'11px'}
-                                onLoad={isLoading}
-                                {...props}/>
-                </ChakraBox>
- 
+                position={'relative'}
+                boxShadow={'xl'}
+                borderRadius={'11px'}
+                initial={{
+                    height: '5em',
+                    opacity: 0
+                }}
+                animate={{
+                    height: img ? '5em' : 'auto',
+                    opacity: img ? 0 : 1
+                }}
+                transition={{
+                    opacity: {
+                        delay: 0.3,
+                        duration: 0.4
+                    }
+                }}>
+                <Flex
+                    position={'relative'}>
+                    <Image
+                        maxH={'40em'}
+                        borderRadius={'11px'}
+                        onLoad={isLoading}
+                        h={'auto'}
+                        htmlHeight={imageData[2]}
+                        htmlWidth={imageData[1]}
+                        maxW={'100%'}
+                        {...src} />
+                </Flex>
+            </ChakraBox>
+        </Flex>
     );
 }
 

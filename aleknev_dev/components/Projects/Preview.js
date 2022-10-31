@@ -222,6 +222,7 @@ const contentModal = (ref, io, oo, oc, link) => {
     const title = projects[link].name
     return ( 
         <Modal
+            preserveScrollBarGap
             motionPreset='slideInBottom'
             isCentered
             size={'xl'}

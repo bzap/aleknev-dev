@@ -32,29 +32,27 @@ import {
     shouldForwardProp
 } from '@chakra-ui/react';
 import projects from '../public/data/ProjectText';
-
 import { useState } from "react";
 import { motion, isValidMotionProp } from "framer-motion";
-
 
 ## Background
 This was a collaborative effort by my groupmates (Kenneth Mak, Kalindu Sembakutti, Claire Elchuk) and I for our Capstone project. We initially recognized that there was an absence in post-op support in breast cancer patients, especially when it came to treating and keeping track of range-of-motion issues. In turn, we sought to create a mobile application that can take different measurements, track results and help inform the patient of their situation.
 <br/>
-## Background
+## Breakdown
 In terms of measurement, the application has a component dedicated to the assessment of the primary categories of movement that would typically be restricted after an operation. Each measurement is taken by an automatic process that guides the user to positioning the phone correctly, while still taking accessibility into account. When the phone is in the correct position and the user initiates movement, it records and processes measurements from the accelerometer, and subsequently submits the results to the server when the process is complete. We talked with real breast cancer survivors as well as a few physiotherapists on their thoughts and for any feedback on this process.  
 <br/>
 <Center
     py={'1em'}
-    alignItems={'center'}
-    direction={'row'}
     gap={{base: '2em', sm: '2em', md:'4em', lg: '7em'}}>
-        <Center>
-            ![The home screen.](/screenshots/go1.png)
-        </Center>
-        <Center>
-            ![The assessment screen.](/screenshots/go2.png)
-        </Center>
+        <Flex> 
+            ![The home screen.](/screenshots/go1.png_600_1043)
+        </Flex> 
+        <Flex
+        >
+            ![The home screen.](/screenshots/go2.png_600_1068)
+        </Flex>
 </Center>
+<br/>
 For other times, when the user just wanted to track their progress, we created a component that can fetch their personal results from a server. It provides tabs to filter out different movements, the option for a more detailed view, and the option to display their progress of a specified movement in a graph. We used an Amazon S3 bucket to store user accounts and their own personal data.  
 <br/>
 <Center
@@ -64,12 +62,13 @@ For other times, when the user just wanted to track their progress, we created a
     direction={'row'}>
             <Center
             onLoad={() => console.log('loaded this')}>
-                ![The home screen.](/screenshots/go3.png)
+                ![The home screen.](/screenshots/go3.png_600_1078)
             </Center>
             <Center>
-                ![The assessment screen.](/screenshots/go4.png)
+                ![The assessment screen.](/screenshots/go4.png_600_840)
             </Center>
 </Center>
+<br/>
 Albeit not quite finished due to time constraints, we also included a component which provided the user with exercise suggestions based on the range their measurements fall under, as well as pointers to informational resources.  
 <br/>   
 ## Other Notes    
