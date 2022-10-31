@@ -46,14 +46,11 @@ const LazyImageAnimator = ({props}) => {
         setImg(false)
     }
     return (
-        <Flex
-            borderRadius={'11px'}
-            
-            mb={{ base: '1em', sm: '1em', md: '1.5em', lg: '3em' }}>
+
                 <ChakraBox   
                     boxShadow={'xl'}
                     borderRadius={'11px'} 
-                    bg={'black.100'}
+                    
                     initial={{ 
                         height: '16em',
                         opacity: 0 
@@ -68,12 +65,11 @@ const LazyImageAnimator = ({props}) => {
                             duration: 0.4
                         }}}>
                             <Image
-                                maxH={'40em'}
                                 borderRadius={'11px'}
                                 onLoad={isLoading}
                                 {...props}/>
                 </ChakraBox>
-        </Flex>
+ 
     );
 }
 
