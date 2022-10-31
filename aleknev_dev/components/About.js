@@ -80,7 +80,7 @@ const About = () => {
 						<Flex
 						position={'relative'}
 						direction={'column'}
-						alignItems={{base: 'center', sm: 'center', md: 'center', lg: 'start'}}>
+						alignItems={'start'}>
 							<ChakraBox
 								position={'relative'}
 
@@ -357,6 +357,7 @@ const skillText = () => {
                 <ChakraBox
                 variants={item}>
                 <Text
+					wordBreak={{ base: 'break-all', sm: 'break-all', md: 'normal', lg: 'normal' }}
 					textAlign={'justify'}
                     as={'p'}
 					lineHeight={'1.3em'}

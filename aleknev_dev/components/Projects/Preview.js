@@ -134,8 +134,6 @@ const projectSkill = (props, icon, idx) => {
                     direction={'row'}>
                         <Icon 
                             as={icon} 
-                            w={{base: 3, sm: 3, md: 3, lg: 3.5}} 
-                            h={{base: 3, sm: 3, md: 3, lg: 3.5}} 
                             color='black.500'/>
                         <Text
                             fontSize={{ base: 10, sm: 12, md: 12, lg: 13 }}>

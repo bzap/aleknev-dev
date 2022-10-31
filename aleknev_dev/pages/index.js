@@ -5,6 +5,7 @@ import {Container, Box, Center } from '@chakra-ui/react'
 import Layout from '../components/layouts/main'
 import Hero from '../components/Hero'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import Projects from '../components/Projects/Projects'
 import About from '../components/About'
 import Contact from '../components/Contact'
@@ -69,6 +70,7 @@ const Home = () => {
         <About/>
         <Projects/>
         <Contact/>
+        <Footer/>
     </Layout>
 
   )

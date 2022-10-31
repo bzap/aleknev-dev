@@ -38,9 +38,10 @@ import projects from '../public/data/ProjectText';
 ## Background
 Admittedly, this was a project from a web development course I was taking. The original goal was to create a website that displayed items and allowed a user to interact and submit their own content. I tried to use this as an additional opportunity to better grasp the usage of the Google Maps API and maintaining a local database. 
 <br/>
-
+<br/>
 ## Breakdown
 The current iteration of the website has the following set of key components and functionalities – user account creation and caching, account login/logout, restaurant location submission, restaurant search, commenting and rating under a selected location, Google Maps geolocation and pin placement (to show local restaurants).
+<br/>
 <br/>
 <Center
     py={'1em'}
@@ -54,7 +55,9 @@ The current iteration of the website has the following set of key components and
             </Center>
 </Center>
 <br/>
+<br/>
 Each of the account and submission related functionalities are processed using PHP to a MySQL database. To that note, I also implemented custom input and form validation, and parametrized queries to prevent SQL injection and/or broken queries to be sent. 
+<br/>
 <br/>
 <Center
     py={'1em'}
@@ -74,6 +77,7 @@ Each of the account and submission related functionalities are processed using P
             </Center>
 </Center>
 <br/>
+<br/>
 ## Other Notes
 Outside of general query difficulties, I was surprised that implementing persistent location from the Google Maps API presented the biggest challenge overall. Each time the user would navigate to a new page their location data and geolocation permission would reset, leading to errors loading related content. The solution entailed storing the user’s location data within a PHP session variable and adding specific checks to ensure the location request happens on initial load, as well as on a specific page if the user arrives by URL. Simple as it may sound, it ended up being quite time consuming.
 <br/>
@@ -84,3 +88,4 @@ Outside of general query difficulties, I was surprised that implementing persist
                 ![The home screen.](/screenshots/rest5.png_1238_1266)
             </Center>
 </Center>
+<br/>

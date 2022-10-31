@@ -144,7 +144,7 @@ const introText = () => {
 						textAlign={'center'}
 						color={'blackAlpha.700'}
 						fontSize={{ base: '1em', sm: '1.2em', md: '1.3em', lg: '1.3em', xl: '1.5em', '2xl': '1.8em' }}>
-						I'm a developer based in Toronto, that's on a pursuit for growth.
+						I'm a developer based in Toronto that's on a pursuit for growth.
 					</Text>
 				</ChakraBox>
 			</Flex>

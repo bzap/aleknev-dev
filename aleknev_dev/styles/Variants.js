@@ -83,9 +83,9 @@ export const projectSubContainer = {
 	  y:0,
 	  opacity: 1,
 	  transition: {
-		delay: 0.8,
+		delay: 0.5,
 		duration: 0.5,
-		delayChildren: 0.8,
+		delayChildren: 0.5,
 		staggerChildren: 0.1
 	  }  
 	}  

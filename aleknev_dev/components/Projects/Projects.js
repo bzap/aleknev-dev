@@ -59,7 +59,7 @@ const Projects = () => {
 			direction={'column'}>
 				<Flex
 					position={'relative'}
-					justifyContent={{ base: 'center', sm: 'center', md: 'center', lg: 'start' }}>
+					justifyContent={'start'}>
 						<ChakraBox
 								as={motion.div}
 								variants={about}
@@ -154,13 +154,13 @@ const Projects = () => {
 const verticalItem = (top, index) => { 
 		return ( 
 			<ChakraBox
-				
+
 				position={'relative'}
 				pt={top}
 				variants={projectSubContainer}
 				initial={'hidden'}
 				whileInView={'visible'}
-				viewport={{once: false}}>	
+				viewport={{once: false, amount: 0.2}}>	
 					<Flex
 					w={'100%'}
 				
