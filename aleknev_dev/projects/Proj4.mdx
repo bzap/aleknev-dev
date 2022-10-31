@@ -47,41 +47,40 @@ The current iteration of the website has the following set of key components and
     position={'relative'}
     direction={'row'}>
             <Center>
-                ![The home screen.](/screenshots/rest2.png)
+                ![The home screen.](/screenshots/rest2.png_1040_1482)
             </Center>
             <Center>
-                ![The assessment screen.](/screenshots/rest1.png)
+                ![The assessment screen.](/screenshots/rest1.png_1290_1486)
             </Center>
 </Center>
+<br/>
 Each of the account and submission related functionalities are processed using PHP to a MySQL database. To that note, I also implemented custom input and form validation, and parametrized queries to prevent SQL injection and/or broken queries to be sent. 
 <br/>
 <Center
+    py={'1em'}
     position={'relative'}
     direction={'row'}>
-            <Center
-                pt={'1em'}
-                px={'3em'}>
-                    ![The home screen.](/screenshots/rest3.png)
+            <Center>
+                ![The home screen.](/screenshots/rest3.png_1412_1162)
             </Center>
 </Center>
+<br/>
 <Center
+    py={'1em'}
     position={'relative'}
     direction={'column'}>
-            <Center
-                pb={'1em'}
-                px={'3em'}>
-                    ![The home screen.](/screenshots/rest4.png)
+            <Center>
+                ![The home screen.](/screenshots/rest4.png_1730_1724)
             </Center>
 </Center>
+<br/>
 ## Other Notes
 Outside of general query difficulties, I was surprised that implementing persistent location from the Google Maps API presented the biggest challenge overall. Each time the user would navigate to a new page their location data and geolocation permission would reset, leading to errors loading related content. The solution entailed storing the user’s location data within a PHP session variable and adding specific checks to ensure the location request happens on initial load, as well as on a specific page if the user arrives by URL. Simple as it may sound, it ended up being quite time consuming.
 <br/>
 <Center
     position={'relative'}
     direction={'row'}>
-            <Center
-                pt={'1em'}
-                px={'3em'}>
-                    ![The home screen.](/screenshots/rest5.png)
+            <Center>
+                ![The home screen.](/screenshots/rest5.png_1238_1266)
             </Center>
 </Center>

@@ -75,7 +75,7 @@ const LazyImageAnimator = ({ props }) => {
                 <Flex
                     position={'relative'}>
                     <Image
-                        maxH={'40em'}
+                        
                         borderRadius={'11px'}
                         onLoad={isLoading}
                         h={'auto'}

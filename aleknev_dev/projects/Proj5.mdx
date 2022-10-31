@@ -44,26 +44,25 @@ One approach to creating a custom kernel for Jupyter was by creating a wrapper. 
 The first half was split into two key components - the scanner and the parser. The scanner would take the input, scan each character one by one, and then talk to the parser. The parser would analyse what was scanned and break it down (into blocks, unary operators, procedure, variables, etc.) to be translated into the equivalent Python code. 
 <br/>
 <Center
-    pt={'1em'}
+    py={'1em'}
     gap={'3em'}
     direction={'row'}>
         <Center>
-            ![The scanner and parser in action.](/screenshots/p01.png)
+            ![The scanner and parser in action.](/screenshots/p01.png_910_504)
         </Center>
         <Center>
-            ![The scanner and parser in action.](/screenshots/p02.png)
+            ![The scanner and parser in action.](/screenshots/p02.png_1090_946)
         </Center>
 </Center>
-
+<br/>
 We could then take that Python code, compile it, run it, and signal its output to the kernel. This half was split into two more key components – the container and the kernel itself. The container would run the Python code and capture the output. It would then send the output as a string to the base kernel. The base kernel is simply there to listen to the cell and the container and respond appropriately.
 <br/>
 <br/>
 ## A Limitation
 The single biggest limitation to this approach was with user input due to the nature of capturing standard output. The input feed was immediately cut off when calling input() within the environment in which the code was run, and so it would always produce an EOF error.
-
 <Center
-    pt={'1em'}>
-        ![The limitation.](/screenshots/p03.png)
+    py={'1em'}>
+        ![The limitation.](/screenshots/p03.png_2736_1292)
 </Center>
 <br/>
 ## The Full Stack
