@@ -64,7 +64,7 @@ const LazyImageAnimator = ({props}) => {
                     }}
                     transition={{
                         opacity: {
-                            delay: 0.2,
+                            delay: 0.3,
                             duration: 0.4
                         }}}>
                             <Image
