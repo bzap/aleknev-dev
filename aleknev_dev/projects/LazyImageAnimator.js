@@ -42,24 +42,29 @@ const ChakraBox = chakra(motion.div, {
 
 const LazyImageAnimator = ({props}) => {
     const [img, setImg] = useState(true);
-
     const isLoading = () => {
         setImg(false)
-       
-    };
-
+    }
     return (
         <Flex
             borderRadius={'11px'}
-            boxShadow={'xl'}
+            
             mb={{ base: '1em', sm: '1em', md: '1.5em', lg: '3em' }}>
-                <ChakraBox  
-                    initial={{ opacity: 0 }}
+                <ChakraBox   
+                    boxShadow={'xl'}
+                    borderRadius={'11px'} 
+                    bg={'black.100'}
+                    initial={{ 
+                        height: '16em',
+                        opacity: 0 
+                    }}
                     animate={{
+                        height: img ? '16em' : 'auto',
                         opacity: img ? 0 : 1
                     }}
                     transition={{
                         opacity: {
+                            delay: 0.2,
                             duration: 0.4
                         }}}>
                             <Image
