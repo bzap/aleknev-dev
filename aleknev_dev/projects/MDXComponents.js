@@ -31,6 +31,18 @@ import {
     chakra,
     shouldForwardProp
 } from '@chakra-ui/react';
+import { useState } from "react";
+import { motion, isValidMotionProp } from "framer-motion";
+
+const ChakraBox = chakra(motion.div, {
+    shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
+});
+
+
+const loading = true 
+const loaded = () => { 
+    loading = false
+}
 
 const MDXComponents = { 
     h1: (props) => <Heading fontSize={30} {...props} />,
@@ -58,11 +70,19 @@ const MDXComponents = {
                         borderRadius={'11px'}
                         boxShadow={'xl'}
                         mb={{ base: '1em', sm: '1em', md: '1.5em', lg: '3em' }}>
-                            <Image 
-                              
-                                maxH={'40em'}
-                                borderRadius={'11px'} 
-                                {...props} />
+                            <ChakraBox
+                            initial={{opacity: 0}}
+                            animate={{
+                                opacity: loaded ? 0 : 1
+                            }}
+                            as={'motion.image'}
+                            onLoad={loaded}>
+                                <Image 
+                                    
+                                    maxH={'40em'}
+                                    borderRadius={'11px'} 
+                                    {...props} />
+                            </ChakraBox>
                     </Flex>
 }
 
