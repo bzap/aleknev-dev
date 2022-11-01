@@ -31,7 +31,7 @@ import { IoMdReturnRight } from 'react-icons/io'
 import { SiGithub  } from 'react-icons/si';
 import { projectContainer, gitGT, gitLT, arrowContainer, gitText, projectSubContainer, gradient, gradient3, gradient4, skillsContainer, item, skillsItem, about } from '../../styles/Variants'
 import Head from 'next/head';
-import { useState, useEffect } from 'react'
+import { useState, useEffect, forwardRef } from 'react'
 import { pageIndicator } from '../About';
 import Title from '../Title'
 
@@ -43,10 +43,10 @@ const ChakraBox = chakra(motion.div, {
 		shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 	});
 
-const Projects = () => { 
-		const bp = useBreakpoint()
+const Projects = forwardRef((props, ref) => {
 		return (
 		<Box
+		ref={ref}
 		position={'relative'}
 		maxW={'100%'}
 		px={{ base: '6.5%', sm: '5%', md: '10%', lg: '12%' }}
@@ -149,7 +149,7 @@ const Projects = () => {
 		</ChakraBox>
 	</Box> 
 		)
-}
+})
 
 const verticalItem = (top, index) => { 
 		return ( 
@@ -193,7 +193,7 @@ const verticalItem = (top, index) => {
 							h={'30.5em'}
 							justifyContent={'center'}
 							w={{base: '100%', sm:'24em', md:'28em', lg:'100%'}} 
-							bg={'whiteAlpha.600'}
+							bg={'whiteAlpha.700'}
 							backdropFilter='auto'
 							backdropBlur='1px'
 							boxShadow={'md'} 

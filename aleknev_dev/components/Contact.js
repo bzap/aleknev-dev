@@ -28,7 +28,7 @@ import {
 	border,
 } from '@chakra-ui/react';
 import Title from './Title'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, forwardRef } from 'react'
 import { useForm, ValidationError } from "@formspree/react"
 import { isValidMotionProp, motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
 import { about, gradient, gradient2, currentSkills, background, title, itemIcon, itemText, itemTitle, aboutItem, titleContainer, projectSubContainer, projectContainer } from '../styles/Variants'
@@ -40,7 +40,7 @@ const ChakraBox = chakra(motion.div, {
 });
 
 
-const Contact = () => {
+const Contact = forwardRef((props, ref) => {
 	const [state, handleSubmit] = useForm('xlevlwkn');
 	const toast = useToast() 
 	useEffect(() => {
@@ -59,6 +59,7 @@ const Contact = () => {
 	return (
 
 		<ChakraBox
+			ref={ref}
 			as={motion.div}
 			variants={aboutItem}
 			initial={'hidden'}
@@ -70,11 +71,11 @@ const Contact = () => {
 			px={{ base: '6.5%', sm: '5%', md: '10%', lg: '12%' }}
 			w={'100%'}
 			id='2'
-			pt={{ base: '4em', sm: '6em', md: '6em', lg: '6em' }}
-			pb={{ base: '5em', sm: '5em', md: '7em', lg: '9%' }}>
+			pt={{ base: '4em', sm: '6em', md: '6em', lg: '6%' }}
+			pb={{ base: '5em', sm: '5em', md: '5em', lg: '7%' }}>
 			<Flex
 				direction={'column'}
-				gap={{ base: '2em', sm: '2em', md: '3em', lg: '5em' }}>
+				gap={{ base: '2em', sm: '2em', md: '3em', lg: '7em' }}>
 				<Flex
 					position={'relative'}
 					justifyContent={{ base: 'center', sm: 'center', md: 'center', lg: 'start' }}>
@@ -96,7 +97,7 @@ const Contact = () => {
 					w={'100%'}
 					position={'relative'}
 					zIndex={5}
-					bg={'whiteAlpha.600'}
+					bg={'whiteAlpha.700'}
 					boxShadow={'md'}
 					direction={'column'}
 					borderRadius={'22px'}
@@ -126,7 +127,7 @@ const Contact = () => {
 													<Heading
 													pb={2}
 													color={'blackAlpha.800'}
-													fontSize={{ base: 22, sm: 23, md: 25, lg: 25 }}>
+													fontSize={{ base: 18, sm: 20, md: 25, lg: 25 }}>
 														EMAIL	
 													</Heading>										
 											</FormLabel>
@@ -156,7 +157,7 @@ const Contact = () => {
 												<Heading
 													pb={2}
 													color={'blackAlpha.800'}
-													fontSize={{ base: 22, sm: 23, md: 25, lg: 25 }}>
+													fontSize={{ base: 18, sm: 20, md: 25, lg: 25 }}>
 													NAME
 												</Heading>
 											</FormLabel>
@@ -187,7 +188,7 @@ const Contact = () => {
 												<Heading
 													pb={2}
 													color={'blackAlpha.800'}
-													fontSize={{ base: 22, sm: 23, md: 25, lg: 25 }}>
+													fontSize={{ base: 18, sm: 20, md: 25, lg: 25 }}>
 													YOUR MESSAGE
 												</Heading>
 											</FormLabel>
@@ -235,7 +236,7 @@ const Contact = () => {
 											type='submit'>
 												<Heading
 													color={'blackAlpha.800'}
-													fontSize={{ base: 14, sm: 15, md: 15, lg: 16 }}>
+													fontSize={{ base: 16, sm: 16, md: 16, lg: 18 }}>
 														SUBMIT
 												</Heading>
 										</Button>
@@ -259,6 +260,6 @@ const Contact = () => {
 			</Flex>
 		</ChakraBox>
 	)
-}
+})
 
 export default Contact

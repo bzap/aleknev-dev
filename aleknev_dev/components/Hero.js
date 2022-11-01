@@ -26,15 +26,17 @@ import { AnimatePresence, motion, useScroll, isValidMotionProp } from 'framer-mo
 import { background, heroContainer, heroDesc, heroTitle, heroKeyboard, scrollArrows } from '../styles/Variants';
 import ScrollIndicator from './ScrollIndicator';
 import Wave from './Variants/Wave';
+import { useState, useEffect, useRef, forwardRef } from 'react'
 
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 });
 
-const Hero = ({loading}) => {
+const Hero = forwardRef((props, ref) => {
 	return (
-		<>
 				<Container
+					
+					
 					id={'home'}
 					maxW={'100%'}
 					px={{ base: '6.5%', sm: '5%', md: '10%', lg: '12%' }}
@@ -42,6 +44,7 @@ const Hero = ({loading}) => {
 					flex={1}
 					pb={{ base: '7em', sm: '10em', md: '16em', lg: '15em' }}>
 						<Flex
+				ref={ref}
 						h={'90vh'}
 						pt={'7em'}
 						direction={'column'}>
@@ -69,7 +72,7 @@ const Hero = ({loading}) => {
 										{introText()}
 									</Flex>
 									<Spacer />
-									{keyboard(loading)}
+									{keyboard(props.loading)}
 								</Flex>
 							</ChakraBox>							
 						</Flex>
@@ -85,10 +88,8 @@ const Hero = ({loading}) => {
 							</Flex>
 						</ChakraBox>
 				</Container>
-
-			</>
 	)
-}
+})
 	
 const keyboard = (loading) => { 
 	const bp = useBreakpoint()

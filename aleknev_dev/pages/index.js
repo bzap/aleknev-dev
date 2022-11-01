@@ -12,9 +12,9 @@ import Contact from '../components/Contact'
 import Stripes from '../components/Stripes'
 import AnimatedTabs from '../components/Tabs/Tabs'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { tabs } from "../public/data/TabContent"
-import { AnimatePresence, motion, useScroll, isValidMotionProp } from 'framer-motion'
+import { AnimatePresence, motion, useScroll, isValidMotionProp, useInView } from 'framer-motion'
 import LoadingWrapper from '../components/LoadingWrapper'
 import {
   chakra,
@@ -33,25 +33,74 @@ const Home = () => {
   const [homeView, setHomeView] = useState(true)
   const [contactView, setContactView] = useState(false)
   const [isLoading, setLoading] = useState(true)
-  const { scrollY } = useScroll() 
+
+  const aboutRef = useRef(null)
+  const isShowAbout = useInView(aboutRef)
+
+  const contactRef = useRef(null)
+  const isShowContact = useInView(contactRef)
+
+  const projRef = useRef(null)
+  const isShowProj = useInView(projRef)
+
+  const heroRef = useRef(null)
+  const isShowHero = useInView(heroRef)
+
 
   useEffect(() => {
-    return scrollY.onChange((latest) => {
-      console.log(latest)
-      const isShowAbout = latest >= 918 && latest < 2730
-      const isShowProj = latest >= 2730 && latest < 5600
-      const isShowHero = latest <  918
-      const isShowHome = latest >  1171 
-      const isShowContact = latest >= 5600
-      
-      if (isShowAbout !== aboutView) setAboutView(isShowAbout)
-      if (isShowProj !== projView) setProjView(isShowProj)
-      if (isShowHero !== heroView) setHeroView(isShowHero)
-      if (isShowHome !== homeView) setHomeView(isShowHome)
-      if (isShowContact !== contactView) setContactView(isShowContact)
-    })
-  }, [aboutView, projView, heroView, homeView, contactView])
-  
+    console.log('########')
+    console.log(isShowHero, 'hero')
+    console.log(isShowAbout, 'about')
+    console.log(isShowProj, 'proj')
+    console.log(isShowContact, 'contact')
+    console.log('########')
+
+    if (!isShowAbout && !isShowProj && !isShowContact){
+      setHeroView(true)
+      /*
+      console.log('---------')
+      console.log(aboutView, 'about')
+      console.log(projView, 'proj')
+      console.log(contactView, 'contact')
+      console.log(heroView, 'hero')
+      console.log('---------') */
+    }
+
+    if (isShowAbout) {
+      setAboutView(isShowAbout)
+      setProjView(false)
+      setHeroView(false)
+      /*
+      console.log('---------')
+      console.log(aboutView, 'about')
+      console.log(projView, 'proj')
+      console.log(contactView, 'contact')
+      console.log('---------') */
+      }
+
+    if (isShowProj) {
+      setAboutView(false)
+      setProjView(isShowProj)
+      setContactView(false)
+      /*
+      console.log('---------')
+      console.log(aboutView, 'about')
+      console.log(projView, 'proj')
+      console.log(contactView, 'contact')
+      console.log('---------') */
+    }
+    if (isShowContact) {
+      setProjView(false)
+      setContactView(isShowContact)
+      /*
+      console.log('---------')
+      console.log(aboutView, 'about')
+      console.log(projView, 'proj')
+      console.log(contactView, 'contact')
+      console.log('---------') */
+    }
+  }, [isShowAbout, isShowProj, isShowContact, isShowHero])
+
   return ( 
     <Layout>
       <AnimatePresence mode='wait'>
@@ -66,11 +115,11 @@ const Home = () => {
         )}
       </AnimatePresence>
         <Header pos={{views: {aboutView, setAboutView, projView, 
-                           setProjView, setContactView, heroView, homeView, contactView}}}/>
-        <Hero loading={{states: {isLoading, setLoading}}}/>
-        <About/>
-        <Projects/>
-        <Contact/>
+                           setProjView, setContactView, heroView, contactView}}}/>
+        <Hero loading={{states: {isLoading, setLoading}}} isShowProj={isShowProj}/>
+        <About ref={aboutRef}/>
+        <Projects ref={projRef}/>
+        <Contact ref={contactRef}/>
         <Footer/>
     </Layout>
 

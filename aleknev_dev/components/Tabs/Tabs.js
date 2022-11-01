@@ -31,7 +31,6 @@ const ChakraBox = chakra(motion.div, {
 
 
 const AnimatedTabs = ({pos}) => {
-	
 	// allows it to hover buttons on scroll as well as when pressed
 	const [selectedTab, setSelectedTab] = useState(tabs[3])
 	const [pressed, setPressed] = useState(false)

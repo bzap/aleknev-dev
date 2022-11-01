@@ -33,7 +33,7 @@ const Header = ({ pos }) => {
 					zIndex={200}
 					boxShadow={'md'}
 					borderRadius={'12px'}
-					bg='whiteAlpha.600'
+					bg='whiteAlpha.700'
 					justifyContent={'center'}>
 					<Box
 						display={{ base: 'none', sm: 'none', md: 'inline', lg: 'inline' }}>
@@ -138,21 +138,7 @@ const container = {
 	}
 }
 
-const fadeInItem = {
-	hidden: { opacity: 0 },
-	show: { opacity: 1 }
-}
 
-const fadeOutItem = {
-	hidden: { opacity: 1 },
-	show: { opacity: 0, scale: 0.9 },
-}
-
-
-const scaleOutItem = {
-	hidden: { opcaity: 1 },
-	show: { scale: 0 }
-}
 
 
 

@@ -39,15 +39,19 @@ import Wave from './Variants/Wave'
 import aboutText from '../public/data/AboutText'
 import { about, gradient, gradient2, currentSkills, background, title, itemIcon, itemText, itemTitle, aboutItem, titleContainer, projectSubContainer, projectContainer } from '../styles/Variants'
 import { CgSmile } from 'react-icons/cg';
+import { useState, useEffect, useRef, forwardRef } from 'react'
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
   });
 
-const About = () => {
+const About = forwardRef((props, ref) => {
 	const bp = useBreakpoint()
+
+
     return(
     <Box
+		ref={ref}
         position={'relative'}
         maxW={'100%'} 
         px={{base: '6.5%', sm: '5%', md: '10%', lg:'12%'}}
@@ -56,6 +60,7 @@ const About = () => {
 		pt={{ base: '4em', sm:'6em', md: '6em', lg: '6em'}}
 		pb={{ base: '7em', sm: '10em', md: '16em', lg: '15em' }}>
         <Flex
+		
 		justifyContent={'center'}
         direction={'column'}>
 			<ChakraBox
@@ -164,15 +169,13 @@ const About = () => {
 										whileHover={{ scale: 1.025 }}
 										variants={aboutItem}>			
 										<Flex
-										
 										flexDirection={{base: 'center', sm: 'center', md:'center', lg:'flex-end'}}
 										w={{base: '100%', sm: '100%', md:'100%', lg:'45em'}}
 										minW={'50%'}
 										gap={'1em'}
-
-										bg={'whiteAlpha.600'}
+										bg={'whiteAlpha.700'}
 										backdropFilter='auto'
-										backdropBlur='2px'
+										backdropBlur='1px'
 										boxShadow={'md'}
 										borderRadius={'20px'}>         
 												<ChakraBox
@@ -280,7 +283,7 @@ const About = () => {
 											minW={'50%'}
 											gap={'1em'}
 											zIndex={10}
-											bg={'whiteAlpha.600'}
+											bg={'whiteAlpha.700'}
 											backdropFilter='auto'
 											backdropBlur='2px'
 											boxShadow={'md'}
@@ -303,7 +306,7 @@ const About = () => {
                         </Flex>
     </Box>
     
-)}
+)})
 
 
 
