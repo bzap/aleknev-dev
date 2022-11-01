@@ -508,9 +508,9 @@ export const heroKeyboard = {
 }
 
 export const gitText = {
-	hidden: { x: 20, opacity: 0 },
+	hidden: { y: 20, opacity: 0 },
 	visible: {
-		x: 0,
+		y: 0,
 		opacity: 1,
 		transition: {
 			ease: 'easeInOut',
@@ -518,4 +518,28 @@ export const gitText = {
 		}
 	},
 
+}
+
+
+export const gradient5 = {
+	hidden: { opacity: 0 },
+	visible: {
+		transition: {
+			duration: 1,
+			delay: 0.5,
+		},
+		opacity: 1
+	}
+};
+
+
+export const footerItem = {
+	hidden: { opacity: 0 },
+	visible: {
+		transition: {
+			delay: 1.1,
+			duration: 0.7
+		},
+		opacity: 1,
+	}
 }

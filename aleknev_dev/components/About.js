@@ -212,16 +212,16 @@ const About = forwardRef((props, ref) => {
 															justifyContent={'center'}
 															position={'relative'}
 															boxShadow={'xl'}
-															ml={10}
-															mb={5}
+															ml={8}
+															mb={6}
 															mt={'2px'}
 															float={'right'}
 															fit='cover'
 															borderRadius={'9px'}
 															borderWidth={'5px'}
 															borderColor={'black'}
-															h={{ base: '12em', sm: '15em', md: '20em', lg: '22em'}}
-															w={{ base: '9em', sm: '10em', md: '15em', lg: '15em' }}
+															h={{ base: '12em', sm: '15em', md: '20em', lg: '24em'}}
+															w={{ base: '9em', sm: '10em', md: '15em', lg: '16em' }}
 														
 															src={'https://i.imgur.com/7R4gnAa.jpg'} />								
 																{aboutText.background}

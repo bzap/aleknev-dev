@@ -4,7 +4,7 @@ import AnimatedTabs from './Tabs/Tabs'
 import { AnimatePresence, motion, isValidMotionProp } from "framer-motion";
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import MobileTabs from './Tabs/MobileTabs';
-import { background, navContainer } from '../styles/Variants'
+import { background, navContainer, footerItem } from '../styles/Variants'
 import { BsFillLightningChargeFill } from 'react-icons/bs'
 import { FaGithubAlt } from 'react-icons/fa'
 
@@ -28,6 +28,10 @@ const Footer = () => {
                 <ChakraBox
                     pt={'15px'}
                     as={motion.div}
+                    variants={footerItem}
+                    initial={'hidden'}
+                    whileInView={'visible'}
+                    viewport={{ once: true }}
                     pb={'1em'}
                     backdropFilter='auto'
                     backdropBlur='8px'
