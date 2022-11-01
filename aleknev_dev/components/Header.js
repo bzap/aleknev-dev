@@ -25,6 +25,7 @@ const Header = ({ pos }) => {
 					initial={'hidden'}
 					variants={navContainer}
 					whileInView={'visible'}
+					viewport={{ once: true }}
 					backdropFilter='auto'
 					backdropBlur='8px'
 					maxW={{ base: '88%', sm: '90%', md: '80%', lg: '76%' }}

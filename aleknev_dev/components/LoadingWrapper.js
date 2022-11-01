@@ -35,7 +35,7 @@ const LoadingWrapper = () => {
             maxW='100%'
             width='100%'
             margin='auto'
-            minH='100vh'>
+            minH='120vh'>
                 <Center
                 w={'100%'}
                 minH='100vh'>

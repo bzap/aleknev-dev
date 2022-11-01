@@ -426,16 +426,13 @@ export const heroTitle = {
 	}
 }
 
-
-
-
 export const navContainer = {
 	hidden: { opacity: 0, y: -20 },
 	visible: {
 		y: 0,
 		opacity: 1,
 		transition: {
-			delay: 2.5,
+			delay: 1.2,
 			ease: 'easeInOut',
 		}
 	}
