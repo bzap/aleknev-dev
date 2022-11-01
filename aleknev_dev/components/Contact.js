@@ -64,16 +64,15 @@ const Contact = () => {
 			initial={'hidden'}
 			whileInView={'visible'}
 			position={'relative'}
+			zIndex={50}
 			viewport={{once: false}}
-			
 			maxW={'100%'}
 			px={{ base: '6.5%', sm: '5%', md: '10%', lg: '12%' }}
 			w={'100%'}
 			id='2'
-			pt={{ base: '7em', sm: '10em', md: '10em', lg: '10em' }}
-			pb={{ base: '7em', sm: '10em', md: '16em', lg: '16em' }}>
+			pt={{ base: '4em', sm: '6em', md: '6em', lg: '6em' }}
+			pb={{ base: '5em', sm: '5em', md: '7em', lg: '9%' }}>
 			<Flex
-				
 				direction={'column'}
 				gap={{ base: '2em', sm: '2em', md: '3em', lg: '5em' }}>
 				<Flex
@@ -84,15 +83,19 @@ const Contact = () => {
 							variants={about}
 							initial={'hidden'}
 							whileInView={'visible'}
-							viewport={{ once: false, amount: 0.5 }}>
+							viewport={{ once: false, amount: 0.8 }}>
 							<Title
 								title={'Contact Me!'}/>
 						</ChakraBox>
 				</Flex>
+				
 				<Flex
+					backdropFilter='auto'
+					backdropBlur='5px'
 					p={{base: '2em', sm: '2.5em', md: '4em', lg: '3em'}}
 					w={'100%'}
 					position={'relative'}
+					zIndex={5}
 					bg={'whiteAlpha.600'}
 					boxShadow={'md'}
 					direction={'column'}
@@ -103,6 +106,7 @@ const Contact = () => {
 							style={{ flex: 1, width: "100%" }}
 							onSubmit={handleSubmit}>
 							<Flex
+
 								gap={{ base: '2em', sm: '2.5em', md: '4em', lg: '4em' }}
 								direction={'column'}>
 								<FormControl
@@ -110,7 +114,7 @@ const Contact = () => {
 									<Flex
 										h={'100%'}
 										w={'100%'}
-										direction={{base:'column', sm: 'column', md: 'row', lg: 'row'}}
+										direction={{base:'column', sm: 'column', md: 'column', lg: 'row'}}
 										gap={'3em'}>
 										<Flex
 											h={'100%'}
@@ -128,12 +132,12 @@ const Contact = () => {
 											</FormLabel>
 											<ChakraBox
 											as={motion.div}
-											whileHover={{ scale: 1.005 }}>
+											whileHover={{ scale: 1.01 }}>
 												<Input
 													fontSize={{ base: 13, sm: 13.5, md: 14, lg: 14 }}
 													borderRadius={'12px'}
 													color={'blackAlpha.800'}
-													bg={'whiteAlpha.900'}
+													bg={'whiteAlpha.800'}
 													borderColor={'blackAlpha.600'}
 													boxShadow={'md'}
 													border={'none'}
@@ -158,12 +162,12 @@ const Contact = () => {
 											</FormLabel>
 											<ChakraBox
 												as={motion.div}
-												whileHover={{ scale: 1.005 }}>
+												whileHover={{ scale: 1.01 }}>
 											<Input
 												fontSize={{ base: 13, sm: 13.5, md: 14, lg: 14 }}
 												borderRadius={'12px'}
 												color={'blackAlpha.800'}
-												bg={'whiteAlpha.900'}
+												bg={'whiteAlpha.800'}
 												boxShadow={'md'}
 												border={'none'}
 												borderWidth={'0px'}
@@ -190,14 +194,14 @@ const Contact = () => {
 											<ChakraBox
 												h={'100%'}
 												as={motion.div}
-												whileHover={{ scale: 1.005 }}>
+												whileHover={{ scale: 1.01 }}>
 											<Textarea
 												p={4}
 												h={'100%'}
 												fontSize={{ base: 13, sm: 13.5, md: 14, lg: 14 }}
-												borderRadius={'12px'}
+												borderRadius={'14px'}
 												color={'blackAlpha.800'}
-												bg={'whiteAlpha.900'}
+												bg={'whiteAlpha.800'}
 												boxShadow={'md'}
 												border={'none'}
 												borderWidth={'0px'}
@@ -214,7 +218,7 @@ const Contact = () => {
 									whileHover={{ scale: 1.02 }}
 									whileTap={{ scale: 0.99}}
 									boxShadow={'md'}
-									bg={'whiteAlpha.900'}
+									bg={'whiteAlpha.800'}
 									py={1.5}
 									h={'100%'}
 									borderRadius={'14px'}
@@ -230,6 +234,7 @@ const Contact = () => {
 											disabled={state.submitting}
 											type='submit'>
 												<Heading
+													color={'blackAlpha.800'}
 													fontSize={{ base: 14, sm: 15, md: 15, lg: 16 }}>
 														SUBMIT
 												</Heading>
@@ -237,6 +242,19 @@ const Contact = () => {
 							</ChakraBox>
 							</Flex>
 						</form>
+				</Flex>
+				<Flex
+					zIndex={0}
+					position={'absolute'}
+					w={'100%'}
+					left={'15%'}
+					top={{ sm: '0em', md: '-20em', lg: '10em' }}>
+					<Center>
+						<Image
+							h={{ base: '0em', sm: '0', md: '0em', lg: '0em', xl: '50em' }}
+							w={{ base: '0em', sm: '0', md: '0em', lg: '0em', xl: '90em' }}
+							src={'footerbl.webp'} />
+					</Center>
 				</Flex>
 			</Flex>
 		</ChakraBox>

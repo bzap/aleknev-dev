@@ -53,8 +53,8 @@ const About = () => {
         px={{base: '6.5%', sm: '5%', md: '10%', lg:'12%'}}
         w={'100%'} 
         id='0' 
-		pt={{ base: '7em', sm:'10em', md: '10em', lg: '10em'}}
-		pb={{ base: '7em', sm: '10em', md: '16em', lg: '16em' }}>
+		pt={{ base: '4em', sm:'6em', md: '6em', lg: '6em'}}
+		pb={{ base: '7em', sm: '10em', md: '16em', lg: '15em' }}>
         <Flex
 		justifyContent={'center'}
         direction={'column'}>
@@ -159,22 +159,25 @@ const About = () => {
 											</Flex>
 										</ChakraBox>		
 										<ChakraBox
+										zIndex={10}
+										position={'relative'}
 										whileHover={{ scale: 1.025 }}
 										variants={aboutItem}>			
 										<Flex
-										position={'relative'}
+										
 										flexDirection={{base: 'center', sm: 'center', md:'center', lg:'flex-end'}}
 										w={{base: '100%', sm: '100%', md:'100%', lg:'45em'}}
 										minW={'50%'}
 										gap={'1em'}
+
 										bg={'whiteAlpha.600'}
 										backdropFilter='auto'
-										backdropBlur='5px'
+										backdropBlur='2px'
 										boxShadow={'md'}
 										borderRadius={'20px'}>         
 												<ChakraBox
 													w={'100%'}
-													zIndex={1}
+
 													py={{ base: 6, sm: 8, md: 10, lg: 10 }}
 													px={{ base: 6, sm: 8, md: 10, lg: 10 }}	>
 													<ChakraBox
@@ -279,7 +282,7 @@ const About = () => {
 											zIndex={10}
 											bg={'whiteAlpha.600'}
 											backdropFilter='auto'
-											backdropBlur='5px'
+											backdropBlur='2px'
 											boxShadow={'md'}
 											borderRadius={'20px'}>
 											<Box

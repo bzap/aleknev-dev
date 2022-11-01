@@ -37,11 +37,12 @@ const Home = () => {
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
-      const isShowAbout = latest >= 1171 && latest < 3100
-      const isShowProj = latest >= 3100 && latest < 5150
-      const isShowHero = latest <  1170 
+      console.log(latest)
+      const isShowAbout = latest >= 918 && latest < 2730
+      const isShowProj = latest >= 2730 && latest < 5600
+      const isShowHero = latest <  918
       const isShowHome = latest >  1171 
-      const isShowContact = latest >= 5150
+      const isShowContact = latest >= 5600
       
       if (isShowAbout !== aboutView) setAboutView(isShowAbout)
       if (isShowProj !== projView) setProjView(isShowProj)

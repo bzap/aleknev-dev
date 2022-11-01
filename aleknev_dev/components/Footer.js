@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Center, Icon, Collapse, Link, IconButton, useDisclosure, chakra, shouldForwardProp, Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer, ScaleFade, transition, useBreakpoint } from '@chakra-ui/react'
+import { Center, Image, Icon, Collapse, Link, IconButton, useDisclosure, chakra, shouldForwardProp, Divider, Heading, Flex, Stack, Container, Button, Text, Box, Spacer, ScaleFade, transition, useBreakpoint } from '@chakra-ui/react'
 import AnimatedTabs from './Tabs/Tabs'
 import { AnimatePresence, motion, isValidMotionProp } from "framer-motion";
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import MobileTabs from './Tabs/MobileTabs';
 import { background, navContainer } from '../styles/Variants'
 import { BsFillLightningChargeFill } from 'react-icons/bs'
-import { SiGithub } from 'react-icons/si'
+import { FaGithubAlt } from 'react-icons/fa'
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -14,20 +14,25 @@ const ChakraBox = chakra(motion.div, {
 
 const Footer = () => {
     return (
-        <Container>
+        <Container
+            w={'100%'}
+            h={'100%'}
+            p={0}
+            position={'relative'}
+            zIndex={50}
+            maxW={'100%'}>
             <Flex
+
+                w={'100%'}
                 justifyContent={'center'}>
                 <ChakraBox
                     pt={'15px'}
                     as={motion.div}
-                    pb={'1.5em'}
+                    pb={'1em'}
                     backdropFilter='auto'
                     backdropBlur='8px'
-                    maxW={{ base: '88%', sm: '90%', md: '80%', lg: '76%' }}
                     position='relative'
-                    w={'100%'}
                     bottom={0}
-                    zIndex={200}
                     borderRadius={'12px'}
                     justifyContent={'center'}>
                         <Flex
@@ -37,48 +42,57 @@ const Footer = () => {
                                 <Icon
                                     position={'relative'}
                                     alignItems={'center'}
-                                    color={'blackAlpha.500'}
+                                    color={'blackAlpha.400'}
                                     as={BsFillLightningChargeFill} />
                                 <Text
                                 position={'relative'}
-                                color={'blackAlpha.500'}
+                                color={'blackAlpha.400'}
                                 fontSize={16}>
                                     &nbsp;Designed and developed by Linas&nbsp;
                                 </Text>
                                 <Icon
                                     position={'relative'}
                                     alignItems={'center'}
-                                    color={'blackAlpha.500'}
+                                    color={'blackAlpha.400'}
                                     as={BsFillLightningChargeFill} />
                         </Flex>
                         <Link 
                             style={{ 'textDecoration': 'none' }}
                             href={'https://github.com/bzap'}
                             isExternal>
-                        <ChakraBox
-                            as={motion.div}
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.99 }}
-                            cursor={'pointer'}>
-                                <Flex
-                                justifyContent={'center'}
-                                direction={'row'}
-                                alignItems={'center'}>
-                                    <Text
+                            <ChakraBox
+                                position={'relative'}
+                                as={motion.div}
+                                h={'container'}
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.99 }}>
+                                    <Flex
                                     position={'relative'}
-                                    color={'blackAlpha.500'}
-                                    fontSize={16}>
-                                        Site Repo&nbsp;
-                                    </Text>
-                                    <Icon
+                                    w={'auto'}
+                                    justifyContent={'center'}
+                                    direction={'row'}
+                                    alignItems={'center'}>
+                                        <Icon
+                                            position={'relative'}
+                                            alignItems={'center'}
+                                            color={'blackAlpha.400'}
+                                            as={FaGithubAlt} />
+                                        <Text
                                         position={'relative'}
-                                        alignItems={'center'}
-                                        color={'blackAlpha.500'}
-                                        as={SiGithub} />
-                                </Flex>
-                        </ChakraBox>
+                                        color={'blackAlpha.400'}
+                                        fontSize={16}>
+                                            &nbsp;Site Repo&nbsp;
+                                        </Text>
+                                        <Icon
+                                            position={'relative'}
+                                            alignItems={'center'}
+                                            color={'blackAlpha.400'}
+                                            as={FaGithubAlt} />
+                                    </Flex>
+                            </ChakraBox>
                         </Link>
                 </ChakraBox>
+
             </Flex>
         </Container>
     )

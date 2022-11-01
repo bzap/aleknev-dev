@@ -38,12 +38,12 @@ const Hero = ({loading}) => {
 					id={'home'}
 					maxW={'100%'}
 					px={{ base: '6.5%', sm: '5%', md: '10%', lg: '12%' }}
-					h={'90vh'}
 					direction={'column'}
 					flex={1}
-					pt={'7em'}
-					pb={{ base: '7em', sm: '10em', md: '16em', lg: '10em', xl: '16em' }}>
+					pb={{ base: '7em', sm: '10em', md: '16em', lg: '15em' }}>
 						<Flex
+						h={'90vh'}
+						pt={'7em'}
 						direction={'column'}>
 							<ChakraBox	
 								h={'40em'}
@@ -73,18 +73,19 @@ const Hero = ({loading}) => {
 								</Flex>
 							</ChakraBox>							
 						</Flex>
+						<ChakraBox
+							position={'relative'}
+							as={motion.div}
+							variants={scrollArrows}
+							initial={'hidden'}
+							whileInView={'visible'}>
+							<Flex
+								justifyContent={'center'}>
+								<ScrollIndicator />
+							</Flex>
+						</ChakraBox>
 				</Container>
-				<ChakraBox
-					position={'relative'}
-					as={motion.div}
-					variants={scrollArrows}
-					initial={'hidden'}
-					whileInView={'visible'}>
-					<Flex
-						justifyContent={'center'}>
-						<ScrollIndicator />
-					</Flex>
-				</ChakraBox>
+
 			</>
 	)
 }

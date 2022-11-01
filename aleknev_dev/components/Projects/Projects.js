@@ -53,7 +53,7 @@ const Projects = () => {
 		w={'100%'}
 		id='1'
 		pt={{ base: '4em', sm:'6em', md: '6em', lg: '6em'}}
-		pb={{ base: '20em', sm: '20em', md: '22em', lg: '26em' }}>
+		pb={{ base: '7em', sm: '10em', md: '16em', lg: '15em' }}>
 		<Flex
 			justifyContent={'center'}
 			direction={'column'}>
@@ -163,7 +163,6 @@ const verticalItem = (top, index) => {
 				viewport={{once: false, amount: 0.2}}>	
 					<Flex
 					w={'100%'}
-				
 					position={'relative'}
 					direction={{base: 'column', sm: 'column', md: 'row', lg: 'column'}}
 					justifyContent='space-between'
@@ -196,7 +195,7 @@ const verticalItem = (top, index) => {
 							w={{base: '100%', sm:'24em', md:'28em', lg:'100%'}} 
 							bg={'whiteAlpha.600'}
 							backdropFilter='auto'
-							backdropBlur='5px'
+							backdropBlur='1px'
 							boxShadow={'md'} 
 							borderRadius={'22px'} >
 							<Preview index={index.slice(1,2)}/>
