@@ -40,7 +40,7 @@ const MDXComponents = {
             py={2}
             px={{ base: '0.5em', sm: '0.5em', md: '1em', lg: '2em' }}>
             <Heading
-                fontSize={{ base: 26, sm: 27, md: 28, lg: 30 }}
+                fontSize={{ base: 23, sm: 26, md: 28, lg: 30 }}
                 {...props} />
         </Flex>,
     p: (props) =>

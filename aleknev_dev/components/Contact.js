@@ -57,20 +57,18 @@ const Contact = forwardRef((props, ref) => {
 			px={{ base: '6.5%', sm: '5%', md: '10%', lg: '12%' }}
 			w={'100%'}
 			id='2'
-			pt={{ base: '4em', sm: '6em', md: '6em', lg: '6%' }}
-			pb={{ base: '5em', sm: '5em', md: '5em', lg: '0' }}>
+			pt={{ base: '4em', sm: '6em', md: '6em', lg: '6%' }}>
 			<Flex
 				direction={'column'}
 				gap={{ base: '2em', sm: '2em', md: '3em', lg: '7em' }}>
 				<Flex
 					position={'relative'}
-					justifyContent={{ base: 'center', sm: 'center', md: 'center', lg: 'start' }}>
+					alignItems={'start'}>
 						<ChakraBox
 							as={motion.div}
 							variants={about}
 							initial={'hidden'}
 							whileInView={'visible'}
-			
 							viewport={{ once: true, amount: 0.8 }}>
 							<Title
 								title={'Contact Me!'}/>

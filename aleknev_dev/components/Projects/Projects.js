@@ -44,6 +44,7 @@ const ChakraBox = chakra(motion.div, {
 	});
 
 const Projects = forwardRef((props, ref) => {
+		const bp = useBreakpoint()
 		return (
 		<Box
 		ref={ref}
@@ -75,7 +76,7 @@ const Projects = forwardRef((props, ref) => {
 				<Flex
 				position={'relative'}
 				zIndex={10}
-				pt={{ base: '2em', sm: '4em', md: '5em', lg: '5em' }}
+				pt={{ base: '0em', sm: '0em', md: '5em', lg: '5em' }}
 				direction='column'
 				justifyContent={'center'}>
 						<ChakraBox
@@ -107,14 +108,15 @@ const Projects = forwardRef((props, ref) => {
 								sx={{ 'flexWrap': 'wrap' }}>
 								{[...Array(6).keys()].map((item, idx) => (
 									<Box
-									
 									key={idx}
 									display={{base: 'flex', sm:'flex', md: 'flex'}}
-					
 									w={{sm:'100%', md: '100%', lg: '26em'}}
-									
 									justifyContent={'center'}>
-										{verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())}
+										{bp == 'base' || bp == 'sm' ? (
+											verticalItem('3em', "0" + (idx + 1).toString())
+										) : (
+											verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())
+										)}
 									</Box> 
 								))}
 							</Flex>
@@ -155,7 +157,6 @@ const Projects = forwardRef((props, ref) => {
 const verticalItem = (top, index) => { 
 		return ( 
 			<ChakraBox
-			
 				position={'relative'}
 				pt={top}
 				variants={projectSubContainer}
@@ -174,7 +175,7 @@ const verticalItem = (top, index) => {
 							<Heading
 							color={'blackAlpha.800'}
 							fontWeight={900}
-							fontSize={{base: 34, sm: 37, md: 40, lg: 45}}>
+							fontSize={{base: 31, sm: 35, md: 40, lg: 45}}>
 								{index}
 							</Heading>
 							<Heading

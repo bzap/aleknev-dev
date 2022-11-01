@@ -114,33 +114,27 @@ const mobileContent = (isOpen, onToggle) => {
 }
 
 const logoHeader = (size) => {
+	const bp = useBreakpoint()
 	return (
 			<ChakraBox
 				as={motion.div}
 				whileHover={{ scale: 1.05 }}
 				whileTap={{ scale: 0.98 }}>
-				<Text
-					fontSize={{base: 19, sm: 19, md: 21, lg: 21}}
-					color={'blackAlpha.800'}>
-					&lt;&thinsp;linas&thinsp;&gt;
-				</Text>
+					{bp == 'base' || bp == 'sm' ? (
+						<Text
+							fontSize={{ base: 19, sm: 19, md: 21, lg: 21 }}
+							color={'blackAlpha.800'}>
+							&lt;linas&gt;
+						</Text>
+					) : (
+						<Text
+							fontSize={{ base: 19, sm: 19, md: 21, lg: 21 }}
+							color={'blackAlpha.800'}>
+							&lt;&thinsp;linas&thinsp;&gt;
+						</Text>
+					)}
 			</ChakraBox>
 	) 
 }
 
-const container = {
-	show: {
-		opacity: 1,
-		transition: {
-			staggerChildren: 0.1,
-			delayChildren: 2,
-		}
-	}
-}
-
-
-
-
-
-//<Divider orientation='horizontal' borderRadius={'2em'} border='1px' dropShadow={'lg'}/>
 export default Header

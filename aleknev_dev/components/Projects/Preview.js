@@ -237,7 +237,7 @@ const contentModal = (ref, io, oo, oc, link) => {
                     px={{ base: '1.9em', sm: '1.9em', md: '1.9em', lg: '3em' }}>    
                             <Heading
                                 pt={{ base: 0, sm: 0, md: 1, lg: 2}}
-                                fontSize={{ base: 33, sm: 38, md: 40, lg: 40 }}>
+                                fontSize={{ base: 30, sm: 38, md: 40, lg: 40 }}>
                                 {title}
                             </Heading>
                     </ModalHeader>

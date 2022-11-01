@@ -51,7 +51,7 @@ const Footer = () => {
                                 <Text
                                 position={'relative'}
                                 color={'blackAlpha.400'}
-                                fontSize={16}>
+                                fontSize={{ base: 13.5, sm: 14, md: 15, lg: 16 }}>
                                     &nbsp;Designed and developed by Linas&nbsp;
                                 </Text>
                                 <Icon
@@ -84,7 +84,7 @@ const Footer = () => {
                                         <Text
                                         position={'relative'}
                                         color={'blackAlpha.400'}
-                                        fontSize={16}>
+                                        fontSize={{ base: 13.5, sm: 14, md: 15, lg: 16 }}>
                                             &nbsp;Site Repo&nbsp;
                                         </Text>
                                         <Icon

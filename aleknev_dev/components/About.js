@@ -88,7 +88,7 @@ const About = forwardRef((props, ref) => {
 						alignItems={'start'}>
 							<ChakraBox
 								position={'relative'}
-
+								pb={{base: '0.5em', sm: 0, md: 0, lg: 0}}
 								as={motion.div}
 								variants={about}
 								initial={'hidden'}
@@ -191,7 +191,7 @@ const About = forwardRef((props, ref) => {
 																borderBottomColor={'blackAlpha.100'}
 																color='blackAlpha.800'
 																fontWeight={900}
-																fontSize={{ base: 30, sm: 35, md: 38, lg: 40 }}>
+																fontSize={{ base: 25, sm: 30, md: 38, lg: 40 }}>
 																BACKGROUND 
 														</Heading>
 													</ChakraBox>
@@ -207,7 +207,7 @@ const About = forwardRef((props, ref) => {
 														pb={2}
 														whiteSpace={'pre-line'}
 														color={'gray.700'}
-														fontSize={{base: 13, sm: 13.5, md: 14, lg: 14}}>	
+														fontSize={{base: 12, sm: 13.5, md: 14, lg: 14}}>	
 															<Image
 															justifyContent={'center'}
 															position={'relative'}
@@ -327,7 +327,7 @@ const skillsInfo = () => {
 					borderBottomWidth={'2px'}
 					borderBottomColor={'blackAlpha.100'}
 					color='blackAlpha.800'
-					fontSize={{ base: 30, sm: 35, md: 38, lg: 40 }}>
+					fontSize={{ base: 25, sm: 30, md: 38, lg: 40 }}>
 					SKILLS
 			</Heading>
 			</ChakraBox>
@@ -368,7 +368,7 @@ const skillText = () => {
                     as={'p'}
 					lineHeight={'1.3em'}
 					color={'gray.700'}
-					fontSize={{ base: 13, sm: 13.5, md: 14, lg: 14 }}>
+					fontSize={{ base: 12, sm: 13.5, md: 14, lg: 14 }}>
                     	{aboutText.skillBackground}
                 </Text>
                 </ChakraBox>
