@@ -220,6 +220,7 @@ const contentModal = (ref, io, oo, oc, link) => {
     const title = projects[link].name
     return ( 
         <Modal
+            
             preserveScrollBarGap
             motionPreset='slideInBottom'
             isCentered
@@ -246,6 +247,7 @@ const contentModal = (ref, io, oo, oc, link) => {
                     </Flex>
                     <ModalCloseButton />
                     <ModalBody
+                    userSelect={'none'}
                     pt={3}>
                         <MDXProvider components={MDXComponents}>
                             <Content />

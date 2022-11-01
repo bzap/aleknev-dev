@@ -110,7 +110,8 @@ const Projects = forwardRef((props, ref) => {
 									
 									key={idx}
 									display={{base: 'flex', sm:'flex', md: 'flex'}}
-									w={{sm:'100%', md: '100%', lg: '25em'}}
+					
+									w={{sm:'100%', md: '100%', lg: '26em'}}
 									
 									justifyContent={'center'}>
 										{verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())}
@@ -154,7 +155,7 @@ const Projects = forwardRef((props, ref) => {
 const verticalItem = (top, index) => { 
 		return ( 
 			<ChakraBox
-
+			
 				position={'relative'}
 				pt={top}
 				variants={projectSubContainer}

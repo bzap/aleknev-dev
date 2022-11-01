@@ -12,6 +12,7 @@ const Layout = ({ children, router }) => {
         minH='100vh' 
         bg='#F2F2F2'
         overflow={'hidden'}
+        userSelect={'none'}
         left={0}
         pl={0}
         pr={0}> 
