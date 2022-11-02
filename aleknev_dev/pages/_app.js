@@ -17,7 +17,8 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <>
 
-    <ChakraProvider theme={theme}>
+    <ChakraProvider 
+    theme={theme}>
         <Component {...pageProps} key={router.route} /> 
     </ChakraProvider>
     </>

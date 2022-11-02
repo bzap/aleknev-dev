@@ -29,14 +29,17 @@ const ChakraBox = chakra(motion.div, {
 });
 
 const LoadingWrapper = () => { 
+
     return (
         <ChakraBox
+            
             as={motion.div}
             maxW='100%'
             width='100%'
+            height={'100%'}
             margin='auto'
             minH='120vh'>
-                <Center
+                <Center  
                 w={'100%'}
                 minH='100vh'>
                     <HashLoader

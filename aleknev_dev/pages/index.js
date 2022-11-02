@@ -16,6 +16,8 @@ import { useState, useEffect, useRef } from 'react'
 import { tabs } from "../public/data/TabContent"
 import { AnimatePresence, motion, useScroll, isValidMotionProp, useInView } from 'framer-motion'
 import LoadingWrapper from '../components/LoadingWrapper'
+import disableScroll from 'disable-scroll';
+
 import {
   chakra,
   shouldForwardProp
@@ -30,7 +32,6 @@ const Home = () => {
   const [aboutView, setAboutView] = useState(false)
   const [projView, setProjView] = useState(false)
   const [heroView, setHeroView] = useState(true)
-  const [homeView, setHomeView] = useState(true)
   const [contactView, setContactView] = useState(false)
   const [isLoading, setLoading] = useState(true)
 
@@ -47,35 +48,28 @@ const Home = () => {
   const isShowHero = useInView(heroRef)
 
 
-  useEffect(() => {
-    console.log('########')
-    console.log(isShowHero, 'hero')
-    console.log(isShowAbout, 'about')
-    console.log(isShowProj, 'proj')
-    console.log(isShowContact, 'contact')
-    console.log('########')
 
-    if (!isShowAbout && !isShowProj && !isShowContact){
+
+
+  useEffect(() => {
+    
+    if (isShowHero && !isLoading){ 
+      disableScroll.off()
+    }
+  
+    if (!isShowAbout && !isShowProj && !isShowContact && !isShowHero ) {
+      disableScroll.on()
+    }
+
+    if (isShowHero){ 
       setHeroView(true)
-      /*
-      console.log('---------')
-      console.log(aboutView, 'about')
-      console.log(projView, 'proj')
-      console.log(contactView, 'contact')
-      console.log(heroView, 'hero')
-      console.log('---------') */
+      setAboutView(false)
     }
 
     if (isShowAbout) {
       setAboutView(isShowAbout)
       setProjView(false)
       setHeroView(false)
-      /*
-      console.log('---------')
-      console.log(aboutView, 'about')
-      console.log(projView, 'proj')
-      console.log(contactView, 'contact')
-      console.log('---------') */
       }
 
     if (isShowProj) {
@@ -99,13 +93,23 @@ const Home = () => {
       console.log(contactView, 'contact')
       console.log('---------') */
     }
+
+
+
   }, [isShowAbout, isShowProj, isShowContact, isShowHero])
 
+
+
+
   return ( 
-    <Layout>
-      <AnimatePresence mode='wait'>
+    <Layout
+     >
+      <AnimatePresence 
+      
+      mode='wait'>
         {isLoading && (
             <ChakraBox
+              
               initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -116,7 +120,7 @@ const Home = () => {
       </AnimatePresence>
         <Header pos={{views: {aboutView, setAboutView, projView, 
                            setProjView, setContactView, heroView, contactView}}}/>
-        <Hero loading={{states: {isLoading, setLoading}}} isShowProj={isShowProj}/>
+        <Hero loading={{states: {isLoading, setLoading}}} ref={heroRef}/>
         <About ref={aboutRef}/>
         <Projects ref={projRef}/>
         <Contact ref={contactRef}/>

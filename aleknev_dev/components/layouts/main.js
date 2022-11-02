@@ -3,13 +3,12 @@ import { Box, Container } from '@chakra-ui/react'
 import Stripes from '../Stripes'
 
 const Layout = ({ children, router }) => { 
-   //maxWidth='100^' minHeight='100vh'
     return (    
         <Container  
         maxW='100%' 
         width='100%' 
         margin='auto' 
-        minH='100vh' 
+        minH='120vh' 
         bg='#F2F2F2'
         overflow={'hidden'}
         userSelect={'none'}
