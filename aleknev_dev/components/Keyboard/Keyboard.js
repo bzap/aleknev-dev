@@ -27,6 +27,7 @@ import { Bounds, Environment, Stage, OrbitControls, PerspectiveCamera, Center } 
 import { AnimatePresence, motion, useScroll, isValidMotionProp } from 'framer-motion'
 import { heroKeyboard, heroGradient, keyboardContainer } from '../../styles/Variants';
 import * as THREE from 'three';
+import { BoxGeometry, Mesh, MeshStandardMaterial } from 'three';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -62,84 +63,83 @@ const Keyboard = ({props}) => {
       fov = 45
     } 
     return (
-      <ChakraBox
-      bg={'green.100'}
-        w={'100%'}
+      <Flex
         h={'100%'}
-        as={motion.div}
-        variants={keyboardContainer}> 
-      <ChakraBox
+        w={{ base: '100%', sm: '100%', md: '100%', lg: '100%', xl: '65%', '2xl': '65%'}}
+        justifyContent={'center'}
+        alignItems={'center'}>
+        <ChakraBox
           w={'100%'}
           h={'100%'}
-        as={motion.div}
-        variants={heroKeyboard}> 	
-        <Flex
-        position={'relative'}
-        zIndex={10}
-        h={'100%'}
-        w={'100%'}>
-          <Canvas
-              dpr={[1, 2]}>
-
-            <Suspense fallback={null}>
-                  {props !== undefined && (
-                    
-                    <Stage
-                      preset="rembrandt"
-                      intensity={1}
-                      environment="city">
-                      {props !== undefined && (
-                      <Bounds 
-                        fit 
-                        clip 
-                        observe 
-                        margin={bp == 'xl' ? 0.75
-                                : bp == '2xl' ? 0.8 
-                                : 1.1}>
-                          <Model innerLoading={props} />
-                      </Bounds>
-                      )}
-                    </Stage>  
-                    
-                  )}
-            </Suspense>
-            <OrbitControls
-              target={[0,0,0]}
-              autoRotate
-              makeDefault
-              enableZoom={false}/> 
-          </Canvas>
-        </Flex>
-
-      </ChakraBox>
-
-      <ChakraBox
-          w={'100%'}
-          variants={heroGradient}
           as={motion.div}
-          position={'absolute'}
+          variants={keyboardContainer}> 
+        <ChakraBox
+            w={'100%'}
+            h={'100%'}
+          as={motion.div}
+          variants={heroKeyboard}> 	
+          <Flex
+          position={'relative'}
+          zIndex={10}
           h={'100%'}
-          top={{ sm: '25%', md: '15%', lg: '0%', xl: '0%', '2xl': '0%' }}
-          left={{ sm: '0%', md: '0%', lg: '0%', xl: '50%', '2xl': '55%' }}>
-          <Image
-            fit='cover'
-            h={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '50em', '2xl': '50em' }}
-            w={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '50em', '2xl': '50em' }}
-            src={'hero.webp'} />
+          w={'100%'}>
+            <Canvas
+                dpr={[1, 2]}>
+              <Suspense fallback={null}>
+                    {props !== undefined && (
+                      <Stage
+                        preset="rembrandt"
+                        intensity={2}
+                        environment="park">
+                        {props !== undefined && (
+                        <Bounds 
+                          fit 
+                          clip 
+                          observe 
+                          margin={bp == 'xl' ? 0.40
+                                  : bp == '2xl' ? 0.50
+                                  : 1}>
+                            <Model innerLoading={props} />
+                        </Bounds>
+                        )}
+                      </Stage>  
+                    )}
+              </Suspense>
+              <OrbitControls
+                target={[0,0,0]}
+                autoRotate
+                makeDefault
+                enableZoom={true}/> 
+            </Canvas>
+          </Flex>
         </ChakraBox>
-
-        </ChakraBox>
+        <ChakraBox
+            w={'100%'}
+            variants={heroGradient}
+            as={motion.div}
+            position={'absolute'}
+            h={'100%'}
+            top={{ sm: '25%', md: '15%', lg: '0%', xl: '0%', '2xl': '5%' }}
+            left={{ sm: '0%', md: '0%', lg: '0%', xl: '60%', '2xl': '65%' }}>
+            <Image
+              fit='cover'
+              h={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '40em', '2xl': '40em' }}
+              w={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '40em', '2xl': '40em' }}
+              src={'hero.webp'} />
+          </ChakraBox>
+          </ChakraBox>
+      </Flex>
     )
 }
 
-
-
 const Model = (innerLoading) => {
     const loadingStates = innerLoading.innerLoading.outerLoading.states 
-    const gltf = useLoader(GLTFLoader, "/model/keyboard11.gltf");
+    const gltf = useLoader(GLTFLoader, "/model/keyboard15.glb");
     loadingStates.setLoading(false)
     return (
-      <primitive object={gltf.scene} scale={1} />
+      <mesh>
+        <primitive object={gltf.scene} scale={1} />
+      </mesh>
     )
   }
 

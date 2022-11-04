@@ -61,11 +61,11 @@ const Hero = forwardRef((props, ref) => {
 								whileInView={'visible'}
 								viewport={{ once: true }}>
 								<Flex
-						bg={'purple.100'}
 									h={'100%'}
 									w={'100%'}
 									position={'relative'}
 									justifyContent={'space-between'}
+									alignItems={'center'}
 									direction={{ base: 'column', sm: 'column', md: 'column', lg: 'column', xl: 'row', '2xl': 'row' }}>
 									<Flex
 										justifyContent={'center'}
@@ -113,6 +113,7 @@ const keyboard = (loading) => {
 const introText = () => { 
 	return ( 
 		<Flex
+		pl={{base: 0, sm: 0, md: 0, lg: 0, xl: '1em', '2xl': '1em'}}
 		position={'relative'}
 		zIndex={1}
 		direction={'column'}
@@ -130,7 +131,7 @@ const introText = () => {
 						as={'span'}
 						position={'relative'}
 						color={'blackAlpha.800'}
-						fontSize={{ base: '9vw', sm: '9vw', md: '8vw', lg: '7vw', xl: '6.5vw', '2xl': '7em' }}>
+						fontSize={{ base: '9vw', sm: '9vw', md: '8vw', lg: '7vw', xl: '6.3vw', '2xl': '6.5vw' }}>
 						<Wave text={'Hey! I\'m Linas.'} />
 				</Heading>
 				</ChakraBox>
@@ -149,7 +150,7 @@ const introText = () => {
 						position={'relative'}
 						textAlign={'center'}
 						color={'blackAlpha.700'}
-						fontSize={{ base: '1em', sm: '1.2em', md: '1.3em', lg: '1.3em', xl: '1.5em', '2xl': '1.8em' }}>
+						fontSize={{ base: '1em', sm: '1.2em', md: '1.3em', lg: '1.3em', xl: '1.5em', '2xl': '1.5vw' }}>
 						I'm a developer based in Toronto that's on a pursuit for growth.
 					</Text>
 				</ChakraBox>
