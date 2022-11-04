@@ -53,7 +53,7 @@ const Preview = ({index}) => {
         <Flex
             justifyContent={'center'}
             overflow='hidden'>
-            {projectImages('https://i.pinimg.com/564x/af/26/42/af2642d7d8ed1d60959f0825e545d92c.jpg')}
+            {projectImages(projects[index].image)}
         </Flex>
         <Flex
             direction={'column'}
@@ -103,6 +103,7 @@ const Preview = ({index}) => {
 const projectImages = (props) => { 
     return (
         <Image
+            opacity={0.8}
             align={'center'}
             borderTopRadius={'10px'}
             h={'12em'}
@@ -263,7 +264,5 @@ const contentModal = (ref, io, oo, oc, link) => {
     )
 }
 
-
-//textShadow={"1px 1px gray.700"}
 export default Preview
 

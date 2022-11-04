@@ -12,6 +12,9 @@ import {
     Button,
     Image,
     Icon,
+    List,
+    UnorderedList,
+    ListItem,
     IconButton,
     createIcon,
     IconProps,
@@ -26,7 +29,6 @@ import {
     Grid,
     GridItem,
     ButtonGroup,
-    AspectRatio,
     ListIcon,
     Spacer,
     chakra,
@@ -37,39 +39,35 @@ import projects from '../public/data/ProjectText';
 
 
 ## Background
-Prior to working on this project, I had little experience with building websites without the use of frameworks and UI tools such as React and Material UI. To combat this and deepen my knowledge, I set out to see what kind of design and implementation I could come up with using plain and simple HTML and CSS. 
+This was a project that aimed to try and implement various topics learned throughout my degree such as searching and sorting algorithms, compression, lexical analysis, and GUI development. I wanted something that does not rely on a cloud orientated service and instead focuses on solving the problem of a large dataset locally. As a result, performance was a concern because any massive delay can ruin user experience. In addition to that, having to run it locally means the performance will vary based on the machine used.
 <br/>
-One of my main goals was to have smooth, and consistent CSS animations when interacting with the interface. Aspects like word highlighting and satisfying dropdown menus were a priority. This project taught me a lot about animating keyframes and syncing elements between transitions. 
-<br/>
-Towards the end of development, I found I was having trouble with animating the dropdown menus, where it became tedious trying to combine multiple animations at the same time, while still balancing the color of certain elements. I ended up breaking my rules and using jQuery for that alone. The use of jQuery greatly simplified these DOM and CSS manipulations.
-<br/>
-<Center
-    py={'1em'}>
-            ![The menus.](/screenshots/dog2.png_3282_850)
-</Center>
 <br/>
 ## Breakdown
-The primary script is split into a few different key operations. The first is the word (sentence) generator that takes a JSON of sample words and uses a simple algorithm to randomize them by their length. 
+The toolkit is split into four different components. The first component is a script to import and compress downloaded data. Unsurprisingly, review data sourced from Amazon can produce very large JSON files, with some of them exceeding 40GB. Processing data like that can become very time consuming and very impractical to store. This script tries to tackle that by initially sorting and searching the data for the necessary forms using Merge Sort and Binary Search. These algorithms aren’t the wildest out there but are still very performant with respect to the type of data used. The script then creates a new object structure from the data and utilizes the Python Pickle module to serialize and compress it into far more reasonably sized files. 
 <br/>
-The second is a counter that keeps track of the time elapsed and updates the statistics based on it. This one proved tricky at first as I was accustomed to the way state works in frameworks such as React. This meant continuously updating elements was not as simple as creating a state and having it update on its own.
+The second component creates an undirected graph from the new data, where the nodes are data points (e.g., each book, from the sample data provided), and the neighbouring edges are the common review words. The graph is then used to find the data points with the most similarities in order to provide recommendations. 
+<br/>
 <br/>
 <Center
     py={'1em'}>
-            ![The typing screen.](/screenshots/dog1.png_3282_2026)
-
+![The second component.](/screenshots/ard2.png_1512_726)
 </Center>
 <br/>
-The last key operation is what I used to alleviate the previously mentioned problem. It’s a rendering call based on the time elapsed, used to calculate the correct statistics and display them to the user.
 <br/>
-
-## The Full Stack
-<Flex
-w={'100%'}
-px={{ base: '1.5em', sm: '1.5em', md: '2em', lg: '3em' }}>
-- Python
-- PyQT6
-</Flex>
-
+The third component outputs a word cloud of adjectives within a data point. It works by the going through the reviews, categorizing and then tagging the words that are adjectives. 
 <br/>
-This was never intended to be a web application, so I chose to use the PyQT toolkit as it’s flexible, open source, and most importantly, compatible with Python.
+<br/>
+<Center
+    py={'1em'}>
+![The third component.](/screenshots/ard3.png_1512_1196)
+</Center>
+<br/>
+<br/>
+The fourth component helps to retrieve the title of the data point from the Amazon website. For the scope of this project, I didn’t want to use their API and instead I created a web scraper. It’s very simple, in that it uses the Python library Mechanize to open the URL of the item and then retrieve the title from the XML data of the page. Mechanize also happened to be perfect in that there is no denial of service from Amazon when trying to access the page. 
+<br/>
+<Center
+    py={'1em'}>
+![The fourth component.](/screenshots/ard1.png_1512_332)
+</Center>
+<br/>
 <br/>

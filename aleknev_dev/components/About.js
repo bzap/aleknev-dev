@@ -217,13 +217,12 @@ const About = forwardRef((props, ref) => {
 															mt={'2px'}
 															float={'right'}
 															fit='cover'
-															borderRadius={'9px'}
-															borderWidth={'5px'}
-															borderColor={'black'}
+															borderRadius={'22px'}
+															opacity={0.9}
 															h={{ base: '12em', sm: '15em', md: '20em', lg: '24em'}}
 															w={{ base: '9em', sm: '10em', md: '15em', lg: '16em' }}
 														
-															src={'https://i.imgur.com/7R4gnAa.jpg'} />								
+															src={'/portrait.png'} />								
 																{aboutText.background}
 																<Icon
 																	boxShadow={'xl'}

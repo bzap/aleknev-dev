@@ -89,7 +89,7 @@ const Keyboard = ({props}) => {
                     {props !== undefined && (
                       <Stage
                         preset="rembrandt"
-                        intensity={2}
+                        intensity={3}
                         environment="park">
                         {props !== undefined && (
                         <Bounds 
@@ -97,7 +97,7 @@ const Keyboard = ({props}) => {
                           clip 
                           observe 
                           margin={bp == 'xl' ? 0.40
-                                  : bp == '2xl' ? 0.50
+                                  : bp == '2xl' ? 0.55
                                   : 1}>
                             <Model innerLoading={props} />
                         </Bounds>

@@ -87,10 +87,10 @@ const Projects = forwardRef((props, ref) => {
 						<Flex
 							position={'absolute'}
 							maxW={'100%'}
-							w={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '90em' }}
-							h={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '90em' }}
-							top={{base: '0em', sm: '0em', md: '0em', lg: '5em'}}
-							left={{base: '0em', sm: '0em', md: '0em', lg: '40em' }}>
+							w={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '70em' }}
+							h={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '70em' }}
+							top={{base: '0em', sm: '0em', md: '0em', lg: '15em'}}
+							left={{base: '0em', sm: '0em', md: '0em', lg: '50em' }}>
 							<Center>
 								<Image
 									w={'100%'}
@@ -133,7 +133,7 @@ const Projects = forwardRef((props, ref) => {
 			position={'absolute'}
 			zIndex={0}
 			w={'100%'}
-			top={{base: '0em', sm: '55%', md: '50%', lg: '45%'}}
+			top={{base: '0em', sm: '55%', md: '50%', lg: '55%'}}
 			left={'-15%'}>
 			<Image
 				fit='cover'
@@ -162,7 +162,7 @@ const verticalItem = (top, index) => {
 				variants={projectSubContainer}
 				initial={'hidden'}
 				whileInView={'visible'}
-				viewport={{once: false, amount: 0.2}}>	
+				viewport={{once: true, amount: 0.2}}>	
 					<Flex
 					w={'100%'}
 					position={'relative'}

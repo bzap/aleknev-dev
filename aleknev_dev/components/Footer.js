@@ -62,7 +62,7 @@ const Footer = () => {
                         </Flex>
                         <Link 
                             style={{ 'textDecoration': 'none' }}
-                            href={'https://github.com/bzap'}
+                            href={'https://github.com/bzap/aleknev-dev'}
                             isExternal>
                             <ChakraBox
                                 position={'relative'}
