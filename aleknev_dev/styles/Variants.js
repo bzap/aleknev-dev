@@ -511,7 +511,7 @@ export const gitText = {
 		opacity: 1,
 		transition: {
 			ease: 'easeInOut',
-			delay: 0.7,
+			delay: 0.5,
 		}
 	},
 

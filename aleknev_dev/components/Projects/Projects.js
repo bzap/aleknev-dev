@@ -112,7 +112,7 @@ const Projects = forwardRef((props, ref) => {
 									display={{base: 'flex', sm:'flex', md: 'flex'}}
 									w={{sm:'100%', md: '100%', lg: '26em'}}
 									justifyContent={'center'}>
-										{bp == 'base' || bp == 'sm' ? (
+										{bp == 'base' || bp == 'sm' || bp == 'md' ? (
 											verticalItem('3em', "0" + (idx + 1).toString())
 										) : (
 											verticalItem((idx * 11).toString()+'%', "0" + (idx + 1).toString())
@@ -146,7 +146,7 @@ const Projects = forwardRef((props, ref) => {
 					as={motion.div}
 					initial={'hidden'}
 					whileInView={'visible'}
-					viewport={{ once: true, amount: 0.8}}
+					viewport={{ once: true, amount: 0.9}}
 					variants={gitText}>
 		{gitButton()}
 		</ChakraBox>
@@ -231,7 +231,7 @@ const gitButton = () => {
 									whileHover={{ scale: 1.05 }}
 									whileTap={{ scale: 0.95 }}
 									
-										direction={'row'}>
+									direction={'row'}>
 										<Link
 											style={{ 'textDecoration': 'none' }}
 											href={'https://github.com/bzap'}

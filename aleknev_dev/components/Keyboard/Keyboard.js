@@ -13,7 +13,6 @@ import {
   chakra,
 	IconButton,
 	createIcon,
-    Center,
 	IconProps,
 	useColorModeValue,
   shouldForwardProp,
@@ -24,9 +23,10 @@ import { useLoader, useThree } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { Canvas } from "@react-three/fiber"
 import { Suspense, useRef, useEffect, useState } from "react"
-import { Environment, Stage, OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { Bounds, Environment, Stage, OrbitControls, PerspectiveCamera, Center } from "@react-three/drei";
 import { AnimatePresence, motion, useScroll, isValidMotionProp } from 'framer-motion'
 import { heroKeyboard, heroGradient, keyboardContainer } from '../../styles/Variants';
+import * as THREE from 'three';
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -53,7 +53,7 @@ const Keyboard = ({props}) => {
       fov = 45
     }
     else if (bp == 'lg'){ 
-      fov = 45
+      fov = 35
     }
     else if (bp == 'xl'){ 
       fov = 55
@@ -63,13 +63,14 @@ const Keyboard = ({props}) => {
     } 
     return (
       <ChakraBox
+      bg={'green.100'}
         w={'100%'}
-        h={{base: '10em', sm: '25em', md: '25em', lg: '30em', xl: '40em', '2xl': '40em'}}
+        h={'100%'}
         as={motion.div}
         variants={keyboardContainer}> 
       <ChakraBox
           w={'100%'}
-          h={{ base: '25em', sm: '25em', md: '30em', lg: '30em', xl: '40em', '2xl': '40em' }}
+          h={'100%'}
         as={motion.div}
         variants={heroKeyboard}> 	
         <Flex
@@ -78,26 +79,35 @@ const Keyboard = ({props}) => {
         h={'100%'}
         w={'100%'}>
           <Canvas
-            dpr={[1, 2]}>
-            <PerspectiveCamera 
-            overflow={'scroll'}
-            position={[0, 0, 0]} 
-            fov={fov} 
-            onUpdate={self => self.updateMatrixWorld()}
-            makeDefault={true} />
+              dpr={[1, 2]}>
+
             <Suspense fallback={null}>
-              <Stage preset="rembrandt" intensity={1} environment="city">
-                {props !== undefined && (
-                  <Model innerLoading={props} />
-                )}
-              </Stage>
+                  {props !== undefined && (
+                    
+                    <Stage
+                      preset="rembrandt"
+                      intensity={1}
+                      environment="city">
+                      {props !== undefined && (
+                      <Bounds 
+                        fit 
+                        clip 
+                        observe 
+                        margin={bp == 'xl' ? 0.75
+                                : bp == '2xl' ? 0.8 
+                                : 1.1}>
+                          <Model innerLoading={props} />
+                      </Bounds>
+                      )}
+                    </Stage>  
+                    
+                  )}
             </Suspense>
             <OrbitControls
-              makeDefault
+              target={[0,0,0]}
               autoRotate
-              enableZoom={false}
-              
-            />
+              makeDefault
+              enableZoom={false}/> 
           </Canvas>
         </Flex>
 
@@ -122,11 +132,12 @@ const Keyboard = ({props}) => {
     )
 }
 
+
+
 const Model = (innerLoading) => {
     const loadingStates = innerLoading.innerLoading.outerLoading.states 
-    const gltf = useLoader(GLTFLoader, "scene.gltf");
+    const gltf = useLoader(GLTFLoader, "/model/keyboard11.gltf");
     loadingStates.setLoading(false)
-//    const { viewport } = useThree()
     return (
       <primitive object={gltf.scene} scale={1} />
     )

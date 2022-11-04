@@ -160,6 +160,7 @@ const projectDesc = (props) => {
 
 const modalButton = (name, link) => { 
     const { isOpen, onOpen, onClose } = useDisclosure()
+    console.log(onOpen)
     const btnRef = useRef([])
     return (
         <ChakraBox
@@ -220,8 +221,9 @@ const contentModal = (ref, io, oo, oc, link) => {
     const title = projects[link].name
     return ( 
         <Modal
-            
             preserveScrollBarGap
+            
+            
             motionPreset='slideInBottom'
             isCentered
             size={'xl'}
@@ -230,7 +232,8 @@ const contentModal = (ref, io, oo, oc, link) => {
             isOpen={io}
             scrollBehavior={'inside'}>
                 <ModalOverlay />
-                <ModalContent
+                <ModalContent 
+                blockScrollOnMount  
                 borderRadius={'12px'}
                 maxW={{base: '90%', sm: '90%', md: '70%', lg: '70%', xl: '50%'}}>
                     <ModalHeader

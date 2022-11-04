@@ -61,6 +61,7 @@ const Hero = forwardRef((props, ref) => {
 								whileInView={'visible'}
 								viewport={{ once: true }}>
 								<Flex
+						bg={'purple.100'}
 									h={'100%'}
 									w={'100%'}
 									position={'relative'}
@@ -85,6 +86,7 @@ const Hero = forwardRef((props, ref) => {
 							initial={'hidden'}
 							whileInView={'visible'}>
 							<Flex
+								pt={'1em'}
 								justifyContent={'center'}>
 								<ScrollIndicator />
 							</Flex>

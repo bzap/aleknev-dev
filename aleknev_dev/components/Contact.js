@@ -179,7 +179,7 @@ const formBox = () => {
 											borderColor={'blackAlpha.600'}
 											boxShadow={'md'}
 											border={'none'}
-											placeHolder={'email@email.com'}
+											placeholder={'email@email.com'}
 											_placeholder={{ opacity: 1, color: 'blackAlpha.300' }}
 											borderWidth={'0px'}
 											_hover={{ border: 'none' }}
@@ -214,7 +214,7 @@ const formBox = () => {
 											bg={'whiteAlpha.800'}
 											boxShadow={'md'}
 											border={'none'}
-											placeHolder={'your name'}
+											placeholder={'your name'}
 											_placeholder={{ opacity: 1, color: 'blackAlpha.300' }}
 											borderWidth={'0px'}
 											_hover={{ border: 'none' }}
@@ -255,7 +255,7 @@ const formBox = () => {
 												borderRadius={'14px'}
 												color={'blackAlpha.800'}
 												bg={'whiteAlpha.800'}
-												placeHolder={'your message...'}
+												placeholder={'your message...'}
 												_placeholder={{ opacity: 1, color: 'blackAlpha.300' }}
 												boxShadow={'md'}
 												border={'none'}

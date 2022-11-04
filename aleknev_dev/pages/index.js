@@ -17,6 +17,7 @@ import { tabs } from "../public/data/TabContent"
 import { AnimatePresence, motion, useScroll, isValidMotionProp, useInView } from 'framer-motion'
 import LoadingWrapper from '../components/LoadingWrapper'
 import disableScroll from 'disable-scroll';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 import {
   chakra,
@@ -54,11 +55,11 @@ const Home = () => {
   useEffect(() => {
     
     if (isShowHero && !isLoading){ 
-      disableScroll.off()
+      enableBodyScroll(heroRef)
     }
   
     if (!isShowAbout && !isShowProj && !isShowContact && !isShowHero ) {
-      disableScroll.on()
+      disableBodyScroll(heroRef)
     }
 
     if (isShowHero){ 
@@ -109,7 +110,6 @@ const Home = () => {
       mode='wait'>
         {isLoading && (
             <ChakraBox
-              
               initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
