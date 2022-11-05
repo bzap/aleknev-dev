@@ -98,14 +98,14 @@ const Hero = forwardRef((props, ref) => {
 	
 const keyboard = (loading) => { 
 	const bp = useBreakpoint()
-	const Keyboard2 = dynamic(import('./Keyboard/Keyboard'))
+	//const Keyboard = dynamic(import('./Keyboard/Keyboard'))
 	return (
 		<Flex
 		w={{base: '100%', sm: '100%', md: '100%', lg: '100%', xl: '35%', '2xl': '35%'}}
 		h={'100%'}
 		zIndex={0}
 		justifyContent={'flex-end'}>	
-			<Keyboard2 props={{ newFov: 30, outerLoading: loading }} />
+			<Keyboard props={{ newFov: 30, outerLoading: loading }} />
 		</Flex>		
 	) 
 	

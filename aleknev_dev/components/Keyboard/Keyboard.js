@@ -37,12 +37,6 @@ const ChakraBox = chakra(motion.div, {
 
 const Keyboard = ({props}) => {
    const bp = useBreakpoint() 
-   /*
-    const [fov, setFov] = useState(false)
-    useEffect(() => {
-      const interval = setInterval(() => set((state) => !state), 1000)
-      return () => clearInterval(interval)
-    }, []) */
     let fov = 20
     if (bp == 'base'){ 
       fov = 60
