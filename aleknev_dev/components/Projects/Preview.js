@@ -134,10 +134,13 @@ const projectSkill = (props, icon, idx) => {
                 <Center
                     direction={'row'}>
                         <Icon 
+                            w={2.5}
+                            h={2.5}
                             as={icon} 
                             color='black.500'/>
                         <Text
-                            fontSize={{ base: 10, sm: 12, md: 12, lg: 13 }}>
+                            color={'blackAlpha.700'}
+                            fontSize={{ base: 10, sm: 12, md: 12, lg: 12.5 }}>
                             &thinsp;{props}
                         </Text>
                 </Center>

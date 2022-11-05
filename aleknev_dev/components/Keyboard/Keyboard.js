@@ -109,7 +109,7 @@ const Keyboard = ({props}) => {
                 target={[0,0,0]}
                 autoRotate
                 makeDefault
-                enableZoom={true}/> 
+                enableZoom={false}/> 
             </Canvas>
           </Flex>
         </ChakraBox>

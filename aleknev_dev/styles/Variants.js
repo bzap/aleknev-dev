@@ -523,7 +523,7 @@ export const gradient5 = {
 	visible: {
 		transition: {
 			duration: 1,
-			delay: 0.5,
+			delay: 0.2,
 		},
 		opacity: 1
 	}
@@ -534,7 +534,7 @@ export const footerItem = {
 	hidden: { opacity: 0 },
 	visible: {
 		transition: {
-			delay: 1.1,
+			delay: 0.7,
 			duration: 0.7
 		},
 		opacity: 1,

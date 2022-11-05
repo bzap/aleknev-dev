@@ -337,6 +337,8 @@ const skillsInfo = () => {
 			<ChakraBox
 			variants={currentSkills}>
 				<Flex
+				px={{base: '2em', sm: '0.5em', md: '1em', lg: '1em', xl: '2.5em'}}
+				pt={'1em'}
 				pb={{ base: 8, sm: 10, md: 14, lg: 14 }}
 				justify-content={'space-between'}
 				direction='row'
