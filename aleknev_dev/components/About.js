@@ -78,7 +78,7 @@ const About = forwardRef((props, ref) => {
 								<Image
 								h={{ base: '0em', sm: '0', md: '0em', lg: '0em', xl: '78em' }}
 								w={{ base: '0em', sm: '0', md: '0em', lg: '0em', xl: '78em' }}
-									src={'topabout.webp'} />
+								src={'/gradients/topabout.png'} />
 							</Center>
 						</Flex>
 				</ChakraBox>

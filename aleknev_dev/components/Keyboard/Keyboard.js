@@ -125,7 +125,7 @@ const Keyboard = ({props}) => {
               fit='cover'
               h={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '40em', '2xl': '40em' }}
               w={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '40em', '2xl': '40em' }}
-              src={'hero.webp'} />
+              src={'/gradients/hero.png'} />
           </ChakraBox>
           </ChakraBox>
       </Flex>

@@ -95,7 +95,7 @@ const Projects = forwardRef((props, ref) => {
 								<Image
 									w={'100%'}
 									h={'100%'}
-									src={'topproj.webp'} />
+										src={'/gradients/topproj.png'} />
 							</Center>
 						</Flex>
 						</ChakraBox>
@@ -139,7 +139,7 @@ const Projects = forwardRef((props, ref) => {
 				fit='cover'
 				h={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '65em' }}
 				w={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '65em' }}
-				src={'centerproj.webp'} />
+				src={'/gradients/centerproj.png'} />
 		</Flex>	
 		</ChakraBox>
 		<ChakraBox

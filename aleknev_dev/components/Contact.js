@@ -99,7 +99,7 @@ const Contact = forwardRef((props, ref) => {
 							<Image
 								h={{ base: '0em', sm: '0', md: '0em', lg: '0em', xl: '50em' }}
 								w={{ base: '0em', sm: '0', md: '0em', lg: '0em', xl: '90em' }}
-								src={'footerbl.webp'} />
+								src={'/gradients/footerbl.png'} />
 						</Center>
 					</Flex>
 				</ChakraBox>
