@@ -139,7 +139,7 @@ const projectSkill = (props, icon, idx) => {
                             as={icon} 
                             color='black.500'/>
                         <Text
-                            color={'blackAlpha.700'}
+                            color={'gray.700'}
                             fontSize={{ base: 10, sm: 12, md: 12, lg: 12.5 }}>
                             &thinsp;{props}
                         </Text>

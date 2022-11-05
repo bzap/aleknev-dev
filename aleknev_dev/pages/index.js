@@ -16,8 +16,9 @@ import { useState, useEffect, useRef } from 'react'
 import { tabs } from "../public/data/TabContent"
 import { AnimatePresence, motion, useScroll, isValidMotionProp, useInView } from 'framer-motion'
 import LoadingWrapper from '../components/LoadingWrapper'
-import disableScroll from 'disable-scroll';
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import dynamic from 'next/dynamic'
+
 
 import {
   chakra,
@@ -48,14 +49,10 @@ const Home = () => {
   const heroRef = useRef(null)
   const isShowHero = useInView(heroRef)
 
-
-
-
-
   useEffect(() => {
     
     if (isShowHero && !isLoading){ 
-      enableBodyScroll(heroRef)
+      clearAllBodyScrollLocks()
     }
   
     if (!isShowAbout && !isShowProj && !isShowContact && !isShowHero ) {
@@ -71,40 +68,30 @@ const Home = () => {
       setAboutView(isShowAbout)
       setProjView(false)
       setHeroView(false)
-      }
+      clearAllBodyScrollLocks()
+    }
 
     if (isShowProj) {
       setAboutView(false)
       setProjView(isShowProj)
       setContactView(false)
-      /*
-      console.log('---------')
-      console.log(aboutView, 'about')
-      console.log(projView, 'proj')
-      console.log(contactView, 'contact')
-      console.log('---------') */
+      clearAllBodyScrollLocks()
     }
     if (isShowContact) {
       setProjView(false)
       setContactView(isShowContact)
-      /*
-      console.log('---------')
-      console.log(aboutView, 'about')
-      console.log(projView, 'proj')
-      console.log(contactView, 'contact')
-      console.log('---------') */
+      clearAllBodyScrollLocks()
     }
 
 
 
   }, [isShowAbout, isShowProj, isShowContact, isShowHero])
 
-
-
+  //const Proj2 = dynamic('../components/Projects/Projects')
+  //const Proj3 = dynamic(import('../components/Projects/Projects'))
 
   return ( 
-    <Layout
-     >
+    <Layout>
       <AnimatePresence 
       
       mode='wait'>
@@ -123,6 +110,7 @@ const Home = () => {
         <Hero loading={{states: {isLoading, setLoading}}} ref={heroRef}/>
         <About ref={aboutRef}/>
         <Projects ref={projRef}/>
+     
         <Contact ref={contactRef}/>
         <Footer/>
     </Layout>

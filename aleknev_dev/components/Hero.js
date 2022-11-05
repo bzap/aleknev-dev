@@ -27,7 +27,7 @@ import { background, heroContainer, heroDesc, heroTitle, heroKeyboard, scrollArr
 import ScrollIndicator from './ScrollIndicator';
 import Wave from './Variants/Wave';
 import { useState, useEffect, useRef, forwardRef } from 'react'
-import disableScroll from 'disable-scroll';
+import dynamic from 'next/dynamic'
 
 const ChakraBox = chakra(motion.div, {
 	shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -35,6 +35,7 @@ const ChakraBox = chakra(motion.div, {
 
 const Hero = forwardRef((props, ref) => {
 	//console.log(props)
+	
 	return (
 				<Container
 					
@@ -97,13 +98,14 @@ const Hero = forwardRef((props, ref) => {
 	
 const keyboard = (loading) => { 
 	const bp = useBreakpoint()
+	const Keyboard2 = dynamic(import('./Keyboard/Keyboard'))
 	return (
 		<Flex
 		w={{base: '100%', sm: '100%', md: '100%', lg: '100%', xl: '35%', '2xl': '35%'}}
 		h={'100%'}
 		zIndex={0}
 		justifyContent={'flex-end'}>	
-			<Keyboard props={{ newFov: 30, outerLoading: loading }} />
+			<Keyboard2 props={{ newFov: 30, outerLoading: loading }} />
 		</Flex>		
 	) 
 	
