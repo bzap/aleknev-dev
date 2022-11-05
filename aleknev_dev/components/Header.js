@@ -129,7 +129,7 @@ const logoHeader = (size) => {
 						</Heading>
 					) : (
 						<Heading
-							fontSize={{ base: 19, sm: 19, md: 20, lg: 20 }}
+							fontSize={{ base: 19, sm: 19, md: 19, lg: 19 }}
 							color={'blackAlpha.800'}>
 								&lt;&thinsp;LINAS&thinsp;ALEKNEVICIUS&thinsp;&gt;
 						</Heading>
