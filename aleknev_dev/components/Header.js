@@ -119,7 +119,7 @@ const logoHeader = (size) => {
 	return (
 			<ChakraBox
 				as={motion.div}
-				whileHover={{ scale: 1.05 }}
+				whileHover={{ scale: 1.02 }}
 				whileTap={{ scale: 0.98 }}>
 					{bp == 'base' || bp == 'sm' || bp == 'md' || bp == 'lg' ? (
 						<Heading
