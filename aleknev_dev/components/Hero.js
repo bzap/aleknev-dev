@@ -49,7 +49,7 @@ const Hero = forwardRef((props, ref) => {
 						<Flex
 				
 						h={'90vh'}
-						pt={'7em'}
+						pt={{base: '5em', sm: '5em', md: '5	em', lg: '7em'}}
 						direction={'column'}>
 							<ChakraBox	
 								h={'40em'}

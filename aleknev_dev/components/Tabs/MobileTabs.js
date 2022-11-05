@@ -59,11 +59,11 @@ const MobileTabs = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.90}}>
                                 <Center>
-                                    <Text
-                                        fontWeight={'700'}
+                                    <Heading
+                                        fontSize={16.5}
                                         color='blackAlpha.800'>
                                         {item.label}
-                                    </Text>
+                                    </Heading>
                                 </Center>
                             </ChakraBox>
 

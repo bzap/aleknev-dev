@@ -121,7 +121,6 @@ const AnimatedTabs = ({pos}) => {
 												<ChakraBox 
 												as={motion.div}>
 													<Text 
-													
 													alignItems={'center'}
 													opacity={0}>
 														{item.label}

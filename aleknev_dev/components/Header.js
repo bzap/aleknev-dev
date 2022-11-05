@@ -123,13 +123,13 @@ const logoHeader = (size) => {
 				whileTap={{ scale: 0.98 }}>
 					{bp == 'base' || bp == 'sm' || bp == 'md' || bp == 'lg' ? (
 						<Heading
-							fontSize={{ base: 19, sm: 19, md: 21, lg: 21 }}
+							fontSize={19}
 							color={'blackAlpha.800'}>
-							&lt;&thinsp;LINAS&thinsp;&gt;
+							&lt;LINAS&gt;
 						</Heading>
 					) : (
 						<Heading
-							fontSize={{ base: 19, sm: 19, md: 19, lg: 19 }}
+							fontSize={19}
 							color={'blackAlpha.800'}>
 								&lt;&thinsp;LINAS&thinsp;ALEKNEVICIUS&thinsp;&gt;
 						</Heading>

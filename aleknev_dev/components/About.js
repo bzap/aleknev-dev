@@ -88,7 +88,7 @@ const About = forwardRef((props, ref) => {
 						alignItems={'start'}>
 							<ChakraBox
 								position={'relative'}
-								pb={{base: '0.5em', sm: 0, md: 0, lg: 0}}
+								pb={0}
 								as={motion.div}
 								variants={about}
 								initial={'hidden'}
@@ -219,9 +219,8 @@ const About = forwardRef((props, ref) => {
 															fit='cover'
 															borderRadius={'22px'}
 															opacity={0.9}
-															h={{ base: '12em', sm: '15em', md: '20em', lg: '24em'}}
-															w={{ base: '9em', sm: '10em', md: '15em', lg: '16em' }}
-														
+															h={{ base: '16em', sm: '18em', md: '20em', lg: '24em'}}
+															w={{ base: '11em', sm: '13em', md: '15em', lg: '16em' }}
 															src={'/portrait.png'} />								
 																{aboutText.background}
 																<Icon
@@ -338,7 +337,7 @@ const skillsInfo = () => {
 			variants={currentSkills}>
 				<Flex
 				px={{base: '2em', sm: '0.5em', md: '1em', lg: '1em', xl: '2.5em'}}
-				pt={'1em'}
+				pt={{base: 0, sm: 0, md: '1em', lg: '1em'}}
 				pb={{ base: 8, sm: 10, md: 14, lg: 14 }}
 				justify-content={'space-between'}
 				direction='row'
