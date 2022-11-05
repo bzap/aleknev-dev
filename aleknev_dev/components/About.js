@@ -126,7 +126,7 @@ const About = forwardRef((props, ref) => {
 								fit='cover'
 									h={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '70em' }}
 									w={{ base: '0em', sm: '0em', md: '0em', lg: '0em', xl: '85em' }}
-								src={'cornerabout.webp'} />
+								src={'/gradients/cornerabout.png'} />
 						</Flex>
 						</ChakraBox>
 						</Flex>
