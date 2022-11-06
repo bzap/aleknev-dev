@@ -1,40 +1,5 @@
-import {
-    Center,
-    HStack,
-    Divider,
-    Container,
-    Stack,
-    Flex,
-    Box,
-    Heading,
-    Text,
-    useDisclosure,
-    Button,
-    Image,
-    Icon,
-    IconButton,
-    createIcon,
-    IconProps,
-    useColorModeValue,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalCloseButton,
-    ModalBody,
-    Modal,
-    ModalFooter,
-    Grid,
-    GridItem,
-    ButtonGroup,
-    AspectRatio,
-    ListIcon,
-    Spacer,
-    chakra,
-    shouldForwardProp
-} from '@chakra-ui/react';
+import { Center } from '@chakra-ui/react';
 import projects from '../public/data/ProjectText';
-
-
 
 ## Background
 Prior to working on this project, I had little experience with building websites without the use of frameworks and UI tools such as React and Material UI. To combat this and deepen my knowledge, I set out to see what kind of design and implementation I could come up with using plain and simple HTML and CSS. 
@@ -45,7 +10,7 @@ Towards the end of development, I found I was having trouble with animating the 
 <br/>
 <Center
     py={'1em'}>
-            ![The menus.](/screenshots/dog2.png_3282_850)
+        ![The menus.](/screenshots/dog2.png_3282_850)
 </Center>
 <br/>
 ## Breakdown
@@ -55,8 +20,7 @@ The second is a counter that keeps track of the time elapsed and updates the sta
 <br/>
 <Center
     py={'1em'}>
-            ![The typing screen.](/screenshots/dog1.png_3282_2026)
-
+        ![The typing screen.](/screenshots/dog1.png_3282_2026)
 </Center>
 <br/>
 The last key operation is what I used to alleviate the previously mentioned problem. It’s a rendering call based on the time elapsed, used to calculate the correct statistics and display them to the user.

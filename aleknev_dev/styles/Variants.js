@@ -1,4 +1,3 @@
-
 export const container = {
 	hidden: { opacity: 0, y:20 },
 	visible: {
@@ -10,7 +9,7 @@ export const container = {
 		staggerChildren: 0.9
 	  }
 	}
-  } 
+} 
 
 export const skillsContainer = {
 	hidden: { opacity: 0, y:20 },
@@ -23,7 +22,7 @@ export const skillsContainer = {
 		staggerChildren: 0.4
 	  }
 	}
-  } 
+} 
 
 export const subContainer = {
   hidden: { opacity: 0, y:20 },
@@ -47,7 +46,7 @@ export const item = {
 	y: 0,
 	opacity: 1
   }
-};
+}
 
 export const skillsItem = {
 	hidden: { opacity: 0 },
@@ -58,11 +57,8 @@ export const skillsItem = {
 	  opacity: 1,
 	  scale:[0.5, 1.02, 1]
 	}
-  }
+}
   
-
-
-
 export const projectContainer = {
 	hidden: { opacity: 0, y:20 },
 	visible: {
@@ -75,7 +71,7 @@ export const projectContainer = {
 		staggerChildren: 1
 	  }
 	}
-  } 
+} 
 
 export const projectSubContainer = {
 	hidden: { opacity: 0, y:20 },
@@ -89,7 +85,8 @@ export const projectSubContainer = {
 		staggerChildren: 0.1
 	  }  
 	}  
-  } 
+} 
+
 export const projectRowContainer = {
 	hidden: { opacity: 0, y: 20 },
 	visible: {
@@ -103,7 +100,6 @@ export const projectRowContainer = {
 	}
 } 
 
-
 export const pskillsItem = {
 	hidden: { opacity: 0, y:20 },
 	visible: {
@@ -113,7 +109,7 @@ export const pskillsItem = {
 	  },
 	  opacity: 1,
 	}
-  }
+}
 
 export const pillItem = {
 	hidden: { opacity: 0, y: 5 },
@@ -124,8 +120,7 @@ export const pillItem = {
 	  opacity: 1,
 	  y: 0
 	}
-  };
-
+}
 
 export const gitContainer = {
 	hidden: { opacity: 0, y:20 },
@@ -149,9 +144,7 @@ export const gitItem = {
 	  opacity: 1,
 	  scale:[0.5, 1.1, 1]
 	}
-  }
-
-
+}
 
 export const titleContainer = {
 	hidden: { opacity: 0 },
@@ -177,6 +170,7 @@ export const subTitleContainer = {
 		stiffness: 200,
 	}
 }
+
 export const indicators = {
 	hidden: { opacity: 0, x: 20 },
 	visible: {
@@ -201,9 +195,7 @@ export const textContainer = {
             delayChildren: 0.1 
         }
     }
-};
-
-
+}
 
 export const about = {
 	hidden: { opacity: 0 },
@@ -227,8 +219,6 @@ export const title = {
 	}
 }   
 
-
-
 export const itemTitle = {
 	hidden: { opacity: 0, y: 20 },
 	visible: {
@@ -247,8 +237,7 @@ export const itemText = {
 		y: 0,
 		opacity: 1
 	}
-};
-
+}
 
 export const background = {
 	hidden: { opacity: 0 },
@@ -277,7 +266,6 @@ export const aboutItem = {
 	}
 } 
 
-
 export const currentSkills = {
 	hidden: { opacity: 0, scale: 0.95 },
 	visible: {
@@ -288,8 +276,7 @@ export const currentSkills = {
 		opacity: 1,
 		scale: 1 
 	}
-};
-
+}
 
 export const gradient = {
 	hidden: { opacity: 0 },
@@ -302,8 +289,7 @@ export const gradient = {
 		},
 		opacity: 1
 	}
-};
-
+}
 
 export const gradient2 = {
 	hidden: { opacity: 0 },
@@ -342,7 +328,6 @@ export const gradient4 = {
 	}
 }
 
-
 export const submission = {
 	hidden: { opacity: 0 },
 	visible: {
@@ -354,7 +339,6 @@ export const submission = {
 	}
 }
 
-
 export const arrowContainer = {
 	hidden: { opacity: 1 },
 	visible: {
@@ -365,7 +349,6 @@ export const arrowContainer = {
 		}
 	}
 }
-
 
 export const gitGT = {
 	hidden: { opacity: 0 },
@@ -392,7 +375,6 @@ export const gitLT = {
 	}
 }
 
-
 export const heroContainer = {
 	hidden: { opacity: 0 },
 	visible: {
@@ -403,7 +385,6 @@ export const heroContainer = {
 		}
 	}
 }   
-
 
 export const heroDesc = {
 	hidden: { y: 20, opacity: 0 },
@@ -437,7 +418,6 @@ export const navContainer = {
 		}
 	}
 }   
-
 
 export const navItem = {
 	hidden: { opacity: 1 },
@@ -475,7 +455,6 @@ export const scrollArrows = {
 		}
 	}
 }   
-
 
 export const heroGradient = {
 	hidden: { opacity: 0 },
@@ -517,7 +496,6 @@ export const gitText = {
 
 }
 
-
 export const gradient5 = {
 	hidden: { opacity: 0 },
 	visible: {
@@ -527,8 +505,7 @@ export const gradient5 = {
 		},
 		opacity: 1
 	}
-};
-
+}
 
 export const footerItem = {
 	hidden: { opacity: 0 },

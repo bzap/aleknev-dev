@@ -1,38 +1,9 @@
 import {
-    Center,
-    HStack,
-    Divider,
-    Container,
-    Stack,
+    Center, 
     Flex,
-    Box,
-    Heading,
-    Text,
-    useDisclosure,
-    Button,
-    Image,
-    Icon,
-    IconButton,
-    createIcon,
-    IconProps,
-    useColorModeValue,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalCloseButton,
-    ModalBody,
-    Modal,
-    ModalFooter,
-    Grid,
-    GridItem,
-    ButtonGroup,
-    ListIcon,
-    Spacer,
-    chakra,
-    shouldForwardProp
+    Grid
 } from '@chakra-ui/react';
 import projects from '../public/data/ProjectText';
-
 
 ## Background
 This was a project that focused on creating a 3D geometric terrain and applying shading and lighting to it. The goal was to differentiate the visual fidelity of shading and lighting between two mesh generation techniques and assess the impact of performance on the initial render.
@@ -46,12 +17,12 @@ To simplify, the terrain is initially generated into vectors using either a faul
     py={'1em'}
     position={'relative'}
     direction={'row'}>
-            <Flex>
-                ![Triangle generation.](/screenshots/gen1.png_508_308)
-            </Flex>
-            <Flex>
-                ![Square generation.](/screenshots/gen2.png_508_308)
-            </Flex>
+        <Flex>
+            ![Triangle generation.](/screenshots/gen1.png_508_308)
+        </Flex>
+        <Flex>
+            ![Square generation.](/screenshots/gen2.png_508_308)
+        </Flex>
 </Center>
 <br/>
 <br/>
@@ -75,7 +46,6 @@ The second operation is the ability to pan and rotate the camera around the gene
         <Flex>
             ![The fault algorithm.](/screenshots/gen4.png_1578_1180)
         </Flex>
-
 </Grid>
 <br/>
 
