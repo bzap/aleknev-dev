@@ -1,38 +1,13 @@
-import { motion, Variants, HTMLMotionProps, isValidMotionProp } from "framer-motion";
+import { motion, isValidMotionProp } from "framer-motion";
 import {
-    Divider,
-    Container,
-    Stack,
     Flex,
-    Box,
-    Heading,
-    Text,
     chakra,
-    Button,
-    Image,
-    Icon,
-    IconButton,
-    createIcon,
-    IconProps,
-    useColorModeValue,
-    Grid,
-    GridItem,
-    VStack,
-    AspectRatio,
-    HStack,
-    Center,
-    List,
-    ListIcon,
-    ListItem,
-    Spacer,
     shouldForwardProp
 } from '@chakra-ui/react';
 
 const ChakraBox = chakra(motion.div, {
     shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
 });
-
-
 
 const textContainer = {
     hidden: {
@@ -45,7 +20,7 @@ const textContainer = {
             delayChildren: 0.1 
         }
     }
-};
+}
 
 const letterContainer = {
     visible: {
@@ -66,7 +41,7 @@ const letterContainer = {
             stiffness: 200
         }
     }
-};
+}
 
 const Wave = ({text}) => { 
     const letters = Array.from(text)
@@ -77,21 +52,19 @@ const Wave = ({text}) => {
             initial={'hidden'}
             whileInView={'visible'}
             viewport={{ once: true }}>
-            <Flex
-            direction={'row'}>
-                {letters.map((letter, idx) =>(
-                    <ChakraBox
-                    as={motion.div}
-                    key={idx}
-                    variants={letterContainer}> 
-                        {letter == ' ' ? '\u00A0' : letter}
-                    </ChakraBox>   
-                ))}
-            </Flex>
+                <Flex
+                    direction={'row'}>
+                        {letters.map((letter, idx) => (
+                            <ChakraBox
+                                as={motion.div}
+                                key={idx}
+                                variants={letterContainer}> 
+                                    {letter == ' ' ? '\u00A0' : letter}
+                            </ChakraBox>   
+                        ))}
+                </Flex>
         </ChakraBox>
-        
     )
 }
-
 
 export default Wave
