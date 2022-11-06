@@ -51,10 +51,6 @@ const Home = () => {
 
   useEffect(() => {
     
-    if (isShowHero && !isLoading){ 
-      clearAllBodyScrollLocks()
-    }
-  
     if (!isShowAbout && !isShowProj && !isShowContact && !isShowHero ) {
       disableBodyScroll(heroRef)
     }
@@ -62,6 +58,7 @@ const Home = () => {
     if (isShowHero){ 
       setHeroView(true)
       setAboutView(false)
+      clearAllBodyScrollLocks()
     }
 
     if (isShowAbout) {
@@ -86,9 +83,6 @@ const Home = () => {
 
 
   }, [isShowAbout, isShowProj, isShowContact, isShowHero])
-
-  //const Proj2 = dynamic('../components/Projects/Projects')
-  //const Proj3 = dynamic(import('../components/Projects/Projects'))
 
   return ( 
     <Layout>

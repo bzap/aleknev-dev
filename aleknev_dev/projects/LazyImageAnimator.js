@@ -47,7 +47,6 @@ const LazyImageAnimator = ({ props }) => {
         setImg(false)
     }
     const imageData = props.src.split('_')
-    console.log(imageData[0], imageData[1], imageData[2])
     const src = { src: imageData[0], alt: props.alt }
     return (
         <Flex

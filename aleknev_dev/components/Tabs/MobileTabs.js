@@ -30,7 +30,6 @@ const ChakraBox = chakra(motion.div, {
 
 const MobileTabs = () => {
     const [selectedTab, setSelectedTab] = useState(tabs[3])
-    console.log('in use')
     return (
         <Flex
             pt={'1.5em'}

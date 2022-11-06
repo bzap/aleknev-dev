@@ -37,25 +37,6 @@ const ChakraBox = chakra(motion.div, {
 
 const Keyboard = ({props}) => {
    const bp = useBreakpoint() 
-    let fov = 20
-    if (bp == 'base'){ 
-      fov = 60
-    }
-    else if (bp == 'sm'){ 
-      fov = 50
-    }
-    else if (bp == 'md'){ 
-      fov = 45
-    }
-    else if (bp == 'lg'){ 
-      fov = 35
-    }
-    else if (bp == 'xl'){ 
-      fov = 55
-    }
-    else if (bp == '2xl'){ 
-      fov = 45
-    } 
     return (
       <Flex
         h={'100%'}
@@ -75,6 +56,8 @@ const Keyboard = ({props}) => {
           variants={heroKeyboard}> 	
           <Flex
           position={'relative'}
+          justifyContent={'center'}
+          alignItems={'center'}
           zIndex={10}
           h={'100%'}
           w={'100%'}>
@@ -93,7 +76,9 @@ const Keyboard = ({props}) => {
                           observe 
                           margin={bp == 'xl' ? 0.40
                                   : bp == '2xl' ? 0.55
-                                  : 1}>
+                                  : bp == 'md' || bp == 'lg' ? 1.1
+                                  : bp == 'sm' ? 1
+                                  : 0.7}>
                             <Model innerLoading={props} />
                         </Bounds>
                         )}

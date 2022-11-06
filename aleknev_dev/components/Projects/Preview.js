@@ -66,13 +66,11 @@ const Preview = ({index}) => {
                 {projectTitle(projects[index].name)}
             </ChakraBox>
             <Flex
+            w={'100%'}
             position={'relative'}
-            justifyContent={'center'}>
+            justifyContent={'space-between'}>
                     {projects[index].tech.map((x, idx) => (
-                         <>
-                         {projectSkill(x, projects[index].icons[idx], idx)}
-                         <Spacer/>
-                        </>
+                         projectSkill(x, projects[index].icons[idx], idx)
                     ))}
             </Flex> 
         </Flex> 
@@ -164,7 +162,6 @@ const projectDesc = (props) => {
 
 const modalButton = (name, link) => { 
     const { isOpen, onOpen, onClose } = useDisclosure()
-    console.log(onOpen)
     const btnRef = useRef([])
     return (
         <ChakraBox
@@ -227,7 +224,7 @@ const contentModal = (ref, io, oo, oc, link) => {
         <Modal
             preserveScrollBarGap
             
-            
+            blockScrollOnMount 
             motionPreset='slideInBottom'
             isCentered
             size={'xl'}
@@ -237,7 +234,7 @@ const contentModal = (ref, io, oo, oc, link) => {
             scrollBehavior={'inside'}>
                 <ModalOverlay />
                 <ModalContent 
-                blockScrollOnMount  
+                 
                 borderRadius={'12px'}
                 maxW={{base: '90%', sm: '90%', md: '70%', lg: '70%', xl: '50%'}}>
                     <ModalHeader
