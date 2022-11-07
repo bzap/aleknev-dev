@@ -27,7 +27,7 @@ import { VscFileCode } from 'react-icons/vsc'
 const projects = { 
     1: {
         name: 'GONI-GO',
-        tech: ['JS', 'React Native', 'NPM', 'AWS'],
+        tech: ['JS', 'React Native', 'NodeJS', 'AWS'],
         icons: [SiJavascript, SiReact, SiNpm, SiAmazonaws],
         desc: 'A mobile goniometry application made for cancer survivors with limited post-treatment help.',
         image: ['/screenshots/go0.png'],
