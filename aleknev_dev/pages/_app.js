@@ -18,6 +18,10 @@ function MyApp({ Component, pageProps, router }) {
 			<ChakraProvider
 				theme={theme}>
 				<Head>
+					<meta name="googlebot" content="noindex,nofollow" />
+					<meta name="google" content="nositelinkssearchbox" />
+					<meta name="google" content="notranslate" />
+					<meta name="robots" content="noindex" />
 					<title>Aleknev</title>
 				</Head>
 				<Component {...pageProps} key={router.route} />
