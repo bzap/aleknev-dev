@@ -9,7 +9,7 @@ import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { Bounds, Stage, OrbitControls } from "@react-three/drei";
+import { Bounds, Stage, OrbitControls, Environment, SpotLight } from "@react-three/drei";
 import { motion, isValidMotionProp } from 'framer-motion';
 import { heroKeyboard, heroGradient, keyboardContainer } from '../../styles/Variants';
 
@@ -52,13 +52,11 @@ const Keyboard = ({ props }) => {
 									h={'100%'}
 									w={'100%'}>
 										<Canvas dpr={[1, 2]}>
+										<pointLight position={[0, 0, 0]} intensity={2} color="#fff" />
 												<Suspense fallback={null}>
 													{props !== undefined && (
-													<Stage
-														preset="rembrandt"
-														intensity={3}
-														environment="park">
-															{props !== undefined && (
+														<Environment path="/" files="rooitou_park_1k.hdr" />,
+															props !== undefined && (
 																<Bounds
 																	fit
 																	clip
@@ -71,8 +69,9 @@ const Keyboard = ({ props }) => {
 																		: 0.7 }>
 																			<Model innerLoading={props} />
 																</Bounds>
-															)}
-													</Stage>
+															)
+														
+										
 													)}
 												</Suspense>
 												<OrbitControls
